@@ -17,13 +17,10 @@ einfache zweispaltige Tabelle mit <Begriff> und <Definition>
 [cols="1,2" options="header"]
 .Glossar
 |===
-|Begriff
-|Definition
+|Begriff      | Definition
 
-|<Begriff-1
-|Beschreibung-2
-
-
-|<Begriff-2
-|Beschreibung-2
+| EndKunde    | Ein Kunde, der sein Ticket selbständig über die Webseite kauft.
+| Performance | Aufführung einer Show, z.B. 12. April 2016, 20:00 "Starlight Express"
+| Show        | Z.B. "Starlight Express"
+| Verkäufer   | Ein Angestellter der Z-Group, der Tickets an Kunden verkauft.
 |===

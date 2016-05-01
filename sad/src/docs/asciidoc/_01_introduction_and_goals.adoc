@@ -108,6 +108,35 @@ Für alle, die es nicht so genau wissen wollen: ein lesbarer Auszug davon ist im
 auf Seite 9 zu finden.
 ****
 
+==== Szenarien
+
+Im Normalbetrieb überschreitet die Antwortzeit des Systems die Werte der folgenden Tabelle nicht
+[options="header"]
+.Antwortzeiten in Sekunden
+|===
+| Seitenname            | Antwortzeit
+| Welcome               | <  1s
+| Show                  | <  2s
+| Sitzbuchungen         | <  2s
+| Reservation           | <  2s
+| Zahlung               | <  2s
+| Zahlung verarbeiten   | < 15s
+|===
+
+Wenn zwei Endkunden den gleichen Sitzplatz der gleichen Performance reserviert haben und beide Endkunden den Sitzplatz kaufen wollen,
+dann stellt das System sicher, dass der Sitzplatz nur an einen Endkunden verkauft wird.
+
+Wenn soviele Endkunden Veranstaltungen suchen, dass sich die Antwortzeiten für die Endkunden verschlechtern,
+dann stellt das System sicher, dass die Antwortzeiten für die Verkäufer davon nicht betroffen sind.
+
+Wenn das System für ein weiteres Theater angepasst werden muss, dann kann dies innerhalb von 60 Personentagen geschehen.
+
+Wenn Raumkonfiguration verändert werden muss, dann muss dies ausschliesslich konfigurativ geschehen.
+
+Wenn ein Endnutzer Informationen zum Verkaufsstatus der Sitzplätze abruft, dann dürfen diese maximal eine Minute alt sein.
+
+Wenn eine neue Show freigeschaltet wird, dann muss sie nach spätestens einer Minute für Endkunden sichtbar sein
+
 === Stakeholder
 
 [role="arc42help"]
