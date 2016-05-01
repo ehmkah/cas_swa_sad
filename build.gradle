@@ -11,6 +11,6 @@ buildscript {
     }
 }
 
-task(name:'check') {
+task('check') << {
     println('hello')
 }
