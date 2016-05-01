@@ -1,7 +1,7 @@
 group 'ch.bfh.cas.swa'
 version '1.0-SNAPSHOT'
 
-project(':sad') {
+/*project(':sad') {
     buildscript {
         repositories {
             jcenter()
@@ -9,13 +9,18 @@ project(':sad') {
 
         dependencies {
             classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
-            //classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.11'
+            classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.11'
         }
     }
+    apply plugin: 'java'
     apply plugin: 'org.asciidoctor.convert'
 
+    asciidoctorj {
+        version = '1.5.4'
+    }
 
     asciidoctor {
+        backends    'pdf'
         attributes  'imagesdir':'images',
                 'toc':'left'
     }
@@ -23,14 +28,15 @@ project(':sad') {
     task('generate', dependsOn:asciidoctor) << {
     }
 }
+*/
 
 buildscript {
     repositories {
         jcenter()
     }
-    dependencies {
-        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
-    }
+    //dependencies {
+    //    classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
+    //}
 }
 
 
