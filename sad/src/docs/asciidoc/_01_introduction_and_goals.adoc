@@ -4,12 +4,12 @@
 (engl.: Introduction and Goals)
 
 
-Als Einführung in das Architekturdokument gehören hierher die treibenden Kräfte, die Software-Architekten bei ihren Entscheidungen berücksichtigen müssen:
-Einerseits die Erfüllung bestimmter fachlicher Aufgabenstellungen der Stakeholder, darüber hinaus aber die Erfüllung oder Einhaltung der vorgegebenen Randbedingungen (required constraints) unter Berücksichtigung der Architekturziele.
+// Als Einführung in das Architekturdokument gehören hierher die treibenden Kräfte, die Software-Architekten bei ihren Entscheidungen berücksichtigen müssen:
+// Einerseits die Erfüllung bestimmter fachlicher Aufgabenstellungen der Stakeholder, darüber hinaus aber die Erfüllung oder Einhaltung der vorgegebenen Randbedingungen (required constraints) unter Berücksichtigung der Architekturziele.
 
 
 === Aufgabenstellung
-(engl.: Requirements Overview)
+//(engl.: Requirements Overview)
 
 [role="arc42help"]
 ****
@@ -41,6 +41,36 @@ Kurzbeschreibung der wichtigsten:
 
 Hier können Sie aus den Anforderungsdokumenten wiederverwenden - halten Sie diese Auszüge so knapp wie möglich und wägen Sie Lesbarkeit und Redundanzfreiheit gegeneinander ab.
 ****
+
+==== Kernaufgabe
+
+Online Ticketing System um ein oder mehrere Sitzplätze für gewünschte Veranstaltung zu erwerben.
+Die Tickets können bei Bedarf auch reserviert und vor Ort abgeholt werden.
+Die Anordnung der Sitzplätze variiert von Show zu Show und muss daher konfigurierbar sein.
+Die Anwendung steht sowohl Kunden übers Internet als auch internen Mitarbeitern zur Verfügung.
+
+==== wichtige Begriffe
+
+Show, Performance, Seat categories, adjacent seat, reservation and confimation/purchase
+
+==== Art des Systems
+
+Interaktives Online System
+
+==== Schnittstellen
+
+* credit card processing system
+* E-Mail
+
+==== Datenhaltung
+
+* Oracle Datebase
+
+==== Steuerung
+
+* Ereignis-getrieben Steuerung (Web-GUI)
+* Admins können direkt auf der DB arbeiten (Phase I)
+
 
 === Qualitätsziele
 (engl.: Quality Goals)
@@ -136,10 +166,14 @@ Hinweis: I.d.R. hat man nicht gleichzeitig Unternehmensarchitekten, eine Archite
 |===
 ****
 
-Die folgende Tabelle zeigt Ihre konkreten Stakeholder für das System sowie deren Interessen oder Beteiligung.
+Die folgende Tabelle zeigt die Stakeholder des OTS Systems.
 
 [cols="1,2" options="header"]
 .Stakeholder des Systems
 |===
-|Rolle |Beschreibung |Ziel / Intention |Kontakt |Bemerkungen
+|Rolle                                      |Beschreibung
+| public internet users (customers)         |
+| box office users (Verkäufer im X Center)  |
+| administrators                            |
+| Management Z Group / X Center             |
 |===
