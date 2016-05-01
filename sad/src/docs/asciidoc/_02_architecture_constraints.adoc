@@ -39,47 +39,47 @@ eingesetzte Technologien (Betriebssysteme, Middleware, Datenbanken, Programmiers
 |===
 2+e| Hardware-Vorgaben
 
-||	_Randbedingung~1~_
-
-||	_Randbedingung~2~_
+||keine
 
 2+| *Software-Vorgaben*
 
-||	_Randbedingung~i~_
+| Datenbank                     | Oracle 12c
+| Unterstützte Browser          | Chrome, Safari, IE, Firefox (mit Version neuer als 01.01.2012)
+| Unterstützung Mobile Browser  | Zwingend Nutzung von __Responsive Design__
 
 2+| *Vorgaben des Systembetriebs*
 
-||	_Randbedingung~j~_
+| Zugriff auf GUI für Verkäufer | Der Zugriff auf das GUI für Verkäufer ist nur aus dem Firmen-LAN gestattet
 
 2+| *Programmiervorgaben*
 
-||	_Randbedingung~k~_
+| Programmiersprache | Java, mit Java-EE 7
 |===
 
-[role="arc42example"]
-****
-.Beispiele
-[cols="1,2", options="header"]
-|===
-|Randbedingung |Erläuterung
-|Hardware-Infrastruktur |Prozessoren, Speicher, Netzwerke, Firewalls und andere relevante Elemente der Hardware- Infrastruktur
-|Software-Infrastruktur |Betriebssysteme, Datenbanksysteme, Middleware, Kommunikationssysteme, Transaktionsmonitor, Webserver, Verzeichnisdienste
-|Systembetrieb |Batch- oder Onlinebetrieb des Systems oder notwendiger externer Systeme?
-|Verfügbarkeit der Laufzeitumgebung |Rechenzentrum mit 7x24h Betriebszeit?
-|Gibt es Wartungs- oder Backupzeiten mit eingeschränkter Verfügbarkeit des Systems oder wichtiger Systemteile?
-|Grafische Oberfläche |Existieren Vorgaben hinsichtlich grafischer Oberfläche (Style Guide)?
-|Bibliotheken, Frameworks und Komponenten |Sollen bestimmte „Software-Fertigteile“ eingesetzt werden?
-|Programmiersprachen |Objektorientierte, strukturierte, deklarative oder
-|Regelsprachen, kompilierte oder interpretierte Sprachen?
-|Referenzarchitekturen |Gibt es in der Organisation vergleichbare oder übertragbare Referenzprojekte?
-|Analyse- und Entwurfsmethoden |Objektorientierte oder strukturierte Methoden?
-|Datenstrukturen |Vorgaben für bestimmte Datenstrukturen, Schnittstellen zu bestehenden Datenbanken oder Dateien
-|Programmierschnittstellen |Schnittstellen zu bestehenden Programmen
-|Programmiervorgaben |Programmierkonventionen, fester Programmaufbau
-|Technische Kommunikation |Synchron oder asynchron, Protokolle
-|Betriebssystem und Middleware |Vorgegebene Betriebssysteme oder Middleware
-|===
-****
+//[role="arc42example"]
+//****
+//.Beispiele
+//[cols="1,2", options="header"]
+//|===
+//|Randbedingung |Erläuterung
+//|Hardware-Infrastruktur |Prozessoren, Speicher, Netzwerke, Firewalls und andere relevante Elemente der Hardware- Infrastruktur
+//|Software-Infrastruktur |Betriebssysteme, Datenbanksysteme, Middleware, Kommunikationssysteme, Transaktionsmonitor, Webserver, Verzeichnisdienste
+//|Systembetrieb |Batch- oder Onlinebetrieb des Systems oder notwendiger externer Systeme?
+//|Verfügbarkeit der Laufzeitumgebung |Rechenzentrum mit 7x24h Betriebszeit?
+//|Gibt es Wartungs- oder Backupzeiten mit eingeschränkter Verfügbarkeit des Systems oder wichtiger Systemteile?
+//|Grafische Oberfläche |Existieren Vorgaben hinsichtlich grafischer Oberfläche (Style Guide)?
+//|Bibliotheken, Frameworks und Komponenten |Sollen bestimmte „Software-Fertigteile“ eingesetzt werden?
+//|Programmiersprachen |Objektorientierte, strukturierte, deklarative oder
+//|Regelsprachen, kompilierte oder interpretierte Sprachen?
+//|Referenzarchitekturen |Gibt es in der Organisation vergleichbare oder übertragbare Referenzprojekte?
+//|Analyse- und Entwurfsmethoden |Objektorientierte oder strukturierte Methoden?
+//|Datenstrukturen |Vorgaben für bestimmte Datenstrukturen, Schnittstellen zu bestehenden Datenbanken oder Dateien
+//|Programmierschnittstellen |Schnittstellen zu bestehenden Programmen
+//|Programmiervorgaben |Programmierkonventionen, fester Programmaufbau
+//|Technische Kommunikation |Synchron oder asynchron, Protokolle
+//|Betriebssystem und Middleware |Vorgegebene Betriebssysteme oder Middleware
+//|===
+//****
 
 === Organisatorische Randbedingungen
 
