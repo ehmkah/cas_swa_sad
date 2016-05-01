@@ -1,1 +1,7 @@
 language: java
+
+script:
+- ./gradlew asciidoctor
+
+# disable travis running gradle assemble
+install: /bin/true

@@ -1,4 +1,5 @@
 group 'ch.bfh.cas.swa'
+
 version '1.0-SNAPSHOT'
 
 buildscript {

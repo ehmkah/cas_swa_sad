@@ -11,4 +11,3 @@ buildscript {
     }
 }
 
-apply plugin: 'org.asciidoctor.convert'
