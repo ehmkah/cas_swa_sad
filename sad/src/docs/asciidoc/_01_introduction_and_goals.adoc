@@ -168,12 +168,43 @@ Hinweis: I.d.R. hat man nicht gleichzeitig Unternehmensarchitekten, eine Archite
 
 Die folgende Tabelle zeigt die Stakeholder des OTS Systems.
 
-[cols="1,2" options="header"]
+[options="header"]
 .Stakeholder des Systems
 |===
-|Rolle                                      |Beschreibung
-| public internet users (customers)         |
-| box office users (Verkäufer im X Center)  |
-| administrators                            |
-| Management Z Group / X Center             |
+|   Rolle               |   Ziel/Intention  |   Bemerkung
+
+| Auftraggeber: Z Group
+|   Wünscht schnellstmögliche Einführung und Einhaltung des Budgets
+| Hat keine Zeit und steht für Nachfragen nicht zur Verfügung
+
+| Anwendungsvertreter (Externer Teil)
+| Formuliert die Anforderungen für den Kundenbereich
+|Verantwortlich für die Abnahme der Phase 1
+
+| Anwendungsvertreter (Fachbereich)
+| Formuliert die Anforderungen für die internen und den Admin-Bereich
+| Erst relevant für die Phasen 2 und 3. Kann die Einführung dieser beiden Phasen verzögern
+
+| Projektleiter
+| Verantwortlich für das Projekt und damit auch für die Termine und Ressourcen |
+
+| Betriebsverantwortlicher
+| Die Anwendung muss in die gestehende Infrastruktur einfach eingebunden werden können und möglichst wenig Aufwand generieren
+Marketing-Abteilung	"Wünscht rechtzeitig vor Betriebsaufnahme informiert zu werden, damit die Info-Kampagne gestartet werden kann.
+Ist bei der Spezifizierung des GUI beteiligt"
+|
+
+| Entwickler
+| Verwenden dieses Dokument als Referenz für die Entwicklung
+|
+
+| Bank A
+| Unterstützt bei der Einbindung des Kreditkarten Systems.
+| Abnahme der Bezahlungsschnittstelle (kann daher Phase 1 verzögern)
+
+
+| public internet users (customers)         ||
+| box office users (Verkäufer im X Center)  ||
+| administrators                            ||
+| Management Z Group / X Center             ||
 |===
