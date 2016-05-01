@@ -11,6 +11,6 @@ buildscript {
     }
 }
 
-task.create(name:'check')<< {
+task(name:'check') {
     println('hello')
 }
