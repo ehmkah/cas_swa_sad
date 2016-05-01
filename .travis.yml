@@ -1,7 +1,7 @@
 language: java
 
-script:
-- ./gradle assemble
+#script:
+#- ./gradle assemble
 
 # disable travis running gradle assemble
 install: /bin/true
