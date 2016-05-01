@@ -12,3 +12,9 @@
   * im Terminal eingeben: `cd cas_swa_sad`
   * im Terminal eingeben: `<YOUR_INSTALLATION_PFAD>/bin/gradle generate`
   * das fertige pdf und html sollte sich in `sad/build/asciidoc/pdf` bzw. `sad/build/asciidoc/html5` befinden 
+
+
+# Kurpräsentation 
+** Asciidoctor images unter src/docs/asciidoc/images (in asciidocDateien, werden diese dann von dort angezogen)
+** neue Dateien mit eigenen Kapiteln möglich, bittte mit _ damit dafür keine eigenen Dokumente generiert werden
+** 
