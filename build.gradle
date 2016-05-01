@@ -1,16 +1,34 @@
 group 'ch.bfh.cas.swa'
 version '1.0-SNAPSHOT'
 
+project(':sad') {
+    buildscript {
+        repositories {
+            jcenter()
+        }
+
+        dependencies {
+            classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
+        }
+    }
+    apply plugin: 'org.asciidoctor.convert'
+    task('generate', dependsOn:asciidoctor) << {
+    }
+}
+
 buildscript {
     repositories {
         jcenter()
     }
-
     dependencies {
         classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
     }
 }
 
-task('check') << {
-    println('hello')
+apply plugin: 'org.asciidoctor.convert'
+
+task('check', dependsOn: ':sad:generate') << {
+    println('hello runit')
+    //
+    println('hello runit')
 }
