@@ -1,6 +1,6 @@
 language: java
 
-script: gradle check
+script: gradle generate
 
 # disable travis running gradle assemble
 install: /bin/true

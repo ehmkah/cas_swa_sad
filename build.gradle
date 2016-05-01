@@ -27,8 +27,5 @@ buildscript {
 
 apply plugin: 'org.asciidoctor.convert'
 
-task('check', dependsOn: ':sad:generate') << {
-    println('hello runit')
-    //
-    println('hello runit')
+task('generate', dependsOn: ':sad:generate') << {
 }
