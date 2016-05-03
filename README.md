@@ -1,6 +1,9 @@
 # SAD - Online Ticketing System
 
-# Installationsanleitung
+#Buildstatus
+Zur Zeit ist der Build: ![logo](https://api.travis-ci.org/ehmkah/cas_swa_sad.svg)
+
+#Installationsanleitung
 
 * https://github.com/ehmkah/cas_swa_sad  - enthält den aktuellen Stand unseres SADs, wenn Ihr mir Eure github-Namen schicken würdet, würde ich Euch Schreibrechte geben 
 * http://asciidoctor.org/docs/asciidoc-syntax-quick-reference - Eine Anleitung zu Asciidoc
