@@ -21,3 +21,9 @@ Zur Zeit ist der Build: ![logo](https://api.travis-ci.org/ehmkah/cas_swa_sad.svg
 * Asciidoctor images unter src/docs/asciidoc/images (in asciidocDateien, werden diese dann von dort angezogen)
 * neue Dateien mit eigenen Kapiteln möglich, bittte mit _ damit dafür keine eigenen Dokumente generiert werden
 
+# mini git aneleitung
+
+* Neue Datei zum Repository hinzufügen `git add <filename>`
+* Alle geänderten Dateien commiten `git commit -a -m "message"`
+* Alle änderungen remote verfügbar machen `git push origin HEAD`
+* Lokales Repository aktualisiert `git pull`
