@@ -45,6 +45,8 @@ Hier können Sie aus den Anforderungsdokumenten wiederverwenden - halten Sie die
 ==== Kernaufgabe
 
 Online Ticketing System um ein oder mehrere Sitzplätze für gewünschte Veranstaltung zu erwerben.
+
+
 Die Tickets können bei Bedarf auch reserviert und vor Ort abgeholt werden.
 Die Anordnung der Sitzplätze variiert von Show zu Show und muss daher konfigurierbar sein.
 Die Anwendung steht sowohl Kunden übers Internet als auch internen Mitarbeitern zur Verfügung.
@@ -122,6 +124,7 @@ Im Normalbetrieb überschreitet die Antwortzeit des Systems die Werte der folgen
 | Zahlung               | <  2s
 | Zahlung verarbeiten   | < 15s
 |===
+
 
 Wenn soviele Endkunden Veranstaltungen suchen, dass sich die Antwortzeiten für die Endkunden verschlechtern,
 dann stellt das System sicher, dass die Antwortzeiten für die Verkäufer davon nicht betroffen sind.

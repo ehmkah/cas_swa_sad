@@ -1,6 +1,7 @@
 [[section-runtime-view]]
 == Laufzeitsicht
 
+KRAUSSE: kritischen usecase herauspicken  (und dafür laufzeitsicht erstellen)
 
 [role="arc42help"]
 ****
