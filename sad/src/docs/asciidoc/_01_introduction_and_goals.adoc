@@ -123,9 +123,6 @@ Im Normalbetrieb überschreitet die Antwortzeit des Systems die Werte der folgen
 | Zahlung verarbeiten   | < 15s
 |===
 
-Wenn zwei Endkunden den gleichen Sitzplatz der gleichen Performance reserviert haben und beide Endkunden den Sitzplatz kaufen wollen,
-dann stellt das System sicher, dass der Sitzplatz nur an einen Endkunden verkauft wird.
-
 Wenn soviele Endkunden Veranstaltungen suchen, dass sich die Antwortzeiten für die Endkunden verschlechtern,
 dann stellt das System sicher, dass die Antwortzeiten für die Verkäufer davon nicht betroffen sind.
 
