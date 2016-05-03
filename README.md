@@ -18,6 +18,6 @@ Zur Zeit ist der Build: ![logo](https://api.travis-ci.org/ehmkah/cas_swa_sad.svg
 
 
 # Kurzpräsentation 
-** Asciidoctor images unter src/docs/asciidoc/images (in asciidocDateien, werden diese dann von dort angezogen)
-** neue Dateien mit eigenen Kapiteln möglich, bittte mit _ damit dafür keine eigenen Dokumente generiert werden
-** 
+* Asciidoctor images unter src/docs/asciidoc/images (in asciidocDateien, werden diese dann von dort angezogen)
+* neue Dateien mit eigenen Kapiteln möglich, bittte mit _ damit dafür keine eigenen Dokumente generiert werden
+
