@@ -1,6 +1,9 @@
 [[section-technical-risks]]
 == Risiken
 
+Krausse: Hinweis: Risiken in dieser Risikomatrix darstellen (das fanden die Lehrer toll) und dient der Übersichtlichkeit
+
+
 
 [role="arc42help"]
 ****
