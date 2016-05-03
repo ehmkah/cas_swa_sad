@@ -28,3 +28,4 @@ Zur Zeit ist der Build: ![logo](https://api.travis-ci.org/ehmkah/cas_swa_sad.svg
 * Alle änderungen remote verfügbar machen `git push origin HEAD`
 * Lokales Repository aktualisiert `git pull`
 * Lokale Änderungen zurücknehmen `git reset --hard`
+* Status Workspace `git status`
