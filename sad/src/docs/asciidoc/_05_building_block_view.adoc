@@ -45,6 +45,8 @@ include::_template-blackbox-short.adoc[]
 
 === Whitebox Gesamtsystem
 
+image:05_bausteinsicht_level0.png["Baustein Sicht Level 0"]
+
 [role="arc42help"]
 ****
 An dieser Stelle beschreiben Sie die Whitebox-Sicht der Ebene 1 gemäß dem
