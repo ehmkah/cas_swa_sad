@@ -26,6 +26,8 @@ Abstrahieren Sie aber auf die Aspekte, die für die Software-Verteilung relevant
 === Infrastruktur Ebene 1
 ==== Verteilungsdiagramm Ebene 1
 
+image:07_verteilungsdiagram.png["Verteilungsdiagram"]
+
 [role="arc42help"]
 ****
 *  zeigt das Verteilung des Gesamtsystems auf 1 - n Prozessoren (oder Standorte) sowie die physischen Verbindungskanäle zwischen diesen.

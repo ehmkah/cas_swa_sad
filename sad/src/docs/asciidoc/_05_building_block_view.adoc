@@ -20,8 +20,6 @@ den _Grundrissplan_.
 .Form
 Die Bausteinsicht ist eine hierarchische Sammlung von Blackbox- und Whitebox- Beschreibungen (siehe Abbildung unten):
 
-image:05_building_blocks.png["Baustein Sichten"]
-
 *Ebene 1* ist die Whitebox-Beschreibung des Gesamtsystems (System under Development / SUD) mit den Blackbox- Beschreibungen der Bausteine des Gesamtsystems
 
 *Ebene 2* zoomt dann in einige Bausteine der Ebene 1 hinein.
@@ -96,6 +94,8 @@ include::_template-blackbox-short.adoc[]
 
 
 === Ebene 2
+
+image:05_bausteinsicht_level1.png["Baustein Sicht Level 1"]
 
 [role="arc42help"]
 ****
@@ -183,6 +183,8 @@ include::_template-blackbox-short.adoc[]
 
 
 === Ebene 3
+
+image:05_bausteinsicht_showverwaltung.png["Baustein Sicht Level 2"]
 
 [role="arc42help"]
 ****
