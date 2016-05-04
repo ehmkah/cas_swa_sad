@@ -1,7 +1,7 @@
 # SAD - Online Ticketing System
 
 #Buildstatus
-Zur Zeit ist der Build: ![logo](https://api.travis-ci.org/ehmkah/cas_swa_sad.svg)
+Zur Zeit ist der Build: [![Build Status](https://api.travis-ci.org/ehmkah/cas_swa_sad.svg?branch=master)](https://travis-ci.org/ehmkah/cas_swa_sad)
 
 #Installationsanleitung
 
