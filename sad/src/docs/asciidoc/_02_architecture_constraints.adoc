@@ -39,10 +39,11 @@ eingesetzte Technologien (Betriebssysteme, Middleware, Datenbanken, Programmiers
 |===
 2+e| Hardware-Vorgaben
 
-||keine
+||keine. Anforderung an die Verfügbarkeit unter Hochlast müssen gewährleistet sein (siehe "Qualitätsziele")
 
 2+| *Software-Vorgaben*
 
+| Application Server		| JavaEE7 Kompatibilität muss gewährleistet sein
 | Datenbank                     | Oracle 12c
 | Unterstützte Browser          | Chrome, Safari, IE, Firefox (mit Version neuer als 01.01.2012)
 | Unterstützung Mobile Browser  | Zwingend Nutzung von __Responsive Design__
