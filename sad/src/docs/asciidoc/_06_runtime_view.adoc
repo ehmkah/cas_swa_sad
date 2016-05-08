@@ -6,7 +6,7 @@
 
 Das folgenden Diagramm stellt den Verkaufsprozess von der Showauswahl bis zum Bestätigungsmailversand dar.
 
-image::06-verkaufsprozess_uebersicht.png[]
+image::06-verkaufsprozess_uebersicht.png[Caption="Verkaufsprozess", width="353", height="849"]
 
 Zu den abgebildeten Prozessschritten folgende Erläuterungen:
 
