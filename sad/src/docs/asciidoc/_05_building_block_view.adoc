@@ -45,7 +45,7 @@ include::_template-blackbox-short.adoc[]
 
 === Whitebox Gesamtsystem
 
-image:05_bausteinsicht_level0.png["Baustein Sicht Level 0"]
+image::05_bausteinsicht_level0.png["Baustein Sicht Level 0"]
 
 [role="arc42help"]
 ****
@@ -97,7 +97,7 @@ include::_template-blackbox-short.adoc[]
 
 === Ebene 2
 
-image:05_bausteinsicht_level1.png["Baustein Sicht Level 1"]
+image::05_bausteinsicht_level1.png["Baustein Sicht Level 1"]
 
 [role="arc42help"]
 ****
@@ -186,7 +186,7 @@ include::_template-blackbox-short.adoc[]
 
 === Ebene 3
 
-image:05_bausteinsicht_showverwaltung.png["Baustein Sicht Level 2"]
+image::05_bausteinsicht_showverwaltung.png["Baustein Sicht Level 2"]
 
 [role="arc42help"]
 ****
