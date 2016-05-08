@@ -23,13 +23,16 @@ einfache zweispaltige Tabelle mit <Begriff> und <Definition>
 
 .Glossar (unabgestimmt)
 |===
-|Begriff      | Definition
+|Begriff      		| Definition
 
-| EndKunde          | Ein Kunde, der sein Ticket selbständig über die Webseite kauft.
-| Performance       | Aufführung einer Show, z.B. 12. April 2016, 20:00 "Starlight Express". Ein Platz in einer Performance ist einer Platzkategorie zugeordnet.
-| Platzkategorie    | Erlauben die Definition von Preisen für Tickets
-| Show              | Z.B. "Starlight Express"
-| Ticket            | Erlaubt dem Kunden den Zutritt zu einer Show. Jedem Ticket ist ein Platz zugewiesen
-| Verkäufer         | Ein Angestellter der Z-Group, der Tickets an Kunden verkauft.
+| EndKunde          	| Ein Kunde, der sein Ticket selbständig über die Webseite kauft.
+| Performance       	| Aufführung einer Show, z.B. 12. April 2016, 20:00 "Starlight Express". Ein Platz in einer Performance ist einer Platzkategorie zugeordnet.
+| Platzkategorie    	| Erlauben die Definition von Preisen für Tickets
+| Preisgestaltung   	| Relation von Platzkategorie zu Ticketpreis.
+| Saal			| Definition des Ortes und der vorhandenen Sitzplätze für Shows 
+| Saalkonfiguration 	| Definition welche Sitzplätze in einem Saal "aktiv" sind, und welcher Platzkategorie sie angehören.
+| Show              	| Z.B. "Starlight Express"
+| Ticket            	| Erlaubt dem Kunden den Zutritt zu einer Show. Jedem Ticket ist ein Platz zugewiesen
+| Verkäufer         	| Ein Angestellter der Z-Group, der Tickets an Kunden verkauft.
 
 |===

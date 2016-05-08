@@ -110,9 +110,12 @@ Für alle, die es nicht so genau wissen wollen: ein lesbarer Auszug davon ist im
 auf Seite 9 zu finden.
 ****
 
-==== Szenarien
 
-Im Normalbetrieb überschreitet die Antwortzeit des Systems die Werte der folgenden Tabelle nicht
+
+
+
+.Verfügbarkeit / Performanz
+* Im Normalbetrieb überschreitet die Antwortzeit des Systems die Werte der folgenden Tabelle nicht
 [options="header"]
 .Antwortzeiten in Sekunden
 |===
@@ -124,18 +127,18 @@ Im Normalbetrieb überschreitet die Antwortzeit des Systems die Werte der folgen
 | Zahlung               | <  2s
 | Zahlung verarbeiten   | < 15s
 |===
+* Im extrem Fall müssen bis zu 15'000 Plätze in 10min verkauft werden können. Annahme: Kauf-Session benötigt ~100 HTTP Requests und ~10 DB-Queries benötigt, entspricht das einer Last von ~2500 HTTP und ~250 SQL Transactions/second.
+** Auch in einem solchen Szenario soll die HTTP Antwortzeiten die geforderten Grenzen nicht üerschreiten
+** Auch bei Überlast, wenn der Public Teil der Applikation nicht mehr zuverlässig erreichbar ist, sollte der Zugriff für Box-Office User unbehindert bleiben.
+* Die Applikation soll auch für Clients mit "schmaler" Internet Anbindung bedienbar sein (down/up 2M/100K).
+* Wenn ein Endnutzer Informationen zum Verkaufsstatus der Sitzplätze abruft, dann dürfen diese maximal eine Minute alt sein.
+* Wenn eine neue Show freigeschaltet wird, dann muss sie nach spätestens einer Minute für Endkunden sichtbar sein.
 
+.Änderbarkeit
+* Wenn Raumkonfiguration verändert werden muss, dann muss dies ausschliesslich konfigurativ geschehen.
+* Die Applikation muss innerhalb von 60 Personentagen auf andere Show-Locations erweitert werden können. (Branding der Oberfläche, neuer Sitzplan)
+* Internationalization und Sprach-Auswahl wird in Zukunft gefordert sein und sollte nicht verbaut werden.
 
-Wenn soviele Endkunden Veranstaltungen suchen, dass sich die Antwortzeiten für die Endkunden verschlechtern,
-dann stellt das System sicher, dass die Antwortzeiten für die Verkäufer davon nicht betroffen sind.
-
-Wenn das System für ein weiteres Theater angepasst werden muss, dann kann dies innerhalb von 60 Personentagen geschehen.
-
-Wenn Raumkonfiguration verändert werden muss, dann muss dies ausschliesslich konfigurativ geschehen.
-
-Wenn ein Endnutzer Informationen zum Verkaufsstatus der Sitzplätze abruft, dann dürfen diese maximal eine Minute alt sein.
-
-Wenn eine neue Show freigeschaltet wird, dann muss sie nach spätestens einer Minute für Endkunden sichtbar sein
 
 === Stakeholder
 
