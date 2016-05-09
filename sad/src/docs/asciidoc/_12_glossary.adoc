@@ -20,8 +20,8 @@ einfache zweispaltige Tabelle mit <Begriff> und <Definition>
 |Begriff      | Definition
 
 |===
-
-.Glossar (unabgestimmt)
+=== Fachbegriffe
+.Glossar  (unabgestimmt)
 |===
 |Begriff      		| Definition
 
@@ -50,6 +50,25 @@ einfache zweispaltige Tabelle mit <Begriff> und <Definition>
 |Sitzplatzkategorie (seat category) |Alle Plätze einer Kategorie haben den selben Preis. Je nach Zeitpunkt der -> Vorstellung können sich die Preise aber unterscheiden.
 |Reservierung (reservation) |Innerhalb des Bestellvorganges, werden temporär dem Benutzer die Sitzplätze zugewiesen. Die Zeitspanne beträgt in der Regel 5 min, kann aber für jeden -> Veranstalter individuell festgelegt werden.
 |Bestellung (confirmation/purchase) |Nach der Bezahlung wird die -> Reservierung in eine verbindliche Bestellung umgewandelt. Die Tickets werden dem Kunden fix zugewiesen. Eine Bestellung kann nur von einem internen Mitarbeiter annulliert werden.
+|===
 
+=== Informatik-Begriffe
+.Glossar  (unabgestimmt)
+|===
+|Begriff      		| Definition
 
+| DB             	    | Datenbank
+| GUI               	| Grafische Benutzeroberfläche (Graphical User Interface)
+|===
+
+=== Prozess-Wörter
+.Glossar  (unabgestimmt)
+|===
+|Begriff      		| Definition
+
+|CRUD             |Create, Read, Update, Delete Operationen
+|eingeben         |Daten/Werte auf der Benutzeroberfläche erfassen/überschreiben
+|speichern        |Daten in DB persistieren
+|verwalten        |CRUD
+|auswählen        |suchen und bestätigen
 |===
