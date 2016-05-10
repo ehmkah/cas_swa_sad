@@ -22,12 +22,7 @@ Kann vielfältig sein. Teilweise Konzeptpapiere mit beliebiger Gliederung, teilw
 
 === Fachliche Strukturen und Modelle
 
-[role="arc42help"]
-****
-Fachliche Modelle, Domänenmodelle, Business-Modelle – sie alle beschreiben Strukturen der reinen Fachlichkeit, also ohne Bezug zur Implementierungs- oder Lösungstechnologie.
-
-Oftmals tauchen Teile solcher fachlichen Modelle an vielen Stellen in der Architektur, insbesondere der Bausteinsicht, wieder auf.
-****
+image::08_schichtenmodell.png["Schichtenarchitektur"]
 
 === Typische Muster und Strukturen
 
