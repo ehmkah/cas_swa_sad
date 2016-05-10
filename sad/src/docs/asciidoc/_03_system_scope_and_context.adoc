@@ -63,6 +63,56 @@ z.B.: UML Deployment-Diagramm mit den Kanälen zu Nachbarsystemen, begleitet von
 
 === Externe Schnittstellen
 
+==== Payment-Schnittstelle
+
+[cols="1,1", options="header"]
+|===
+|Name / Bezeichnung der Schnittstelle
+|Payment
+|Beschreibung|
+Schnittstelle zum Zahlungsanbieter
+|Version
+| Wird durch Zahlungsanbieter definiert
+
+|Änderungen gegenüber Vorversion
+| Keine
+
+|Wer hat geändert und warum?
+| -
+
+|Verantwortlicher Ansprechpartner / Rolle
+| Zahlungsdienstleister
+|===
+
+===== Fachliche Abläufe
+* Kreditkartendaten müssen sicher (verschlüsselt) übermittelt werden
+* Zahlungsdienstleister bestätitg Zahlung oder generiert Fehler
+* Fehlerbehandlung auf seite OTS
+
+===== Mengengerüst
+* Annahme Normal-Auslastung: 30000 Transaktionen pro Tag (Annahme 2 Performances pro Tag)
+* Annahme Peak-Szenario: 15000 Transaktionen in 10min müssen bewältigt werden können
+* Zeit für eine Transaktion darf maximal 10 Sekunden in Anspruch nehmen
+(Vergleiche auch "Qualitätsziele" Kapitel 1.2)
+
+===== Syntax: Daten und Formate
+Wird durch den Zahlungsanbieter defniert (TBD)
+
+===== Technische Infrastruktur
+* HTTP / REST Webservice
+
+===== Fehler und Ausnahmebehandlung
+* Validierungs-Fehler (Validierung wird durch Zahlungsdienstleister durchgeführt)
+** Karte ungültig
+** Kredit-Limite erreicht
+* Timeout
+* Protokoll-Fehler
+
+===== Einschränkungen und Voraussetzungen
+* Voraussetzung: OTS muss beim Zahlungsanbieter registirert sein
+* Auf der Schnittstelle müssen Transaktionen parallel ausgeführt werden können
+* Schnittstelle muss 7x24 verfügbar sein (SLA noch offen)
+
 [role="arc42help"]
 ****
 .Inhalt
