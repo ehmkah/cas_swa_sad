@@ -1,27 +1,18 @@
 [[section-glossary]]
 == Glossar
 
-
-[role="arc42help"]
-****
-.Inhalt
-Die wichtigsten Begriffe der Software-Architektur in alphabetischer Reihenfolge
-
-.Motivation
-Sie sollten relevante Begriffe im Rahmen eines Systems oder eines Teams konsistent verstehen und verwenden.
-
-.Form
-einfache zweispaltige Tabelle mit <Begriff> und <Definition>
-****
-
-=== Fachbegriffe
 .Glossar
 |===
 |Begriff      		| Definition
 
+| auswählen             |suchen und bestätigen
 | Benachbarte Sitzplätze | Wann immer möglich, sollen dem Kunden benachbarte Sitzplätze angeboten werden. Durch die Gänge werden die Sitzplätze von einander getrennt. Wenn zwischen Platz 20 und 21 ein Gang befindet, sind sie nicht benachbart.
 | Box-Office-User      	| Ein Angestellter der Z-Group, der Tickets an Kunden verkauft.
 | Buchung               | Nach der Bezahlung wird die -> Reservierung in eine verbindliche Bestellung umgewandelt. Die Tickets werden dem Kunden fix zugewiesen. Eine Bestellung kann nur von einem internen Mitarbeiter annulliert werden.
+| CRUD                  | Create, Read, Update, Delete Operationen
+| DB             	    | Datenbank
+| eingeben              | Daten/Werte auf der Benutzeroberfläche erfassen/überschreiben
+| GUI               	| Grafische Benutzeroberfläche (Graphical User Interface)
 | Online-User          	| Ein Kunde, der sein Ticket selbständig über die Webseite kauft.
 | Performance       	| Aufführung einer Show, z.B. 12. April 2016, 20:00 "Starlight Express". Ein Platz in einer Performance ist einer Platzkategorie zugeordnet.
 | Sitzplatzkategorie   	| Erlaubt die Definition von Preisen für Tickets
@@ -31,9 +22,11 @@ einfache zweispaltige Tabelle mit <Begriff> und <Definition>
 | Saalkonfiguration 	| Definition welche Sitzplätze in einem Saal "aktiv" sind, und welcher Platzkategorie sie angehören
 | Sitzplatz             | Ein nummerierter Sitzplatz in einem Saal der eine Zuordnung zu einer Kategorie hat
 | Show              	| Auftritt eines Künstlers, eines Zirkus oder einer Oper. Eine Veranstaltung kann mehrere Termine (→ Vorstellungen) haben. Der Sitzplan ist immer gleich, allerdings können die → Vorstellungen eine abweichende Preisstruktur haben.
+| speichern             | Daten in DB persistieren
 | Standardsitzplan      | Jede -> Halle hat eine Grundkonfiguration. Die Bestuhlung einer → Veranstaltung kann aber leicht vom Standardsitzplan abweichen.
 | Ticket            	| Erlaubt dem Kunden den Zutritt zu einer Show. Jedem Ticket ist ein Sitzplatz zugewiesen
 | Veranstalter          | Ein Veranstalter betreibt eine oder mehrere → Hallen, wo die -> Veranstaltungen stattfinden.
+| verwalten             | CRUD
 | Zahlung               |
 
 |===
@@ -46,25 +39,4 @@ einfache zweispaltige Tabelle mit <Begriff> und <Definition>
 |Vorstellung (performance)  | Eine -> Veranstaltung unterteilt sich in mehrere Vorstellungen. Eine Vorstellung hat einen festgelegten Zeitpunkt.
 |Halle (performance hall) | In der Halle können pro Tag mehrere -> Vorstellungen einer -> Veranstaltung stattfinden. Jede Halle hat ihren eigenen -> Standardsitzplan und unterschiedliche Kapazitäten.
 |Sitzplatzkategorie (seat category) | Alle Plätze einer Kategorie haben den selben Preis. Je nach Zeitpunkt der -> Vorstellung können sich die Preise aber unterscheiden.
-|===
-
-=== Informatik-Begriffe
-.Glossar  (unabgestimmt)
-|===
-|Begriff      		| Definition
-
-| DB             	    | Datenbank
-| GUI               	| Grafische Benutzeroberfläche (Graphical User Interface)
-|===
-
-=== Prozess-Wörter
-.Glossar  (unabgestimmt)
-|===
-|Begriff      		| Definition
-
-|CRUD             |Create, Read, Update, Delete Operationen
-|eingeben         |Daten/Werte auf der Benutzeroberfläche erfassen/überschreiben
-|speichern        |Daten in DB persistieren
-|verwalten        |CRUD
-|auswählen        |suchen und bestätigen
 |===
