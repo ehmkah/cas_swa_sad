@@ -45,8 +45,6 @@ include::_template-blackbox-short.adoc[]
 
 === Whitebox Gesamtsystem
 
-image::05_bausteinsicht_level0.png["Baustein Sicht Level 0"]
-
 [role="arc42help"]
 ****
 An dieser Stelle beschreiben Sie die Whitebox-Sicht der Ebene 1 gemäß dem
@@ -64,36 +62,60 @@ mitsamt Begründung, warum sie verworfen wurden.
 
 ****
 
-include::_template-whitebox.adoc[]
+Übersicht / Struktur::
+Die folgende Abbildung zeigt das Gesamtsystem mit externen Bestandteilen
+
+image::05_bausteinsicht_level0.png["Baustein Sicht Level 0"]
 
 
-==== _Baustein 1_ (Blackbox)
-
-[role="arc42help"]
-****
-Beschreiben Sie diesen Baustein anhand des Blackbox-Templates.
-Nachfolgend finden Sie eine kompakte und eine ausführliche Fassung davon.
-****
-
-include::_template-blackbox-short.adoc[]
-
-include::_template-blackbox-long.adoc[]
-
-[role="arc42help"]
-****
-(In den folgenden Abschnitten finden Sie nur noch die Kurzfassung des Blackbox-Template)
-****
-
-==== _Baustein 2_ (Blackbox)
+Begründung::
+_Begründen oder erläutern Sie die Struktur_
 
 
-include::_template-blackbox-short.adoc[]
+Enthaltene Bausteine::
+
+[cols="1,4,1" options=""]
+|===
+| OTS | Das Online Ticketing System (Dieses Projekt) | siehe Kapitel 5.2
+| Bernutzer | verschiedene Benutzer die auf das OTS zugreifen |
+| Emailsystem | Externes E-Mail System |
+| Paymentsystem | Externer Zahlungsdienstleister |
+|===
 
 
-==== _Baustein n_ (Blackbox)
+Schnittstellen::
+(siehe auch Kapitel 3.3)
+[cols="1,4" options=""]
+|===
+| User-Schnittstelle | Webbasiertes User-Interface
+| E-Mail-Schnittstelle | Schnittstelle zum Externen E-Mail System
+| Payment-Schnittstelle | Schnittstelle zum Externen Payment System
+|===
 
-include::_template-blackbox-short.adoc[]
 
+==== Emailsystem (Blackbox)
+
+Externes E-Mail System. Das vorhandene E-Mail System der Z-Group.
+
+*Zweck:* Versenden von Buchungsbestätigunen
+
+.Schnittstellen _Bausteinname_:
+[cols="1,2" options=""]
+|===
+| E-Mail-Schnittstelle | Schnittstelle welche vom OTS genutzt wird um Buchungsbestätigunen zu versenden
+|===
+
+==== Paymentsystem (Blackbox)
+
+Externes Payment System. Im moment ist noch nicht definiert welches konkrete System hier angebunden wird.
+
+*Zweck:* Abwicklung der Zahlung für Ticket-Käufe per Kredit-Karte
+
+.Schnittstellen _Bausteinname_:
+[cols="1,2" options=""]
+|===
+| Payment-Schnittstelle | Schnittstelle welche vom OTS genutzt wird um die Bezahlung von Ticketkäufen abzuwickeln
+|===
 
 === Ebene 2
 
