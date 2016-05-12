@@ -27,34 +27,13 @@ Kann vielfältig sein. Teilweise Konzeptpapiere mit beliebiger Gliederung, teilw
 image::08_schichtenmodell.png["Schichtenarchitektur"]
 
 === Persistenz
-
-[role="arc42help"]
-****
-Persistenz (Dauerhaftigkeit, Beständigkeit) bedeutet, Daten aus dem (flüchtigen) Hauptspeicher auf ein beständiges Medium (und wieder zurück) zu bringen.
-
-Einige der Daten, die ein Software-System bearbeitet, müssen dauerhaft auf einem Speichermedium gespeichert oder von solchen Medien gelesen werden:
-
-*  Flüchtige Speichermedien (Hauptspeicher oder Cache) sind technisch nicht für dauerhafte Speicherung ausgelegt. Daten gehen verloren, wenn die entsprechende Hardware ausgeschaltet oder heruntergefahren wird.
-*  Die Menge der von kommerziellen Software-Systemen bearbeiteten Daten übersteigt üblicherweise die Kapazität des Hauptspeichers.
-*  Auf Festplatten, optischen Speichermedien oder Bändern sind oftmals große Mengen von Unternehmensdaten vorhanden, die eine beträchtliche Investition darstellen.
-
-Persistenz ist ein technisch bedingtes Thema und trägt nichts zur eigentlichen Fachlichkeit eines Systems bei. Dennoch müssen Sie sich als Architekt mit dem Thema auseinander setzen, denn ein erheblicher Teil aller Software-Systeme benötigt einen effizienten Zugriff auf persistent gespeicherte Daten. Hierzu gehören praktisch sämtliche kommerziellen und viele technischen Systeme. Eingebettete Systeme (embedded systems ) gehorchen jedoch oft anderen Regeln hinsichtlich ihrer Datenverwaltung.
-****
+Der Prototyp OTS verwendet eine MySQL-Datenbank zur Persistierung der Daten
 
 === Benutzungsoberfläche
-
-[role="arc42help"]
-****
-IT-Systeme, die von (menschlichen) Benutzern interaktiv genutzt werden, benötigen eine Benutzungsoberfläche.
-Das können sowohl grafische als auch textuelle Oberflächen sein.
-****
-
+Die Benutzeroberfläche wird als Web-GUI Interface umgesetzt und orientiert sich am Kapitel 5, "Application Screens" des REQUIREMENT DOK (todo).
+Das GUI wird gemäs den verschiedenen Phasen des REQUIREMENT DOK (todo), Kapitel 4, "Delivery Schedule" implementiert.
 === Ergonomie
-
-[role="arc42help"]
-****
-Ergonomie von IT-Systemen bedeutet die Verbesserung (Optimierung) deren Benutzbarkeit aufgrund objektiver und subjektiver Faktoren. Im Wesentlichen zählen zu ergonomischen Faktoren die Benutzungsoberfläche, die Reaktivität (gefühlte Performance) sowie die Verfügbarkeit und Robustheit eines Systems.
-****
+siehe Unterkapitel 8.4
 
 === Ablaufsteuerung
 
