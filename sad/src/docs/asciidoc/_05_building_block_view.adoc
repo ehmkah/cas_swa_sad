@@ -45,8 +45,6 @@ include::_template-blackbox-short.adoc[]
 
 === Whitebox Gesamtsystem
 
-image::05_bausteinsicht_level0.png["Baustein Sicht Level 0"]
-
 [role="arc42help"]
 ****
 An dieser Stelle beschreiben Sie die Whitebox-Sicht der Ebene 1 gemäß dem
@@ -64,40 +62,62 @@ mitsamt Begründung, warum sie verworfen wurden.
 
 ****
 
-include::_template-whitebox.adoc[]
+Übersicht / Struktur::
+Die folgende Abbildung zeigt das Gesamtsystem mit externen Bestandteilen
+
+image::05_bausteinsicht_level0.png["Baustein Sicht Level 0"]
 
 
-==== _Baustein 1_ (Blackbox)
-
-[role="arc42help"]
-****
-Beschreiben Sie diesen Baustein anhand des Blackbox-Templates.
-Nachfolgend finden Sie eine kompakte und eine ausführliche Fassung davon.
-****
-
-include::_template-blackbox-short.adoc[]
-
-include::_template-blackbox-long.adoc[]
-
-[role="arc42help"]
-****
-(In den folgenden Abschnitten finden Sie nur noch die Kurzfassung des Blackbox-Template)
-****
-
-==== _Baustein 2_ (Blackbox)
+Begründung::
+_Begründen oder erläutern Sie die Struktur_
 
 
-include::_template-blackbox-short.adoc[]
+Enthaltene Bausteine::
+
+[cols="1,4,1" options=""]
+|===
+| OTS | Das Online Ticketing System (Dieses Projekt) | siehe Kapitel 5.2
+| Bernutzer | verschiedene Benutzer die auf das OTS zugreifen |
+| Emailsystem | Externes E-Mail System |
+| Paymentsystem | Externer Zahlungsdienstleister |
+|===
 
 
-==== _Baustein n_ (Blackbox)
+Schnittstellen::
+(siehe auch Kapitel 3.3)
+[cols="1,4" options=""]
+|===
+| User-Schnittstelle | Webbasiertes User-Interface
+| E-Mail-Schnittstelle | Schnittstelle zum Externen E-Mail System
+| Payment-Schnittstelle | Schnittstelle zum Externen Payment System
+|===
 
-include::_template-blackbox-short.adoc[]
 
+==== Emailsystem (Blackbox)
+
+Externes E-Mail System. Das vorhandene E-Mail System der Z-Group.
+
+*Zweck:* Versenden von Buchungsbestätigunen
+
+.Schnittstellen _Bausteinname_:
+[cols="1,2" options=""]
+|===
+| E-Mail-Schnittstelle | Schnittstelle welche vom OTS genutzt wird um Buchungsbestätigunen zu versenden
+|===
+
+==== Paymentsystem (Blackbox)
+
+Externes Payment System. Im moment ist noch nicht definiert welches konkrete System hier angebunden wird.
+
+*Zweck:* Abwicklung der Zahlung für Ticket-Käufe per Kredit-Karte
+
+.Schnittstellen _Bausteinname_:
+[cols="1,2" options=""]
+|===
+| Payment-Schnittstelle | Schnittstelle welche vom OTS genutzt wird um die Bezahlung von Ticketkäufen abzuwickeln
+|===
 
 === Ebene 2
-
-image::05_bausteinsicht_level1.png["Baustein Sicht Level 1"]
 
 [role="arc42help"]
 ****
@@ -105,7 +125,7 @@ An dieser Stelle können Sie den inneren Aufbau
 (einiger) Bausteine aus Ebene 1 als Whitebox beschreiben.
 ****
 
-==== _Baustein 1_ (Whitebox)
+==== OTS (Whitebox)
 
 [role="arc42help"]
 ****
@@ -115,73 +135,114 @@ sowie deren Zusammenhänge und Abhängigkeiten.
 * begründet diese Struktur
 ****
 
-include::_template-whitebox.adoc[]
+Übersicht / Struktur::
 
-===== _Baustein 1.1_ (Blackbox)
+Die folgende Abbildung zeigt die inneren Bestandteile des OTS
+und dessen Abhängigkeiten.
 
-include::_template-blackbox-short.adoc[]
+image::05_bausteinsicht_level1.png["Baustein Sicht Level 1"]
 
-
-===== _Baustein 1.2_ (Blackbox)
-
-include::_template-blackbox-short.adoc[]
-
-
-===== _Baustein 1.n_ (Blackbox)
-
-include::_template-blackbox-short.adoc[]
+Begründung::
+_Begründen oder erläutern Sie die Struktur_
 
 
-==== _Baustein 2_ (Whitebox)
+Enthaltene Bausteine::
 
-[role="arc42help"]
-****
-* ...zeigt das Innenleben von _Baustein 2_ in Diagrammform
-mit den lokalen Bausteinen 2.1 - 2.n,
-sowie deren Zusammenhänge und Abhängigkeiten.
-* begründet diese Struktur
-****
-
-
-include::_template-whitebox.adoc[]
-
-
-===== _Baustein 2.1_ (Blackbox)
-
-include::_template-blackbox-short.adoc[]
-
-===== _Baustein 2.2_ (Blackbox)
-
-include::_template-blackbox-short.adoc[]
-
-===== _Baustein 2.n_ (Blackbox)
-
-include::_template-blackbox-short.adoc[]
+[cols="1,4,1" options=""]
+|===
+| Frontend          | _Beschreibung_ | _Verweis_
+| Admininterface    | Vorerst *nicht* implementiertes Administrations Interface |
+| Ticketverwaltung  | _Beschreibung_ | _Verweis_
+| Showverwaltung    | _Beschreibung_ | _Verweis_
+| Saalverwaltung    | _Beschreibung_ | _Verweis_
+| Paymentsystem     | siehe Kapitel 5.1.2 |
+| Mailsystem        | siehe Kapitel 5.1.1 |
+|===
 
 
-==== _Baustein 3_ (Whitebox)
+Schnittstellen::
+_hier beschreiben Sie (kurz) Name und Zweck der (internen+externen)
+Schnittstellen der Bausteine._
 
-[role="arc42help"]
-****
-* ...zeigt das Innenleben von _Baustein 3_ in Diagrammform
-mit den lokalen Bausteinen 3.1 - 3.n,
-sowie deren Zusammenhänge und Abhängigkeiten.
-* begründet diese Struktur
-****
+[cols="1,4" options=""]
+|===
+| Schnittstelle 1 | Beschreibung 1
+| Schnittstelle 2 | Beschreibung 2
+| Schnittstelle 3 | Beschreibung 3
+|===
 
-_<Hier Whitebox-Erläuterung für Baustein 3 einfügen>_
 
-===== _Baustein 3.1_ (Blackbox)
 
-include::_template-blackbox-short.adoc[]
+===== Frontend (Blackbox)
 
-===== _Baustein 3.2_ (Blackbox)
+_Bausteinname_ Blackboxbeschreibung
 
-include::_template-blackbox-short.adoc[]
+*Zweck:* _hier beschreiben Sie Zweck oder Verantwortung des Bausteins_
 
-===== _Baustein 3.n_ (Blackbox)
+.Schnittstellen _Bausteinname_:
+[cols="1,2" options=""]
+|===
+| Schnittstelle 1 | Beschreibung 1
+|===
 
-include::_template-blackbox-short.adoc[]
+
+*Ablageort/Datei:* _Verweisen Sie auf den Einstieg in
+  den Sourcecode, den/die Paket-/Modulnamen oder
+  die wichtigsten Klassen_
+
+
+===== Ticketverwaltung (Blackbox)
+
+_Bausteinname_ Blackboxbeschreibung
+
+*Zweck:* _hier beschreiben Sie Zweck oder Verantwortung des Bausteins_
+
+.Schnittstellen _Bausteinname_:
+[cols="1,2" options=""]
+|===
+| Schnittstelle 1 | Beschreibung 1
+|===
+
+*Ablageort/Datei:* _Verweisen Sie auf den Einstieg in
+  den Sourcecode, den/die Paket-/Modulnamen oder
+  die wichtigsten Klassen_
+
+
+===== Showverwaltung (Blackbox)
+
+_Bausteinname_ Blackboxbeschreibung
+
+*Zweck:* _hier beschreiben Sie Zweck oder Verantwortung des Bausteins_
+
+.Schnittstellen _Bausteinname_:
+[cols="1,2" options=""]
+|===
+| Schnittstelle 1 | Beschreibung 1
+|===
+
+*Ablageort/Datei:* _Verweisen Sie auf den Einstieg in
+  den Sourcecode, den/die Paket-/Modulnamen oder
+  die wichtigsten Klassen_
+
+
+===== Saalverwaltung (Blackbox)
+
+_Bausteinname_ Blackboxbeschreibung
+
+*Zweck:* _hier beschreiben Sie Zweck oder Verantwortung des Bausteins_
+
+.Schnittstellen _Bausteinname_:
+[cols="1,2" options=""]
+|===
+| Schnittstelle 1 | Beschreibung 1
+|===
+
+
+*Ablageort/Datei:* _Verweisen Sie auf den Einstieg in
+  den Sourcecode, den/die Paket-/Modulnamen oder
+  die wichtigsten Klassen_
+
+
 
 
 === Ebene 3

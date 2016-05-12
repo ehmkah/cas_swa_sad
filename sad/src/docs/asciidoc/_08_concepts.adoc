@@ -22,19 +22,9 @@ Kann vielfältig sein. Teilweise Konzeptpapiere mit beliebiger Gliederung, teilw
 
 === Fachliche Strukturen und Modelle
 
-[role="arc42help"]
-****
-Fachliche Modelle, Domänenmodelle, Business-Modelle – sie alle beschreiben Strukturen der reinen Fachlichkeit, also ohne Bezug zur Implementierungs- oder Lösungstechnologie.
-
-Oftmals tauchen Teile solcher fachlichen Modelle an vielen Stellen in der Architektur, insbesondere der Bausteinsicht, wieder auf.
-****
-
 === Typische Muster und Strukturen
 
-[role="arc42help"]
-****
-Oftmals tauchen einige typische Lösungsstrukturen oder Grundmuster an mehren Stellen der Architektur auf. Beispiele dafür sind die Abhängigkeiten zwischen Persistenzschicht, Applikation sowie die Anbindung grafischer Oberflächen an die Fach- oder Domänenobjekte. Solche wiederkehrenden Strukturen beschreiben Sie möglichst nur ein einziges Mal, um Redundanzen zu vermeiden. Dieser Abschnitt erfüllt genau diesen Zweck.
-****
+image::08_schichtenmodell.png["Schichtenarchitektur"]
 
 === Persistenz
 
