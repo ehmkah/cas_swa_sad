@@ -68,10 +68,6 @@ Die folgende Abbildung zeigt das Gesamtsystem mit externen Bestandteilen
 image::05_bausteinsicht_level0.png["Baustein Sicht Level 0"]
 
 
-Begründung::
-_Begründen oder erläutern Sie die Struktur_
-
-
 Enthaltene Bausteine::
 
 [cols="1,4,1" options=""]
@@ -143,111 +139,70 @@ und dessen Abhängigkeiten.
 image::05_bausteinsicht_level1.png["Baustein Sicht Level 1"]
 
 Begründung::
-_Begründen oder erläutern Sie die Struktur_
+Schichten Architektur, mit User-Interface auf der ersten Ebene (Frontend),
+Buissness-Logik in der Mitte und einer Infrastruktur Komponente für die Abstraktion
+Der externen Schnittstellen unten dran.
 
 
 Enthaltene Bausteine::
 
 [cols="1,4,1" options=""]
 |===
-| Frontend          | _Beschreibung_ | _Verweis_
-| Admininterface    | Vorerst *nicht* implementiertes Administrations Interface |
-| Ticketverwaltung  | _Beschreibung_ | _Verweis_
-| Showverwaltung    | _Beschreibung_ | _Verweis_
-| Saalverwaltung    | _Beschreibung_ | _Verweis_
-| Paymentsystem     | siehe Kapitel 5.1.2 |
-| Mailsystem        | siehe Kapitel 5.1.1 |
+| Frontend            | Web-Applikations-Frontend für Online-User und Box-Office-User |
+| Admininterface      | Vorerst *nicht* implementiertes Administrations Interface |
+| Buchungsverwaltung  | Logik für die Platzreservation und Buchung inkl. Bezahlung | siehe 5.3.1
+| Showverwaltung      | Logik zur Verknüpfung von Show und Saal-Konfiguration | siehe 5.3.2
+| Saalverwaltung      | Logik zur Konfiguration des Saales | siehe 5.3.2
+| Infrastruktur-Modul | Adapter für Zugriff auf interne / externe Systeme | siehe 5.3.1
+| DB                  | Z-Group-interne Datenbank |
+| Paymentsystem       | Externes Payment-System | siehe 5.1.2
+| Mailsystem          | Externes E-Mail-System  | siehe 5.1.1
 |===
 
 
 Schnittstellen::
-_hier beschreiben Sie (kurz) Name und Zweck der (internen+externen)
-Schnittstellen der Bausteine._
 
 [cols="1,4" options=""]
 |===
-| Schnittstelle 1 | Beschreibung 1
-| Schnittstelle 2 | Beschreibung 2
-| Schnittstelle 3 | Beschreibung 3
+| Datenbank-Schnittstelle | Datenbank Zugriff für Show- und Buchungs-Verwaltung
 |===
-
-
 
 ===== Frontend (Blackbox)
 
-_Bausteinname_ Blackboxbeschreibung
-
-*Zweck:* _hier beschreiben Sie Zweck oder Verantwortung des Bausteins_
+*Zweck:* Zuriff auf die Show-Auswahl und das Buchungs-System
 
 .Schnittstellen _Bausteinname_:
 [cols="1,2" options=""]
 |===
-| Schnittstelle 1 | Beschreibung 1
+| User-Schnittstelle | Web-Interface für Online- und Box-Office-User
 |===
 
 
-*Ablageort/Datei:* _Verweisen Sie auf den Einstieg in
-  den Sourcecode, den/die Paket-/Modulnamen oder
-  die wichtigsten Klassen_
+===== Buchungsverwaltung (Blackbox)
 
-
-===== Ticketverwaltung (Blackbox)
-
-_Bausteinname_ Blackboxbeschreibung
-
-*Zweck:* _hier beschreiben Sie Zweck oder Verantwortung des Bausteins_
-
-.Schnittstellen _Bausteinname_:
-[cols="1,2" options=""]
-|===
-| Schnittstelle 1 | Beschreibung 1
-|===
-
-*Ablageort/Datei:* _Verweisen Sie auf den Einstieg in
-  den Sourcecode, den/die Paket-/Modulnamen oder
-  die wichtigsten Klassen_
+*Zweck:* Zentrale Logik für Reservations- und Buchungs-Verarbeitung
 
 
 ===== Showverwaltung (Blackbox)
 
-_Bausteinname_ Blackboxbeschreibung
-
-*Zweck:* _hier beschreiben Sie Zweck oder Verantwortung des Bausteins_
-
-.Schnittstellen _Bausteinname_:
-[cols="1,2" options=""]
-|===
-| Schnittstelle 1 | Beschreibung 1
-|===
-
-*Ablageort/Datei:* _Verweisen Sie auf den Einstieg in
-  den Sourcecode, den/die Paket-/Modulnamen oder
-  die wichtigsten Klassen_
-
+*Zweck:* Definiert Shows und Performances inkl. Preisgestaltung und zugehöriger Saalkonfiguration
 
 ===== Saalverwaltung (Blackbox)
 
-_Bausteinname_ Blackboxbeschreibung
+*Zweck:* Definiert den Saal sowie verschiedene Saal-Konfigurationen
 
-*Zweck:* _hier beschreiben Sie Zweck oder Verantwortung des Bausteins_
+===== DB (Blackbox)
 
-.Schnittstellen _Bausteinname_:
-[cols="1,2" options=""]
-|===
-| Schnittstelle 1 | Beschreibung 1
-|===
+*Zweck:* persistierung der OTS Daten
 
+Hier werden die Daten welche von verschiedenen Modulen benögit werden verwaltet/gespeichert:
 
-*Ablageort/Datei:* _Verweisen Sie auf den Einstieg in
-  den Sourcecode, den/die Paket-/Modulnamen oder
-  die wichtigsten Klassen_
-
-
-
+* Saal-Konfiguration
+* Show/Performance Information inkl. Preisgestaltung
+* Kunden-Daten (keine Kreditkarten Daten)
+* Buchungen und Reservationen
 
 === Ebene 3
-
-image::05_bausteinsicht_showverwaltung.png["Baustein Sicht Level 2"]
 
 [role="arc42help"]
 ****
@@ -264,23 +219,80 @@ volatile Bausteine. Normale, einfache oder standardisierte Teile sollten
 Sie weglassen.
 ****
 
+==== Buchungs-Verwaltung (Whitebox)
 
-==== _Baustein 1.1_ (Whitebox)
+Übersicht / Struktur::
+Baustein Übersicht der Show- und Saal-Verwaltung
 
-[role="arc42help"]
-****
-* ...zeigt das Innenleben von _Baustein 1.1_ in Diagrammform
-mit den lokalen Bausteinen 1.1.1 - 1.1.n,
-sowie deren Zusammenhänge und Abhängigkeiten.
-* begründet diese Struktur
-****
+image::05_bausteinsicht_level2-BuchungsVerwaltung.png["Baustein Sicht Level 2 der Buchungs-Verwaltung"]
 
-include::_template-whitebox.adoc[]
+Begründung::
+Die Buchungsverwaltung stellt über den Buchungs-Service eine Schnittstelle zur Verfügung
+über die Das Frontend Informationen zu Shows und Performaces abrufen, sowie Sitzplatz-Buchungen
+durchgeführt werden können.
 
-===== _Baustein 1.1.1_ (Blackbox)
 
-include::_template-blackbox-short.adoc[]
+Enthaltene Bausteine::
 
-===== _Baustein 1.1.2_ (Blackbox)
+[cols="1,4,1" options=""]
+|===
+| Buchungs-Service  | Stellt Schnittstelle für Show-Informationen sowie den Buchungs-Prozess zur Verfügung |
+| Buchungs-Manager  | Erzeugt Reservationen und Buchungen |
+| Show-Accessor     | Zugriff auf Informationen der einzelnen Shows und Performances |
+|===
 
-include::_template-blackbox-short.adoc[]
+===== Buchungs-Service (Blackbox)
+
+*Zweck:* Zugriff auf Show-Information und den Reservations- und Buchungs-Prozess
+
+Dieses Modul ist zuständig, dass freie Sitze gefunden werden und eine Reservation erzeugt wird.
+Weiter führt es eine Reservation bei erfolgreicher Bezahlung in eine definitive Buchung über.
+Hier wird der Algorythmus zur Suche nach freien Sitzen implementiert (Prototyp).
+
+===== Show-Accessor (Blackbox)
+
+*Zweck:* Zugriff auf Show und Performance Informationen
+
+
+==== Infrastruktur-Modul (Whitebox)
+
+Das Infrastruktur-Modul beinhaltet Adapter zur Kommunikation mit externen Systemen sowie zur
+perstistierung von Daten an.
+
+Enthaltene Bausteine::
+
+[cols="1,4,1" options=""]
+|===
+| E-Mail-Service-Adapter | Adapter für die Schnittstelle zum externen E-Mail-System |
+| Payment-Service-Adapter | Adapter für die Schnittstelle zum externen Zahlungs-Dienstleister |
+| Persistierungs-Adapter | Adapter zur DB |
+|===
+
+
+
+==== _Show- und Saal-Verwaltung_ (Whitebox)
+
+Übersicht / Struktur::
+Baustein übersicht der Show- und Saal-Verwaltung
+
+image::05_bausteinsicht_showverwaltung.png["Baustein Sicht Level 2"]
+
+Begründung::
+* Eine Performance definiert sich aus der Verknüpfung einer Show mit einer gewissen Preisgestaltung,
+und findet zu einem gewissen Zeitpunkt statt.
+* Die Preisgestaltung defniert einen Preis für eine gewisse Sitzplatzkategorie.
+* Eine Show findet in einem Saal mit einer gewissen Konfiguration statt.
+* Ein Saalkonfiguration basiert auf einem Saal mit der zusätzlichen Information,
+welche Sitzplätze aktiv sind und welcher Kategorie sie angehören.
+
+
+Enthaltene Bausteine::
+
+[cols="1,4,1" options=""]
+|===
+| Show | Definition einer Show | siehe Glossar
+| Performance | Definition einer Performance | siehe Glossar
+| Preisgestaltung | Definition einer Preisgestaltung: Preis pro Kategorie | siehe Glossar
+| Saalkonfiguration | Defition einer Saalkonfiguration: aktive Sitzplätze inkl Kategorie | siehe Glossar
+| Saal | Definition eines Saals | siehe Glossar
+|===
