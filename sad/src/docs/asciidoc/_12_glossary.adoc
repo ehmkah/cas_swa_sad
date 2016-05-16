@@ -5,15 +5,18 @@
 |===
 |Begriff      		| Definition
 
+| Administrator         |
 | auswählen             |suchen und bestätigen
 | Benachbarte Sitzplätze | Wann immer möglich, sollen dem Kunden benachbarte Sitzplätze angeboten werden. Durch die Gänge werden die Sitzplätze von einander getrennt. Wenn zwischen Platz 20 und 21 ein Gang befindet, sind sie nicht benachbart.
 | Box-Office-User      	| Ein Angestellter der Z-Group, der Tickets an Kunden verkauft.
+| Branding              |
 | Buchung               | Nach der Bezahlung wird die -> Reservierung in eine verbindliche Bestellung umgewandelt. Die Tickets werden dem Kunden fix zugewiesen. Eine Bestellung kann nur von einem internen Mitarbeiter annulliert werden.
 | CRUD                  | Create, Read, Update, Delete Operationen
 | DB             	    | Datenbank
 | eingeben              | Daten/Werte auf der Benutzeroberfläche erfassen/überschreiben
 | GUI               	| Grafische Benutzeroberfläche (Graphical User Interface)
 | HTTP / HTTPS          |
+| Mbps                  |
 | Online-User          	| Ein Kunde, der sein Ticket selbständig über die Webseite kauft.
 | OTS                 | Online Ticketing-System der Firma Z-Group
 | Paymentsystem        | Externes Kredikartenunternehmen
@@ -21,17 +24,22 @@
 | Sitzplatzkategorie   	| Erlaubt die Definition von Preisen für Tickets
 | Preisgestaltung   	| Zuordnung von Platzkategorie zum Ticketpreis
 | Reservierung          | Innerhalb des Bestellvorganges, werden temporär dem Benutzer die Sitzplätze zugewiesen. Die Zeitspanne beträgt in der Regel 5 min, kann aber für jeden -> Veranstalter individuell festgelegt werden.
+| REST                  |
 | Saal			        | Definition des Ortes und der vorhandenen Sitzplätze für Shows
 | Saalkonfiguration 	| Definition welche Sitzplätze in einem Saal "aktiv" sind, und welcher Platzkategorie sie angehören
 | Sitzplatz             | Ein nummerierter Sitzplatz in einem Saal der eine Zuordnung zu einer Kategorie hat
 | Show              	| Auftritt eines Künstlers, eines Zirkus oder einer Oper. Eine Veranstaltung kann mehrere Termine (→ Vorstellungen) haben. Der Sitzplan ist immer gleich, allerdings können die → Vorstellungen eine abweichende Preisstruktur haben.
+| Show-Location       |
+| SLA                    |
+| SMPT                 |
 | SQL                   |
 | speichern             | Daten in DB persistieren
 | Standardsitzplan      | Jede -> Halle hat eine Grundkonfiguration. Die Bestuhlung einer → Veranstaltung kann aber leicht vom Standardsitzplan abweichen.
 | Ticket            	| Erlaubt dem Kunden den Zutritt zu einer Show. Jedem Ticket ist ein Sitzplatz zugewiesen
+| Überlast              |
 | Veranstalter          | Ein Veranstalter betreibt eine oder mehrere → Hallen, wo die -> Veranstaltungen stattfinden.
 | verwalten             | CRUD
-| X-Center
+| X-Center              |
 | Zahlung               |
 
 |===

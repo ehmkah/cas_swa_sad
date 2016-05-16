@@ -35,9 +35,9 @@ eingesetzte Technologien (Betriebssysteme, Middleware, Datenbanken, Programmiers
 
 [cols="1,2"]
 .Technische Randbedingungen
-
+[[techRand-1]]
 |===
-2+| *Hardware-Vorgaben* 
+2+| *Hardware-Vorgaben*
 |DatenBank Server| Sun Server
 
 2+| *Software-Infrastruktur*
@@ -46,19 +46,19 @@ eingesetzte Technologien (Betriebssysteme, Middleware, Datenbanken, Programmiers
 | Browser          | IE ab Version 9, Firefox ab Version 10, Opera ab Version 11.61, Safari ab Version 5.1.3, Chrome ab Version 17.0.963
 
 2+| *Hardware-Infrastruktur*
-|Bandbreite |download 2 Mbps, upload 100 Kbps 
+|Bandbreite |download 2 Mbps, upload 100 Kbps
 |Betrieb |Datenbank Server und Application Server müssen in gleichen LAN laufen
 |Skalierbarkeit | Muss skalierbar sein
 
 2+| *Vorgaben des Systembetriebs*
 | Zugriff auf GUI | Der Zugriff auf das GUI für Verkäufer ist nur aus dem Firmen-LAN gestattet
-|Externe System |External payment system 
+|Externe System |External payment system
 
 2+| *Programmiervorgaben*
 | Programmiersprache | JavaEE 7, JavaScript
 
 2+| *Graphische-Oberfläche*
-| Responsive web design  | Unterstützung Mobile Browser 
+| Responsive web design  | Unterstützung Mobile Browser
 
 
 |===

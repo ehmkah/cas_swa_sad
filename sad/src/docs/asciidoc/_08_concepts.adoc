@@ -27,13 +27,17 @@ Kann vielfältig sein. Teilweise Konzeptpapiere mit beliebiger Gliederung, teilw
 image::08_schichtenmodell.png["Schichtenarchitektur"]
 
 === Persistenz
-Der Prototyp OTS verwendet eine MySQL-Datenbank zur Persistierung der Daten
+OTS verwendet eine Oracle-Datenbank zur Persistierung der Daten (siehe Technische Randbedingung<<techRand-1>>)
 
 === Benutzungsoberfläche
-Die Benutzeroberfläche wird als Web-GUI Interface umgesetzt und orientiert sich am Kapitel 5, "Application Screens" des REQUIREMENT DOK (todo).
-Das GUI wird gemäs den verschiedenen Phasen des REQUIREMENT DOK (todo), Kapitel 4, "Delivery Schedule" implementiert.
+[[gui-1]]
+Die Benutzeroberfläche wird als Web-GUI Interface umgesetzt und orientiert sich am Anforderungsdokument <<req-1>>, Kapitel 5, "Application Screens".
+Das GUI wird gemäs den verschiedenen Phasen des Anforderungsdokument <<req-1>>, Kapitel 4, "Delivery Schedule" implementiert.
+
+Bild todo
+
 === Ergonomie
-siehe Unterkapitel 8.4
+siehe Unterkapitel <<gui-1>>
 
 === Ablaufsteuerung
 

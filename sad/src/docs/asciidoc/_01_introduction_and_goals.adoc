@@ -60,7 +60,7 @@ Show, Performance, Sitzplatzkategorie (Seat categories), Benachbarte Sitzplätze
 
 ==== Art des Systems
 
-Interaktives Online System
+Das OTS ist ein "Interaktives Online System"
 
 ==== Schnittstellen
 
@@ -113,11 +113,10 @@ Für alle, die es nicht so genau wissen wollen: ein lesbarer Auszug davon ist im
 auf Seite 9 zu finden.
 ****
 
+Im Rahmen der Phase I von OTS soll auf folgende Qualitätsziele  mit absteigender Priorität geachtet werden.
 
 
-
-
-.Verfügbarkeit / Performanz
+.Verfügbarkeit / Performanz /Sicherheit (Priorität 1)
 * Im Normalbetrieb überschreitet die Antwortzeit des Systems die Werte der folgenden Tabelle nicht
 [options="header"]
 .Antwortzeiten in Sekunden
@@ -133,14 +132,20 @@ auf Seite 9 zu finden.
 * Im extrem Fall müssen bis zu 15'000 Plätze in 10min verkauft werden können. Annahme: Kauf-Session benötigt ~100 HTTP Requests und ~10 DB-Queries benötigt, entspricht das einer Last von ~2500 HTTP und ~250 SQL Transactions/second.
 ** Auch in einem solchen Szenario soll die HTTP Antwortzeiten die geforderten Grenzen nicht üerschreiten
 ** Auch bei Überlast, wenn der Public Teil der Applikation nicht mehr zuverlässig erreichbar ist, sollte der Zugriff für Box-Office User unbehindert bleiben.
-* Die Applikation soll auch für Clients mit "schmaler" Internet Anbindung bedienbar sein (down/up 2M/100K).
+* Die Applikation soll auch für Clients mit "schmaler" Internet Anbindung bedienbar sein (down/up 2Mbps/100Kbps).
 * Wenn ein Endnutzer Informationen zum Verkaufsstatus der Sitzplätze abruft, dann dürfen diese maximal eine Minute alt sein.
 * Wenn eine neue Show freigeschaltet wird, dann muss sie nach spätestens einer Minute für Endkunden sichtbar sein.
+* Sicherheit (siehe <<risk-1,Kap. Risiken>>).
 
-.Änderbarkeit
+.Änderbarkeit (Priorität 2)
 * Wenn Raumkonfiguration verändert werden muss, dann muss dies ausschliesslich konfigurativ geschehen.
 * Die Applikation muss innerhalb von 60 Personentagen auf andere Show-Locations erweitert werden können. (Branding der Oberfläche, neuer Sitzplan)
 * Internationalization und Sprach-Auswahl wird in Zukunft gefordert sein und sollte nicht verbaut werden.
+
+.Bedienbarkeit / Testbarkeit (Priorität 3)
+* Funktion vor Bedienbarkeit.
+* Das OTS wird über Standard Unit-Test getestet.
+
 
 
 === Stakeholder
