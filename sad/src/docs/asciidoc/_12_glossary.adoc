@@ -13,7 +13,10 @@
 | DB             	    | Datenbank
 | eingeben              | Daten/Werte auf der Benutzeroberfläche erfassen/überschreiben
 | GUI               	| Grafische Benutzeroberfläche (Graphical User Interface)
+| HTTP / HTTPS          |
 | Online-User          	| Ein Kunde, der sein Ticket selbständig über die Webseite kauft.
+| OTS                 | Online Ticketing-System der Firma Z-Group
+| Paymentsystem        | Externes Kredikartenunternehmen
 | Performance       	| Aufführung einer Show, z.B. 12. April 2016, 20:00 "Starlight Express". Ein Platz in einer Performance ist einer Platzkategorie zugeordnet.
 | Sitzplatzkategorie   	| Erlaubt die Definition von Preisen für Tickets
 | Preisgestaltung   	| Zuordnung von Platzkategorie zum Ticketpreis
@@ -22,11 +25,13 @@
 | Saalkonfiguration 	| Definition welche Sitzplätze in einem Saal "aktiv" sind, und welcher Platzkategorie sie angehören
 | Sitzplatz             | Ein nummerierter Sitzplatz in einem Saal der eine Zuordnung zu einer Kategorie hat
 | Show              	| Auftritt eines Künstlers, eines Zirkus oder einer Oper. Eine Veranstaltung kann mehrere Termine (→ Vorstellungen) haben. Der Sitzplan ist immer gleich, allerdings können die → Vorstellungen eine abweichende Preisstruktur haben.
+| SQL                   |
 | speichern             | Daten in DB persistieren
 | Standardsitzplan      | Jede -> Halle hat eine Grundkonfiguration. Die Bestuhlung einer → Veranstaltung kann aber leicht vom Standardsitzplan abweichen.
 | Ticket            	| Erlaubt dem Kunden den Zutritt zu einer Show. Jedem Ticket ist ein Sitzplatz zugewiesen
 | Veranstalter          | Ein Veranstalter betreibt eine oder mehrere → Hallen, wo die -> Veranstaltungen stattfinden.
 | verwalten             | CRUD
+| X-Center
 | Zahlung               |
 
 |===
