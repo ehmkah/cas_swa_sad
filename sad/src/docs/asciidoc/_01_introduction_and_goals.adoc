@@ -10,6 +10,8 @@
 
 === Aufgabenstellung
 //(engl.: Requirements Overview)
+Das folgende Diagramm
+image::01_usecase.png["Use Case Online Ticketing System"]
 
 [role="arc42help"]
 ****
