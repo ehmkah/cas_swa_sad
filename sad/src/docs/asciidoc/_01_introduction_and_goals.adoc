@@ -53,7 +53,7 @@ Die Anwendung steht sowohl Kunden übers Internet als auch internen Mitarbeitern
 
 ==== wichtige Begriffe
 
-Show, Performance, Seat categories, adjacent seat, reservation and confimation/purchase
+Show, Performance, Sitzplatzkategorie (Seat categories), Benachbarte Sitzplätze (adjacent seat), Reservierung (reservation and confimation/purchase)
 
 ==== Art des Systems
 
@@ -66,7 +66,7 @@ Interaktives Online System
 
 ==== Datenhaltung
 
-* Oracle Datebase
+* Dantenbank (Oracle Datebase), ist von der Z-Group
 
 ==== Steuerung
 
