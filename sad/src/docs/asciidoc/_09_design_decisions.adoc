@@ -3,7 +3,7 @@
 == Entwurfsentscheidungen
 
 
-=== Entwurfsentscheidung 1
+=== Schichtenmodell verwenden
 
 ==== Fragestellung
 
@@ -16,6 +16,107 @@
 ==== Betrachtete Alternativen
 
 
+=== Datenhaltung
+
+==== Fragestellung
+Wie können die Daten gespeichert werden?
+
+==== Rahmenbedingungen
+
+Oracle 12c wird bereits verwendet.
+
+==== Annahmen
+
+Andere (kommerzielle) Datenbank-Managementsysteme sind nicht zulässig.
+
+==== Entscheidungskriterien
+
+Konsitenz muss gewährleistet werden.
+Ein hoher Datendurchsatz muss möglich sein.
+
 ==== Entscheidung
 
-=== Entwurfsentscheidung n
+Neben Oracle wurde auch die Verwendung einer NoSQL-Datenbank in Betracht gezogen,
+da diese eine hohe Skalierbarkeit und eine hohe Performance bietet.
+Aufgrund der mangelden Erfahrung und des kurzen Zeitplanes wird aber die bestehende
+Oracle-DB verwendet.
+
+
+=== MVC-Pattern verwenden
+
+==== Fragestellung
+
+Wie wird sichergestellt, dass das GUI ausgetauscht werden kann.
+
+==== Rahmenbedingungen
+
+==== Annahmen
+
+==== Entscheidungskriterien
+
+Einfachheit bei der Implementierung. Verwendung einer bewährten Technik.
+
+==== Betrachtete Alternativen
+
+Variante 1: Eigene Implementierung der Seiten?
+
+Variante 2: Verwendung von JavaServer Faces
+
+Vorteil: etabliertes Framework. Erleichtert die Umsetzung des MVC-Patterns.
+Unterstützt bei der Umsetzung der Internationalisierung.
+
+Variante 3: Single Page Application
+
+Vorteil: Antwortzeiten können reduziert werden, da nur Teile der Webseite übertragen werden.
+Die Benutzer können nicht manuell einzelne Seite aufrufen, sondern können nur die auf
+der aktuellen Webseite verfügbaren Links verwenden.
+
+==== Entscheidung
+
+Aufgrund der grösseren Erfahrung mit den JavaServer Faces wird diese Variante umgesetz,
+damit der Zeitplan eingehalten werden kann.
+
+
+=== Zahlungen extern abwickeln
+
+==== Fragestellung
+
+
+==== Rahmenbedingungen
+
+==== Annahmen
+
+==== Entscheidungskriterien
+
+==== Betrachtete Alternativen
+
+==== Entscheidung
+
+
+
+
+
+=== Performance der Boxoffice-User
+
+==== Fragestellung
+
+Wie wird sichergestellt, dass bei den Boxoffice-User die maximal zulässige Antwortzeit
+immer gegehalten wird.
+
+==== Rahmenbedingungen
+
+TODO: Zeit aus den Qualitätsanforderungen übernehmen
+
+Es soll nur ein Server verwendet werden.
+
+==== Betrachtete Alternativen
+
+Variante 1) mehere Applikationserver auf dem physischen Server betreiben
+
+Variante 2) Neuverhandlung der Rahmenbedingungen, damit mindestens 2 Server betrieben werden können.
+
+==== Entscheidung
+
+Auch wenn die Kosten kurzfristig für die Ein-Sever-Variante spricht, empfehlen wir, dass mindestens zwei
+Server bereit gestellt werden. Neben der besseren Verteilung der Last und auch eine bessere Verfügbarkeit
+gewährleistet. Wenn ein Server ausfällt, können die Benutzer auf den anderen Server umgeleitet werden.
