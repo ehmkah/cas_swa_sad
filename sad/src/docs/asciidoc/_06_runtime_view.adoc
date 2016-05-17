@@ -13,51 +13,51 @@ Zu den abgebildeten Prozessschritten folgende Erläuterungen:
 [options="header"]
 |===
 | Prozessschritt                                             | Beschreibung
-| Kunde wählt Show
-| Der Endkunde wählt eine Show aus, die er besuchen möchte
+| Online-User wählt Show
+| Der Online-User wählt eine Show aus, die er besuchen möchte
 
-| Kunde wählt Performance, die Platzkategorie, Anzahl Plätze
-| Endkunde sagt, welche Performance er besuchen möchte und in welcher Platzkategorie er wieviele Tickets benötigt
+| Online-User wählt Performance, die Platzkategorie, Anzahl Plätze
+| Online-User sagt, welche Performance er besuchen möchte und in welcher Platzkategorie er wieviele Tickets benötigt
 
 | Performance hat genügen freie Plätze
 | es erfolgt eine Prüfung, ob die Kundenwünscher erfüllt werden können
 
-| Entscheidung Kunde will sich einloggen
-|OTS erlaubt es Endkunden sich einzuloggen, damit müssen sie Rechnungsadresse und Bestätigungsemailadresse nicht mehr angeben
+| Entscheidung Online-User will sich einloggen
+|OTS erlaubt es Online-User sich einzuloggen, damit müssen sie Rechnungsadresse und Bestätigungsemailadresse nicht mehr angeben
 
-| Kunde loggt sich ein
-| Kunde meldet sich mit seiner eMailadresse und Password erfolgreich an
+| Online-User loggt sich ein
+| Online-User meldet sich mit seiner eMailadresse und Password erfolgreich an
 
 | OTS lädt Rechnungsadresse und Bestätigungsmailadresse
 | diese Daten werden von OTS geladen
 
-| Kunde gibt Bestätigungsmailadresse, Rechnungsadresse ein
-| diese Daten sind für den Verkaufsprozess notwendig, deshalb muss der Kunde sie manuell eingeben
+| Online-User gibt Bestätigungsmailadresse, Rechnungsadresse ein
+| diese Daten sind für den Verkaufsprozess notwendig, deshalb muss der Online-User sie manuell eingeben
 
-| Kunde gibt Zahlungsinformationen ein
-|OTS speichert keine Kreditkartendaten, deshalb muss der Kunde diese Informationen im Verkaufsprozess manuell eingeben
+| Online-User gibt Zahlungsinformationen ein
+|OTS speichert keine Kreditkartendaten, deshalb muss der Online-User diese Informationen im Verkaufsprozess manuell eingeben
 
 | Paymentpartner wickelt Zahlung ab
-| mit den Zahlungsinformationen des Kunden wickelt der Paymentpartner die Zahlung ab.
+| mit den Zahlungsinformationen des Online-User wickelt der Paymentpartner die Zahlung ab.
 
 | Bezahlungsergebnis
-| Wenn der Kunde, falsche Zahlungsinformationen eingeben hat, so muss er die Zahlungsinformationen erneut eingeben
+| Wenn der Online-User, falsche Zahlungsinformationen eingeben hat, so muss er die Zahlungsinformationen erneut eingeben
 
-Wenn ein Sonstiger Zahlungsfehler auftrat, darf der Kunde entscheiden, ob die Zahlunge erneut durchgeführt werden soll
+Wenn ein Sonstiger Zahlungsfehler auftrat, darf der Online-User entscheiden, ob die Zahlunge erneut durchgeführt werden soll
 
 Wenn die Zahlung erfolgreich war, geht es im Verkaufsprozess ordnungsgemäss weiter
 
 | OTS bucht Tickets
-| OTS bucht die Tickets, damit sind die Tickets dem Kunden verkauft und können nicht mehr durch andere Kunden gekauft werden
+| OTS bucht die Tickets, damit sind die Tickets dem Online-User verkauft und können nicht mehr durch andere Online-User gekauft werden
 
 
 | Buchung erfolgreich
-| Plätze konnten nicht gebucht werden - das kann auftreten, wenn die reservierten Plätze länger als fünf Minuten reserviert waren und durch einen anderen Kunden reserviert oder gekauft wurden
+| Plätze konnten nicht gebucht werden - das kann auftreten, wenn die reservierten Plätze länger als fünf Minuten reserviert waren und durch einen anderen Online-User reserviert oder gekauft wurden
 
 JA - Tickets konnten erfolgreich gebucht werden
 
-| OTS sendet Kunde Bestätigungsmail
-| nach einer erfolgreichen Buchung wird dem Kunden eine Bestätigungsmail gesendet, damit er seine Tickets ausdrucken kann
+| OTS sendet Online-User Bestätigungsmail
+| nach einer erfolgreichen Buchung wird dem Online-User eine Bestätigungsmail gesendet, damit er seine Tickets ausdrucken kann
 
 | reservierte Plätze freigeben
 |um Tickets möglichst schnell nach einer Reservierung wieder verkaufen zu können, werden sie explizit auch vor Ablauf der maximal möglichen Reservierungsfrist freigegeben. Es behandelt sich bereits um eine Optimierung.
