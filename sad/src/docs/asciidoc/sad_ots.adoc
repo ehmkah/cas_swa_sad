@@ -3,7 +3,7 @@
 //
 // ====================================
 
-= image:arc42-logo.png[arc42] Template
+= image:ots-logo.png[arc42] Online Ticketing System SAD
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Inhaltsverzeichnis
 
