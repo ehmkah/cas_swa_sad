@@ -1,25 +1,36 @@
 [[section-technical-risks]]
 == Risiken
-
-Krausse: Hinweis: Risiken in dieser Risikomatrix darstellen (das fanden die Lehrer toll) und dient der Übersichtlichkeit
+image::11_risikoanalyse.png["Risikoanalyse zum Online Ticketing System"]
+Für das OTS wurden folgende Risiken erkannt:
 
 [cols="1,2" options="header"]
 .Risiken
 |===
 |Risiko
 |Priorität
-|Konsequenz
-|Erläuterung
+|Verfügbarkeit
+|Hoch
 
-|
-|
-|
-|
+|Performance
+|Hoch
 
-|
-|
-|
-|
+|Security
+|Hoch
+
+|Single Point of Failure
+|Mittel
+
 |===
 [[risk-1]]
-Paragraph or block 1.
+
+.Verfügbarkeit
+* Wenn die Verfügbarkeit während eines Konzertverkaufs nicht gewährleistet kann, führt dies zu finanziellen Schaden
+
+.Performance
+*
+
+.Security
+* Das System sollte gegen Betrug gesichert sein
+
+.Single Point of Failure
+* Es gibt nur eine Datenbank bei der Z-Group, Problematik ist, wenn die Datenbank offline ist 
