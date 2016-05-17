@@ -69,12 +69,4 @@ JA - Tickets konnten erfolgreich gebucht werden
 
 === Laufzeitszenario 2
 
-[role="arc42help"]
-****
-*  Laufzeitdiagramm
-*  Erläuterung der Besonderheiten bei dem Zusammenspiel der Bausteininstanzen in diesem Diagramm
-****
-
-...
-
 === Laufzeitszenario _n_

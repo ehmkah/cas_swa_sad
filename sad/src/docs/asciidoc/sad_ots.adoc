@@ -26,18 +26,9 @@ endif::basebackend-html[]
 include::_config.adoc[]
 
 
-include::_about-arc42.adoc[]
 
 // horizontal line
 ***
-
-[NOTE]
-====
-Diese Version des Templates enthält Hilfen und Erläuterungen.
-Sie dient der Einarbeitung in arc42 sowie dem Verständnis der Konzepte.
-Für die Dokumentation eigener System verwenden Sie besser die _plain_ Version.
-====
-
 
 
 // numbering from here on
@@ -104,8 +95,6 @@ include::_appendix-references.adoc[]
 include::_appendix-examples.adoc[]
 
 <<<<
-// Contributing and Contributors
-include::_appendix-contributing.adoc[]
 
 <<<<
 // Approved Practitioner for arc42
