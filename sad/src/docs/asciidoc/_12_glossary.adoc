@@ -14,6 +14,8 @@
 | CRUD                  | Create, Read, Update, Delete Operationen
 | DB             	    | Datenbank
 | eingeben              | Daten/Werte auf der Benutzeroberfläche erfassen/überschreiben
+| Emailsystem           | Externes E-Mail-System der Z-Group
+| Frontend              | Web-Applikations-Frontend des OTS
 | GUI               	| Grafische Benutzeroberfläche (Graphical User Interface)
 | HTTP / HTTPS          |
 | Mbps                  |
