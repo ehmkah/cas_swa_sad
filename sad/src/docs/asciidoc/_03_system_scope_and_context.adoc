@@ -150,15 +150,10 @@ an dieser Stelle nicht explizit auf Punkte eingegangen wird, welche anderenorts
 beschrieben wurden.
 
 ===== Fachliche Abläufe
+(Siehe Use-Cases Kapitel 1)
+
 ===== Mengengerüste
 (Siehe "Qualitätsziele" Kapitel 1.2)
 
 ===== Syntax: Daten und Formate
 * HTTP
-
-===== Syntax: Ablauf der Schnittstelle
-===== Technische Infrastruktur
-===== Fehler und Ausnahmebehandlung
-===== Einschränkungen und Voraussetzungen
-===== Metainformation der Schnittstelle
-===== Beispiele für Nutzung und Daten

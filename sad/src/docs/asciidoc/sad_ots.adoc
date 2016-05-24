@@ -91,11 +91,5 @@ include::_12_glossary.adoc[]
 include::_appendix-references.adoc[]
 
 <<<<
-// Beispiele
-include::_appendix-examples.adoc[]
-
-<<<<
-
-<<<<
 // Approved Practitioner for arc42
 include::_appendix-practitioner.adoc[]

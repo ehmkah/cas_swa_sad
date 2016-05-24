@@ -38,7 +38,7 @@ Das OTS ist ein "Interaktives Online System"
 * Administratorens können direkt auf der DB arbeiten (Phase I)
 
 
-=== Qualitätsziele
+=== Qualitätsziele [[QZ]]
 
 Im Rahmen der Phase I von OTS soll auf folgende Qualitätsziele  mit absteigender Priorität geachtet werden.
 
@@ -46,7 +46,8 @@ Im Rahmen der Phase I von OTS soll auf folgende Qualitätsziele  mit absteigende
 .Verfügbarkeit / Performanz /Sicherheit (Priorität 1)
 * Im Normalbetrieb überschreitet die Antwortzeit des Systems die Werte der folgenden Tabelle nicht
 [options="header"]
-.Antwortzeiten in Sekunden
+
+.Antwortzeiten in Sekunden [[QZ-TAB1]]
 |===
 | Seitenname            | Antwortzeit
 | Welcome               | <  1s

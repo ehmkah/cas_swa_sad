@@ -12,6 +12,18 @@ image::08_schichtenmodell.png["Schichtenarchitektur"]
 === Persistenz
 OTS verwendet eine Oracle-Datenbank zur Persistierung der Daten (siehe Technische Randbedingung<<techRand-1>>)
 
+Anmerkung FMO: Der Prototyp muss meiner Meinung nach hier nicht erwähnt werden?
+
+Als Datenbanksystem ist Oracle 12c vorgeben. Aufgrund des engen Zeitplanes wird auf die
+Evaluierung einer NoSQL-Datenbank verzichet. Beim späteren Ausbau, sollte dies aber
+in Betracht gezogen werden.
+Der Zugriff auf die Persitenzschicht erfolgt über einen Adapter. Änderungen am Datenmodell
+führen dadurch nicht automatisch zu Änderungen in der Businesslogik. Ausserdem
+kann dadurch die Persitenzschicht für die automatisch Tests gemockt werden.
+Ein späterer Wechsel auf eine NoSQL-Datenbank wäre ausserdem einfacher möglich.
+
+
+
 === Benutzungsoberfläche
 [[gui-1]]
 Die Benutzeroberfläche wird als Web-GUI Interface umgesetzt und orientiert sich am Anforderungsdokument <<req-1>>, Kapitel 5, "Application Screens".
@@ -19,16 +31,49 @@ Das GUI wird gemäs den verschiedenen Phasen des Anforderungsdokument <<req-1>>,
 
 Bild todo
 
+
+Anmerkungen FMO:
+Das GUI wird mittels JavaServer Faces umgesetzt. (oder gibt es bessere Alternativen?)
+Dadurch ist bereits die Struktur für die Implementierung des MVC-Pattern vorgegeben.
+Das Design der Masken ist in REQUIREMENT DOK im Kapitel 5 beschrieben.
+Die Zahlungsseite weicht etwas ab, da die Kreditkartendaten nicht im OTS sondern direkt bei der Zahlungsschnittstelle eingegeben werden.
+
+
 === Ergonomie
 siehe Unterkapitel <<gui-1>>
+
+Die Pflichtfelder werden mittels eines Sterns gekennzeichnet, damit sie sofort für den Benutzer ersichtlich sind.
+Falls mehrere Fehleingaben auf einer Seite auftragen, werden bei allen Stellen eine Fehlermeldung angezeigt.
+Es wird also immer die gesamte Seite validiert und nicht beim ersten Fehler abgebrochen.
+
 
 === Ablaufsteuerung
 
 === Transaktionsbehandlung
 
+Die Persistierung der bestellten Tickets erfolgt immer in einer Transaktion.
+Dies betrifft sowohl die Reservierung, Bestätigung als auch die Annullierung der Tickets.
+
+
 === Sessionbehandlung
 
+Nach der Auswahl der Performance und der Angabe der gewünschten Tickets wird eine Websession erstellt,
+damit die Daten dem Benutzer zugewiesen werden können.
+Dafür wird ein Session-Cookie verwendet. (Gibt es Alternativen, um Cookies zu vermeiden?)
+Die Session endet entweder nach 5 Minuten oder nach dem Versenden der Bestätigungsmail.
+
+
 === Sicherheit
+
+Die Webapplikation wird immer mittels https aufgerufen. Dadurch ist die Kommunikation zwischen dem Webserver und beim Browser geschützt.
+
+Der Zugriff auf die Datenbank erfolgt nur für berechtigte Benutzer. (User/Passwort oder gibt es Alternativen?)
+
+Die Passwörter der registrierten Kunden werden verschlüsselt in der Datenbank abgelegt. Dazu wird für jedes Passwort ein zusätzlicher zufälliger Salt-Wert generiert und zusammen mit dem Passwort mittels SHA-3 verschlüsselt.
+
+Bei der Implementierung der Webapplikation werden die Hinweise des Open Web Security Projects berücksichtigt. Siehe
+https://www.owasp.org/images/4/42/OWASP_Top_10_2013_DE_Version_1_0.pdf[OWSP-Webseite]footnote:[https://www.owasp.org/images/4/42/OWASP_Top_10_2013_DE_Version_1_0.pdf]
+
 
 === Kommunikation und Integration mit anderen IT-Systemen
 
@@ -36,28 +81,63 @@ siehe Unterkapitel <<gui-1>>
 
 === Plausibilisierung und Validierung
 
+Die Pflichtfelder und Datenformate werden zunächst mittels JavaScript im Browser geprüft.
+Der Applikationsserver führt zusätzlich immer eine serverseitige Prüfung durch.
 
-=== Ausnahme-/Fehlerbehandlung
+=== Ausnahme-/Fehlerbehandlung [[ErrHnd]]
 
 === Management des Systems & Administrierbarkeit
 
 === Logging, Protokollierung, Tracing
 
+JLog, oder Ähnliches verwenden?
 === Geschäftsregeln
 
+Die Geschäftslogik wird in den Java-Klassen implementiert.
+Die Geschäftsregeln sind relativ simpel, so dass der Initalaufwand für eine Regelmaschine zu gross wäre.
+
+
+
 === Konfigurierbarkeit
+
+Die URL von OTS ist frei wählbar.
+Ebenso der Connectionstring für die Datenbank.
+Für die Zahlungsschnittstelle und die E-Mailschnittstelle werden separate Konfigurationsdateien verwendet. Die Dateien werden überwacht, damit nach einer Änderung kein Neustart notwendig ist.
+
+
 
 === Parallelisierung und Threading
 
 === Internationalisierung
 
+JavaServer Faces unterstützt die Erstellung von Webapplikationen mit verschiedenen Sprachen. Auch wenn es für diese Phase des OTS noch nicht notwendig ist, werden die Anzeigetexte bereits in eigene Ressourcendateien ausgelagert. Dies erleichtert auch die Anpassung der Texte der Standardsprache.
+Für den Inhalt der Bestätigungsmail wird ebenfalls Ressourcendatei verwendet.
+
+
+
 === Migration
+
+Die bestehenden Daten werden nicht migriert.
+
 
 === Testbarkeit
 
+Die Businesslogik muss so implementiert werden, dass die Methoden automatisiert getestet werden können (Countinious Integration). Da für den Zugriff auf die Persistenzschicht ein Adapter verwendet wird, kann der Datenbankzugriff gemockt werden.
+
+
 === Skalierung, Clustering
 
+Können wir dazu eine Aussage machen? Beim Risiko auf jeden Fall erwähnen.
+
+
 === Hochverfügbarkeit
+
+Backup-System verwenden?
+
+DB-Cluster?
+
+In der ersten Phase wird der Server nur an einem Standort betrieben. (Randbedingung)
+Als Risiko aufnehmen.
 
 === Codegenerierung
 
@@ -68,5 +148,9 @@ siehe Unterkapitel <<gui-1>>
 === Drucken
 
 === Reporting
+
+Das Reporting ist nicht Bestandteil dieser Projektphase, sondern wird in der Phase 3 umgesetzt.
+
+
 
 === Archivierung
