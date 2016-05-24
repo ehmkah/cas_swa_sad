@@ -8,18 +8,19 @@
 | Administrator         | Ein Angestellter der Z-Group, welcher berechtigs ist im OTS neue Shows hinzuzufügen
 | Benachbarte Sitzplätze | Wann immer möglich, sollen dem Kunden benachbarte Sitzplätze angeboten werden. Durch die Gänge werden die Sitzplätze von einander getrennt. Wenn zwischen Platz 20 und 21 ein Gang befindet, sind sie nicht benachbart.
 | Box-Office-User      	| Ein Angestellter der Z-Group, der Tickets an Kunden verkauft.
+| bps                   | Bits per Second (Übertrangungsrate)
 | Branding              | Anpassung des OTS an eine andere Show-Location
 | Buchung               | Nach der Bezahlung wird die -> Reservierung in eine verbindliche Bestellung umgewandelt. Die Tickets werden dem Kunden fix zugewiesen. Eine Bestellung kann nur von einem internen Mitarbeiter annulliert werden.
+| CorrelationID         | erlaubt einen Aufruf in OTS zu tracen, alle Logmeldungen werden mit dieser ID versehen.
 | CRUD                  | Create, Read, Update, Delete Operationen
 | DB             	    | Datenbank
 | Emailsystem           | Externes E-Mail-System der Z-Group
 | Frontend              | Web-Applikations-Frontend des OTS
 | GUI               	| Grafische Benutzeroberfläche (Graphical User Interface)
 | HTTP / HTTPS          | HyperText Transport Protocol (Secure)
-| bps                  | Bits per Second (Übertrangungsrate)
 | Online-User          	| Ein Kunde, der sein Ticket selbständig über die Webseite kauft.
-| OTS                 | Online Ticketing-System der Firma Z-Group
-| Paymentsystem        | Externes Kredikartenunternehmen
+| OTS                   | Online Ticketing-System der Firma Z-Group
+| Paymentsystem         | Externes Kredikartenunternehmen
 | Performance       	| Aufführung einer Show, z.B. 12. April 2016, 20:00 "Starlight Express". Ein Platz in einer Performance ist einer Platzkategorie zugeordnet.
 | Sitzplatzkategorie   	| Erlaubt die Definition von Preisen für Tickets
 | Preisgestaltung   	| Zuordnung von Platzkategorie zum Ticketpreis

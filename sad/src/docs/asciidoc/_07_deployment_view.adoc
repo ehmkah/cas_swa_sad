@@ -6,25 +6,18 @@
 === Infrastruktur Ebene 1
 ==== Verteilungsdiagramm Ebene 1
 
+.Verteilungsdiagramm
 image::07_verteilungsdiagram.png["Verteilungsdiagram"]
 
+Das Verteilungsdiagram stell das Deployment von OTS dar.
+OTS wird innerhalb des Rechenzentrums der Z-Group auf einem eigenen Linux Server deployed.
+OTS wird vollständig mit allen Modulen auf einem ApplikationServer deployed.
+Die Anwendung wird auf zwei verschiedenen Application Servern deployed.
+Eine Instanz steht den BoxOffice-Userx exklusiv zur Verfügung, damit stellen wir sicher, dass sie immer arbeiten können.
+Vor dem ApplicationServer befindet sich eine Firewall, um OTS vor Angriffen aus dem Internetz zu schützen.
+Die Kommunikation zwischen OTS und dem Paymentsystem geschieht über eine verschlüsselte HTTP-Verbindung.
+Die Kommunikation zwischen OTS und der Datenbank geshieht mittelts JDBC.
+Die Kommunikation zwischen OTS und dem Mailserver geschieht mit Hilfe des SMTP-Protokolls.
 
-==== Prozessor 1
+//==== Offene Punkte
 
-
-==== Prozessor 2
-
-
-==== Prozessor _n_
-
-==== Kanal 1
-
-
-==== Kanal 2
-
-
-==== Kanal _m_
-
-==== Offene Punkte
-
-=== Infrastruktur Ebene 2

@@ -3,44 +3,60 @@
 
 === Fachliche Strukturen und Modelle
 
+.Domainmodell
 image::08_domainmodel.png["Domainmodel"]
+
+Das Domainmodell stellt die wesentlichen Fachbegriffe und ihre Beziehungen untereinander dar.
+Der Lesbarkeit willen wurden im Modell Beziehungen, die die Kardinalität 1 aufweisen weggelassen.
+
+==== Fachdomäne Saalverwaltung
+
+Jedes Center kann aus mehreren Säälen bestehen.
+Jedem Saal können beliebig viele Saalkonfigurationen zugeordnet werden.
+Eine Saalkonfiguration besteht aus beliebig vielen Sitzplätzen.
+Jeder Sitzplatz gehört zu genau einer Sitzplatzkategorie und wird über eine Reihennummer und Sitzplaznummer innerhalb der Reihe definiert.
+Die Sitzplatzkategorie ist die Basis für die spätere Preifestlegung einer Performance.
+
+==== Fachdomäne Showverwaltung
+
+Eine Show wird in verschiedenen Performances aufgeführt und einer Show wird eine Saalkonfiguration zugeordnet.
+Für jede Performance können die Preise für eine Sitzplatzkategorie individuell festgelegt werden, indem SitzplatzkategorieVerkaufspreise definiert werden.
+Um in einer Performance einen kontinuierlichen Überblick über jeden Sitzplatz einer Performance zu erhalten werden, einer Performance Performancesitzplätze zugeordnet.
+Ein Performancesitzplatz besteht aus einem Sitzplatzstatus (frei, reserviert, verkauft) und einem Sitzplatz, damit ist eine platzgenaue Zuordnung von bereits reservierten, verkauften und freien Sitzplätzen möglich.
+
+==== Fachdomäne Buchungsverwaltung
+
+Wenn ein Kunde ein Ticket kauft, dann erhält er eine Buchung.
+Eine Buchung besteht aus mehreren Tickets und einer ZahlungsId.
+Eine Buchung wird nur nach einem erfolgreichen Verkauf erstellt.
+Jedem Ticket wird ein Sitzplatz und ein Verkaufspreis zugeordnet.
+Dies erlaubt es, dass die SitzplatzkategorieVerkaufspreise verändert werden können, ohne dass bereits verkaufte Sitzplätze von der Preisänderung betroffen sind.
+Die ZahlungsId vermerkt unter welcher externen Nummer, die Buchung beim externen Paymentsystem gefunden werden kann.
+
 
 === Typische Muster und Strukturen
 
+.Schichtenarchitektur
 image::08_schichtenmodell.png["Schichtenarchitektur"]
 
 === Persistenz
-OTS verwendet eine Oracle-Datenbank zur Persistierung der Daten (siehe Technische Randbedingung<<techRand-1>>)
-
-Anmerkung FMO: Der Prototyp muss meiner Meinung nach hier nicht erwähnt werden?
 
 Als Datenbanksystem ist Oracle 12c vorgeben. Aufgrund des engen Zeitplanes wird auf die
 Evaluierung einer NoSQL-Datenbank verzichet. Beim späteren Ausbau, sollte dies aber
 in Betracht gezogen werden.
-Der Zugriff auf die Persitenzschicht erfolgt über einen Adapter. Änderungen am Datenmodell
-führen dadurch nicht automatisch zu Änderungen in der Businesslogik. Ausserdem
-kann dadurch die Persitenzschicht für die automatisch Tests gemockt werden.
-Ein späterer Wechsel auf eine NoSQL-Datenbank wäre ausserdem einfacher möglich.
-
-
+Der Zugriff auf die Datenbank erfolgt nicht direkt, sondern über eine Persitenzschicht.
+Änderungen am Datenmodell führen dadurch nicht automatisch zu Änderungen in der Businesslogik.
+Ausserdem kann dadurch der Persitenzschicht für die automatisch Tests gemockt werden.
+Die Umsetzung erfolgt mittels Hibernate.
 
 === Benutzungsoberfläche
-[[gui-1]]
-Die Benutzeroberfläche wird als Web-GUI Interface umgesetzt und orientiert sich am Anforderungsdokument <<req-1>>, Kapitel 5, "Application Screens".
-Das GUI wird gemäs den verschiedenen Phasen des Anforderungsdokument <<req-1>>, Kapitel 4, "Delivery Schedule" implementiert.
 
-Bild todo
+Das GUI wird mittels JavaServer Faces umgesetzt. Dadurch ist bereits die Struktur für die Implementierung des MVC-Pattern vorgegeben.
+Das Design der Masken ist in <<req-1>> (Kapitel 5, "Application Screens") beschrieben.
 
-
-Anmerkungen FMO:
-Das GUI wird mittels JavaServer Faces umgesetzt. (oder gibt es bessere Alternativen?)
-Dadurch ist bereits die Struktur für die Implementierung des MVC-Pattern vorgegeben.
-Das Design der Masken ist in REQUIREMENT DOK im Kapitel 5 beschrieben.
-Die Zahlungsseite weicht etwas ab, da die Kreditkartendaten nicht im OTS sondern direkt bei der Zahlungsschnittstelle eingegeben werden.
-
+Die Zahlungsseite weicht etwas von den Vorgaben ab, da die Kreditkartendaten nicht im OTS sondern direkt bei der Zahlungsschnittstelle eingegeben werden.
 
 === Ergonomie
-siehe Unterkapitel <<gui-1>>
 
 Die Pflichtfelder werden mittels eines Sterns gekennzeichnet, damit sie sofort für den Benutzer ersichtlich sind.
 Falls mehrere Fehleingaben auf einer Seite auftragen, werden bei allen Stellen eine Fehlermeldung angezeigt.
@@ -48,6 +64,9 @@ Es wird also immer die gesamte Seite validiert und nicht beim ersten Fehler abge
 
 
 === Ablaufsteuerung
+
+Es wird ein interaktives Online-System entwickelt.
+Die Steuerung des Systems erfolgt daher immer ereignisgesteuert über den Benutzer.
 
 === Transaktionsbehandlung
 
@@ -77,6 +96,14 @@ https://www.owasp.org/images/4/42/OWASP_Top_10_2013_DE_Version_1_0.pdf[OWSP-Webs
 
 === Kommunikation und Integration mit anderen IT-Systemen
 
+Der Browser kommuniziert mit dem Applicationserver mittels HTTPS.
+
+Innerhalb von OTS werden synchrone und dirkete Methodenaufrufe verwendet.
+
+Die zu versendenen E-Mails werden in eine Warteliste eingetragen. Dadurch erfolgt der Versand unabhängig von der Reservierung.
+
+
+
 === Verteilung
 
 === Plausibilisierung und Validierung
@@ -86,17 +113,28 @@ Der Applikationsserver führt zusätzlich immer eine serverseitige Prüfung durc
 
 === Ausnahme-/Fehlerbehandlung [[ErrHnd]]
 
-=== Management des Systems & Administrierbarkeit
+Die Fehler die bei OTS auftreten können, betreffen vor allem die Funktionsfähigkeit der integrierten externen Anwendungen Payment und Email.
+
+Aufgetretene Fehler des Paymentsystems werden an den User mit einer sprechenden Fehlermeldung kommuniziert.
+Es ist nicht gestattet an der Servicegrenze zum Frontend Exceptions zu werfen.
+Tritt an der Servicegrenze zum Frontend ein Fehler auf, so muss dieser gefangen werden und dem User eine allgemeine Fehlermeldung präsentiert werden.
+Jeder bekannte Fehler wird mit einem Fehlercode benannt und in der Liste der Fehlercodes dokumentiert.
+Alle Exceptions, die innerhalb von OTS erzeugt werden, müssen von der OTSException erben, damit die Quelle leichter zu finden ist.
+Alle aufgetretenen Exceptions müssen zum Zeitpunkt des auftretens ins Logfile geschrieben werden, damit eine Nachverfolgung möglich ist.
+
+// === Management des Systems & Administrierbarkeit
 
 === Logging, Protokollierung, Tracing
 
-JLog, oder Ähnliches verwenden?
+Zum Logging wird das Framework log4 verwendet.
+Loggingmeldungen sind mit den Einstufungen: Debug, Info, Warnung, Error zu versehen.
+In Produktion wird das Loglevel auf Warnung gestellt.
+Jeder Aufruf nach OTS erhält eine CorrelationId, diese muss beim loggend zwingend ausgegeben werden, um Loggingmeldungen einem Aufruf zuordnen zu können.
+
 === Geschäftsregeln
 
 Die Geschäftslogik wird in den Java-Klassen implementiert.
 Die Geschäftsregeln sind relativ simpel, so dass der Initalaufwand für eine Regelmaschine zu gross wäre.
-
-
 
 === Konfigurierbarkeit
 

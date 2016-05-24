@@ -63,10 +63,3 @@ JA - Tickets konnten erfolgreich gebucht werden
 |um Tickets möglichst schnell nach einer Reservierung wieder verkaufen zu können, werden sie explizit auch vor Ablauf der maximal möglichen Reservierungsfrist freigegeben. Es behandelt sich bereits um eine Optimierung.
 
 |===
-
-
-
-
-=== Laufzeitszenario 2
-
-=== Laufzeitszenario _n_
