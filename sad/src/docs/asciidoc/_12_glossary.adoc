@@ -5,20 +5,18 @@
 |===
 |Begriff      		| Definition
 
-| Administrator         |
-| auswählen             |suchen und bestätigen
+| Administrator         | Ein Angestellter der Z-Group, welcher berechtigs ist im OTS neue Shows hinzuzufügen
 | Benachbarte Sitzplätze | Wann immer möglich, sollen dem Kunden benachbarte Sitzplätze angeboten werden. Durch die Gänge werden die Sitzplätze von einander getrennt. Wenn zwischen Platz 20 und 21 ein Gang befindet, sind sie nicht benachbart.
 | Box-Office-User      	| Ein Angestellter der Z-Group, der Tickets an Kunden verkauft.
-| Branding              |
+| Branding              | Anpassung des OTS an eine andere Show-Location
 | Buchung               | Nach der Bezahlung wird die -> Reservierung in eine verbindliche Bestellung umgewandelt. Die Tickets werden dem Kunden fix zugewiesen. Eine Bestellung kann nur von einem internen Mitarbeiter annulliert werden.
 | CRUD                  | Create, Read, Update, Delete Operationen
 | DB             	    | Datenbank
-| eingeben              | Daten/Werte auf der Benutzeroberfläche erfassen/überschreiben
 | Emailsystem           | Externes E-Mail-System der Z-Group
 | Frontend              | Web-Applikations-Frontend des OTS
 | GUI               	| Grafische Benutzeroberfläche (Graphical User Interface)
-| HTTP / HTTPS          |
-| Mbps                  |
+| HTTP / HTTPS          | HyperText Transport Protocol (Secure)
+| bps                  | Bits per Second (Übertrangungsrate)
 | Online-User          	| Ein Kunde, der sein Ticket selbständig über die Webseite kauft.
 | OTS                 | Online Ticketing-System der Firma Z-Group
 | Paymentsystem        | Externes Kredikartenunternehmen
@@ -26,33 +24,20 @@
 | Sitzplatzkategorie   	| Erlaubt die Definition von Preisen für Tickets
 | Preisgestaltung   	| Zuordnung von Platzkategorie zum Ticketpreis
 | Reservierung          | Innerhalb des Bestellvorganges, werden temporär dem Benutzer die Sitzplätze zugewiesen. Die Zeitspanne beträgt in der Regel 5 min, kann aber für jeden -> Veranstalter individuell festgelegt werden.
-| REST                  |
+| REST                  | Representational State Transfer
 | Saal			        | Definition des Ortes und der vorhandenen Sitzplätze für Shows
 | Saalkonfiguration 	| Definition welche Sitzplätze in einem Saal "aktiv" sind, und welcher Platzkategorie sie angehören
 | Sitzplatz             | Ein nummerierter Sitzplatz in einem Saal der eine Zuordnung zu einer Kategorie hat
 | Show              	| Auftritt eines Künstlers, eines Zirkus oder einer Oper. Eine Veranstaltung kann mehrere Termine (→ Vorstellungen) haben. Der Sitzplan ist immer gleich, allerdings können die → Vorstellungen eine abweichende Preisstruktur haben.
-| Show-Location       |
-| SLA                    |
-| SMPT                 |
-| SQL                   |
-| speichern             | Daten in DB persistieren
+| Show-Location       | Austragungsort einer Show zb das X-Center
+| SLA                    | Service Level Agreement
+| SMTP                 | Simple Mail Transfer Protocol
+| SQL                   | Structured Query Language / Protokoll für Datenbankabfragen
 | Standardsitzplan      | Jede -> Halle hat eine Grundkonfiguration. Die Bestuhlung einer → Veranstaltung kann aber leicht vom Standardsitzplan abweichen.
 | Ticket            	| Erlaubt dem Kunden den Zutritt zu einer Show. Jedem Ticket ist ein Sitzplatz zugewiesen
-| Überlast              |
+| Überlast              | System wird ausserhalb der spezifizierten Grenzwerte betrieben
 | Veranstalter          | Ein Veranstalter betreibt eine oder mehrere → Hallen, wo die -> Veranstaltungen stattfinden.
-| verwalten             | CRUD
-| X-Center              |
+| X-Center              | Die designierte (primäre) Show-Location der Z-Group für welche das OTS kreiert wird
 | Zahlungsinformation   | Beinhaltet die Kredikartennummer, Name auf der Kreditkarte, Gültigkeit der Kreditkarte
-| Zahlung               |
 
-|===
-
-.Glossar (unabgestimmt)
-|===
-|Begriff      		| Definition
-
-|Veranstaltung (show) | Auftritt eines Künstlers, eines Zirkus oder einer Oper. Eine Veranstaltung kann mehrere Termine (→ Vorstellungen) haben. Der Sitzplan ist immer gleich, allerdings können die → Vorstellungen eine abweichende Preisstruktur haben.
-|Vorstellung (performance)  | Eine -> Veranstaltung unterteilt sich in mehrere Vorstellungen. Eine Vorstellung hat einen festgelegten Zeitpunkt.
-|Halle (performance hall) | In der Halle können pro Tag mehrere -> Vorstellungen einer -> Veranstaltung stattfinden. Jede Halle hat ihren eigenen -> Standardsitzplan und unterschiedliche Kapazitäten.
-|Sitzplatzkategorie (seat category) | Alle Plätze einer Kategorie haben den selben Preis. Je nach Zeitpunkt der -> Vorstellung können sich die Preise aber unterscheiden.
 |===
