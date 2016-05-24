@@ -33,17 +33,30 @@
 |===
 
 === Organisatorische Randbedingungen
+[cols="1,2"]
+.Organisatorische Randbedingungen
 
-==== Organisation und Struktur
-_<hier Randbedingungen einfügen>_
+Die organisatorischen Randbedingungen müssen noch mit der Projektleitung abgestimmt werden
+und können sich daher noch ändern.
 
-==== Ressourcen (Budget, Zeit, Personal)
-_<hier Randbedingungen einfügen>_
+[[orgRand-1]]
+|===
+2+| *Organisation und Struktur*
+| Organsisationsstruktur Projektteam | kleines internes Team ohne Unterauftragnehmer
+| Eigenentwicklung | Die Applikation wird nur innerhalb der Z Group verwendet werden.
+2+| *Ressourcen*
+| Verrechnung | muss noch mit der Projektleitung abgestimmt werden, voraussichtlich wird
+nach Aufwand/Zeit abgerechnet
+| Zeitplan | "as soon as posible" -
+daher muss mit einem engen Zeitplan gerechnet werden
+| Release-Plan | Phase 1: Sitzplatzreservierung (Kunden und Backoffice-User)
+Phase 2: Admin-Interface
+Phase 3: Erweiterung der Webseite (Premium services und Internationalisierung)
+| Projekt-Budget | muss noch mit der Projektleitung abgestimmt werden
+| Team | muss noch mit der Projektleitung abgestimmt werden
+2+| *Juristische Faktoren*
+| Datenschutz | Kreditkartennummern dürfen nicht im System gespeichert werden
+| Internationale Rechtsfragen | müssen für diese Phase noch nicht berücksichtigt werden,
+aber mit der Phase 3 ist ein internationaler Einsatz vorgesehen
 
-==== Organisatorische Standards
-_<hier Randbedingungen einfügen>_
-
-==== Juristische Faktoren
-_<hier Randbedingungen einfügen>_
-
-=== Konventionen
+|===
