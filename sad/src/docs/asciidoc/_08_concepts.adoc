@@ -7,6 +7,31 @@
 image::08_domainmodel.png["Domainmodel"]
 
 Das Domainmodell stellt die wesentlichen Fachbegriffe und ihre Beziehungen untereinander dar.
+Der Lesbarkeit willen wurden im Modell Beziehungen, die die Kardinalität 1 aufweisen weggelassen.
+
+==== Fachdomäne Saalverwaltung
+
+Jedes Center kann aus mehreren Säälen bestehen.
+Jedem Saal können beliebig viele Saalkonfigurationen zugeordnet werden.
+Eine Saalkonfiguration besteht aus beliebig vielen Sitzplätzen.
+Jeder Sitzplatz gehört zu genau einer Sitzplatzkategorie und wird über eine Reihennummer und Sitzplaznummer innerhalb der Reihe definiert.
+Die Sitzplatzkategorie ist die Basis für die spätere Preifestlegung einer Performance.
+
+==== Fachdomäne Showverwaltung
+
+Eine Show wird in verschiedenen Performances aufgeführt und einer Show wird eine Saalkonfiguration zugeordnet.
+Für jede Performance können die Preise für eine Sitzplatzkategorie individuell festgelegt werden, indem SitzplatzkategorieVerkaufspreise definiert werden.
+Um in einer Performance einen kontinuierlichen Überblick über jeden Sitzplatz einer Performance zu erhalten werden, einer Performance Performancesitzplätze zugeordnet.
+Ein Performancesitzplatz besteht aus einem Sitzplatzstatus (frei, reserviert, verkauft) und einem Sitzplatz, damit ist eine platzgenaue Zuordnung von bereits reservierten, verkauften und freien Sitzplätzen möglich.
+
+==== Fachdomäne Buchungsverwaltung
+
+Wenn ein Kunde ein Ticket kauft, dann erhält er eine Buchung.
+Eine Buchung besteht aus mehreren Tickets und einer ZahlungsId.
+Eine Buchung wird nur nach einem erfolgreichen Verkauf erstellt.
+Jedem Ticket wird ein Sitzplatz und ein Verkaufspreis zugeordnet.
+Dies erlaubt es, dass die SitzplatzkategorieVerkaufspreise verändert werden können, ohne dass bereits verkaufte Sitzplätze von der Preisänderung betroffen sind.
+Die ZahlungsId vermerkt unter welcher externen Nummer, die Buchung beim externen Paymentsystem gefunden werden kann.
 
 
 === Typische Muster und Strukturen
