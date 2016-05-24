@@ -2,14 +2,15 @@
 ==	Einführung und Ziele
 
 === Aufgabenstellung
+
 Das folgende Diagramm zeigt die Anwendungsfälle von OTS
 
+.Usecases Online Ticketing System
 image::01_usecase.png["Use Case - Online Ticketing System"]
 
 ==== Kernaufgabe
 
-Online Ticketing System um ein oder mehrere Sitzplätze für gewünschte Veranstaltung zu erwerben.
-
+Das Online Ticketing System, nachfolgend OTS, ist ein System um ein oder mehrere Sitzplätze für gewünschte Shows zu erwerben.
 
 Die Tickets können bei Bedarf auch reserviert und vor Ort abgeholt werden.
 Die Anordnung der Sitzplätze variiert von Show zu Show und muss daher konfigurierbar sein.
@@ -17,7 +18,7 @@ Die Anwendung steht sowohl Kunden übers Internet als auch internen Mitarbeitern
 
 ==== wichtige Begriffe
 
-Show, Performance, Sitzplatzkategorie (Seat categories), Benachbarte Sitzplätze (adjacent seat), Reservierung (reservation and confimation/purchase)
+Show, Performance, Sitzplatzkategorie, Benachbarte Sitzplätze, Reservierung
 
 ==== Art des Systems
 
@@ -25,7 +26,7 @@ Das OTS ist ein "Interaktives Online System"
 
 ==== Schnittstellen
 
-* Schnittstelle zu einem Extern Paymentsystem (credit card processing system)
+* Schnittstelle zu einem externen Paymentsystem
 * E-Mail werden über ein externes Emailsystem geschickt
 
 ==== Datenhaltung
@@ -37,11 +38,9 @@ Das OTS ist ein "Interaktives Online System"
 * Ereignis-getrieben Steuerung (Web-GUI)
 * Administratorens können direkt auf der DB arbeiten (Phase I)
 
-
 === Qualitätsziele [[QZ]]
 
 Im Rahmen der Phase I von OTS soll auf folgende Qualitätsziele  mit absteigender Priorität geachtet werden.
-
 
 .Verfügbarkeit / Performanz /Sicherheit (Priorität 1)
 * Im Normalbetrieb überschreitet die Antwortzeit des Systems die Werte der folgenden Tabelle nicht
@@ -57,16 +56,18 @@ Im Rahmen der Phase I von OTS soll auf folgende Qualitätsziele  mit absteigende
 | Zahlung               | <  2s
 | Zahlung verarbeiten   | < 15s
 |===
-* Im extrem Fall müssen bis zu 15'000 Plätze in 10min verkauft werden können. Annahme: Kauf-Session benötigt ~100 HTTP Requests und ~10 DB-Queries benötigt, entspricht das einer Last von ~2500 HTTP und ~250 SQL Transactions/second.
-** Auch in einem solchen Szenario soll die HTTP Antwortzeiten die geforderten Grenzen nicht üerschreiten
+
+* Im extrem Fall müssen bis zu 15'000 Plätze in 10min verkauft werden können.
+Annahme: Eine Kauf-Session benötigt etwa 100 HTTP Requests und 10 DB-Queries, dies entspricht einer Last von etwa 2500 HTTP und 250 SQL Transactions pro Sekunde.
+** Auch in einem solchen Szenario soll die HTTP Antwortzeiten die geforderten Grenzen nicht überschreiten.
 ** Auch bei Überlast, wenn der Public Teil der Applikation nicht mehr zuverlässig erreichbar ist, sollte der Zugriff für Box-Office User unbehindert bleiben.
 * Die Applikation soll auch für Clients mit "schmaler" Internet Anbindung bedienbar sein (down/up 2Mbps/100Kbps).
-* Wenn ein Endnutzer Informationen zum Verkaufsstatus der Sitzplätze abruft, dann dürfen diese maximal eine Minute alt sein.
-* Wenn eine neue Show freigeschaltet wird, dann muss sie nach spätestens einer Minute für Endkunden sichtbar sein.
+* Wenn ein Online-User Informationen zum Verkaufsstatus der Sitzplätze abruft, dann dürfen diese maximal eine Minute alt sein.
+* Wenn eine neue Show freigeschaltet wird, dann muss sie nach spätestens einer Minute für Online-User sichtbar sein.
 * Sicherheit (siehe <<risk-1,Kap. Risiken>>).
 
 .Änderbarkeit (Priorität 2)
-* Wenn Raumkonfiguration verändert werden muss, dann muss dies ausschliesslich konfigurativ geschehen.
+* Wenn Saalkonfigurationen verändert werden muss, dann muss dies ausschliesslich konfigurativ geschehen.
 * Die Applikation muss innerhalb von 60 Personentagen auf andere Show-Locations erweitert werden können. (Branding der Oberfläche, neuer Sitzplan)
 * Internationalization und Sprach-Auswahl wird in Zukunft gefordert sein und sollte nicht verbaut werden.
 
@@ -111,7 +112,6 @@ Ist bei der Spezifizierung des GUI beteiligt"
 | Bank A
 | Unterstützt bei der Einbindung des Kreditkarten Systems.
 | Abnahme der Bezahlungsschnittstelle (kann daher Phase 1 verzögern)
-
 
 | public internet users (customers)         ||
 | box office users (Verkäufer im X Center)  ||
