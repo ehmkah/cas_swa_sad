@@ -10,37 +10,23 @@ image::08_domainmodel.png["Domainmodel"]
 image::08_schichtenmodell.png["Schichtenarchitektur"]
 
 === Persistenz
-OTS verwendet eine Oracle-Datenbank zur Persistierung der Daten (siehe Technische Randbedingung<<techRand-1>>)
-
-Anmerkung FMO: Der Prototyp muss meiner Meinung nach hier nicht erwähnt werden?
 
 Als Datenbanksystem ist Oracle 12c vorgeben. Aufgrund des engen Zeitplanes wird auf die
 Evaluierung einer NoSQL-Datenbank verzichet. Beim späteren Ausbau, sollte dies aber
 in Betracht gezogen werden.
-Der Zugriff auf die Persitenzschicht erfolgt über einen Adapter. Änderungen am Datenmodell
-führen dadurch nicht automatisch zu Änderungen in der Businesslogik. Ausserdem
-kann dadurch die Persitenzschicht für die automatisch Tests gemockt werden.
-Ein späterer Wechsel auf eine NoSQL-Datenbank wäre ausserdem einfacher möglich.
-
-
+Der Zugriff auf die Datenbank erfolgt nicht direkt, sondern über eine Persitenzschicht.
+Änderungen am Datenmodell führen dadurch nicht automatisch zu Änderungen in der Businesslogik.
+Ausserdem kann dadurch der Persitenzschicht für die automatisch Tests gemockt werden.
+Die Umsetzung erfolgt mittels Hibernate.
 
 === Benutzungsoberfläche
-[[gui-1]]
-Die Benutzeroberfläche wird als Web-GUI Interface umgesetzt und orientiert sich am Anforderungsdokument <<req-1>>, Kapitel 5, "Application Screens".
-Das GUI wird gemäs den verschiedenen Phasen des Anforderungsdokument <<req-1>>, Kapitel 4, "Delivery Schedule" implementiert.
 
-Bild todo
+Das GUI wird mittels JavaServer Faces umgesetzt. Dadurch ist bereits die Struktur für die Implementierung des MVC-Pattern vorgegeben.
+Das Design der Masken ist in <<req-1>> (Kapitel 5, "Application Screens") beschrieben.
 
-
-Anmerkungen FMO:
-Das GUI wird mittels JavaServer Faces umgesetzt. (oder gibt es bessere Alternativen?)
-Dadurch ist bereits die Struktur für die Implementierung des MVC-Pattern vorgegeben.
-Das Design der Masken ist in REQUIREMENT DOK im Kapitel 5 beschrieben.
-Die Zahlungsseite weicht etwas ab, da die Kreditkartendaten nicht im OTS sondern direkt bei der Zahlungsschnittstelle eingegeben werden.
-
+Die Zahlungsseite weicht etwas von den Vorgaben ab, da die Kreditkartendaten nicht im OTS sondern direkt bei der Zahlungsschnittstelle eingegeben werden.
 
 === Ergonomie
-siehe Unterkapitel <<gui-1>>
 
 Die Pflichtfelder werden mittels eines Sterns gekennzeichnet, damit sie sofort für den Benutzer ersichtlich sind.
 Falls mehrere Fehleingaben auf einer Seite auftragen, werden bei allen Stellen eine Fehlermeldung angezeigt.
@@ -48,6 +34,9 @@ Es wird also immer die gesamte Seite validiert und nicht beim ersten Fehler abge
 
 
 === Ablaufsteuerung
+
+Es wird ein interaktives Online-System entwickelt.
+Die Steuerung des Systems erfolgt daher immer ereignisgesteuert über den Benutzer.
 
 === Transaktionsbehandlung
 
@@ -77,6 +66,14 @@ https://www.owasp.org/images/4/42/OWASP_Top_10_2013_DE_Version_1_0.pdf[OWSP-Webs
 
 === Kommunikation und Integration mit anderen IT-Systemen
 
+Der Browser kommuniziert mit dem Applicationserver mittels HTTPS.
+
+Innerhalb von OTS werden synchrone und dirkete Methodenaufrufe verwendet.
+
+Die zu versendenen E-Mails werden in eine Warteliste eingetragen. Dadurch erfolgt der Versand unabhängig von der Reservierung.
+
+
+
 === Verteilung
 
 === Plausibilisierung und Validierung
@@ -91,6 +88,7 @@ Der Applikationsserver führt zusätzlich immer eine serverseitige Prüfung durc
 === Logging, Protokollierung, Tracing
 
 JLog, oder Ähnliches verwenden?
+
 === Geschäftsregeln
 
 Die Geschäftslogik wird in den Java-Klassen implementiert.

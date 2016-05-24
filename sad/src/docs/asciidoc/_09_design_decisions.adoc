@@ -19,7 +19,7 @@
 === Datenhaltung
 
 ==== Fragestellung
-Wie können die Daten gespeichert werden?
+Wo können die Daten gespeichert werden?
 
 ==== Rahmenbedingungen
 
@@ -40,6 +40,40 @@ Neben Oracle wurde auch die Verwendung einer NoSQL-Datenbank in Betracht gezogen
 da diese eine hohe Skalierbarkeit und eine hohe Performance bietet.
 Aufgrund der mangelden Erfahrung und des kurzen Zeitplanes wird aber die bestehende
 Oracle-DB verwendet.
+
+=== Datenzugriff
+
+==== Fragestellung
+
+Wie soll auf die Daten zugegriffen werden?
+
+==== Variante 1: Direkter Zugriff
+
+Auf eine Zwischenschicht wird verzichtet und die SQL-Statements werden direkt ausgeführt.
+Vorteil: Durch den Verzicht auf die Zwischenschicht ist eine höhere Performance möglich.
+Nachteil: Änderungen an der DB-Struktur wirken sich direkt auf die Businesslogik aus.
+Ein Teil der Businesslogik wird in die Persitenzschicht verlagert.
+
+==== Variante 2: Data Access Objects (DAO)
+
+Der Zugriff auf die Daten erfolgt über eigene Datenklassen - den Data Access Objects.
+Vorteil: Die Integrationsschicht wird von der Businesslogik getrennt.
+Wenn sich das Datenmodell ändert, muss nur das entsprechende DAO angepasst werden.
+Nachteil: Es müssen die entsprechenden Klassen implementiert werden.
+
+==== Variante 3: Hibernate
+
+Hibernate ist ein Standard-Framework, welches den Zugriff auf die Datenbank kapselt.
+Es müssen daher keine zusätzlichen Klassen für den Datenzugriff implementiert werden.
+Vorteil: Standardkomponente, flexibel und robust
+Nachteil: höhere Komplexität als bei den DAOs, zusätzliche Abhängigkeit von einem weiterer Komponente
+
+=== Entscheidung
+
+Wir haben uns für Hibenate entschieden.
+Die Vorteile einer Standardkomponente überwiegen unserer Meinung nach die Nachteile wie die höhere Komplexität.
+
+
 
 
 === MVC-Pattern verwenden
