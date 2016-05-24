@@ -3,10 +3,15 @@
 
 === Fachliche Strukturen und Modelle
 
+.Domainmodell
 image::08_domainmodel.png["Domainmodel"]
+
+Das Domainmodell stellt die wesentlichen Fachbegriffe und ihre Beziehungen untereinander dar.
+
 
 === Typische Muster und Strukturen
 
+.Schichtenarchitektur
 image::08_schichtenmodell.png["Schichtenarchitektur"]
 
 === Persistenz
