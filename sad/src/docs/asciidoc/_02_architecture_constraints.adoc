@@ -60,3 +60,8 @@ Phase 3: Erweiterung der Webseite (Premium services und Internationalisierung)
 aber mit der Phase 3 ist ein internationaler Einsatz vorgesehen
 
 |===
+
+=== Konventionen
+
+Für die Architektur sind keine relevanten Konventionen vorgesehen.
+Es gelten die allgemeinen Programmier-, Dokumentations- und Versionsmanagementrichtlinien der Z Group.
