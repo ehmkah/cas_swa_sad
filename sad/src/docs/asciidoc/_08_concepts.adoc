@@ -113,18 +113,28 @@ Der Applikationsserver führt zusätzlich immer eine serverseitige Prüfung durc
 
 === Ausnahme-/Fehlerbehandlung [[ErrHnd]]
 
-=== Management des Systems & Administrierbarkeit
+Die Fehler die bei OTS auftreten können, betreffen vor allem die Funktionsfähigkeit der integrierten externen Anwendungen Payment und Email.
+
+Aufgetretene Fehler des Paymentsystems werden an den User mit einer sprechenden Fehlermeldung kommuniziert.
+Es ist nicht gestattet an der Servicegrenze zum Frontend Exceptions zu werfen.
+Tritt an der Servicegrenze zum Frontend ein Fehler auf, so muss dieser gefangen werden und dem User eine allgemeine Fehlermeldung präsentiert werden.
+Jeder bekannte Fehler wird mit einem Fehlercode benannt und in der Liste der Fehlercodes dokumentiert.
+Alle Exceptions, die innerhalb von OTS erzeugt werden, müssen von der OTSException erben, damit die Quelle leichter zu finden ist.
+Alle aufgetretenen Exceptions müssen zum Zeitpunkt des auftretens ins Logfile geschrieben werden, damit eine Nachverfolgung möglich ist.
+
+// === Management des Systems & Administrierbarkeit
 
 === Logging, Protokollierung, Tracing
 
-JLog, oder Ähnliches verwenden?
+Zum Logging wird das Framework log4 verwendet.
+Loggingmeldungen sind mit den Einstufungen: Debug, Info, Warnung, Error zu versehen.
+In Produktion wird das Loglevel auf Warnung gestellt.
+Jeder Aufruf nach OTS erhält eine CorrelationId, diese muss beim loggend zwingend ausgegeben werden, um Loggingmeldungen einem Aufruf zuordnen zu können.
 
 === Geschäftsregeln
 
 Die Geschäftslogik wird in den Java-Klassen implementiert.
 Die Geschäftsregeln sind relativ simpel, so dass der Initalaufwand für eine Regelmaschine zu gross wäre.
-
-
 
 === Konfigurierbarkeit
 

@@ -11,6 +11,7 @@
 | bps                   | Bits per Second (Übertrangungsrate)
 | Branding              | Anpassung des OTS an eine andere Show-Location
 | Buchung               | Nach der Bezahlung wird die -> Reservierung in eine verbindliche Bestellung umgewandelt. Die Tickets werden dem Kunden fix zugewiesen. Eine Bestellung kann nur von einem internen Mitarbeiter annulliert werden.
+| CorrelationID         | erlaubt einen Aufruf in OTS zu tracen, alle Logmeldungen werden mit dieser ID versehen.
 | CRUD                  | Create, Read, Update, Delete Operationen
 | DB             	    | Datenbank
 | Emailsystem           | Externes E-Mail-System der Z-Group
