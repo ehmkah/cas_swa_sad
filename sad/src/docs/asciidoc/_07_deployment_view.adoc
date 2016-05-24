@@ -6,6 +6,7 @@
 === Infrastruktur Ebene 1
 ==== Verteilungsdiagramm Ebene 1
 
+.Verteilungsdiagramm
 image::07_verteilungsdiagram.png["Verteilungsdiagram"]
 
 

@@ -3,28 +3,29 @@
 
 === Fachliche Strukturen und Modelle
 
+.Domainmodell
 image::08_domainmodel.png["Domainmodel"]
 
 Das Domainmodell stellt die wesentlichen Fachbegriffe und ihre Beziehungen untereinander dar.
 
+
 === Typische Muster und Strukturen
 
+.Schichtenarchitektur
 image::08_schichtenmodell.png["Schichtenarchitektur"]
 
 === Persistenz
-OTS verwendet eine Oracle-Datenbank zur Persistierung der Daten (siehe Technische Randbedingung<<techRand-1>>)
+OTS verwendet eine Oracle-Datenbank zur Persistierung der Daten (siehe Technische Randbedingung <<techRand-1>>)
 
 Anmerkung FMO: Der Prototyp muss meiner Meinung nach hier nicht erwähnt werden?
 
-Als Datenbanksystem ist Oracle 12c vorgeben. Aufgrund des engen Zeitplanes wird auf die
-Evaluierung einer NoSQL-Datenbank verzichet. Beim späteren Ausbau, sollte dies aber
-in Betracht gezogen werden.
-Der Zugriff auf die Persitenzschicht erfolgt über einen Adapter. Änderungen am Datenmodell
-führen dadurch nicht automatisch zu Änderungen in der Businesslogik. Ausserdem
-kann dadurch die Persitenzschicht für die automatisch Tests gemockt werden.
+Als Datenbanksystem ist Oracle 12c vorgeben.
+Aufgrund des engen Zeitplanes wird auf die Evaluierung einer NoSQL-Datenbank verzichet.
+Beim späteren Ausbau, sollte dies aber in Betracht gezogen werden.
+Der Zugriff auf die Persitenzschicht erfolgt über einen Adapter.
+Änderungen am Datenmodell führen dadurch nicht automatisch zu Änderungen in der Businesslogik.
+Ausserdem kann dadurch die Persitenzschicht für die automatisch Tests gemockt werden.
 Ein späterer Wechsel auf eine NoSQL-Datenbank wäre ausserdem einfacher möglich.
-
-
 
 === Benutzungsoberfläche
 [[gui-1]]
