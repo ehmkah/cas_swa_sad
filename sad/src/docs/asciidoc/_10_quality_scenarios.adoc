@@ -6,17 +6,20 @@
 In Folgender Tabelle werden verschiedene für OTS relevante
 (DIN/ISO 9126) Qualitätsmerkmale bestimmten Bewertungs-Szenarios
 zugeordnet
-[options="header"]
+[options="header" cols="1,1,100,1"]
 |===
-2+| Qualitäsmerkmale (DIN/ISO 9126)       | Bewertungs-Szenario
-.2+.^|Funktionalität    |Richtigkeit      | BS10
-                        |Sicherheit       | BS20
-.1+.^|Zuverlässigkeit   |Fehlertoleranz   | BS30-31
-.1+.^|Benutzbarkeit     |Verständlichkeit,
-                        Bedienbarkeit     | BS40-41
-.1+.^|Effizienz         |Zeitverhalten    | BS50-51
-.1+.^|Änderbarkeit      |Modifizierbarkeit| BS60
-.1+.^|Übertragbarkeit   |Anpassbarkeit    | BS70
+2+| Qualitäsmerkmale (DIN/ISO 9126)       | Bewertungs-Szenario | Prio
+.2+.^|Funktionalität    .1+.^|Richtigkeit  | BS10 Abnahme | B
+                        .1+.^|Sicherheit      | BS20 Blackbox-Analyse | A
+.2+.^|Zuverlässigkeit   .2+.^|Fehlertoleranz  | BS30 Ausfall Paymentsystem | A
+                                              | BS31 Ausfall Emailsystem | C
+.2+.^|Benutzbarkeit     .2+.^|Verständlichkeit,
+                              Bedienbarkeit     | BS40 Online-User | C
+                                                | BS41 Box-Office-User | C
+.2+.^|Effizienz         .2+.^|Zeitverhalten    | BS50 Hochlast | A
+                                                | BS51 Überlast | A
+.1+.^|Änderbarkeit      .1+.^|Modifizierbarkeit| BS60 Hinzufügen Show | B
+.1+.^|Übertragbarkeit   .1+.^|Anpassbarkeit    | BS70 Neue Show-Location | B
 |===
 
 === Bewertungsszenarien
@@ -75,6 +78,6 @@ Eine neue Show (inkl. Saalkonfiguration, Performances und Preisgestaltung) wird 
 (oder sonstige negativen Seiteneffekte) für Online-User zur Folge. Zudem ist die Show spätestens nach 60 Sekunden über das Frontend verfügbar.
 
 ==== Übertragbarkeit - Anpassbarkeit
-===== BS70 Neuer Standort
-Die Applikation muss für einen neuen Standort angepasst werden (Rebranding).
+===== BS70 Neue Show-Location
+Die Applikation muss für eine neue Show-Location angepasst werden (Branding).
 Dies kann innerhalb von 60 Personentagen bewerkstelligt werden, ohne dass die Architektur des OTS angepasst werden muss.
