@@ -5,8 +5,10 @@
 Die folgenden Unterkapitel zeigen die Einbettung unseres Systems in seine Umgebung.
 
 === Fachlicher Kontext
+Siehe Kapitel <<section-building-block-view,5.1>>
 
 === Technischer- oder Verteilungskontext
+Siehe Kapitel <<section-deployment-view,7.1>>
 
 === Externe Schnittstellen
 
