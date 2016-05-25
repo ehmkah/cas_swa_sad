@@ -2,24 +2,10 @@
 
 == Entwurfsentscheidungen
 
-
-=== Schichtenmodell verwenden
-
-==== Fragestellung
-
-==== Rahmenbedingungen
-
-==== Annahmen
-
-==== Entscheidungskriterien
-
-==== Betrachtete Alternativen
-
-
 === Datenhaltung
 
 ==== Fragestellung
-Wo können die Daten gespeichert werden?
+Wo sollen die Daten gespeichert werden?
 
 ==== Rahmenbedingungen
 
@@ -73,33 +59,17 @@ Nachteil: höhere Komplexität als bei den DAOs, zusätzliche Abhängigkeit von 
 Wir haben uns für Hibenate entschieden.
 Die Vorteile einer Standardkomponente überwiegen unserer Meinung nach die Nachteile wie die höhere Komplexität.
 
-
-
-
 === MVC-Pattern verwenden
 
 ==== Fragestellung
 
-Wie wird sichergestellt, dass das GUI ausgetauscht werden kann.
+Wie wird sichergestellt, dass das GUI ausgetauscht werden kann?
 
-==== Rahmenbedingungen
-
-==== Annahmen
-
-==== Entscheidungskriterien
-
-Einfachheit bei der Implementierung. Verwendung einer bewährten Technik.
-
-==== Betrachtete Alternativen
-
-Variante 1: Eigene Implementierung der Seiten?
-
-Variante 2: Verwendung von JavaServer Faces
-
+==== Variante 1: JavaServer Faces
 Vorteil: etabliertes Framework. Erleichtert die Umsetzung des MVC-Patterns.
 Unterstützt bei der Umsetzung der Internationalisierung.
 
-Variante 3: Single Page Application
+==== Variante 2: Single Page Application
 
 Vorteil: Antwortzeiten können reduziert werden, da nur Teile der Webseite übertragen werden.
 Die Benutzer können nicht manuell einzelne Seite aufrufen, sondern können nur die auf
@@ -111,25 +81,6 @@ Aufgrund der grösseren Erfahrung mit den JavaServer Faces wird diese Variante u
 damit der Zeitplan eingehalten werden kann.
 
 
-=== Zahlungen extern abwickeln
-
-==== Fragestellung
-
-
-==== Rahmenbedingungen
-
-==== Annahmen
-
-==== Entscheidungskriterien
-
-==== Betrachtete Alternativen
-
-==== Entscheidung
-
-
-
-
-
 === Performance der Boxoffice-User
 
 ==== Fragestellung
@@ -139,9 +90,9 @@ immer gegehalten wird.
 
 ==== Rahmenbedingungen
 
-TODO: Zeit aus den Qualitätsanforderungen übernehmen
+1.) Ausser bei der Zahlungsabwicklung soll die Antwortseit immer unter 2 Sekunden liegen.
 
-Es soll nur ein Server verwendet werden.
+2.) Es soll nur ein Server verwendet werden.
 
 ==== Betrachtete Alternativen
 

@@ -84,14 +84,14 @@ Die Session endet entweder nach 5 Minuten oder nach dem Versenden der Bestätigu
 
 === Sicherheit
 
-Die Webapplikation wird immer mittels https aufgerufen. Dadurch ist die Kommunikation zwischen dem Webserver und beim Browser geschützt.
+Die Webapplikation wird immer mittels https aufgerufen. Dadurch ist die Kommunikation zwischen dem Webserver und dem Browser geschützt.
 
 Der Zugriff auf die Datenbank erfolgt nur für berechtigte Benutzer. (User/Passwort oder gibt es Alternativen?)
 
 Die Passwörter der registrierten Kunden werden verschlüsselt in der Datenbank abgelegt. Dazu wird für jedes Passwort ein zusätzlicher zufälliger Salt-Wert generiert und zusammen mit dem Passwort mittels SHA-3 verschlüsselt.
 
-Bei der Implementierung der Webapplikation werden die Hinweise des Open Web Security Projects berücksichtigt. Siehe
-https://www.owasp.org/images/4/42/OWASP_Top_10_2013_DE_Version_1_0.pdf[OWSP-Webseite]footnote:[https://www.owasp.org/images/4/42/OWASP_Top_10_2013_DE_Version_1_0.pdf]
+Bei der Implementierung der Webapplikation sind die Hinweise des Open Web Security Projects zu berücksichtigen.
+Siehe https://www.owasp.org/images/4/42/OWASP_Top_10_2013_DE_Version_1_0.pdf[OWSP-Webseite]footnote:[https://www.owasp.org/images/4/42/OWASP_Top_10_2013_DE_Version_1_0.pdf]
 
 
 === Kommunikation und Integration mit anderen IT-Systemen
@@ -100,11 +100,15 @@ Der Browser kommuniziert mit dem Applicationserver mittels HTTPS.
 
 Innerhalb von OTS werden synchrone und dirkete Methodenaufrufe verwendet.
 
-Die zu versendenen E-Mails werden in eine Warteliste eingetragen. Dadurch erfolgt der Versand unabhängig von der Reservierung.
-
-
+Die zu versendenen E-Mails werden in eine Warteliste eingetragen. Dadurch erfolgt der Versand unabhängig (asynchron) von der Reservierung.
 
 === Verteilung
+
+Die gesamte Logik befindet sich auf dem Applikationsserver,
+in dem Sinne ist es daher kein verteiltest System.
+Vom Applikationsserver aus wird allerdings über Schnittstellen auf die Zahlungsschnittstelle,
+den Mailsserver und die Datenbank zugegriffen.
+
 
 === Plausibilisierung und Validierung
 
@@ -122,11 +126,13 @@ Jeder bekannte Fehler wird mit einem Fehlercode benannt und in der Liste der Feh
 Alle Exceptions, die innerhalb von OTS erzeugt werden, müssen von der OTSException erben, damit die Quelle leichter zu finden ist.
 Alle aufgetretenen Exceptions müssen zum Zeitpunkt des auftretens ins Logfile geschrieben werden, damit eine Nachverfolgung möglich ist.
 
-// === Management des Systems & Administrierbarkeit
+=== Management des Systems & Administrierbarkeit
+
+Muss noch mit den Betriebsverantwortlichen abgeklärt werden.
 
 === Logging, Protokollierung, Tracing
 
-Zum Logging wird das Framework log4 verwendet.
+Zum Logging wird das Framework log4j verwendet.
 Loggingmeldungen sind mit den Einstufungen: Debug, Info, Warnung, Error zu versehen.
 In Produktion wird das Loglevel auf Warnung gestellt.
 Jeder Aufruf nach OTS erhält eine CorrelationId, diese muss beim loggend zwingend ausgegeben werden, um Loggingmeldungen einem Aufruf zuordnen zu können.
@@ -142,16 +148,15 @@ Die URL von OTS ist frei wählbar.
 Ebenso der Connectionstring für die Datenbank.
 Für die Zahlungsschnittstelle und die E-Mailschnittstelle werden separate Konfigurationsdateien verwendet. Die Dateien werden überwacht, damit nach einer Änderung kein Neustart notwendig ist.
 
-
-
 === Parallelisierung und Threading
+
+Die einzelnen Requests werden unabhängig voneinander verarbeitet.
+Innerhalb eines Requests wird auf eine weitere Parallelisierung verzichtet
 
 === Internationalisierung
 
 JavaServer Faces unterstützt die Erstellung von Webapplikationen mit verschiedenen Sprachen. Auch wenn es für diese Phase des OTS noch nicht notwendig ist, werden die Anzeigetexte bereits in eigene Ressourcendateien ausgelagert. Dies erleichtert auch die Anpassung der Texte der Standardsprache.
 Für den Inhalt der Bestätigungsmail wird ebenfalls Ressourcendatei verwendet.
-
-
 
 === Migration
 
@@ -160,35 +165,47 @@ Die bestehenden Daten werden nicht migriert.
 
 === Testbarkeit
 
-Die Businesslogik muss so implementiert werden, dass die Methoden automatisiert getestet werden können (Countinious Integration). Da für den Zugriff auf die Persistenzschicht ein Adapter verwendet wird, kann der Datenbankzugriff gemockt werden.
+Die Businesslogik muss so implementiert werden,
+dass die Methoden automatisiert getestet werden können (Countinious Integration).
+Da für den Zugriff auf die Datenbank über eine Persitenzschicht erfolgt, kann der Datenbankzugriff gemockt werden.
 
 
 === Skalierung, Clustering
 
-Können wir dazu eine Aussage machen? Beim Risiko auf jeden Fall erwähnen.
+Grundsätzlich ist OTS so ausgelegt, dass mehrere Server parallel betrieben werden können.
+Ob die Datenbank geclustert werden kann, muss noch mit dem Betriebsverantwortlichen geklärt werden.
 
 
 === Hochverfügbarkeit
 
-Backup-System verwenden?
-
-DB-Cluster?
-
-In der ersten Phase wird der Server nur an einem Standort betrieben. (Randbedingung)
-Als Risiko aufnehmen.
+In der ersten Phase ist nur ein (physikalischer) Server vorgesehen.
+Um die Ausfallsicherheit zu zu erhöhen, empfehlen wir den Betrieb von mindestens zwei Servern.
+Als Risiko aufnehmen!
 
 === Codegenerierung
 
+nicht relevant
+
 === Buildmanagement
+
+nicht relevant
 
 === Stapel-/Batchverarbeitung
 
+Die zu versendenen E-Mails werden zu einer Warteschlage hinzugefügt
+und dann alle 5 min stapelweise versendet.
+Die Zeitspanne kann konfiguriert werden.
+
 === Drucken
+
+nicht relevant
 
 === Reporting
 
 Das Reporting ist nicht Bestandteil dieser Projektphase, sondern wird in der Phase 3 umgesetzt.
 
-
-
 === Archivierung
+
+Eine Archivierung der Daten ist nicht vorgesehen.
+Mit der Rechtsabteilung muss aber nochmals abgeklärt werden,
+ob und wie lange die Buchungsdaten gespeichert werden müssen.
