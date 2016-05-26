@@ -10,7 +10,7 @@ In folgender Tabelle werden verschiedene für OTS relevante
 zugeordnet.
 
 // TODO: Check was machen die cols Parameter???
-// [options="header" cols="1,1,100,1"]
+// [options="header" cols="1,1,10,1"]
 [options="header"]
 |===
 2+      | Qualitäsmerkmale (DIN/ISO 9126)       | Bewertungs-Szenario | Prio
