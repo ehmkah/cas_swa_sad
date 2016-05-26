@@ -3,32 +3,39 @@
 (Vergleiche mit Kapitel <<QZ,1.2>>)
 
 === Qualitätsbaum
-In Folgender Tabelle werden verschiedene für OTS relevante
-(DIN/ISO 9126) Qualitätsmerkmale bestimmten Bewertungs-Szenarios
-zugeordnet
-[options="header"]
+In folgender Tabelle werden verschiedene für OTS relevante
+(DIN/ISO 9126) Qualitätsmerkmale, bestimmten Bewertungs-Szenarios
+zugeordnet.
+[options="header" cols="1,1,100,1"]
 |===
-2+| Qualitäsmerkmale (DIN/ISO 9126)       | Bewertungs-Szenario
-.2+.^|Funktionalität    |Richtigkeit      | BS10
-                        |Sicherheit       | BS20
-.1+.^|Zuverlässigkeit   |Fehlertoleranz   | BS30-31
-.1+.^|Benutzbarkeit     |Verständlichkeit,
-                        Bedienbarkeit     | BS40-41
-.1+.^|Effizienz         |Zeitverhalten    | BS50-51
-.1+.^|Änderbarkeit      |Modifizierbarkeit| BS60
-.1+.^|Übertragbarkeit   |Anpassbarkeit    | BS70
+2+| Qualitäsmerkmale (DIN/ISO 9126)       | Bewertungs-Szenario | Prio
+.2+.^|Funktionalität    .1+.^|Richtigkeit  | BS10 Abnahme | B
+                        .1+.^|Sicherheit      | BS20 Blackbox-Analyse | A
+.2+.^|Zuverlässigkeit   .2+.^|Fehlertoleranz  | BS30 Ausfall Paymentsystem | A
+                                              | BS31 Ausfall Emailsystem | C
+.2+.^|Benutzbarkeit     .2+.^|Verständlichkeit,
+                              Bedienbarkeit     | BS40 Online-User | C
+                                                | BS41 Box-Office-User | C
+.2+.^|Effizienz         .2+.^|Zeitverhalten    | BS50 Hochlast | A
+                                                | BS51 Überlast | A
+.1+.^|Änderbarkeit      .1+.^|Modifizierbarkeit| BS60 Hinzufügen Show | B
+.1+.^|Übertragbarkeit   .1+.^|Anpassbarkeit    | BS70 Neue Show-Location | B
 |===
+
+Vorschlag FMO: Wartbarkeit - Codemetriken hinzufügen?
+Testbarkeit: Abdeckung über automatisierte Tests von > 80% des Codes
+
 
 === Bewertungsszenarien
 ==== Funktionalität - Richtigkeit
 ===== BS10 Abnahme
-Das System wird durch den Kunden geprüft. Dieser stellt fest dass das System alle funktionalen und
+Die Z Group ernennt einen Testverantwortlichen. Dieser stellt fest dass das System alle funktionalen und
 nicht-funktionalen Anforderungen gemäss [OTS-Req-2003] erfüllt.
 
 ==== Funktionalität - Sicherheit
 ===== BS20 Blackbox-Analyse
 Ein Sicherheits-Experte führt eine Blackbox-Analyse von 4 Stunden des Frontend-Systems durch.
-Dabei stellt er keine Mängel im Sinne der OWASP top Ten fest (siehe <<OWASP10>>).
+Dabei stellt er keine Mängel im Sinne der OWASP Top Ten fest (siehe <<OWASP10>>).
 Sollten dennoch Mängel festgestellt werden, lassen sich damit keine Daten des OTS manipulieren oder
 die Verfügbarkeit des OTS herabsetzen.
 
@@ -75,6 +82,6 @@ Eine neue Show (inkl. Saalkonfiguration, Performances und Preisgestaltung) wird 
 (oder sonstige negativen Seiteneffekte) für Online-User zur Folge. Zudem ist die Show spätestens nach 60 Sekunden über das Frontend verfügbar.
 
 ==== Übertragbarkeit - Anpassbarkeit
-===== BS70 Neuer Standort
-Die Applikation muss für einen neuen Standort angepasst werden (Rebranding).
+===== BS70 Neue Show-Location
+Die Applikation muss für eine neue Show-Location angepasst werden (Branding).
 Dies kann innerhalb von 60 Personentagen bewerkstelligt werden, ohne dass die Architektur des OTS angepasst werden muss.
