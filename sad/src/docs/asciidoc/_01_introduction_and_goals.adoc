@@ -10,7 +10,7 @@ image::01_usecase.png["Use Case - Online Ticketing System"]
 
 ==== Kernaufgabe
 
-Das Online Ticketing System, nachfolgend OTS, ist ein System um ein oder mehrere Sitzplätze für gewünschte Shows zu erwerben.
+Das Online Ticketing System, nachfolgend OTS genannt, ist ein System um ein oder mehrere Sitzplätze für gewünschte Shows zu erwerben.
 
 Die Tickets können bei Bedarf auch reserviert und vor Ort abgeholt werden.
 Die Anordnung der Sitzplätze variiert von Show zu Show und muss daher konfigurierbar sein.
@@ -68,7 +68,7 @@ Annahme: Eine Kauf-Session benötigt etwa 100 HTTP Requests und 10 DB-Queries, d
 
 .Änderbarkeit (Priorität 2)
 * Wenn Saalkonfigurationen verändert werden muss, dann muss dies ausschliesslich konfigurativ geschehen.
-* Die Applikation muss innerhalb von 60 Personentagen auf andere Show-Locations erweitert werden können. (Branding der Oberfläche, neuer Sitzplan)
+* Die Applikation muss innerhalb von 5 Personentagen auf andere Show-Locations erweitert werden können. (Branding der Oberfläche, neuer Sitzplan)
 * Internationalization und Sprach-Auswahl wird in Zukunft gefordert sein und sollte nicht verbaut werden.
 
 .Bedienbarkeit / Testbarkeit (Priorität 3)
@@ -109,12 +109,8 @@ Ist bei der Spezifizierung des GUI beteiligt"
 | Verwenden dieses Dokument als Referenz für die Entwicklung
 |
 
-| Bank A
-| Unterstützt bei der Einbindung des Kreditkarten Systems.
-| Abnahme der Bezahlungsschnittstelle (kann daher Phase 1 verzögern)
+| DataTrans
+| Unterstützt bei der Einbindung der Zahlungsschnittstelle.
+| Abnahme der Zahlungsschnittstelle (kann daher Phase 1 verzögern)
 
-| public internet users (customers)         ||
-| box office users (Verkäufer im X Center)  ||
-| administrators                            ||
-| Management Z Group / X Center             ||
 |===

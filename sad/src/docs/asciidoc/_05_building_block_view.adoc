@@ -13,7 +13,7 @@ image::05_bausteinsicht_level0.png["Baustein Sicht Level 0"]
 
 Enthaltene Bausteine::
 
-[cols="1,4,1" options=""]
+[cols="2,4,1" options=""]
 |===
 | OTS | Das Online Ticketing System (Dieses Projekt) | siehe Kapitel 5.2
 | Bernutzer | verschiedene Benutzer die auf das OTS zugreifen |
@@ -75,7 +75,7 @@ Der externen Schnittstellen unten dran.
 
 Enthaltene Bausteine::
 
-[cols="1,4,1" options=""]
+[cols="2,4,1" options=""]
 |===
 | Frontend            | Web-Applikations-Frontend für Online-User und Box-Office-User |
 | Admininterface      | Vorerst *nicht* implementiertes Administrations Interface |
@@ -148,7 +148,7 @@ durchgeführt werden können.
 
 Enthaltene Bausteine::
 
-[cols="1,4,1" options=""]
+[cols="2,4,1" options=""]
 |===
 | Buchungs-Service  | Stellt Schnittstelle für Show-Informationen sowie den Buchungs-Prozess zur Verfügung |
 | Buchungs-Manager  | Erzeugt Reservationen und Buchungen |
@@ -175,7 +175,7 @@ perstistierung von Daten an.
 
 Enthaltene Bausteine::
 
-[cols="1,4,1" options=""]
+[cols="2,4,1" options=""]
 |===
 | E-Mail-Service-Adapter | Adapter für die Schnittstelle zum externen E-Mail-System |
 | Payment-Service-Adapter | Adapter für die Schnittstelle zum externen Zahlungs-Dienstleister |
@@ -202,7 +202,7 @@ welche Sitzplätze aktiv sind und welcher Kategorie sie angehören.
 
 Enthaltene Bausteine::
 
-[cols="1,4,1" options=""]
+[cols="2,4,1" options=""]
 |===
 | Show | Definition einer Show | siehe Glossar
 | Performance | Definition einer Performance | siehe Glossar

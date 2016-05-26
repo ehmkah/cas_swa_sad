@@ -16,63 +16,112 @@ Siehe Kapitel <<section-deployment-view,7.1>>
 
 [cols="1,1", options="header"]
 |===
-|Name / Bezeichnung der Schnittstelle
-|Payment-Schnittstelle
-|Beschreibung|
-Schnittstelle zum Zahlungsanbieter
-|Version
-| Wird durch Zahlungsanbieter definiert
-
-|Änderungen gegenüber Vorversion
-| Keine
-
-|Wer hat geändert und warum?
-| -
-
-|Verantwortlicher Ansprechpartner / Rolle
-| Zahlungsdienstleister
+|Name / Bezeichnung der Schnittstelle | Payment-Schnittstelle Datatrans LightboxMode
+|Beschreibung| Einbindung der Zahlungsschnittstelle mittels JavaScript
+|Version | 1.0.2
+|Änderungen gegenüber Vorversion | nicht relevant, da Neuimplementierung
+|Wer hat geändert und warum? | -
+|Verantwortlicher Ansprechpartner / Rolle | Datatrans-Support
 |===
 
-Da der Zahlunsanbieter noch nicht definiert ist, können bezüglich des Protokolles
-oft nur Annahmen getroffen werden.
+Für die Abwicklung der Zahlungen wird die Payment-Schnittstelle von Datatrans verwendet.
+Datatrans stellt verschiedene Varianten zur Verfügung,
+die hier (https://www.datatrans.ch/de/angebot/zahlungsloesungen/webshop) erläutert werden.
+Die Variante "Lightbox Mode" hat folgende Vorteile:
+
+* einfache Integration,
+* der komplette Zahlungsablauf läuft extern ab
+* daher kann ein vereinfachtens Zertifizierungsverfahren verwendet werden
+
+Die Variante "Hidden/Ajax Mode" ermöglichst es zwar,
+die Zahlungsmaske direkt ins OTS zu integrieren,
+stellt aber erhöhte Anforderungen für die Zertifizierung (https://www.datatrans.ch/de/e-payment/pcidss/pci-dss-3-ausgangslage).
+Daher wird auf die Variante "Hidden/Ajax Mode" verzichtet.
+
+Eine detailierte Beschreibung der Variante findet sich hier:
+https://pilot.datatrans.biz/showcase/doc/Technical_Implementation_Guide.pdf
+
 
 ===== Fachliche Abläufe
-* Kreditkartendaten müssen sicher (verschlüsselt) übermittelt werden
-* Zahlungsdienstleister bestätitg Zahlung oder generiert Fehler
-* Fehlerbehandlung auf seite OTS
+* Der Benutzer klickt auf Bezahlen
+* mittels JavaScript wird das von datatrans zur Verfügung gestellte Popover geöffnet
+* der Benutzer wählt die gewünschte Zahlungsart aus
+* Der Benutzer gibt die Kreditkartendaten ein und klickt auf Bezahlen
+* je nach Status sendet datatrans mittels POST-Parametern die Zahlungsdaten an die successUrl, die errorURL oder die cancelURL
+
 
 ===== Mengengerüste
-* Annahme Normal-Auslastung: 30000 Transaktionen pro Tag (Annahme 2 Performances pro Tag)
-* Annahme Peak-Szenario: 15000 Transaktionen in 10min müssen bewältigt werden können
+* Annahme Normal-Auslastung: 12000 Transaktionen pro Tag (Annahme 2 Performances pro Tag mit 15000 Plätzen und durchschnittlich 2.5 Karten pro Bestellung)
+* Annahme Peak-Szenario: 12000 Transaktionen in 10min müssen bewältigt werden können
 * Zeit für eine Transaktion darf maximal 10 Sekunden in Anspruch nehmen
 (Vergleiche auch "Qualitätsziele" Kapitel 1.2)
 
 ===== Syntax: Daten und Formate
-Wird durch den Zahlungsanbieter defniert (TBD)
+Kann mittels JavaScript in die Seite eingebunden werden und als Funktion aufgerufen werden.
+
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://pilot.datatrans.biz/upp/payment/js/datatrans-1.0.2.js"></script>
+<form id="paymentForm" data-merchant-id="1100004624" data-amount="1000"
+data-currency="CHF" data-refno="123456789" data-sign="30916165706580013">
+<button id="paymentButton">Pay</button></form>
+<script type="text/javascript">$("#paymentButton").click(function(){Datatrans.startPayment({'form':'#paymentForm'});});</script>
+
+Übergabeparameter:
+|===
+| Name | Pflicht | Datentyp | Bemerkung
+| merchantId  | X | N10  | die Händler-ID wird von datatrans vergeben
+| amount | X | int | Betrag in Rappen bzw. Cent
+| currency | X | A3 | ISO-Code der Währung (CHF, USD, EUR usw.)
+| refno | X | AN18 | Referenznummer
+| sign | X | |  Hash-Wertes des Requestes ( siehe kapitel 6.2.3 der transdata-Doc)
+|successUrl | | | URL die noch einer erfolgreichen Zahlung aufgerufen wird
+|errorUrl | | |
+|cancelUrl | | |
+|===
+
+Zusätzliche Parameter sind möglich. Details siehe datatrans-Doc.
+
+Rückgabewerte
+
+Je nach Status wird eine separate Seite aufgerufen.
+Mittels POST-Parametern werden die Informationen zurückgeliefert.
+|===
+| Name | Datentyp | Bedeutung
+| uppTransactionId| N18 | transaktionsnummer
+| refNo | AN18 | ID, die beim Request angegeben wurde
+| responseCode | N4 |
+|===
+
+Details siehe transdata-Doc
+
 
 ===== Syntax: Ablauf der Schnittstelle
 Wird durch den Zahlungsanbieter defniert (TBD)
 
 ===== Technische Infrastruktur
-* HTTP / REST (Webservice)
+* Serverseitig keine speziellen Voraussetzungen notwendig (wird als Scriptcode in die Webseite eingebunden)
+* Clientseitig muss der Browser JavaScript aktiviert haben
+
 
 ===== Fehler und Ausnahmebehandlung
-* Validierungs-Fehler (Validierung wird durch Zahlungsdienstleister durchgeführt)
-** Karte ungültig
-** Kredit-Limite erreicht
-* Timeout
-* Protokoll-Fehler
+* Timeout (transdataseite ist nicht erreichbar)
+* transdata liefert eine Fehlercode (siehe Kapitel 8 der transdata-docu)
 
-===== Einschränkungen und Voraussetzungen
-* Voraussetzung: OTS muss beim Zahlungsanbieter registirert sein
-* Auf der Schnittstelle müssen Transaktionen parallel ausgeführt werden können
+
+===== Voraussetzungen
+* OTS muss beim Zahlungsanbieter registirert sein (gültige merchantId notwendig)
+* Auf der Schnittstelle müssen Transaktionen parallel ausgeführt werden können (ist gewährleistet)
 * Schnittstelle muss 7x24 verfügbar sein (SLA noch offen)
+
+===== Einschränkungen
+* transdata unterstützt folgende Browserversionen: Chrome 28, Firefox 31, IE9, Safari 6, Opera 24
+
 
 ===== Metainformation der Schnittstelle
 noch nicht verfübar (TBD)
 
 ===== Beispiele für Nutzung und Daten
-noch nicht verfügbar (TBD)
+siehe https://www.datatrans.ch/showcase/authorisation/lightbox-mode
 
 
 ==== E-Mail-Schnittstelle

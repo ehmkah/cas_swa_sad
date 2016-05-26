@@ -6,7 +6,7 @@
 In folgender Tabelle werden verschiedene für OTS relevante
 (DIN/ISO 9126) Qualitätsmerkmale, bestimmten Bewertungs-Szenarios
 zugeordnet.
-[options="header" cols="1,1,100,1"]
+[options="header" cols="4,4,10,2"]
 |===
 2+| Qualitäsmerkmale (DIN/ISO 9126)       | Bewertungs-Szenario | Prio
 .2+.^|Funktionalität    .1+.^|Richtigkeit  | BS10 Abnahme | B
@@ -18,13 +18,10 @@ zugeordnet.
                                                 | BS41 Box-Office-User | C
 .2+.^|Effizienz         .2+.^|Zeitverhalten    | BS50 Hochlast | A
                                                 | BS51 Überlast | A
-.1+.^|Änderbarkeit      .1+.^|Modifizierbarkeit| BS60 Hinzufügen Show | B
-.1+.^|Übertragbarkeit   .1+.^|Anpassbarkeit    | BS70 Neue Show-Location | B
+.2+.^|Änderbarkeit      .1+.^|Modifizierbarkeit | BS60 Hinzufügen Show | B
+                        .1+.^|Stabilität       | BS61 Code Metriken | C
+.1+.^|Übertragbarkeit   .1+.^|Anpassbarkeit     | BS70 Neue Show-Location | B
 |===
-
-Vorschlag FMO: Wartbarkeit - Codemetriken hinzufügen?
-Testbarkeit: Abdeckung über automatisierte Tests von > 80% des Codes
-
 
 === Bewertungsszenarien
 ==== Funktionalität - Richtigkeit
@@ -80,6 +77,9 @@ Box-Office-User können ohne Behinderung ihre Operationen durchführen.
 ===== BS60 Hinzufügen Show
 Eine neue Show (inkl. Saalkonfiguration, Performances und Preisgestaltung) wird durch den Administrator direkt in der DB hinzugefügt. Dies hat keinen Unterbruch
 (oder sonstige negativen Seiteneffekte) für Online-User zur Folge. Zudem ist die Show spätestens nach 60 Sekunden über das Frontend verfügbar.
+
+===== BS61 Code Metriken
+Die Test-Abdeckung über automatisierte Tests (Code-Coverage) beträgt mindestens 80%.
 
 ==== Übertragbarkeit - Anpassbarkeit
 ===== BS70 Neue Show-Location
