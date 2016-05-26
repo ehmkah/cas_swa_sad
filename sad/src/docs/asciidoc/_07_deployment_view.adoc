@@ -8,6 +8,7 @@
 
 .Verteilungsdiagramm
 image::07_verteilungsdiagram.png["Verteilungsdiagram"]
+[[verteilungsdiagramm-1]]
 
 Das Verteilungsdiagram stell das Deployment von OTS dar.
 OTS wird innerhalb des Rechenzentrums der Z-Group auf einem eigenen Linux Server deployed.
