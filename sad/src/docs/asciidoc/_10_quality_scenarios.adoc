@@ -1,20 +1,15 @@
 [[section-quality-scenarios]]
 == Qualitätsszenarien
-
 (Vergleiche mit Kapitel <<QZ,1.2>>)
 
 === Qualitätsbaum
-
 In folgender Tabelle werden verschiedene für OTS relevante
 (DIN/ISO 9126) Qualitätsmerkmale, bestimmten Bewertungs-Szenarios
 zugeordnet.
-
-// TODO: Check was machen die cols Parameter???
-// [options="header" cols="1,1,10,1"]
-[options="header"]
+[options="header" cols="1,1,10,1"]
 |===
-2+      | Qualitäsmerkmale (DIN/ISO 9126)       | Bewertungs-Szenario | Prio
-.2+.^   |Funktionalität    .1+.^|Richtigkeit  | BS10 Abnahme | B
+2+| Qualitäsmerkmale (DIN/ISO 9126)       | Bewertungs-Szenario | Prio
+.2+.^|Funktionalität    .1+.^|Richtigkeit  | BS10 Abnahme | B
                         .1+.^|Sicherheit      | BS20 Blackbox-Analyse | A
 .2+.^|Zuverlässigkeit   .2+.^|Fehlertoleranz  | BS30 Ausfall Paymentsystem | A
                                               | BS31 Ausfall Emailsystem | C
@@ -26,46 +21,39 @@ zugeordnet.
 .1+.^|Änderbarkeit      .1+.^|Modifizierbarkeit| BS60 Hinzufügen Show | B
 .1+.^|Übertragbarkeit   .1+.^|Anpassbarkeit    | BS70 Neue Show-Location | B
 |===
+
 Vorschlag FMO: Wartbarkeit - Codemetriken hinzufügen?
 Testbarkeit: Abdeckung über automatisierte Tests von > 80% des Codes
 
+
 === Bewertungsszenarien
-
 ==== Funktionalität - Richtigkeit
-
 ===== BS10 Abnahme
-
 Die Z Group ernennt einen Testverantwortlichen. Dieser stellt fest dass das System alle funktionalen und
 nicht-funktionalen Anforderungen gemäss [OTS-Req-2003] erfüllt.
 
 ==== Funktionalität - Sicherheit
-
 ===== BS20 Blackbox-Analyse
-
 Ein Sicherheits-Experte führt eine Blackbox-Analyse von 4 Stunden des Frontend-Systems durch.
 Dabei stellt er keine Mängel im Sinne der OWASP Top Ten fest (siehe <<OWASP10>>).
 Sollten dennoch Mängel festgestellt werden, lassen sich damit keine Daten des OTS manipulieren oder
 die Verfügbarkeit des OTS herabsetzen.
 
 ==== Zuverlässigkeit - Fehlertoleranz
-
 (siehe auch Kapitel <<ErrHnd,8.13>>)
 
 ===== BS30 Ausfall Paymentsystem
-
 Das Paymentsystem ist nicht mehr verfügbar. Trotzdem können Kunden weiterhin Informationen zu
 Shows einsehen und Reservationen tätigen. Einzig der Bezahlprozess kann nicht durchgeführt werden.
 
 ===== BS31 Ausfall Emailsystem
-
 Das Emailsystem ist nicht mehr verfügbar. Trotzdem können Kunden alle Funktionen des OTS nutzen.
 Der Buchungsprozess kann komplett durchgeführt werden.
 Das Bestätigungs-Mail wird versandt sobald das Emailsystem wieder verfügbar ist.
 
+
 ==== Benutzbarkeit
-
 ===== BS40 Online-User
-
 10 zufällig gewählte Personen können über das Web-Frontend des OTS, selbständig innerhalb von 5 Minuten,
 Informationen über Shows und Performances (Datum, Zeit, Preis) herausfinden.
 Sie können zusätzlich innerhalb von weiteren 5 Minuten den Buchungsprozess für eine ausgewählte Performance durchführen.
@@ -73,35 +61,27 @@ Wenn die Probanden die Verständlichkeit des OTS auf einer Skala von 1 bis 5 bew
 wird eine Durchschnittliche Wertung von 4 erreicht.
 
 ===== BS41 Box-Office-User
-
 10 zufällig gewählten Personen wird eine 15 minütige Einführung in die Operationen des
 Box-Office-User Interfaces gegeben. Danach können diese selbstständig und effizient diese Operationen
 ausführen.
 
 ==== Effizienz
-
 ===== BS50 Hochlast
-
 Das System wird an der Kapazitätsgrenze betrieben. Annahme: 15'000 Online-User starten innerhalb von
 10 Minuten den Reservations/Buchungsprozess. Dabei steigt die Antwortzeit nicht über die in den Qualitätszielen <<QZ-TAB1>>
 definierten Werte.
 
 ===== BS51 Überlast
-
 Es greifen so viele Online-User auf das OTS zu, dass die Antwortzeiten gemäss <<QZ-TAB1>> nicht mehr eingehalten werden.
 Dabei kommt es auch zu Laufzeitüberschreitungen (Timeouts). Das Box-Office-User Interface ist von dieser Überlast nicht betroffen.
 Box-Office-User können ohne Behinderung ihre Operationen durchführen.
 
 ==== Änderbarkeit - Modifizierbarkeit
-
 ===== BS60 Hinzufügen Show
-
 Eine neue Show (inkl. Saalkonfiguration, Performances und Preisgestaltung) wird durch den Administrator direkt in der DB hinzugefügt. Dies hat keinen Unterbruch
 (oder sonstige negativen Seiteneffekte) für Online-User zur Folge. Zudem ist die Show spätestens nach 60 Sekunden über das Frontend verfügbar.
 
 ==== Übertragbarkeit - Anpassbarkeit
-
 ===== BS70 Neue Show-Location
-
 Die Applikation muss für eine neue Show-Location angepasst werden (Branding).
 Dies kann innerhalb von 60 Personentagen bewerkstelligt werden, ohne dass die Architektur des OTS angepasst werden muss.
