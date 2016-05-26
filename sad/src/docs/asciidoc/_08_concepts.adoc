@@ -135,7 +135,7 @@ Muss noch mit den Betriebsverantwortlichen abgeklärt werden.
 Zum Logging wird das Framework log4j verwendet.
 Loggingmeldungen sind mit den Einstufungen: Debug, Info, Warnung, Error zu versehen.
 In Produktion wird das Loglevel auf Warnung gestellt.
-Jeder Aufruf nach OTS erhält eine CorrelationId, diese muss beim loggend zwingend ausgegeben werden, um Loggingmeldungen einem Aufruf zuordnen zu können.
+Jeder Aufruf nach OTS erhält eine CorrelationId, diese muss beim loggen zwingend ausgegeben werden, um Loggingmeldungen einem Aufruf zuordnen zu können.
 
 === Geschäftsregeln
 
@@ -197,8 +197,7 @@ und dann alle 5 min stapelweise versendet.
 Die Zeitspanne kann konfiguriert werden.
 
 === Drucken
-
-nicht relevant
+OTS generiert die Tickets als PDF-Dokument, welche zu einem späteren Zeitpunkt mit einem gewöhlichen PDF-Viewer ausgedruckt werden können. Das Drucken ist nicht Bestandteil des OTS-systems.
 
 === Reporting
 
