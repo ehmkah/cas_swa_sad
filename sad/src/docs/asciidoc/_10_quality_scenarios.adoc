@@ -6,7 +6,7 @@
 In folgender Tabelle werden verschiedene für OTS relevante
 (DIN/ISO 9126) Qualitätsmerkmale, bestimmten Bewertungs-Szenarios
 zugeordnet.
-[options="header" cols="1,1,100,1"]
+[options="header" cols="1,1,10,1"]
 |===
 2+| Qualitäsmerkmale (DIN/ISO 9126)       | Bewertungs-Szenario | Prio
 .2+.^|Funktionalität    .1+.^|Richtigkeit  | BS10 Abnahme | B
