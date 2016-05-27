@@ -11,18 +11,18 @@ Der Lesbarkeit willen wurden im Modell Beziehungen, die die Kardinalität 1 aufw
 
 ==== Fachdomäne Saalverwaltung
 
-Jedes Center kann aus mehreren Säälen bestehen.
+Jedes Center kann aus mehreren Sälen bestehen.
 Jedem Saal können beliebig viele Saalkonfigurationen zugeordnet werden.
 Eine Saalkonfiguration besteht aus beliebig vielen Sitzplätzen.
-Jeder Sitzplatz gehört zu genau einer Sitzplatzkategorie und wird über eine Reihennummer und Sitzplaznummer innerhalb der Reihe definiert.
-Die Sitzplatzkategorie ist die Basis für die spätere Preifestlegung einer Performance.
+Jeder Sitzplatz gehört zu genau einer Sitzplatzkategorie und wird über eine Reihennummer und Sitzplatznummer innerhalb der Reihe definiert.
+Die Sitzplatzkategorie ist die Basis für die spätere Preisfestlegung einer Performance.
 
 ==== Fachdomäne Showverwaltung
 
 Eine Show wird in verschiedenen Performances aufgeführt und einer Show wird eine Saalkonfiguration zugeordnet.
-Für jede Performance können die Preise für eine Sitzplatzkategorie individuell festgelegt werden, indem SitzplatzkategorieVerkaufspreise definiert werden.
-Um in einer Performance einen kontinuierlichen Überblick über jeden Sitzplatz einer Performance zu erhalten werden, einer Performance Performancesitzplätze zugeordnet.
-Ein Performancesitzplatz besteht aus einem Sitzplatzstatus (frei, reserviert, verkauft) und einem Sitzplatz, damit ist eine platzgenaue Zuordnung von bereits reservierten, verkauften und freien Sitzplätzen möglich.
+Für jede Performance können die Preise für eine Sitzplatzkategorie individuell festgelegt werden, indem Sitzplatzkategorie-Verkaufspreise definiert werden.
+Um in einer Performance einen kontinuierlichen Überblick über jeden Sitzplatz einer Performance zu erhalten, werden einer Performance Performancesitzplätze zugeordnet.
+Ein Performancesitzplatz besteht aus einem Sitzplatzstatus (frei, reserviert, verkauft) und einem Sitzplatz, damit ist eine platz-genaue Zuordnung von bereits reservierten, verkauften und freien Sitzplätzen möglich.
 
 ==== Fachdomäne Buchungsverwaltung
 
@@ -30,7 +30,7 @@ Wenn ein Kunde ein Ticket kauft, dann erhält er eine Buchung.
 Eine Buchung besteht aus mehreren Tickets und einer ZahlungsId.
 Eine Buchung wird nur nach einem erfolgreichen Verkauf erstellt.
 Jedem Ticket wird ein Sitzplatz und ein Verkaufspreis zugeordnet.
-Dies erlaubt es, dass die SitzplatzkategorieVerkaufspreise verändert werden können, ohne dass bereits verkaufte Sitzplätze von der Preisänderung betroffen sind.
+Dies erlaubt es, dass die Sitzplatzkategorie-Verkaufspreise verändert werden können, ohne dass bereits verkaufte Sitzplätze von der Preisänderung betroffen sind.
 Die ZahlungsId vermerkt unter welcher externen Nummer, die Buchung beim externen Paymentsystem gefunden werden kann.
 
 
@@ -42,11 +42,11 @@ image::08_schichtenmodell.png["Schichtenarchitektur"]
 === Persistenz
 
 Als Datenbanksystem ist Oracle 12c vorgeben. Aufgrund des engen Zeitplanes wird auf die
-Evaluierung einer NoSQL-Datenbank verzichet. Beim späteren Ausbau, sollte dies aber
+Evaluierung einer NoSQL-Datenbank verzichtet. Beim späteren Ausbau, sollte dies aber
 in Betracht gezogen werden.
-Der Zugriff auf die Datenbank erfolgt nicht direkt, sondern über eine Persitenzschicht.
+Der Zugriff auf die Datenbank erfolgt nicht direkt, sondern über eine Persistenzschicht.
 Änderungen am Datenmodell führen dadurch nicht automatisch zu Änderungen in der Businesslogik.
-Ausserdem kann dadurch der Persitenzschicht für die automatisch Tests gemockt werden.
+Ausserdem kann dadurch die Datenbank für die automatisch Tests gemockt werden.
 Die Umsetzung erfolgt mittels Hibernate.
 
 === Benutzungsoberfläche
@@ -62,6 +62,7 @@ Die Pflichtfelder werden mittels eines Sterns gekennzeichnet, damit sie sofort f
 Falls mehrere Fehleingaben auf einer Seite auftragen, werden bei allen Stellen eine Fehlermeldung angezeigt.
 Es wird also immer die gesamte Seite validiert und nicht beim ersten Fehler abgebrochen.
 
+Die Webseite muss unterschiedliche Bildschirmauflösungen sowie Touch-Eingaben unterstützen (Stichwort responsive design)
 
 === Ablaufsteuerung
 
@@ -78,7 +79,8 @@ Dies betrifft sowohl die Reservierung, Bestätigung als auch die Annullierung de
 
 Nach der Auswahl der Performance und der Angabe der gewünschten Tickets wird eine Websession erstellt,
 damit die Daten dem Benutzer zugewiesen werden können.
-Dafür wird ein Session-Cookie verwendet. (Gibt es Alternativen, um Cookies zu vermeiden?)
+Dafür wird ein Session-Cookie verwendet.
+//Todo (Gibt es Alternativen, um Cookies zu vermeiden?)
 Die Session endet entweder nach 5 Minuten oder nach dem Versenden der Bestätigungsmail.
 
 
@@ -86,7 +88,8 @@ Die Session endet entweder nach 5 Minuten oder nach dem Versenden der Bestätigu
 
 Die Webapplikation wird immer mittels https aufgerufen. Dadurch ist die Kommunikation zwischen dem Webserver und dem Browser geschützt.
 
-Der Zugriff auf die Datenbank erfolgt nur für berechtigte Benutzer. (User/Passwort oder gibt es Alternativen?)
+Der Zugriff auf die Datenbank erfolgt nur für berechtigte Benutzer.
+//Todo User/Passwort oder gibt es Alternativen?
 
 Die Passwörter der registrierten Kunden werden verschlüsselt in der Datenbank abgelegt. Dazu wird für jedes Passwort ein zusätzlicher zufälliger Salt-Wert generiert und zusammen mit dem Passwort mittels SHA-3 verschlüsselt.
 
@@ -96,18 +99,18 @@ Siehe https://www.owasp.org/images/4/42/OWASP_Top_10_2013_DE_Version_1_0.pdf[OWS
 
 === Kommunikation und Integration mit anderen IT-Systemen
 
-Der Browser kommuniziert mit dem Applicationserver mittels HTTPS.
+Der Browser kommuniziert mit dem Applikationsserver mittels HTTPS.
 
-Innerhalb von OTS werden synchrone und dirkete Methodenaufrufe verwendet.
+Innerhalb von OTS werden synchrone und direkte Methodenaufrufe verwendet.
 
-Die zu versendenen E-Mails werden in eine Warteliste eingetragen. Dadurch erfolgt der Versand unabhängig (asynchron) von der Reservierung.
+Die zu versendenden E-Mails werden in eine Warteliste eingetragen. Dadurch erfolgt der Versand unabhängig (asynchron) von der Reservierung.
 
 === Verteilung
 
 Die gesamte Logik befindet sich auf dem Applikationsserver,
 in dem Sinne ist es daher kein verteiltest System.
 Vom Applikationsserver aus wird allerdings über Schnittstellen auf die Zahlungsschnittstelle,
-den Mailsserver und die Datenbank zugegriffen.
+dem Mailserver und die Datenbank zugegriffen.
 
 
 === Plausibilisierung und Validierung
@@ -124,7 +127,7 @@ Es ist nicht gestattet an der Servicegrenze zum Frontend Exceptions zu werfen.
 Tritt an der Servicegrenze zum Frontend ein Fehler auf, so muss dieser gefangen werden und dem User eine allgemeine Fehlermeldung präsentiert werden.
 Jeder bekannte Fehler wird mit einem Fehlercode benannt und in der Liste der Fehlercodes dokumentiert.
 Alle Exceptions, die innerhalb von OTS erzeugt werden, müssen von der OTSException erben, damit die Quelle leichter zu finden ist.
-Alle aufgetretenen Exceptions müssen zum Zeitpunkt des auftretens ins Logfile geschrieben werden, damit eine Nachverfolgung möglich ist.
+Alle aufgetretenen Exceptions müssen zum Zeitpunkt des Auftretens ins Logfile geschrieben werden, damit eine Nachverfolgung möglich ist.
 
 === Management des Systems & Administrierbarkeit
 
@@ -135,12 +138,12 @@ Muss noch mit den Betriebsverantwortlichen abgeklärt werden.
 Zum Logging wird das Framework log4j verwendet.
 Loggingmeldungen sind mit den Einstufungen: Debug, Info, Warnung, Error zu versehen.
 In Produktion wird das Loglevel auf Warnung gestellt.
-Jeder Aufruf nach OTS erhält eine CorrelationId, diese muss beim loggend zwingend ausgegeben werden, um Loggingmeldungen einem Aufruf zuordnen zu können.
+Jeder Aufruf nach OTS erhält eine CorrelationId, diese muss beim loggen zwingend ausgegeben werden, um Loggingmeldungen einem Aufruf zuordnen zu können.
 
 === Geschäftsregeln
 
 Die Geschäftslogik wird in den Java-Klassen implementiert.
-Die Geschäftsregeln sind relativ simpel, so dass der Initalaufwand für eine Regelmaschine zu gross wäre.
+Die Geschäftsregeln sind relativ simpel, so dass der Initialaufwand für eine Regelmaschine zu gross wäre.
 
 === Konfigurierbarkeit
 
@@ -151,7 +154,7 @@ Für die Zahlungsschnittstelle und die E-Mailschnittstelle werden separate Konfi
 === Parallelisierung und Threading
 
 Die einzelnen Requests werden unabhängig voneinander verarbeitet.
-Innerhalb eines Requests wird auf eine weitere Parallelisierung verzichtet
+Innerhalb eines Requests wird auf eine weitere Parallelisierung verzichtet.
 
 === Internationalisierung
 
@@ -167,7 +170,7 @@ Die bestehenden Daten werden nicht migriert.
 
 Die Businesslogik muss so implementiert werden,
 dass die Methoden automatisiert getestet werden können (Countinious Integration).
-Da für den Zugriff auf die Datenbank über eine Persitenzschicht erfolgt, kann der Datenbankzugriff gemockt werden.
+Da für den Zugriff auf die Datenbank über eine Persistenzschicht erfolgt, kann der Datenbankzugriff gemockt werden.
 
 
 === Skalierung, Clustering
@@ -180,7 +183,7 @@ Ob die Datenbank geclustert werden kann, muss noch mit dem Betriebsverantwortlic
 
 In der ersten Phase ist nur ein (physikalischer) Server vorgesehen.
 Um die Ausfallsicherheit zu zu erhöhen, empfehlen wir den Betrieb von mindestens zwei Servern.
-Als Risiko aufnehmen!
+//Todo: Als Risiko aufnehmen!
 
 === Codegenerierung
 
@@ -192,7 +195,7 @@ nicht relevant
 
 === Stapel-/Batchverarbeitung
 
-Die zu versendenen E-Mails werden zu einer Warteschlage hinzugefügt
+Die zu versendenden E-Mails werden zu einer Warteschlange hinzugefügt
 und dann alle 5 min stapelweise versendet.
 Die Zeitspanne kann konfiguriert werden.
 
@@ -202,7 +205,7 @@ nicht relevant
 
 === Reporting
 
-Das Reporting ist nicht Bestandteil dieser Projektphase, sondern wird in der Phase 3 umgesetzt.
+Ein Reporting ist nicht Bestandteil dieser Projektphase, sondern wird in der Phase 3 umgesetzt.
 
 === Archivierung
 

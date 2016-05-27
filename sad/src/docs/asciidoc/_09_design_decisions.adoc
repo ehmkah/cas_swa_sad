@@ -17,14 +17,14 @@ Andere (kommerzielle) Datenbank-Managementsysteme sind nicht zulässig.
 
 ==== Entscheidungskriterien
 
-Konsitenz muss gewährleistet werden.
+Konsistenz muss gewährleistet werden.
 Ein hoher Datendurchsatz muss möglich sein.
 
 ==== Entscheidung
 
 Neben Oracle wurde auch die Verwendung einer NoSQL-Datenbank in Betracht gezogen,
 da diese eine hohe Skalierbarkeit und eine hohe Performance bietet.
-Aufgrund der mangelden Erfahrung und des kurzen Zeitplanes wird aber die bestehende
+Aufgrund der mangelnden Erfahrung und des kurzen Zeitplanes wird aber die bestehende
 Oracle-DB verwendet.
 
 === Datenzugriff
@@ -38,7 +38,7 @@ Wie soll auf die Daten zugegriffen werden?
 Auf eine Zwischenschicht wird verzichtet und die SQL-Statements werden direkt ausgeführt.
 Vorteil: Durch den Verzicht auf die Zwischenschicht ist eine höhere Performance möglich.
 Nachteil: Änderungen an der DB-Struktur wirken sich direkt auf die Businesslogik aus.
-Ein Teil der Businesslogik wird in die Persitenzschicht verlagert.
+Ein Teil der Businesslogik wird in die Persistenzschicht verlagert.
 
 ==== Variante 2: Data Access Objects (DAO)
 
@@ -57,7 +57,7 @@ Nachteil: höhere Komplexität als bei den DAOs, zusätzliche Abhängigkeit von 
 === Entscheidung
 
 Wir haben uns für Hibenate entschieden.
-Die Vorteile einer Standardkomponente überwiegen unserer Meinung nach die Nachteile wie die höhere Komplexität.
+Die Vorteile einer Standardkomponente überwiegen unserer Meinung nach die Nachteile wie die der höheren Komplexität.
 
 === MVC-Pattern verwenden
 
@@ -77,7 +77,7 @@ der aktuellen Webseite verfügbaren Links verwenden.
 
 ==== Entscheidung
 
-Aufgrund der grösseren Erfahrung mit den JavaServer Faces wird diese Variante umgesetz,
+Aufgrund der grösseren Erfahrung mit den JavaServer Faces wird diese Variante umgesetzt,
 damit der Zeitplan eingehalten werden kann.
 
 
@@ -86,22 +86,23 @@ damit der Zeitplan eingehalten werden kann.
 ==== Fragestellung
 
 Wie wird sichergestellt, dass bei den Boxoffice-User die maximal zulässige Antwortzeit
-immer gegehalten wird.
+immer eingehalten wird?
 
 ==== Rahmenbedingungen
 
-1.) Ausser bei der Zahlungsabwicklung soll die Antwortseit immer unter 2 Sekunden liegen.
+1.) Ausser bei der Zahlungsabwicklung soll die Antwortzeit immer unter 2 Sekunden liegen.
 
 2.) Es soll nur ein Server verwendet werden.
 
 ==== Betrachtete Alternativen
 
-Variante 1) mehere Applikationserver auf dem physischen Server betreiben
+Variante 1) mehrere Applikationsserver auf dem physischen Server betreiben
 
 Variante 2) Neuverhandlung der Rahmenbedingungen, damit mindestens 2 Server betrieben werden können.
 
 ==== Entscheidung
 
-Auch wenn die Kosten kurzfristig für die Ein-Sever-Variante spricht, empfehlen wir, dass mindestens zwei
-Server bereit gestellt werden. Neben der besseren Verteilung der Last und auch eine bessere Verfügbarkeit
-gewährleistet. Wenn ein Server ausfällt, können die Benutzer auf den anderen Server umgeleitet werden.
+Auch wenn die Kosten kurzfristig für die Ein-Server-Variante spricht,
+empfehlen wir, dass mindestens zwei Server bereit gestellt werden.
+Neben der besseren Verteilung der Last kann auch eine bessere Verfügbarkeit gewährleistet werden. 
+Wenn ein Server ausfällt, können die Benutzer auf den anderen Server umgeleitet werden.
