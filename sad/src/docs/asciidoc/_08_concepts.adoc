@@ -39,7 +39,6 @@ Eine Reservierung besteht ebenfalls aus einer Show und einer Performance für di
 
 .Schichtenarchitektur
 image::08_schichtenmodell.png["Schichtenarchitektur"]
-//ye: wollen wir hier Transfer Object, Adapter und DAO Muster auch erwähnen?
 
 === Persistenz
 
