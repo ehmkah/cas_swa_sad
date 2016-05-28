@@ -221,7 +221,7 @@ und dann alle 5 min stapelweise versendet.
 Die Zeitspanne kann konfiguriert werden.
 
 === Drucken
-OTS generiert die Tickets als PDF-Dokument, welche zu einem späteren Zeitpunkt mit einem gewöhlichen PDF-Viewer ausgedruckt werden können. Das Drucken ist nicht Bestandteil des OTS-systems.
+OTS generiert die Tickets als PDF-Dokument, welche zu einem späteren Zeitpunkt mit einem gewöhlichen PDF-Viewer oder direkt aus dem Browser ausgedruckt werden können. Das Drucken ist nicht Bestandteil des OTS-systems.
 
 === Reporting
 
