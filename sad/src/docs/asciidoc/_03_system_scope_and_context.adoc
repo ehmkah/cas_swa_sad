@@ -26,28 +26,31 @@ Siehe Kapitel <<section-deployment-view,7.1>>
 
 Für die Abwicklung der Zahlungen wird die Payment-Schnittstelle von Datatrans verwendet.
 Datatrans stellt verschiedene Varianten zur Verfügung,
-die hier (https://www.datatrans.ch/de/angebot/zahlungsloesungen/webshop) erläutert werden.
+die auf der Webseite
+footnote:[https://www.datatrans.ch/de/angebot/zahlungsloesungen/webshop]
+erläutert werden.
 Die Variante "Lightbox Mode" hat folgende Vorteile:
 
 * einfache Integration,
 * der komplette Zahlungsablauf läuft extern ab
-* daher kann ein vereinfachtens Zertifizierungsverfahren verwendet werden
+* daher kann ein vereinfachtes Zertifizierungsverfahren verwendet werden
 
 Die Variante "Hidden/Ajax Mode" ermöglichst es zwar,
 die Zahlungsmaske direkt ins OTS zu integrieren,
-stellt aber erhöhte Anforderungen für die Zertifizierung (https://www.datatrans.ch/de/e-payment/pcidss/pci-dss-3-ausgangslage).
+stellt aber erhöhte Anforderungen für die Zertifizierung.
+footnote:[https://www.datatrans.ch/de/e-payment/pcidss/pci-dss-3-ausgangslage]
 Daher wird auf die Variante "Hidden/Ajax Mode" verzichtet.
 
-Eine detailierte Beschreibung der Variante findet sich hier:
-https://pilot.datatrans.biz/showcase/doc/Technical_Implementation_Guide.pdf
+Eine detaillierte Beschreibung der Variante findet sich hier.
+footnote:[https://pilot.datatrans.biz/showcase/doc/Technical_Implementation_Guide.pdf]
 
 
 ===== Fachliche Abläufe
 * Der Benutzer klickt auf Bezahlen
-* mittels JavaScript wird das von datatrans zur Verfügung gestellte Popover geöffnet
+* mittels JavaScript wird das von Datatrans zur Verfügung gestellte Popover geöffnet
 * der Benutzer wählt die gewünschte Zahlungsart aus
 * Der Benutzer gibt die Kreditkartendaten ein und klickt auf Bezahlen
-* je nach Status sendet datatrans mittels POST-Parametern die Zahlungsdaten an die successUrl, die errorURL oder die cancelURL
+* je nach Status sendet Datatrans mittels POST-Parametern die Zahlungsdaten an die successUrl, die errorURL oder die cancelURL
 
 
 ===== Mengengerüste
@@ -58,28 +61,31 @@ https://pilot.datatrans.biz/showcase/doc/Technical_Implementation_Guide.pdf
 
 ===== Syntax: Daten und Formate
 Kann mittels JavaScript in die Seite eingebunden werden und als Funktion aufgerufen werden.
-
+[source, JavaScript]
+----
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="https://pilot.datatrans.biz/upp/payment/js/datatrans-1.0.2.js"></script>
 <form id="paymentForm" data-merchant-id="1100004624" data-amount="1000"
 data-currency="CHF" data-refno="123456789" data-sign="30916165706580013">
 <button id="paymentButton">Pay</button></form>
 <script type="text/javascript">$("#paymentButton").click(function(){Datatrans.startPayment({'form':'#paymentForm'});});</script>
-
+----
 Übergabeparameter:
 |===
 | Name | Pflicht | Datentyp | Bemerkung
-| merchantId  | X | N10  | die Händler-ID wird von datatrans vergeben
+| merchantId  | X | N10  | die Händler-ID wird von Datatrans vergeben
 | amount | X | int | Betrag in Rappen bzw. Cent
 | currency | X | A3 | ISO-Code der Währung (CHF, USD, EUR usw.)
 | refno | X | AN18 | Referenznummer
-| sign | X | |  Hash-Wertes des Requestes ( siehe kapitel 6.2.3 der transdata-Doc)
+| sign | X | |  Hash-Wertes des Requestes ( siehe Kapitel 6.2.3 der Datatrans-Doc)
 |successUrl | | | URL die noch einer erfolgreichen Zahlung aufgerufen wird
 |errorUrl | | |
 |cancelUrl | | |
 |===
 
-Zusätzliche Parameter sind möglich. Details siehe datatrans-Doc.
+Zusätzliche Parameter sind möglich. Details siehe Datatrans-Doc.
+footnote:[https://pilot.datatrans.biz/showcase/doc/Technical_Implementation_Guide.pdf]
+
 
 Rückgabewerte
 
@@ -87,16 +93,16 @@ Je nach Status wird eine separate Seite aufgerufen.
 Mittels POST-Parametern werden die Informationen zurückgeliefert.
 |===
 | Name | Datentyp | Bedeutung
-| uppTransactionId| N18 | transaktionsnummer
+| uppTransactionId| N18 | Transaktionsnummer
 | refNo | AN18 | ID, die beim Request angegeben wurde
 | responseCode | N4 |
 |===
 
-Details siehe transdata-Doc
+Details siehe Datatrans-Doc.
 
 
 ===== Syntax: Ablauf der Schnittstelle
-Wird durch den Zahlungsanbieter defniert (TBD)
+Wird durch den Zahlungsanbieter definiert (TBD)
 
 ===== Technische Infrastruktur
 * Serverseitig keine speziellen Voraussetzungen notwendig (wird als Scriptcode in die Webseite eingebunden)
@@ -104,21 +110,21 @@ Wird durch den Zahlungsanbieter defniert (TBD)
 
 
 ===== Fehler und Ausnahmebehandlung
-* Timeout (transdataseite ist nicht erreichbar)
-* transdata liefert eine Fehlercode (siehe Kapitel 8 der transdata-docu)
+* Timeout (Datatrans-Seite ist nicht erreichbar)
+* Datatrans liefert eine Fehlercode (siehe Kapitel 8 Datatrans-doc)
 
 
 ===== Voraussetzungen
-* OTS muss beim Zahlungsanbieter registirert sein (gültige merchantId notwendig)
+* OTS muss beim Zahlungsanbieter registriert sein (gültige merchantId notwendig)
 * Auf der Schnittstelle müssen Transaktionen parallel ausgeführt werden können (ist gewährleistet)
-* Schnittstelle muss 7x24 verfügbar sein (SLA noch offen)
+* Schnittstelle muss 7x24 verfügbar sein (genaues SLA noch offen)
 
 ===== Einschränkungen
-* transdata unterstützt folgende Browserversionen: Chrome 28, Firefox 31, IE9, Safari 6, Opera 24
+* Datatrans unterstützt folgende Browserversionen: Chrome 28, Firefox 31, IE9, Safari 6, Opera 24
 
 
 ===== Metainformation der Schnittstelle
-noch nicht verfübar (TBD)
+noch nicht verfügbar (TBD)
 
 ===== Beispiele für Nutzung und Daten
 siehe https://www.datatrans.ch/showcase/authorisation/lightbox-mode
@@ -131,7 +137,7 @@ siehe https://www.datatrans.ch/showcase/authorisation/lightbox-mode
 |Name / Bezeichnung der Schnittstelle
 | E-Mail-Schnittstelle
 |Beschreibung
-| Schnittstelle zum verdenden der Bestellungsbestätigung und Tickets
+| Schnittstelle zum Versenden der Bestellbestätigung und Tickets
 |Version
 | 1.0
 |Änderungen gegenüber Vorversion
@@ -144,11 +150,12 @@ siehe https://www.datatrans.ch/showcase/authorisation/lightbox-mode
 |===
 
 ===== Fachliche Abläufe
-* für jede erfolgreiche Buchung wird ein Buchungsbestätigungs E-Mail versandt
+* für jede erfolgreiche Buchung wird ein Buchungsbestätigung-E-Mail versandt
 
 ===== Mengengerüste
-* Das System muss 30000 E-Mails pro Tag verarbeiten und versenden können.
-* Unter Hochlast muss das System muss bis zu 15000 Mails innerhalb von 10min entgegennehmen können,
+* Das System muss 12000 E-Mails pro Tag verarbeiten und versenden können.
+(Annahme 2 Performances pro Tag mit 15000 Plätzen und durchschnittlich 2.5 Karten pro Bestellung)
+* Unter Hochlast muss das System muss bis zu 12000 Mails innerhalb von 10min entgegennehmen können,
 die Mails müssen jedoch nicht in diesem Zeitraum versandt werden
 
 ===== Syntax: Daten und Formate
@@ -178,6 +185,11 @@ noch nicht vorhanden (TBD)
 (siehe Syntax: Daten und Formate)
 
 
+////
+
+Anmerkung FMO: Das GUI ist meiner Meinung nach keine Schnittstelle, sondern
+(wie unten auch erwähnt) ein zentraler Bestandteil
+
 ==== User-Schnittstelle
 
 [cols="1,1", options="header"]
@@ -185,7 +197,7 @@ noch nicht vorhanden (TBD)
 |Name / Bezeichnung der Schnittstelle
 | User-Schnittstelle
 |Beschreibung
-| Web Applikation über welche Online-User sowie Box-Office-User zugreiffen
+| Web Applikation über welche Online-User sowie Box-Office-User zugreifen
 |Version
 | 1.0
 |Änderungen gegenüber Vorversion
@@ -196,7 +208,7 @@ noch nicht vorhanden (TBD)
 | Architektur-Team
 |===
 
-Diese Schnittstelle ist zentraler Bestandteil der gesammt-Archtektur, weswegen
+Diese Schnittstelle ist zentraler Bestandteil der Gesamt-Archtektur, weswegen
 an dieser Stelle nicht explizit auf Punkte eingegangen wird, welche anderenorts
 beschrieben wurden.
 
@@ -208,3 +220,5 @@ beschrieben wurden.
 
 ===== Syntax: Daten und Formate
 * HTTP
+
+////

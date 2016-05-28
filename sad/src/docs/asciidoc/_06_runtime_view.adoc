@@ -6,6 +6,7 @@
 
 Das folgenden Diagramm stellt den Verkaufsprozess von der Showauswahl bis zum Bestätigungsmailversand dar.
 
+.Aktivitätsdiagram Verkaufsprozess
 image::06-verkaufsprozess_uebersicht.png[Caption="Verkaufsprozess", width="353", height="849"]
 
 Zu den abgebildeten Prozessschritten folgende Erläuterungen:
@@ -61,5 +62,7 @@ JA - Tickets konnten erfolgreich gebucht werden
 
 | reservierte Plätze freigeben
 |um Tickets möglichst schnell nach einer Reservierung wieder verkaufen zu können, werden sie explizit auch vor Ablauf der maximal möglichen Reservierungsfrist freigegeben. Es behandelt sich bereits um eine Optimierung.
-// TODO: Mir war das nicht bewusst. War das so spezifiziert? 
+// TODO: Mir war das nicht bewusst. War das so spezifiziert?
+// ehmkah: Nein, das war so nicht spezifiziert, deshalb habe ich dahinter geschrieben, dass es eine Optimierung ist.
+// soll es wieder raus?
 |===

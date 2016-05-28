@@ -8,6 +8,27 @@ Das folgende Diagramm zeigt die Anwendungsfälle von OTS
 .Usecases Online Ticketing System
 image::01_usecase.png["Use Case - Online Ticketing System"]
 
+==== Beschreibung der Usecases
+
+Es gibt drei Akteure von OTS: Online-User, Boxoffice-User, Administratoren.
+Ausserdem interagieren die beiden Umsysteme Emailsystem und Paymentsystem mit OTS.
+
+[options="header" cols="1,2"]
+|===
+| Usecase                   | Kurzbeschreibung
+| Show auswählen            | Aus einer Liste von Shows wird eine Show ausgewählt
+| Performance auswählen     | Nach der Auswahl einer Show wird eine konkrete Performance ausgewählt
+| Sitzplatz reservieren     | Ein Sitzplatz wird für 5 Minuten durch OTS reserviert. In dieser Zeit kann er nicht anderweitig reserviert werden
+| Show bezahlen             | Um ein Ticket zu erhalten, muss ein Ticket gekauft werden
+| Buchung verwalten         | Damit die Box-Office-User reservierte Tickets ausdrucken und anullieren können, müssen sie auf die Buchungen zugreifen können
+| Show verwalten            | Es werden Shows angelegt und modifiziert
+| Saalkonfiguration         | Es werden verschiedene Saalkonfigurationen angelegt und modifiziert
+| Preise festlegen          | Es können für Sitzplatzkategorien in verschiedenen Performances die Preise verwaltetet werden
+| Reports generieren        | Es werden verschiedene Reports aus OTS herausgelassen
+| mit Kreditkarte bezahlen  | Eine Buchung wird mit einer Kreditkarte bezahlt
+| Bestätigungsmail auslösen | Nach einer Buchung wird dem Online-User eine Bestätigungsmail geschickt
+|===
+
 ==== Kernaufgabe
 
 Das Online Ticketing System, nachfolgend OTS genannt, ist ein System um ein oder mehrere Sitzplätze für gewünschte Shows zu erwerben.

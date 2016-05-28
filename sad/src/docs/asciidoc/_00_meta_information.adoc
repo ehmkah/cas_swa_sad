@@ -1,0 +1,9 @@
+== Versionsgeschichte
+
+Wesentliche Änderungen am SAD werden an dieser Stelle festgehalten.
+
+|====
+| Version   | Changes         | Autoren
+| 1.0       | Initial-version | Feuz, Klomisnky, Zhao, Meier, Moritz, Krausse
+|====
+

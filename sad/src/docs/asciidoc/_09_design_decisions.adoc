@@ -17,14 +17,14 @@ Andere (kommerzielle) Datenbank-Managementsysteme sind nicht zulässig.
 
 ==== Entscheidungskriterien
 
-Konsitenz muss gewährleistet werden.
+Konsistenz muss gewährleistet werden.
 Ein hoher Datendurchsatz muss möglich sein.
 
 ==== Entscheidung
 
 Neben Oracle wurde auch die Verwendung einer NoSQL-Datenbank in Betracht gezogen,
 da diese eine hohe Skalierbarkeit und eine hohe Performance bietet.
-Aufgrund der mangelden Erfahrung und des kurzen Zeitplanes wird aber die bestehende
+Aufgrund der mangelnden Erfahrung und des kurzen Zeitplanes wird aber die bestehende
 Oracle-DB verwendet.
 
 === Datenzugriff
@@ -38,7 +38,7 @@ Wie soll auf die Daten zugegriffen werden?
 Auf eine Zwischenschicht wird verzichtet und die SQL-Statements werden direkt ausgeführt.
 Vorteil: Durch den Verzicht auf die Zwischenschicht ist eine höhere Performance möglich.
 Nachteil: Änderungen an der DB-Struktur wirken sich direkt auf die Businesslogik aus.
-Ein Teil der Businesslogik wird in die Persitenzschicht verlagert.
+Ein Teil der Businesslogik wird in die Persistenzschicht verlagert.
 
 ==== Variante 2: Data Access Objects (DAO)
 
@@ -56,8 +56,8 @@ Nachteil: höhere Komplexität als bei den DAOs, zusätzliche Abhängigkeit von 
 
 === Entscheidung
 
-Wir haben uns für Hibenate entschieden.
-Die Vorteile einer Standardkomponente überwiegen unserer Meinung nach die Nachteile wie die höhere Komplexität.
+Wir haben uns für Hibernate entschieden.
+Die Vorteile einer Standardkomponente überwiegen unserer Meinung nach die Nachteile wie die der höheren Komplexität.
 
 === MVC-Pattern verwenden
 
@@ -72,36 +72,146 @@ Unterstützt bei der Umsetzung der Internationalisierung.
 ==== Variante 2: Single Page Application
 
 Vorteil: Antwortzeiten können reduziert werden, da nur Teile der Webseite übertragen werden.
-Die Benutzer können nicht manuell einzelne Seite aufrufen, sondern können nur die auf
+Die Benutzer können nicht manuell einzelne Seiten aufrufen, sondern können nur die auf
 der aktuellen Webseite verfügbaren Links verwenden.
 
 ==== Entscheidung
 
-Aufgrund der grösseren Erfahrung mit den JavaServer Faces wird diese Variante umgesetz,
+Aufgrund der grösseren Erfahrung mit den JavaServer Faces wird diese Variante umgesetzt,
 damit der Zeitplan eingehalten werden kann.
 
 
-=== Performance der Boxoffice-User
+=== Performance der Boxoffice-User [[section-performance-box-office]]
+
 
 ==== Fragestellung
 
 Wie wird sichergestellt, dass bei den Boxoffice-User die maximal zulässige Antwortzeit
-immer gegehalten wird.
+immer eingehalten wird?
 
 ==== Rahmenbedingungen
 
-1.) Ausser bei der Zahlungsabwicklung soll die Antwortseit immer unter 2 Sekunden liegen.
+1.) Ausser bei der Zahlungsabwicklung soll die Antwortzeit immer unter 2 Sekunden liegen.
 
 2.) Es soll nur ein Server verwendet werden.
 
 ==== Betrachtete Alternativen
 
-Variante 1) mehere Applikationserver auf dem physischen Server betreiben
+Variante 1) mehrere Applikationsserver auf dem physischen Server betreiben
 
 Variante 2) Neuverhandlung der Rahmenbedingungen, damit mindestens 2 Server betrieben werden können.
 
 ==== Entscheidung
 
-Auch wenn die Kosten kurzfristig für die Ein-Sever-Variante spricht, empfehlen wir, dass mindestens zwei
-Server bereit gestellt werden. Neben der besseren Verteilung der Last und auch eine bessere Verfügbarkeit
-gewährleistet. Wenn ein Server ausfällt, können die Benutzer auf den anderen Server umgeleitet werden.
+Auch wenn die Kosten kurzfristig für die Ein-Server-Variante spricht,
+empfehlen wir, dass mindestens zwei Server bereit gestellt werden.
+Neben der besseren Verteilung der Last kann auch eine bessere Verfügbarkeit gewährleistet werden. 
+Wenn ein Server ausfällt, können die Benutzer auf den anderen Server umgeleitet werden.
+
+=== Performance Sitzplatzreservation [[section-performance-sitzplatzreservierung]]
+
+==== Fragestellung
+
+Die zuverlässigkeit des Reservationsablaufs ist einer der wichtigsten Faktoren für den Projekterfolgt. Entscheidend
+ist, dass einzelne Plätze nicht mehrmals verkauft werden und dass durch eine möglichst optimale Verteilung eine
+hohe Anzahl an Plätzen anhand der Buchungswünsche verkauft werden können. Bei vielen simultanen Reservationen
+muss der Algorithmus auch in der Lage sein, den geforderten Durchsatz zu erreichen.
+
+Im Rahmen des SADs wurden daher mehrere Prototypen entwickelt auf ihre Funktionalität und Performance getestet.
+
+.Die Performancetests wurden auf einem älteren Laptop (Lenovo T530) mit folgenden Hardware ausgeführt:
+ * Intel Core i7-3630QM
+ * 16 GB Systemspeicher
+
+==== Rahmenbedingungen
+
+Gemäss den Anforderungen (siehe <<QZ,Qualitätsziele>>) sollen 15'000 Plätze innerhalb von 10 Minuten verkauft werden.
+Das bedeutet das der Algorithmus rund rund 25 Reservationen pro Sekunden bei einer maximalen Antwortzeit von maximal
+zwei Sekunden.
+
+Beim buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und die Sitzplätze sollten benachbart sein.
+
+==== Variante 1: Zufälliger Sitz wählen
+
+TODO
+
+[source]
+----
+Strategy: RandomSeatSelectionStrategy
+Seats
+  available:     13660
+  reserved:      12805
+  remaining:     855
+Reservations
+  total:         4000
+  rejected:      1468
+  adjacent:      2228
+  non-adjacent:  237
+  incorrect:     67
+Latency Time
+  minimum:       0.0s
+  maximum:       3.191s
+  average:       0.657s
+  deviation:     0.522s
+
+Total Time:      26s
+Throughput:      148 requests/s
+----
+
+==== Variante 2: Zufälliger Sektor wählen
+
+TODO
+
+[source]
+----
+Strategy: RandomSectorSelectionStrategy
+Seats
+  available:     13660
+  reserved:      11176
+  remaining:     2484
+Reservations
+  total:         4000
+  rejected:      1736
+  adjacent:      2264
+  non-adjacent:  0
+  incorrect:     0
+Latency Time
+  minimum:       0.0s
+  maximum:       2.076s
+  average:       0.583s
+  deviation:     0.229s
+
+Total Time:      24s
+Throughput:      166 requests/s
+----
+
+==== Variante 3: Chache basierte Lösung
+
+TODO
+
+[source]
+----
+Strategy: CacheBasedSelectionStrategy
+Seats
+  available:     13660
+  reserved:      13513
+  remaining:     147
+Reservations
+  total:         4000
+  rejected:      1400
+  adjacent:      2600
+  non-adjacent:  0
+  incorrect:     0
+Latency Time
+  minimum:       0.0s
+  maximum:       1.247s
+  average:       0.287s
+  deviation:     0.254s
+
+Total Time:      11s
+Throughput:      342 requests/s
+----
+
+==== Entscheidung
+
+TODO
