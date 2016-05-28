@@ -138,8 +138,8 @@ Das bedeutet das der Algorithmus rund rund 25 Reservationen pro Sekunden bei ein
 Beim Buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und die Sitzplätze sollten (sofern noch vorhanden) benachbart sein.
 
 ==== Variante 1: Zufälliger Sitz wählen
-
-TODO
+Idee:
+Alle freie Sitzplätze der gewünschten Kategorie werden gelesen. Es wird mit einem zufälligen Platz beginen die benachbarte Plätze zu suchen. Falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Sonst wird es noch mal wiederholt.
 
 [source]
 ----
@@ -166,7 +166,7 @@ Throughput:      148 requests/s
 
 ==== Variante 2: Zufälliger Sektor wählen
 Idee:
-Nur einen zufälligen Sektor der gewünschten Kategorie mit genügend freie Sitzplätze wird ausw?hlt. Dann werden die benachbarte Plätze in diesem Sektor gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert und dabei wird ein Optimistic Locking beim persistieren verwendet.
+Nur einen zufälligen Sektor der gewünschten Kategorie mit genügend freie Sitzplätze wird auswählt. Dann werden die benachbarte Plätze in diesem Sektor gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert und dabei wird ein Optimistic Locking beim persistieren verwendet.
 
 [source]
 ----
@@ -193,11 +193,11 @@ Throughput:      166 requests/s
 
 ==== Variante 2b: Sektoren mit zufälliger Reihenfolge
 Idee:
-Alle Sektoren der gewünschten Kategorie mit genügend freie Sitzplätze werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Dann werden die benachbarte Plätze in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert und dabei wird ein Optimistic Locking beim persistieren verwendet.
+Alle Sektoren der gewünschten Kategorie mit genügend freie Sitzplätze werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Die benachbarte Plätze werden in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking beim persistieren verwendet und beim Konflikt werden die Sitzplätze neue geladen.  
 
 [source]
 ----
-Strategy: RandomSectorSelectionStrategy
+Strategy: RandomOrderSectorStrategy
 Seats
   available:     13660
   reserved:      11176
