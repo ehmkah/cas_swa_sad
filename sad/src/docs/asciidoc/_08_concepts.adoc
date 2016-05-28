@@ -119,21 +119,32 @@ dem Mailserver und die Datenbank zugegriffen.
 Die Pflichtfelder und Datenformate werden zunächst mittels JavaScript im Browser geprüft.
 Der Applikationsserver führt zusätzlich immer eine serverseitige Prüfung durch.
 
-=== Ausnahme-/Fehlerbehandlung [[ErrHnd]]
+=== Ausnahme-/ Fehlerbehandlung [[ErrHnd]]
 
-Die Fehler die bei OTS auftreten können, betreffen vor allem die Funktionsfähigkeit der integrierten externen Anwendungen Payment und Email.
+Es gibt eine Unterscheidung in _Fachliche Fehler_ und _Technische Fehler_.
+Fachliche Fehler sind z.B. eine falsche Kreditkartennummer oder Zahlung abgelehnt.
+Treten sie auf muss dem Nutzer eine benutzerfreundliche Fehlermeldung angezeigt werden.
+Weiterhin muss der Nutzer die Möglichkeit bekommen, den Fehler zu korrigieren.
+Technische Fehler haben keine fachliche Ursache, sondern weisen auf Programm- oder Konfigurationsfehler hin.
+Eine Nullpointer Exception ist ein Beispiel für einen technischen Fehler.
+Technische Fehler dürfen dem Nutzer nicht angezeigt werden, stattdessen muss eine allgemeine Fehlermeledung angezeigt werden.
+Besondere Technische Fehler sind _Laufzeitfehler_.
+Laufzeitfehler können zum Beispiel sein: keine Verbindung zur Datenbank oder das Paymentsystem ist nicht verfügbar.
+Tritt ein Laufzeitfehler auf, muss der Benutzer eine Fehlermeldung bekommen, die es ihm erlaubt den Vorgang zu wiederholen.
 
-Aufgetretene Fehler des Paymentsystems werden an den User mit einer sprechenden Fehlermeldung kommuniziert.
-Es ist nicht gestattet an der Servicegrenze zum Frontend Exceptions zu werfen.
-Tritt an der Servicegrenze zum Frontend ein Fehler auf, so muss dieser gefangen werden und dem User eine allgemeine Fehlermeldung präsentiert werden.
-Jeder bekannte Fehler wird mit einem Fehlercode benannt und in der Liste der Fehlercodes dokumentiert.
-Alle Exceptions, die innerhalb von OTS erzeugt werden, müssen von der OTSException erben, damit die Quelle leichter zu finden ist.
-Alle aufgetretenen Exceptions müssen zum Zeitpunkt des Auftretens ins Logfile geschrieben werden, damit eine Nachverfolgung möglich ist.
-//ye: es ist zwischen Fachliche Fehler und Technische Fehler zu unterscheiden. 
-//Fachliche Fehler: falsche Angaben, Kreditkarte ungültig, Zahlung abgelehnt. Es muss eine Benutzerfreundliche Meldung geben, 
+Weiterhin gelten die folgenden Prinzipien:
+
+* Es ist nicht gestattet an der Servicegrenze zum Frontend Exceptions zu werfen.
+* Jeder bekannte Fehler wird mit einem Fehlercode benannt und in der Liste der Fehlercodes dokumentiert.
+* Alle Exceptions, die innerhalb von OTS erzeugt werden, müssen von der OTSException erben, damit die Quelle leichter zu finden ist.
+* Alle aufgetretenen Exceptions müssen zum Zeitpunkt des Auftretens ins Logfile geschrieben werden, damit eine Nachverfolgung möglich ist.
+
+//ye: es ist zwischen Fachliche Fehler und Technische Fehler zu unterscheiden.
+//Fachliche Fehler: falsche Angaben, Kreditkarte ungültig, Zahlung abgelehnt. Es muss eine Benutzerfreundliche Meldung geben,
 //benutzer kann noch mal versuchen. 
 //Technische Fehler: laufzeit Fehler wie nullpointer darf auf keinen fall zu benutzer angezeigt werden. 
 //Laufzeit Fehler wie die verbindung zu umsystem wie payment oder db, müssen protokolliert werden. Es sollte noch eine Meldung zu //Benutzer kommen, er kann später noch mal versuchen.
+// ehmkah: DONE (hoffe es ist so korrekt für Dich eingearbeitet), habe das loggen nicht reingeschrieben, da sowieso alle Fehler geloggt werden sollen.)
 
 === Management des Systems & Administrierbarkeit
 
