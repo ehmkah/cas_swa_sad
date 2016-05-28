@@ -25,6 +25,7 @@ Für das OTS wurden folgende Risiken erkannt:
 |===
 [[risk-1]]
 
+
 .Verfügbarkeit
 * Wenn die Verfügbarkeit, z.B. die Applikation läuft nur auf einem Server und dieser geht während eines Konzertverkaufs kaputt, so kann dies zu finanziellen Schaden führen.
 * Eine schlechte Verfügbarkeit kann zu Reputationsschaden führen
@@ -41,3 +42,13 @@ Für das OTS wurden folgende Risiken erkannt:
 .Single Point of Failure
 * Es gibt nur eine Datenbank bei der Z-Group, Problematik, wenn die Datenbank offline ist.(siehe Verfügbarkeit)
 * Ausbildung der Mitarbeiter: es sollten mehrere Administratoren das OTS beherrschen.
+
+
+
+////
+Todo:
+In den Anforderungen steht ziemlich weit hinten, dass das Management der Meinung ist,
+ein Server sei ausreichend.
+Diese Anforderung sollte als Risiko aufgeführt werden.
+In Kapitel 8 weisen wir darauf hin, dass für die Hochverfügbarbeit mindestens zwei Server verwendet werden sollten.
+////

@@ -4,5 +4,5 @@
 [appendix]
 == Literatur und Verweise
 
-OTS-Req-2003[[req-1]]:: Requirements for the Sample Application. Wiley Publishing, Inc. 2003
+
 OWASP10[[OWASP10]]:: OWASP Top Ten: The Ten Most Critical Web Application Security Risks  (https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)

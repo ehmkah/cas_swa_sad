@@ -17,7 +17,7 @@ Enthaltene Bausteine::
 [cols="2,4,1" options=""]
 |===
 | OTS | Das Online Ticketing System (Dieses Projekt) | siehe Kapitel 5.2
-| Bernutzer | verschiedene Benutzer die auf das OTS zugreifen |
+| Benutzer | verschiedene Benutzer die auf das OTS zugreifen |
 | Emailsystem | Externes E-Mail System |
 | Paymentsystem | Externer Zahlungsdienstleister |
 |===
@@ -164,7 +164,7 @@ Enthaltene Bausteine::
 
 Dieses Modul ist zuständig, dass freie Sitze gefunden werden und eine Reservation erzeugt wird.
 Weiter führt es eine Reservation bei erfolgreicher Bezahlung in eine definitive Buchung über.
-Hier wird der Algorythmus zur Suche nach freien Sitzen implementiert (Prototyp).
+Hier wird der Algorithmus zur Suche nach freien Sitzen implementiert (Prototyp).
 
 ===== Show-Accessor (Blackbox)
 

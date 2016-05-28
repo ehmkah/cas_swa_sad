@@ -38,26 +38,33 @@ Wie soll auf die Daten zugegriffen werden?
 Auf eine Zwischenschicht wird verzichtet und die SQL-Statements werden direkt ausgeführt.
 Vorteil: Durch den Verzicht auf die Zwischenschicht ist eine höhere Performance möglich.
 Nachteil: Änderungen an der DB-Struktur wirken sich direkt auf die Businesslogik aus.
-Ein Teil der Businesslogik wird in die Persistenzschicht verlagert.
+Ein Teil der Businesslogik wird in die Persistenzschicht verlagert und Teile der
+Persistierung wird durch die Businesslogik vorgenommen.
 
-==== Variante 2: Data Access Objects (DAO)
+==== Variante 2: Object-Relational Mapping (ORM)
 
-Der Zugriff auf die Daten erfolgt über eigene Datenklassen - den Data Access Objects.
-Vorteil: Die Integrationsschicht wird von der Businesslogik getrennt.
-Wenn sich das Datenmodell ändert, muss nur das entsprechende DAO angepasst werden.
-Nachteil: Es müssen die entsprechenden Klassen implementiert werden.
+Mittels Object-Relational Mapping werden die Java-Objekte automatisch auf die Datenbanktabellen gemappt.
+Der Zugriff auf die Datenbank ist daher gekapselt.
+Ein häufig verwendeter OR-Mapper ist Hibernate.
+footnote:[http://hibernate.org/orm/]
 
-==== Variante 3: Hibernate
-
-Hibernate ist ein Standard-Framework, welches den Zugriff auf die Datenbank kapselt.
-Es müssen daher keine zusätzlichen Klassen für den Datenzugriff implementiert werden.
 Vorteil: Standardkomponente, flexibel und robust
-Nachteil: höhere Komplexität als bei den DAOs, zusätzliche Abhängigkeit von einem weiterer Komponente
+
+==== Variante 3: Hibernate und DAO
+
+Der Zugriff auf die von Hibernate erstellten Entitäten erfolgt über eigene Datenklassen - den Data Access Objects (DAO).
+Vorteil: Die Integrationsschicht wird vollständig von der Businesslogik getrennt.
+Wenn sich das Datenmodell ändert, muss nur das entsprechende DAO angepasst werden.
+Hibernate kann durch eine andere Technologie ersetzt werden,
+beispielsweise wenn später auf NoSQL gewechselt werden sollte.
+Nachteil: Es müssen die entsprechenden Klassen implementiert werden.
+Durch jede weitere Zwischenschicht geht etwas Performance verloren.
 
 ==== Entscheidung
 
-Wir haben uns für Hibernate entschieden.
-Die Vorteile einer Standardkomponente überwiegen unserer Meinung nach die Nachteile wie die der höheren Komplexität.
+Wir haben uns für Variante 3 entschieden.
+Die Vorteil der Flexibilität der DAOs überwiegt unserer Meinung nach den geringfügigen
+Einfluss auf die Performance.
 
 === MVC-Pattern verwenden
 
@@ -131,8 +138,8 @@ Das bedeutet das der Algorithmus rund rund 25 Reservationen pro Sekunden bei ein
 Beim Buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und die Sitzplätze sollten (sofern noch vorhanden) benachbart sein.
 
 ==== Variante 1: Zufälliger Sitz wählen
-
-TODO
+Idee:
+Alle freie Sitzplätze der gewünschten Kategorie werden gelesen. Es wird mit einem zufälligen Platz beginen die benachbarte Plätze zu suchen. Falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Sonst wird es noch mal wiederholt.
 
 [source]
 ----
@@ -158,12 +165,39 @@ Throughput:      148 requests/s
 ----
 
 ==== Variante 2: Zufälliger Sektor wählen
-
-TODO
+Idee:
+Nur einen zufälligen Sektor der gewünschten Kategorie mit genügend freie Sitzplätze wird auswählt. Dann werden die benachbarte Plätze in diesem Sektor gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert und dabei wird ein Optimistic Locking beim persistieren verwendet.
 
 [source]
 ----
 Strategy: RandomSectorSelectionStrategy
+Seats
+  available:     13660
+  reserved:      11176
+  remaining:     2484
+Reservations
+  total:         4000
+  rejected:      1736
+  adjacent:      2264
+  non-adjacent:  0
+  incorrect:     0
+Latency Time
+  minimum:       0.0s
+  maximum:       2.076s
+  average:       0.583s
+  deviation:     0.229s
+
+Total Time:      24s
+Throughput:      166 requests/s
+----
+
+==== Variante 2b: Sektoren mit zufälliger Reihenfolge
+Idee:
+Alle Sektoren der gewünschten Kategorie mit genügend freie Sitzplätze werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Die benachbarte Plätze werden in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking beim persistieren verwendet und beim Konflikt werden die Sitzplätze neue geladen.  
+
+[source]
+----
+Strategy: RandomOrderSectorStrategy
 Seats
   available:     13660
   reserved:      11176

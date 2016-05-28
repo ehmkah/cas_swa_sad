@@ -6,11 +6,11 @@
 .Domainmodell
 image::08_domainmodel.png["Domainmodel"]
 //ye: in kap6 ist der Bgriff Online-User, aber hier Kunden
+// ehmkah: DONE habe den Begriff Kunde, durch online-user ersetzt
 Das Domainmodell stellt die wesentlichen Fachbegriffe und ihre Beziehungen untereinander dar.
 Der Lesbarkeit willen wurden im Modell Beziehungen, die die Kardinalität 1 aufweisen weggelassen.
 
-==== Fachdomäne Saalverwaltung
-//ye: ich würde nur Saal nennen ohne verwaltung
+==== Fachdomäne Saal
 Jedes Center kann aus mehreren Sälen bestehen.
 Jedem Saal können beliebig viele Saalkonfigurationen zugeordnet werden.
 Eine Saalkonfiguration besteht aus beliebig vielen Sitzplätzen.
@@ -18,22 +18,21 @@ Jeder Sitzplatz gehört zu genau einer Sitzplatzkategorie und wird über eine Re
 Die Sitzplatzkategorie ist die Basis für die spätere Preisfestlegung einer Performance.
 Ein Sitzplatz hat einen Status, damit erkannt werden kann, ob er frei, reserviert oder ebreits verkauft wurde.
 
-==== Fachdomäne Showverwaltung
-//ye: ich würde nur Show nennen ohne verwaltung
+==== Fachdomäne Show
 Eine Show wird in beliebig vielen Performances aufgeführt und einer Show wird eine Saalkonfiguration zugeordnet.
 Für jede Performance können die Preise für eine Sitzplatzkategorie individuell festgelegt werden, indem Sitzplatzkategorie-Verkaufspreise definiert werden.
 Dies geschieht über die Preisfesetzung der zugewiesenen Sitzplätze.
 
-==== Fachdomäne Buchungsverwaltung
-//ye: ich würde nur Buchung nennen ohne verwaltung
-Wenn ein Kunde ein Ticket kauft, dann erhält er eine Buchung.
-Eine Buchung besteht aus mehreren Tickets und einer Kredikarte, mit der das Ticket bezahlt wurde.
+==== Fachdomäne Buchung
+Wenn ein Online-User ein Ticket kauft, dann erhält er eine Buchung.
+Eine Buchung besteht aus mehreren Tickets und enthält eine Kreditkarte, damit die Buchung über den Paymentanbieter erfolgen kann.
 Eine Buchung wird nur nach einem erfolgreichen Verkauf erstellt.
 Jedem Ticket wird eine Performance und ein Sitzplatz zugeordnet, für den es gilt.
-Die Kreditkarte dient der Information, falls es Probleme mit der Abrechnung gibt.
+Die Kreditkarte ist für den Verkauf notwendig wird aber nicht persistiert
 Eine Reservierung besteht ebenfalls aus einer Show und einer Performance für die sie gelten.
-//ye: in kap6 steht Kreditkarte wird nicht persistiert.Vielleicht müssen wir anderes formulieren. wie z.b um die Buchung //abzuschliesen muss Kunde Kreditkarte angeben.
-//order machen wir eine verbindung Buchung zur Zahlung, und Zahlung hat Kreditkarte.
+// ye:      in kap6 steht Kreditkarte wird nicht persistiert.Vielleicht müssen wir anderes formulieren. wie z.b um die Buchung //abzuschliesen muss Kunde Kreditkarte angeben.
+//          order machen wir eine verbindung Buchung zur Zahlung, und Zahlung hat Kreditkarte.
+// ehmkah:  DONE (Text umformuliert, explizit auf nicht Persistierung der Kredikarte hingewiesen)
 
 === Typische Muster und Strukturen
 
@@ -82,6 +81,7 @@ Nach der Auswahl der Performance und der Angabe der gewünschten Tickets wird ei
 damit die Daten dem Benutzer zugewiesen werden können.
 Dafür wird ein Session-Cookie verwendet.
 //Todo (Gibt es Alternativen, um Cookies zu vermeiden?)
+// ehmkah: gäbe es mit z.B. HTML offline storage. Wollt Ihr das hier noch erwähnen?
 Die Session endet entweder nach 5 Minuten oder nach dem Versenden der Bestätigungsmail.
 
 
@@ -92,7 +92,7 @@ Die Webapplikation wird immer mittels https aufgerufen. Dadurch ist die Kommunik
 Der Zugriff auf die Datenbank erfolgt nur für berechtigte Benutzer.
 //Todo User/Passwort oder gibt es Alternativen?
 
-Die Passwörter der registrierten Kunden werden verschlüsselt in der Datenbank abgelegt. Dazu wird für jedes Passwort ein zusätzlicher zufälliger Salt-Wert generiert und zusammen mit dem Passwort mittels SHA-3 verschlüsselt.
+Die Passwörter der registrierten Online-User werden verschlüsselt in der Datenbank abgelegt. Dazu wird für jedes Passwort ein zusätzlicher zufälliger Salt-Wert generiert und zusammen mit dem Passwort mittels SHA-3 verschlüsselt.
 
 Bei der Implementierung der Webapplikation sind die Hinweise des Open Web Security Projects zu berücksichtigen.
 Siehe https://www.owasp.org/images/4/42/OWASP_Top_10_2013_DE_Version_1_0.pdf[OWSP-Webseite]footnote:[https://www.owasp.org/images/4/42/OWASP_Top_10_2013_DE_Version_1_0.pdf]
@@ -119,16 +119,32 @@ dem Mailserver und die Datenbank zugegriffen.
 Die Pflichtfelder und Datenformate werden zunächst mittels JavaScript im Browser geprüft.
 Der Applikationsserver führt zusätzlich immer eine serverseitige Prüfung durch.
 
-=== Ausnahme-/Fehlerbehandlung [[ErrHnd]]
+=== Ausnahme-/ Fehlerbehandlung [[ErrHnd]]
 
-Die Fehler die bei OTS auftreten können, betreffen vor allem die Funktionsfähigkeit der integrierten externen Anwendungen Payment und Email.
+Es gibt eine Unterscheidung in _Fachliche Fehler_ und _Technische Fehler_.
+Fachliche Fehler sind z.B. eine falsche Kreditkartennummer oder Zahlung abgelehnt.
+Treten sie auf muss dem Nutzer eine benutzerfreundliche Fehlermeldung angezeigt werden.
+Weiterhin muss der Nutzer die Möglichkeit bekommen, den Fehler zu korrigieren.
+Technische Fehler haben keine fachliche Ursache, sondern weisen auf Programm- oder Konfigurationsfehler hin.
+Eine Nullpointer Exception ist ein Beispiel für einen technischen Fehler.
+Technische Fehler dürfen dem Nutzer nicht angezeigt werden, stattdessen muss eine allgemeine Fehlermeledung angezeigt werden.
+Besondere Technische Fehler sind _Laufzeitfehler_.
+Laufzeitfehler können zum Beispiel sein: keine Verbindung zur Datenbank oder das Paymentsystem ist nicht verfügbar.
+Tritt ein Laufzeitfehler auf, muss der Benutzer eine Fehlermeldung bekommen, die es ihm erlaubt den Vorgang zu wiederholen.
 
-Aufgetretene Fehler des Paymentsystems werden an den User mit einer sprechenden Fehlermeldung kommuniziert.
-Es ist nicht gestattet an der Servicegrenze zum Frontend Exceptions zu werfen.
-Tritt an der Servicegrenze zum Frontend ein Fehler auf, so muss dieser gefangen werden und dem User eine allgemeine Fehlermeldung präsentiert werden.
-Jeder bekannte Fehler wird mit einem Fehlercode benannt und in der Liste der Fehlercodes dokumentiert.
-Alle Exceptions, die innerhalb von OTS erzeugt werden, müssen von der OTSException erben, damit die Quelle leichter zu finden ist.
-Alle aufgetretenen Exceptions müssen zum Zeitpunkt des Auftretens ins Logfile geschrieben werden, damit eine Nachverfolgung möglich ist.
+Weiterhin gelten die folgenden Prinzipien:
+
+* Es ist nicht gestattet an der Servicegrenze zum Frontend Exceptions zu werfen.
+* Jeder bekannte Fehler wird mit einem Fehlercode benannt und in der Liste der Fehlercodes dokumentiert.
+* Alle Exceptions, die innerhalb von OTS erzeugt werden, müssen von der OTSException erben, damit die Quelle leichter zu finden ist.
+* Alle aufgetretenen Exceptions müssen zum Zeitpunkt des Auftretens ins Logfile geschrieben werden, damit eine Nachverfolgung möglich ist.
+
+//ye: es ist zwischen Fachliche Fehler und Technische Fehler zu unterscheiden.
+//Fachliche Fehler: falsche Angaben, Kreditkarte ungültig, Zahlung abgelehnt. Es muss eine Benutzerfreundliche Meldung geben,
+//benutzer kann noch mal versuchen.
+//Technische Fehler: laufzeit Fehler wie nullpointer darf auf keinen fall zu benutzer angezeigt werden.
+//Laufzeit Fehler wie die verbindung zu umsystem wie payment oder db, müssen protokolliert werden. Es sollte noch eine Meldung zu //Benutzer kommen, er kann später noch mal versuchen.
+// ehmkah: DONE (hoffe es ist so korrekt für Dich eingearbeitet), habe das loggen nicht reingeschrieben, da sowieso alle Fehler geloggt werden sollen.)
 
 === Management des Systems & Administrierbarkeit
 
@@ -187,6 +203,10 @@ Um die Ausfallsicherheit zu zu erhöhen, empfehlen wir den Betrieb von mindesten
 //Todo: Als Risiko aufnehmen!
 // ehmkah: wie meinst DU das mit dem Risiko? Also was willst Du da schreiben? Die beiden Server haben wird doch empholen, um den Box-Office-Usern eine bestimmte Performance garantieren zu können? Oder Du schreibst es es einfach ins Risikokapitel hinein... :-)
 // johnDilbert: ich habe das im Kapitel 11 erwähnt
+=======
+// FMO: Risiko: 1 Server; Lösung: mindestens zwei Server verwenden, hab ich als ToDo zum Kapitel 11 hinzugefügt.
+
+
 === Codegenerierung
 
 nicht relevant

@@ -10,7 +10,7 @@
 | Box-Office-User      	| Ein Angestellter der Z-Group, der Tickets an Kunden verkauft.
 | bps                   | Bits per Second (Übertrangungsrate)
 | Branding              | Anpassung des OTS an eine andere Show-Location
-| Buchung               | Nach der Bezahlung wird die -> Reservierung in eine verbindliche Bestellung umgewandelt. Die Tickets werden dem Kunden fix zugewiesen. Eine Bestellung kann nur von einem internen Mitarbeiter annulliert werden.
+| Buchung               | Nach der Bezahlung wird die Reservierung in eine verbindliche Bestellung umgewandelt. Die Tickets werden dem Kunden fix zugewiesen. Eine Bestellung kann nur von einem internen Mitarbeiter annulliert werden.
 | CorrelationID         | erlaubt einen Aufruf in OTS zu tracen, alle Logmeldungen werden mit dieser ID versehen.
 | CRUD                  | Create, Read, Update, Delete Operationen
 | DB             	    | Datenbank
@@ -24,22 +24,23 @@
 | Performance       	| Aufführung einer Show, z.B. 12. April 2016, 20:00 "Starlight Express". Ein Platz in einer Performance ist einer Platzkategorie zugeordnet.
 | Sitzplatzkategorie   	| Erlaubt die Definition von Preisen für Tickets
 | Preisgestaltung   	| Zuordnung von Platzkategorie zum Ticketpreis
-| Reservierung          | Innerhalb des Bestellvorganges, werden temporär dem Benutzer die Sitzplätze zugewiesen. Die Zeitspanne beträgt in der Regel 5 min, kann aber für jeden -> Veranstalter individuell festgelegt werden.
+| Reservierung          | Innerhalb des Bestellvorganges, werden temporär dem Benutzer die Sitzplätze zugewiesen. Die Zeitspanne beträgt in der Regel 5 min, kann aber für jeden Veranstalter individuell festgelegt werden.
 | REST                  | Representational State Transfer
 | Saal			        | Definition des Ortes und der vorhandenen Sitzplätze für Shows
 | Saalkonfiguration 	| Definition welche Sitzplätze in einem Saal "aktiv" sind, und welcher Platzkategorie sie angehören
 | Sitzplatz             | Ein nummerierter Sitzplatz in einem Saal der eine Zuordnung zu einer Kategorie hat
-| Show              	| Auftritt eines Künstlers, eines Zirkus oder einer Oper. Eine Veranstaltung kann mehrere Termine (→ Vorstellungen) haben. Der Sitzplan ist immer gleich, allerdings können die → Vorstellungen eine abweichende Preisstruktur haben.
+| Show              	| Auftritt eines Künstlers, eines Zirkus, einer Oper usw. Eine Show kann mehrere Performances haben. Der Sitzplan ist immer gleich, allerdings können die einzelnen Performances eine abweichende Preisstruktur haben.
 | Show-Location       | Austragungsort einer Show zb das X-Center
-| SLA                    | Service Level Agreement
+| SLA                    | Service Level Agreement, legt die zugesicherte Verfügbarkeit fest (zum Beispiel 99%)
 | SMTP                 | Simple Mail Transfer Protocol
 | SQL                   | Structured Query Language / Protokoll für Datenbankabfragen
-| Standardsitzplan      | Jede -> Halle hat eine Grundkonfiguration. Die Bestuhlung einer → Veranstaltung kann aber leicht vom Standardsitzplan abweichen.
+| Standardsitzplan      | Jeder Saal hat eine Grundkonfiguration. Die Bestuhlung einer Show kann aber leicht vom Standardsitzplan abweichen.
 | Ticket            	| Erlaubt dem Kunden den Zutritt zu einer Show. Jedem Ticket ist ein Sitzplatz zugewiesen
 | Überlast              | System wird ausserhalb der spezifizierten Grenzwerte betrieben
-| Veranstalter          | Ein Veranstalter betreibt eine oder mehrere → Hallen, wo die -> Veranstaltungen stattfinden.
+| Veranstalter          | Ein Veranstalter betreibt eine oder mehrere Säle, wo die Shows stattfinden.
 | X-Center              | Die designierte (primäre) Show-Location der Z-Group für welche das OTS kreiert wird
 | Z-Group               | Eigentümer des X-Center und Auftraggeber für das OTS
 | Zahlungsinformation   | Beinhaltet die Kredikartennummer, Name auf der Kreditkarte, Gültigkeit der Kreditkarte
+
 
 |===
