@@ -4,10 +4,10 @@ Wesentliche Änderungen am SAD werden an dieser Stelle festgehalten.
 
 |====
 | Version   | Changes         | Autoren
-| 1.0       | Initial-version | Feuz, Klomisnky, Zhao, Meier, Moritz, Krausse
+| 1.0       | Initial-version | Feuz, Klominsky, Zhao, Meier, Moritz, Krausse
 |====
 
-== Basisdokumente
+== Basisdokumente1
 |====
 | Referenz  | Dokument     | Beschreibung                                                       | Version
 | req-1 [[req-1]]| Requirements_J2EE_Sample_Application.pdf| Requirements for the Sample Application. Wiley Publishing, Inc. 2003| 2003
