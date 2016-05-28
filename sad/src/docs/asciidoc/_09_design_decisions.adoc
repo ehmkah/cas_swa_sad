@@ -56,7 +56,7 @@ Nachteil: höhere Komplexität als bei den DAOs, zusätzliche Abhängigkeit von 
 
 === Entscheidung
 
-Wir haben uns für Hibenate entschieden.
+Wir haben uns für Hibernate entschieden.
 Die Vorteile einer Standardkomponente überwiegen unserer Meinung nach die Nachteile wie die der höheren Komplexität.
 
 === MVC-Pattern verwenden
@@ -72,7 +72,7 @@ Unterstützt bei der Umsetzung der Internationalisierung.
 ==== Variante 2: Single Page Application
 
 Vorteil: Antwortzeiten können reduziert werden, da nur Teile der Webseite übertragen werden.
-Die Benutzer können nicht manuell einzelne Seite aufrufen, sondern können nur die auf
+Die Benutzer können nicht manuell einzelne Seiten aufrufen, sondern können nur die auf
 der aktuellen Webseite verfügbaren Links verwenden.
 
 ==== Entscheidung
@@ -81,7 +81,8 @@ Aufgrund der grösseren Erfahrung mit den JavaServer Faces wird diese Variante u
 damit der Zeitplan eingehalten werden kann.
 
 
-=== Performance der Boxoffice-User
+=== Performance der Boxoffice-User [[section-performance-box-office]]
+
 
 ==== Fragestellung
 
