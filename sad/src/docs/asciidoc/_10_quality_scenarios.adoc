@@ -84,4 +84,4 @@ Die Test-Abdeckung über automatisierte Tests (Code-Coverage) beträgt mindesten
 ==== Übertragbarkeit - Anpassbarkeit
 ===== BS70 Neue Show-Location
 Die Applikation muss für eine neue Show-Location angepasst werden (Branding).
-Dies kann innerhalb von 60 Personentagen bewerkstelligt werden, ohne dass die Architektur des OTS angepasst werden muss.
+Dies kann innerhalb von 5 Personentagen bewerkstelligt werden, ohne dass die Architektur des OTS angepasst werden muss.
