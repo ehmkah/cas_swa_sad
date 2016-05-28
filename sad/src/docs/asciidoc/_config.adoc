@@ -19,6 +19,3 @@
 
 // where are images located?
 :imagesdir: ./images
-
-:pdf-stylesdir: ./themes
-:pdf-style: custom-theme.yml
