@@ -107,3 +107,100 @@ Auch wenn die Kosten kurzfristig für die Ein-Server-Variante spricht,
 empfehlen wir, dass mindestens zwei Server bereit gestellt werden.
 Neben der besseren Verteilung der Last kann auch eine bessere Verfügbarkeit gewährleistet werden. 
 Wenn ein Server ausfällt, können die Benutzer auf den anderen Server umgeleitet werden.
+
+=== Performance Sitzplatzreservation [[section-performance-sitzplatzreservierung]]
+
+==== Fragestellung
+TODO
+
+==== Rahmenbedingungen
+
+.Die Performancetests wurden auf einem älteren Laptop (Lenovo T530) mit folgenden Hardware gemacht:
+ * Intel Core i7-3630QM
+ * 16 GB Systemspeicher
+
+
+==== Variante 1: Zufälliger Sitz wählen
+
+TODO
+
+[source]
+----
+Strategy: RandomSeatSelectionStrategy
+Seats
+  available:     13660
+  reserved:      12805
+  remaining:     855
+Reservations
+  total:         4000
+  rejected:      1468
+  adjacent:      2228
+  non-adjacent:  237
+  incorrect:     67
+Latency Time
+  minimum:       0.0s
+  maximum:       3.191s
+  average:       0.657s
+  deviation:     0.522s
+
+Total Time:      26s
+Throughput:      148 requests/s
+----
+
+==== Variante 2: Zufälliger Sektor wählen
+
+TODO
+
+[source]
+----
+Strategy: RandomSectorSelectionStrategy
+Seats
+  available:     13660
+  reserved:      11176
+  remaining:     2484
+Reservations
+  total:         4000
+  rejected:      1736
+  adjacent:      2264
+  non-adjacent:  0
+  incorrect:     0
+Latency Time
+  minimum:       0.0s
+  maximum:       2.076s
+  average:       0.583s
+  deviation:     0.229s
+
+Total Time:      24s
+Throughput:      166 requests/s
+----
+
+==== Variante 3: Chache basierte Lösung
+
+TODO
+
+[source]
+----
+Strategy: CacheBasedSelectionStrategy
+Seats
+  available:     13660
+  reserved:      13513
+  remaining:     147
+Reservations
+  total:         4000
+  rejected:      1400
+  adjacent:      2600
+  non-adjacent:  0
+  incorrect:     0
+Latency Time
+  minimum:       0.0s
+  maximum:       1.247s
+  average:       0.287s
+  deviation:     0.254s
+
+Total Time:      11s
+Throughput:      342 requests/s
+----
+
+==== Entscheidung
+
+TODO
