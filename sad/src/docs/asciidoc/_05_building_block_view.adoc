@@ -8,6 +8,7 @@
 Übersicht / Struktur::
 Die folgende Abbildung zeigt das Gesamtsystem mit externen Bestandteilen
 
+.Kontextabgrenzung
 image::05_bausteinsicht_level0.png["Baustein Sicht Level 0"]
 
 
@@ -65,6 +66,7 @@ Externes Payment System. Im moment ist noch nicht definiert welches konkrete Sys
 Die folgende Abbildung zeigt die inneren Bestandteile des OTS
 und dessen Abhängigkeiten.
 
+.Bausteinsicht Level 1
 image::05_bausteinsicht_level1.png["Baustein Sicht Level 1"]
 
 Begründung::
@@ -138,6 +140,7 @@ Hier werden die Daten welche von verschiedenen Modulen benögit werden verwaltet
 Übersicht / Struktur::
 Baustein Übersicht der Show- und Saal-Verwaltung
 
+.Bausteinsicht Buchungs-Verwaltung Level 2
 image::05_bausteinsicht_level2-BuchungsVerwaltung.png["Baustein Sicht Level 2 der Buchungs-Verwaltung"]
 
 Begründung::
@@ -189,6 +192,7 @@ Enthaltene Bausteine::
 Übersicht / Struktur::
 Baustein übersicht der Show- und Saal-Verwaltung
 
+.Bausteinsicht Show- und Saalverwaltung Level 2
 image::05_bausteinsicht_showverwaltung.png["Baustein Sicht Level 2"]
 
 Begründung::

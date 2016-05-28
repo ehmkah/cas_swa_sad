@@ -89,7 +89,3 @@ include::_12_glossary.adoc[]
 <<<<
 // Verweise + Literatur
 include::_appendix-references.adoc[]
-
-<<<<
-// Approved Practitioner for arc42
-include::_appendix-practitioner.adoc[]

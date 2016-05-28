@@ -16,23 +16,21 @@ Jedem Saal können beliebig viele Saalkonfigurationen zugeordnet werden.
 Eine Saalkonfiguration besteht aus beliebig vielen Sitzplätzen.
 Jeder Sitzplatz gehört zu genau einer Sitzplatzkategorie und wird über eine Reihennummer und Sitzplatznummer innerhalb der Reihe definiert.
 Die Sitzplatzkategorie ist die Basis für die spätere Preisfestlegung einer Performance.
-
+Ein Sitzplatz hat einen Status, damit erkannt werden kann, ob er frei, reserviert oder ebreits verkauft wurde.
 ==== Fachdomäne Showverwaltung
 
-Eine Show wird in verschiedenen Performances aufgeführt und einer Show wird eine Saalkonfiguration zugeordnet.
+Eine Show wird in beliebig vielen Performances aufgeführt und einer Show wird eine Saalkonfiguration zugeordnet.
 Für jede Performance können die Preise für eine Sitzplatzkategorie individuell festgelegt werden, indem Sitzplatzkategorie-Verkaufspreise definiert werden.
-Um in einer Performance einen kontinuierlichen Überblick über jeden Sitzplatz einer Performance zu erhalten, werden einer Performance Performancesitzplätze zugeordnet.
-Ein Performancesitzplatz besteht aus einem Sitzplatzstatus (frei, reserviert, verkauft) und einem Sitzplatz, damit ist eine platz-genaue Zuordnung von bereits reservierten, verkauften und freien Sitzplätzen möglich.
+Dies geschieht über die Preisfesetzung der zugewiesenen Sitzplätze.
 
 ==== Fachdomäne Buchungsverwaltung
 
 Wenn ein Kunde ein Ticket kauft, dann erhält er eine Buchung.
-Eine Buchung besteht aus mehreren Tickets und einer ZahlungsId.
+Eine Buchung besteht aus mehreren Tickets und einer Kredikarte, mit der das Ticket bezahlt wurde.
 Eine Buchung wird nur nach einem erfolgreichen Verkauf erstellt.
-Jedem Ticket wird ein Sitzplatz und ein Verkaufspreis zugeordnet.
-Dies erlaubt es, dass die Sitzplatzkategorie-Verkaufspreise verändert werden können, ohne dass bereits verkaufte Sitzplätze von der Preisänderung betroffen sind.
-Die ZahlungsId vermerkt unter welcher externen Nummer, die Buchung beim externen Paymentsystem gefunden werden kann.
-
+Jedem Ticket wird eine Performance und ein Sitzplatz zugeordnet, für den es gilt.
+Die Kreditkarte dient der Information, falls es Probleme mit der Abrechnung gibt.
+Eine Reservierung besteht ebenfalls aus einer Show und einer Performance für die sie gelten.
 
 === Typische Muster und Strukturen
 
