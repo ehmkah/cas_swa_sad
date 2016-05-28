@@ -23,3 +23,12 @@ Krausse: Hinweis: Risiken in dieser Risikomatrix darstellen (das fanden die Lehr
 |===
 [[risk-1]]
 Paragraph or block 1.
+
+
+////
+Todo:
+In den Anforderungen steht ziemlich weit hinten, dass das Management der Meinung ist,
+ein Server sei ausreichend.
+Diese Anforderung sollte als Risiko aufgeführt werden.
+In Kapitel 8 weisen wir darauf hin, dass für die Hochverfügbarbeit mindestens zwei Server verwendet werden sollten.
+////
