@@ -2,6 +2,7 @@
 == Glossar
 
 .Glossar
+[options="header", cols="1,2"]
 |===
 |Begriff      		| Definition
 
@@ -16,21 +17,21 @@
 | DB             	    | Datenbank
 | Emailsystem           | Externes E-Mail-System der Z-Group
 | Frontend              | Web-Applikations-Frontend des OTS
-| GUI               	| Grafische Benutzeroberfläche (Graphical User Interface)
+| GUI               	| Grafische Benutzeroberfläche (Graphical User Interface)
 | HTTP / HTTPS          | HyperText Transport Protocol (Secure)
 | Online-User          	| Ein Kunde, der sein Ticket selbständig über die Webseite kauft.
 | OTS                   | Online Ticketing-System der Firma Z-Group
 | Paymentsystem         | Externes Kredikartenunternehmen
 | Performance       	| Aufführung einer Show, z.B. 12. April 2016, 20:00 "Starlight Express". Ein Platz in einer Performance ist einer Platzkategorie zugeordnet.
-| Sitzplatzkategorie   	| Erlaubt die Definition von Preisen für Tickets
 | Preisgestaltung   	| Zuordnung von Platzkategorie zum Ticketpreis
 | Reservierung          | Innerhalb des Bestellvorganges, werden temporär dem Benutzer die Sitzplätze zugewiesen. Die Zeitspanne beträgt in der Regel 5 min, kann aber für jeden Veranstalter individuell festgelegt werden.
 | REST                  | Representational State Transfer
 | Saal			        | Definition des Ortes und der vorhandenen Sitzplätze für Shows
 | Saalkonfiguration 	| Definition welche Sitzplätze in einem Saal "aktiv" sind, und welcher Platzkategorie sie angehören
-| Sitzplatz             | Ein nummerierter Sitzplatz in einem Saal der eine Zuordnung zu einer Kategorie hat
 | Show              	| Auftritt eines Künstlers, eines Zirkus, einer Oper usw. Eine Show kann mehrere Performances haben. Der Sitzplan ist immer gleich, allerdings können die einzelnen Performances eine abweichende Preisstruktur haben.
 | Show-Location       | Austragungsort einer Show zb das X-Center
+| Sitzplatz             | Ein nummerierter Sitzplatz in einem Saal der eine Zuordnung zu einer Kategorie hat
+| Sitzplatzkategorie   	| Erlaubt die Definition von Preisen für Tickets
 | SLA                    | Service Level Agreement, legt die zugesicherte Verfügbarkeit fest (zum Beispiel 99%)
 | SMTP                 | Simple Mail Transfer Protocol
 | SQL                   | Structured Query Language / Protokoll für Datenbankabfragen
