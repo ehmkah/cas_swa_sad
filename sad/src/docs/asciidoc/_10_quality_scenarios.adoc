@@ -26,7 +26,7 @@ zugeordnet.
 === Bewertungsszenarien
 ==== Funktionalität - Richtigkeit
 ===== BS10 Abnahme
-Die Z Group ernennt einen Testverantwortlichen. Dieser stellt fest dass das System alle funktionalen und
+Die Z-Group ernennt einen Testverantwortlichen. Dieser stellt fest dass das System alle funktionalen und
 nicht-funktionalen Anforderungen gemäss [OTS-Req-2003] erfüllt.
 
 ==== Funktionalität - Sicherheit

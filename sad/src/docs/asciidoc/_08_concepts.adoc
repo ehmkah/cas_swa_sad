@@ -5,32 +5,35 @@
 
 .Domainmodell
 image::08_domainmodel.png["Domainmodel"]
-
+//ye: in kap6 ist der Bgriff Online-User, aber hier Kunden
 Das Domainmodell stellt die wesentlichen Fachbegriffe und ihre Beziehungen untereinander dar.
 Der Lesbarkeit willen wurden im Modell Beziehungen, die die Kardinalität 1 aufweisen weggelassen.
 
 ==== Fachdomäne Saalverwaltung
-
+//ye: ich würde nur Saal nennen ohne verwaltung
 Jedes Center kann aus mehreren Sälen bestehen.
 Jedem Saal können beliebig viele Saalkonfigurationen zugeordnet werden.
 Eine Saalkonfiguration besteht aus beliebig vielen Sitzplätzen.
 Jeder Sitzplatz gehört zu genau einer Sitzplatzkategorie und wird über eine Reihennummer und Sitzplatznummer innerhalb der Reihe definiert.
 Die Sitzplatzkategorie ist die Basis für die spätere Preisfestlegung einer Performance.
 Ein Sitzplatz hat einen Status, damit erkannt werden kann, ob er frei, reserviert oder ebreits verkauft wurde.
-==== Fachdomäne Showverwaltung
 
+==== Fachdomäne Showverwaltung
+//ye: ich würde nur Show nennen ohne verwaltung
 Eine Show wird in beliebig vielen Performances aufgeführt und einer Show wird eine Saalkonfiguration zugeordnet.
 Für jede Performance können die Preise für eine Sitzplatzkategorie individuell festgelegt werden, indem Sitzplatzkategorie-Verkaufspreise definiert werden.
 Dies geschieht über die Preisfesetzung der zugewiesenen Sitzplätze.
 
 ==== Fachdomäne Buchungsverwaltung
-
+//ye: ich würde nur Buchung nennen ohne verwaltung
 Wenn ein Kunde ein Ticket kauft, dann erhält er eine Buchung.
 Eine Buchung besteht aus mehreren Tickets und einer Kredikarte, mit der das Ticket bezahlt wurde.
 Eine Buchung wird nur nach einem erfolgreichen Verkauf erstellt.
 Jedem Ticket wird eine Performance und ein Sitzplatz zugeordnet, für den es gilt.
 Die Kreditkarte dient der Information, falls es Probleme mit der Abrechnung gibt.
 Eine Reservierung besteht ebenfalls aus einer Show und einer Performance für die sie gelten.
+//ye: in kap6 steht Kreditkarte wird nicht persistiert.Vielleicht müssen wir anderes formulieren. wie z.b um die Buchung //abzuschliesen muss Kunde Kreditkarte angeben.
+//order machen wir eine verbindung Buchung zur Zahlung, und Zahlung hat Kreditkarte.
 
 === Typische Muster und Strukturen
 

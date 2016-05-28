@@ -54,7 +54,7 @@ Es müssen daher keine zusätzlichen Klassen für den Datenzugriff implementiert
 Vorteil: Standardkomponente, flexibel und robust
 Nachteil: höhere Komplexität als bei den DAOs, zusätzliche Abhängigkeit von einem weiterer Komponente
 
-=== Entscheidung
+==== Entscheidung
 
 Wir haben uns für Hibernate entschieden.
 Die Vorteile einer Standardkomponente überwiegen unserer Meinung nach die Nachteile wie die der höheren Komplexität.
@@ -91,21 +91,21 @@ immer eingehalten wird?
 
 ==== Rahmenbedingungen
 
-1.) Ausser bei der Zahlungsabwicklung soll die Antwortzeit immer unter 2 Sekunden liegen.
+* Ausser bei der Zahlungsabwicklung soll die Antwortzeit immer unter 2 Sekunden liegen.
 
-2.) Es soll nur ein Server verwendet werden.
+* Es soll nur ein Server verwendet werden.
 
 ==== Betrachtete Alternativen
 
-Variante 1) mehrere Applikationsserver auf dem physischen Server betreiben
+* Mehrere Applikationsserver auf dem physischen Server betreiben
 
-Variante 2) Neuverhandlung der Rahmenbedingungen, damit mindestens 2 Server betrieben werden können.
+* Neuverhandlung der Rahmenbedingungen, damit mindestens 2 Server betrieben werden können.
 
 ==== Entscheidung
 
 Auch wenn die Kosten kurzfristig für die Ein-Server-Variante spricht,
 empfehlen wir, dass mindestens zwei Server bereit gestellt werden.
-Neben der besseren Verteilung der Last kann auch eine bessere Verfügbarkeit gewährleistet werden. 
+Neben der besseren Verteilung der Last kann auch eine bessere Verfügbarkeit gewährleistet werden.
 Wenn ein Server ausfällt, können die Benutzer auf den anderen Server umgeleitet werden.
 
 === Performance Sitzplatzreservation [[section-performance-sitzplatzreservierung]]
@@ -125,11 +125,10 @@ Im Rahmen des SADs wurden daher mehrere Prototypen entwickelt auf ihre Funktiona
 
 ==== Rahmenbedingungen
 
-Gemäss den Anforderungen (siehe <<QZ,Qualitätsziele>>) sollen 15'000 Plätze innerhalb von 10 Minuten verkauft werden.
-Das bedeutet das der Algorithmus rund rund 25 Reservationen pro Sekunden bei einer maximalen Antwortzeit von maximal
-zwei Sekunden.
+Gemäss den Anforderungen (siehe <<QZ,Qualitätsziele>>) sollen 15'000 Plätze innerhalb von 10 Minuten verkauft werden können.
+Das bedeutet das der Algorithmus rund rund 25 Reservationen pro Sekunden bei einer Antwortzeit von maximal zwei Sekunden ermöglichen muss.
 
-Beim buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und die Sitzplätze sollten benachbart sein.
+Beim Buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und die Sitzplätze sollten (sofern noch vorhanden) benachbart sein.
 
 ==== Variante 1: Zufälliger Sitz wählen
 
