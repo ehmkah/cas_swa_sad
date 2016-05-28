@@ -3,7 +3,11 @@
 //
 // ====================================
 
-= image:ots-logo.png[arc42] Online Ticketing System SAD
+:title-logo-image: image:ots-logo.png[arc42][scaledwidth=100%,align=left]
+
+= Software Architektur Dokument (SAD): Online Ticketing System
+Christian Feuz; Frank Meier; Frank Moritz; Jan Klominsky; Michael Krausse; Ye Zhao
+v1.0, 2016-29-05
 
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Inhaltsverzeichnis
