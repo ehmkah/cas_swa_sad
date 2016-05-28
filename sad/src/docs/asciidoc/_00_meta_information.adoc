@@ -11,5 +11,5 @@ Wesentliche Änderungen am SAD werden an dieser Stelle festgehalten.
 |====
 | Referenz  | Dokument     | Beschreibung                                                       | Version
 | req-1 [[req-1]]| Requirements_J2EE_Sample_Application.pdf| Requirements for the Sample Application. Wiley Publishing, Inc. 2003| 2003
-| arc42 [[arc42]]| arc42 Template | We acknowledge that this document uses material from the arc 42 architecture  template, http://www.arc42.de. Created by Dr. Peter Hruschka & Dr. Gernot Starke. For additional contributors see arc42.de/about/contributors.html| Template Revision: 6.0 DE (Release Candidate) 19. March 2012
+| arc42 [[arc42]]| arc42 Template | We acknowledge that this document uses material from the arc 42 architecture  template, http://www.arc42.de. Created by Dr. Peter Hruschka & Dr. Gernot Starke. For additional contributors see arc42.de/about/contributors.html| Template Revision: 6.0 DE (Release Candidate)  19. March 2012
 |====
