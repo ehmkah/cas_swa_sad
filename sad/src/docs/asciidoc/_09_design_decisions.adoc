@@ -139,7 +139,8 @@ Beim Buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und di
 
 ==== Variante 1: Zufälliger Sitz wählen
 
-TODO
+Idee:
+Alle freie Sitzplätze der gewünschten Kategorie werden gelesen. Es wird mit einem zufälligen Platz beginen die benachbarte Plätze zu suchen. Falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Sonst wird es noch mal wiederholt.
 
 [source]
 ----
@@ -197,7 +198,7 @@ Alle Sektoren der gewünschten Kategorie mit genügend freie Sitzplätze werden 
 
 [source]
 ----
-Strategy: RandomSectorSelectionStrategy
+Strategy: RandomOrderSectorStrategy
 Seats
   available:     13660
   reserved:      11176
