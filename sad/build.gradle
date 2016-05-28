@@ -19,7 +19,10 @@ asciidoctorj {
 
 asciidoctor {
     backends    'pdf', 'html5'
+    //backends    'html5'
     attributes	'build-gradle': file('build.gradle'),
+            'pdf-stylesdir': 'themes',
+            'pdf-style': 'custom',
             'sourcedir': project.sourceSets.main.java.srcDirs[0],
             'endpoint-url': 'http://example.org',
             'source-highlighter' : 'coderay',
