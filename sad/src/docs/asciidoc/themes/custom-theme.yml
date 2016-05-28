@@ -16,12 +16,14 @@ page:
   margin: [1.2in, 1in, 1.2in, 1in]
   size: A4
 base:
+  align: justify
   font_size: 11
-  font_family: Helvetica
+  font_family: Times-Roman
   font_color: #333333
   line_height_length: 12
   line_height: $base_line_height_length / $base_font_size
 heading:
+  font_family: Helvetica
   font_color: #0080c0
   font_size: 17
   font_style: bold
