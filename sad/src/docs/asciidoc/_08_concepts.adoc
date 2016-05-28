@@ -11,8 +11,6 @@ Das Domainmodell stellt die wesentlichen Fachbegriffe und ihre Beziehungen unter
 Der Lesbarkeit willen wurden im Modell Beziehungen, die die Kardinalität 1 aufweisen weggelassen.
 
 ==== Fachdomäne Saal
-// ye:      ich würde nur Saal nennen ohne verwaltung
-// ehmkah:  DONE
 Jedes Center kann aus mehreren Sälen bestehen.
 Jedem Saal können beliebig viele Saalkonfigurationen zugeordnet werden.
 Eine Saalkonfiguration besteht aus beliebig vielen Sitzplätzen.
@@ -21,15 +19,11 @@ Die Sitzplatzkategorie ist die Basis für die spätere Preisfestlegung einer Per
 Ein Sitzplatz hat einen Status, damit erkannt werden kann, ob er frei, reserviert oder ebreits verkauft wurde.
 
 ==== Fachdomäne Show
-//ye: ich würde nur Show nennen ohne verwaltung
-// ehmkah: DONE
 Eine Show wird in beliebig vielen Performances aufgeführt und einer Show wird eine Saalkonfiguration zugeordnet.
 Für jede Performance können die Preise für eine Sitzplatzkategorie individuell festgelegt werden, indem Sitzplatzkategorie-Verkaufspreise definiert werden.
 Dies geschieht über die Preisfesetzung der zugewiesenen Sitzplätze.
 
 ==== Fachdomäne Buchung
-//ye: ich würde nur Buchung nennen ohne verwaltung
-// ehmkah: DONE
 Wenn ein Online-User ein Ticket kauft, dann erhält er eine Buchung.
 Eine Buchung besteht aus mehreren Tickets und enthält eine Kreditkarte, damit die Buchung über den Paymentanbieter erfolgen kann.
 Eine Buchung wird nur nach einem erfolgreichen Verkauf erstellt.
@@ -135,6 +129,11 @@ Tritt an der Servicegrenze zum Frontend ein Fehler auf, so muss dieser gefangen 
 Jeder bekannte Fehler wird mit einem Fehlercode benannt und in der Liste der Fehlercodes dokumentiert.
 Alle Exceptions, die innerhalb von OTS erzeugt werden, müssen von der OTSException erben, damit die Quelle leichter zu finden ist.
 Alle aufgetretenen Exceptions müssen zum Zeitpunkt des Auftretens ins Logfile geschrieben werden, damit eine Nachverfolgung möglich ist.
+//ye: es ist zwischen Fachliche Fehler und Technische Fehler zu unterscheiden. 
+//Fachliche Fehler: falsche Angaben, Kreditkarte ungültig, Zahlung abgelehnt. Es muss eine Benutzerfreundliche Meldung geben, 
+//benutzer kann noch mal versuchen. 
+//Technische Fehler: laufzeit Fehler wie nullpointer darf auf keinen fall zu benutzer angezeigt werden. 
+//Laufzeit Fehler wie die verbindung zu umsystem wie payment oder db, müssen protokolliert werden. Es sollte noch eine Meldung zu //Benutzer kommen, er kann später noch mal versuchen.
 
 === Management des Systems & Administrierbarkeit
 
