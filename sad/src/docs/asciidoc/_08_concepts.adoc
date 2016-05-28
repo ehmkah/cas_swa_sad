@@ -35,7 +35,6 @@ Eine Buchung besteht aus mehreren Tickets und enthält eine Kreditkarte, damit d
 Eine Buchung wird nur nach einem erfolgreichen Verkauf erstellt.
 Jedem Ticket wird eine Performance und ein Sitzplatz zugeordnet, für den es gilt.
 Die Kreditkarte ist für den Verkauf notwendig wird aber nicht persistiert
-Mit der Die Kreditkarte dient der Information, falls es Probleme mit der Abrechnung gibt.
 Eine Reservierung besteht ebenfalls aus einer Show und einer Performance für die sie gelten.
 // ye:      in kap6 steht Kreditkarte wird nicht persistiert.Vielleicht müssen wir anderes formulieren. wie z.b um die Buchung //abzuschliesen muss Kunde Kreditkarte angeben.
 //          order machen wir eine verbindung Buchung zur Zahlung, und Zahlung hat Kreditkarte.
