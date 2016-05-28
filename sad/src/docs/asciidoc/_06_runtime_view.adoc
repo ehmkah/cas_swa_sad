@@ -18,7 +18,7 @@ Zu den abgebildeten Prozessschritten folgende Erläuterungen:
 | Der Online-User wählt eine Show aus, die er besuchen möchte
 
 | Online-User wählt Performance, die Platzkategorie, Anzahl Plätze
-| Online-User sagt, welche Performance er besuchen möchte und in welcher Platzkategorie er wieviele Tickets benötigt
+| Online-User sagt, welche Performance er besuchen möchte und in welcher Platzkategorie er wieviele Plätze benötigt
 
 | Performance hat genügen freie Plätze
 | es erfolgt eine Prüfung, ob die Kundenwünsche erfüllt werden können
@@ -48,23 +48,25 @@ Wenn ein Sonstiger Zahlungsfehler auftrat, darf der Online-User entscheiden, ob 
  +
 Wenn die Zahlung erfolgreich war, geht es im Verkaufsprozess ordnungsgemäss weiter
 
-| OTS bucht Tickets
-| OTS bucht die Tickets, damit sind die Tickets dem Online-User verkauft und können nicht mehr durch andere Online-User gekauft werden
+| OTS bucht Plätze
+| OTS bucht die Plätze, damit sind die Plätze dem Online-User verkauft und können nicht mehr durch andere Online-User gekauft werden
 
 
 | Buchung erfolgreich?
 | NEIN - Plätze konnten nicht gebucht werden - das kann auftreten, wenn die reservierten Plätze länger als fünf Minuten reserviert waren und durch einen anderen Online-User reserviert oder gekauft wurden. +
  +
-JA - Tickets konnten erfolgreich gebucht werden
+JA - Plätze konnten erfolgreich gebucht werden
 
 | OTS sendet Online-User Bestätigungsmail
 | nach einer erfolgreichen Buchung wird dem Online-User eine Bestätigungsmail gesendet, damit er seine Tickets ausdrucken kann
 
 | reservierte Plätze freigeben
-|um Tickets möglichst schnell nach einer Reservierung wieder verkaufen zu können, werden sie explizit auch vor Ablauf der maximal möglichen Reservierungsfrist freigegeben. Es behandelt sich bereits um eine Optimierung.
+| Online-User will Zahlung nicht mehr fortsetzen, die reservierte Plätze werden wieder freigegeben.
+//um Tickets möglichst schnell nach einer Reservierung wieder verkaufen zu können, werden sie explizit auch vor Ablauf der //maximal möglichen Reservierungsfrist freigegeben. Es behandelt sich bereits um eine Optimierung.
 // TODO:
 // meierfra: Mir war das nicht bewusst. War das so spezifiziert?
 // ehmkah: Nein, das war so nicht spezifiziert, deshalb habe ich dahinter geschrieben, dass es eine Optimierung ist.
 // soll es wieder raus?
 // meierfra: ich würde es rausnehmen, denn so ist die Reservierung eigentlich keine richtige Reservierung mehr.
+//ye: Tickets durch Plätze ersetzt, und letzen Teil anderes formuliert. Bitte graphic noch anpassen.
 |===
