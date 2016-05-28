@@ -25,7 +25,8 @@ endif::basebackend-html[]
 // configure DE settings for asciidoc
 include::_config.adoc[]
 
-
+<<<<
+include::_00_meta_information.adoc[]
 
 // horizontal line
 ***
@@ -33,6 +34,8 @@ include::_config.adoc[]
 
 // numbering from here on
 :numbered:
+
+
 
 <<<<
 // 1. Anforderungen und Ziele
