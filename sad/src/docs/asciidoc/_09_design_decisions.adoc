@@ -193,7 +193,7 @@ Throughput:      166 requests/s
 
 ==== Variante 2b: Sektoren mit zufälliger Reihenfolge
 Idee:
-Alle Sektoren der gewünschten Kategorie mit genügend freie Sitzplätze werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Dann werden die benachbarte Plätze in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking beim persistieren verwendet und beim Konflikt werden die Sitzplätze neue geladen.  
+Alle Sektoren der gewünschten Kategorie mit genügend freie Sitzplätze werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Die benachbarte Plätze werden in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking beim persistieren verwendet und beim Konflikt werden die Sitzplätze neue geladen.  
 
 [source]
 ----
