@@ -9,7 +9,7 @@ einzelnen Schichten garantiert werden kann.
 === Performance
 
 Um die Verfügbarkeit der Applikation für die Box-Office-User bei hoher Last (z.B. bei einem Verkauf von Tickets für einen Grossanlass)
-zu garantieren, sollen die Mitarbeiter und die Online-User auf zwei getrennte Applikationsserver zugreifen (siehe <<verteilungsdiagramm-1,Verteilungsdiagramm>>).
+zu garantieren, sollen die Mitarbeiter und die Online-User auf zwei getrennte Applikationsserver zugreifen (siehe <<section-performance-box-office,Entwurfsentscheidungen>>).
 Die Kriterien an die Antwortzeit während dem Peak-Szenatio zu gewährleisten, soll die Appliaktion mit Hilfe von Lasttest
 regelmässig überprüft werden.
 
