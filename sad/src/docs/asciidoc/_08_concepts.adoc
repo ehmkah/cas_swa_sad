@@ -17,6 +17,7 @@ Eine Saalkonfiguration besteht aus beliebig vielen Sitzplätzen.
 Jeder Sitzplatz gehört zu genau einer Sitzplatzkategorie und wird über eine Reihennummer und Sitzplatznummer innerhalb der Reihe definiert.
 Die Sitzplatzkategorie ist die Basis für die spätere Preisfestlegung einer Performance.
 Ein Sitzplatz hat einen Status, damit erkannt werden kann, ob er frei, reserviert oder ebreits verkauft wurde.
+
 ==== Fachdomäne Showverwaltung
 
 Eine Show wird in beliebig vielen Performances aufgeführt und einer Show wird eine Saalkonfiguration zugeordnet.
