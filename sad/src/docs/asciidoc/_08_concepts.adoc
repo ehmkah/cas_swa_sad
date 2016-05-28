@@ -203,7 +203,6 @@ Um die Ausfallsicherheit zu zu erhöhen, empfehlen wir den Betrieb von mindesten
 //Todo: Als Risiko aufnehmen!
 // ehmkah: wie meinst DU das mit dem Risiko? Also was willst Du da schreiben? Die beiden Server haben wird doch empholen, um den Box-Office-Usern eine bestimmte Performance garantieren zu können? Oder Du schreibst es es einfach ins Risikokapitel hinein... :-)
 // johnDilbert: ich habe das im Kapitel 11 erwähnt
-=======
 // FMO: Risiko: 1 Server; Lösung: mindestens zwei Server verwenden, hab ich als ToDo zum Kapitel 11 hinzugefügt.
 
 
