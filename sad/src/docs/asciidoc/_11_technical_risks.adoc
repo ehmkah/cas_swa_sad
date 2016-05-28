@@ -24,18 +24,18 @@ Für das OTS wurden folgende Risiken erkannt:
 [[risk-1]]
 
 .Verfügbarkeit
-* Wenn die Verfügbarkeit während eines Konzertverkaufs nicht gewährleistet ist, kann dies zu finanziellen Schaden führen.
+* Wenn die Verfügbarkeit, z.B. die Applikation läuft nur auf einem Server und dieser geht während eines Konzertverkaufs kaputt, so kann dies zu finanziellen Schaden führen.
+* Eine schlechte Verfügbarkeit kann zu Reputationsschaden führen
 
 .Performance
-* Das OTS muss mit Peak-Szenarien (Überlast) umgehen können. 
+* Das OTS muss mit Peak-Szenarien (Überlast) umgehen können.
 
 .Security
 * Das System sollte gegen Betrug gesichert sein, z.B:
-** es dürfen keine Sitzplätze mehrfachbelegt werden
-** Hacker
+** es dürfen keine Sitzplätze mehrfachbelegt (verkauft) werden
+** die Architektur der Software muss ausgelegt werden, dass es Hacker nicht möglich ist, in das OTS einzudringen.
 * Administratoren arbeiten nur im local LAN
 
-
 .Single Point of Failure
-* Es gibt nur eine Datenbank bei der Z-Group, Problematik ist, wenn die Datenbank offline ist
-* Ausbildung der Mitarbeiter: es sollten mehrere Administratoren das OTS beherrschen
+* Es gibt nur eine Datenbank bei der Z-Group, Problematik, wenn die Datenbank offline ist.(siehe Verfügbarkeit)
+* Ausbildung der Mitarbeiter: es sollten mehrere Administratoren das OTS beherrschen.
