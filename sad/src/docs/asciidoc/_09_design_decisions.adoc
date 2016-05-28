@@ -111,14 +111,25 @@ Wenn ein Server ausfällt, können die Benutzer auf den anderen Server umgeleite
 === Performance Sitzplatzreservation [[section-performance-sitzplatzreservierung]]
 
 ==== Fragestellung
-TODO
 
-==== Rahmenbedingungen
+Die zuverlässigkeit des Reservationsablaufs ist einer der wichtigsten Faktoren für den Projekterfolgt. Entscheidend
+ist, dass einzelne Plätze nicht mehrmals verkauft werden und dass durch eine möglichst optimale Verteilung eine
+hohe Anzahl an Plätzen anhand der Buchungswünsche verkauft werden können. Bei vielen simultanen Reservationen
+muss der Algorithmus auch in der Lage sein, den geforderten Durchsatz zu erreichen.
 
-.Die Performancetests wurden auf einem älteren Laptop (Lenovo T530) mit folgenden Hardware gemacht:
+Im Rahmen des SADs wurden daher mehrere Prototypen entwickelt auf ihre Funktionalität und Performance getestet.
+
+.Die Performancetests wurden auf einem älteren Laptop (Lenovo T530) mit folgenden Hardware ausgeführt:
  * Intel Core i7-3630QM
  * 16 GB Systemspeicher
 
+==== Rahmenbedingungen
+
+Gemäss den Anforderungen (siehe <<QZ,Qualitätsziele>>) sollen 15'000 Plätze innerhalb von 10 Minuten verkauft werden.
+Das bedeutet das der Algorithmus rund rund 25 Reservationen pro Sekunden bei einer maximalen Antwortzeit von maximal
+zwei Sekunden.
+
+Beim buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und die Sitzplätze sollten benachbart sein.
 
 ==== Variante 1: Zufälliger Sitz wählen
 
