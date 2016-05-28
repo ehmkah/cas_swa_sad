@@ -158,8 +158,35 @@ Throughput:      148 requests/s
 ----
 
 ==== Variante 2: Zufälliger Sektor wählen
+Idee:
+Nur einen zufälligen Sektor der gewünschten Kategorie mit genügend freie Sitzplätze wird ausw?hlt. Dann werden die benachbarte Plätze in diesem Sektor gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert und dabei wird ein Optimistic Locking beim persistieren verwendet.
 
-TODO
+[source]
+----
+Strategy: RandomSectorSelectionStrategy
+Seats
+  available:     13660
+  reserved:      11176
+  remaining:     2484
+Reservations
+  total:         4000
+  rejected:      1736
+  adjacent:      2264
+  non-adjacent:  0
+  incorrect:     0
+Latency Time
+  minimum:       0.0s
+  maximum:       2.076s
+  average:       0.583s
+  deviation:     0.229s
+
+Total Time:      24s
+Throughput:      166 requests/s
+----
+
+==== Variante 2b: Sektoren mit zufälliger Reihenfolge
+Idee:
+Alle Sektoren der gewünschten Kategorie mit genügend freie Sitzplätze werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Dann werden die benachbarte Plätze in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert und dabei wird ein Optimistic Locking beim persistieren verwendet.
 
 [source]
 ----
