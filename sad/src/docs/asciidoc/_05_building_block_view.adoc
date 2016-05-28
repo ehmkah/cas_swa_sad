@@ -124,9 +124,9 @@ Schnittstellen::
 
 ===== DB (Blackbox)
 
-*Zweck:* persistierung der OTS Daten
+*Zweck:* Persistierung der OTS Daten
 
-Hier werden die Daten welche von verschiedenen Modulen benögit werden verwaltet/gespeichert:
+Hier werden die Daten welche von verschiedenen Modulen benötigt werden verwaltet/gespeichert:
 
 * Saal-Konfiguration
 * Show/Performance Information inkl. Preisgestaltung
@@ -145,7 +145,7 @@ image::05_bausteinsicht_level2-BuchungsVerwaltung.png["Baustein Sicht Level 2 de
 
 Begründung::
 Die Buchungsverwaltung stellt über den Buchungs-Service eine Schnittstelle zur Verfügung
-über die Das Frontend Informationen zu Shows und Performaces abrufen, sowie Sitzplatz-Buchungen
+über die das Frontend Informationen zu Shows und Performaces abrufen, sowie Sitzplatz-Buchungen
 durchgeführt werden können.
 
 
@@ -164,7 +164,7 @@ Enthaltene Bausteine::
 
 Dieses Modul ist zuständig, dass freie Sitze gefunden werden und eine Reservation erzeugt wird.
 Weiter führt es eine Reservation bei erfolgreicher Bezahlung in eine definitive Buchung über.
-Hier wird der Algorithmus zur Suche nach freien Sitzen implementiert (Prototyp).
+Hier wird der Algorithmus zur Suche nach freien Sitzen implementiert (Prototyp-Phase I).
 
 ===== Show-Accessor (Blackbox)
 
@@ -174,7 +174,7 @@ Hier wird der Algorithmus zur Suche nach freien Sitzen implementiert (Prototyp).
 ==== Infrastruktur-Modul (Whitebox)
 
 Das Infrastruktur-Modul beinhaltet Adapter zur Kommunikation mit externen Systemen sowie zur
-perstistierung von Daten an.
+Perstistierung von Daten an.
 
 Enthaltene Bausteine::
 
@@ -211,6 +211,6 @@ Enthaltene Bausteine::
 | Show | Definition einer Show | siehe Glossar
 | Performance | Definition einer Performance | siehe Glossar
 | Preisgestaltung | Definition einer Preisgestaltung: Preis pro Kategorie | siehe Glossar
-| Saalkonfiguration | Defition einer Saalkonfiguration: aktive Sitzplätze inkl Kategorie | siehe Glossar
+| Saalkonfiguration | Defition einer Saalkonfiguration: aktive Sitzplätze inkl. Kategorie | siehe Glossar
 | Saal | Definition eines Saals | siehe Glossar
 |===

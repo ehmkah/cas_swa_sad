@@ -33,13 +33,16 @@ outline_list:
 header:
   height: 0.75in
   line_height: 1
-  #image_vertical_align: 2 # (1)
+  vertical_align: center
+  image_vertical_align: 2
   recto_content:
     left: image:arc42-logo.png[width=80]
     center: Software Architektur Dokument OTS
+    right: image:ots-logo.png[width=100]
   verso_content:
     left: image:arc42-logo.png[width=80]
     center: Software Architektur Dokument OTS
+    right: image:ots-logo.png[width=100]
 footer:
   height: 0.75in
   line_height: 1
