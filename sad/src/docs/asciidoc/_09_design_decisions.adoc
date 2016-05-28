@@ -38,26 +38,33 @@ Wie soll auf die Daten zugegriffen werden?
 Auf eine Zwischenschicht wird verzichtet und die SQL-Statements werden direkt ausgeführt.
 Vorteil: Durch den Verzicht auf die Zwischenschicht ist eine höhere Performance möglich.
 Nachteil: Änderungen an der DB-Struktur wirken sich direkt auf die Businesslogik aus.
-Ein Teil der Businesslogik wird in die Persistenzschicht verlagert.
+Ein Teil der Businesslogik wird in die Persistenzschicht verlagert und Teile der
+Persistierung wird durch die Businesslogik vorgenommen.
 
-==== Variante 2: Data Access Objects (DAO)
+==== Variante 2: Object-Relational Mapping (ORM)
 
-Der Zugriff auf die Daten erfolgt über eigene Datenklassen - den Data Access Objects.
-Vorteil: Die Integrationsschicht wird von der Businesslogik getrennt.
-Wenn sich das Datenmodell ändert, muss nur das entsprechende DAO angepasst werden.
-Nachteil: Es müssen die entsprechenden Klassen implementiert werden.
+Mittels Object-Relational Mapping werden die Java-Objekte automatisch auf die Datenbanktabellen gemappt.
+Der Zugriff auf die Datenbank ist daher gekapselt.
+Ein häufig verwendeter OR-Mapper ist Hibernate.
+footnote:[http://hibernate.org/orm/]
 
-==== Variante 3: Hibernate
-
-Hibernate ist ein Standard-Framework, welches den Zugriff auf die Datenbank kapselt.
-Es müssen daher keine zusätzlichen Klassen für den Datenzugriff implementiert werden.
 Vorteil: Standardkomponente, flexibel und robust
-Nachteil: höhere Komplexität als bei den DAOs, zusätzliche Abhängigkeit von einem weiterer Komponente
+
+==== Variante 3: Hibernate und DAO
+
+Der Zugriff auf die von Hibernate erstellten Entitäten erfolgt über eigene Datenklassen - den Data Access Objects (DAO).
+Vorteil: Die Integrationsschicht wird vollständig von der Businesslogik getrennt.
+Wenn sich das Datenmodell ändert, muss nur das entsprechende DAO angepasst werden.
+Hibernate kann durch eine andere Technologie ersetzt werden,
+beispielsweise wenn später auf NoSQL gewechselt werden sollte.
+Nachteil: Es müssen die entsprechenden Klassen implementiert werden.
+Durch jede weitere Zwischenschicht geht etwas Performance verloren.
 
 ==== Entscheidung
 
-Wir haben uns für Hibernate entschieden.
-Die Vorteile einer Standardkomponente überwiegen unserer Meinung nach die Nachteile wie die der höheren Komplexität.
+Wir haben uns für Variante 3 entschieden.
+Die Vorteil der Flexibilität der DAOs überwiegt unserer Meinung nach den geringfügigen
+Einfluss auf die Performance.
 
 === MVC-Pattern verwenden
 
