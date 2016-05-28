@@ -39,6 +39,7 @@
 | Überlast              | System wird ausserhalb der spezifizierten Grenzwerte betrieben
 | Veranstalter          | Ein Veranstalter betreibt eine oder mehrere → Hallen, wo die -> Veranstaltungen stattfinden.
 | X-Center              | Die designierte (primäre) Show-Location der Z-Group für welche das OTS kreiert wird
+| Z-Group               | Eigentümer des X-Center und Auftraggeber für das OTS
 | Zahlungsinformation   | Beinhaltet die Kredikartennummer, Name auf der Kreditkarte, Gültigkeit der Kreditkarte
 
 |===
