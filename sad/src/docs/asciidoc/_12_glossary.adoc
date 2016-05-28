@@ -2,6 +2,7 @@
 == Glossar
 
 .Glossar
+[options="header", cols="1,2"]
 |===
 |Begriff      		| Definition
 
@@ -16,7 +17,7 @@
 | DB             	    | Datenbank
 | Emailsystem           | Externes E-Mail-System der Z-Group
 | Frontend              | Web-Applikations-Frontend des OTS
-| GUI               	| Grafische Benutzeroberfläche (Graphical User Interface)
+| GUI               	| Grafische Benutzeroberfläche (Graphical User Interface)
 | HTTP / HTTPS          | HyperText Transport Protocol (Secure)
 | Online-User          	| Ein Kunde, der sein Ticket selbständig über die Webseite kauft.
 | OTS                   | Online Ticketing-System der Firma Z-Group
