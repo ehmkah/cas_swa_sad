@@ -1,7 +1,7 @@
 [[section-technical-risks]]
 == Risiken
 .Risikoanalyse zum Online Ticketing System
-image::11_risikoanalyse.png["Risikoanalyse zum Online Ticketing System"]
+image::11_risikoanalyse.png[scaledwidth="80%","Risikoanalyse zum Online Ticketing System"]
 
 Für das OTS wurden folgende Risiken erkannt:
 

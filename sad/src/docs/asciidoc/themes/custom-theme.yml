@@ -63,6 +63,7 @@ caption:
   font_color: #000001
   font_size: 12
 table:
+  align: center
   head:
     background_color: #f0f0f0
   even_row:
