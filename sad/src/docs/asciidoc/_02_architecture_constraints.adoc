@@ -8,21 +8,22 @@
 [[techRand-1]]
 |===
 2+| *Hardware-Vorgaben*
-|DatenBank Server| bestehender Sun Server
+|Datenbank Server| bestehender Sun Server
 
 2+| *Software-Infrastruktur*
 | Application Server		| GlassFish v4.0
 | Datenbanksystem           | Oracle 12c
-| Browser          | IE ab Version 9, andere Browser version nach 01.01.2012. Konkret: Firefox ab Version 10, Opera ab Version 11.61, Safari ab Version 5.1.3, Chrome ab Version 17.0.963
+| Browser          | IE ab Version 9, andere Browser Version nach 01.01.2012. Konkret: Firefox ab Version 10, Opera ab Version 11.61, Safari ab Version 5.1.3, Chrome ab Version 17.0.963
 
 2+| *Hardware-Infrastruktur*
 |Bandbreite |download >= 2 Mbps, upload >= 100 Kbps
 |Betrieb |Datenbank Server und Application Server müssen in gleichen LAN laufen
-|Skalierbarkeit | Muss skalierbar sein
+|Skalierbarkeit | Es müssen mehrere parallele Server betrieben werden können (horizontal skalierbar)
+
 
 2+| *Vorgaben des Systembetriebs*
 | Zugriff auf GUI | Der Zugriff auf das GUI für Verkäufer ist nur aus dem Firmen-LAN gestattet
-|Externe System |External payment system
+| Externe Systeme | Paymentsystem, Emailsystem
 
 2+| *Programmiervorgaben*
 | Programmiersprache | JavaEE 7, JavaScript
@@ -43,8 +44,8 @@ und können sich daher noch ändern.
 [options="header"]
 |===
 2+| *Organisation und Struktur*
-| Organsisationsstruktur Projektteam | kleines internes Team ohne Unterauftragnehmer
-| Eigenentwicklung | Die Applikation wird nur innerhalb der Z Group verwendet werden.
+| Organisationsstruktur Projektteam | kleines internes Team ohne Unterauftragnehmer
+| Eigenentwicklung | Die Applikation wird nur innerhalb der Z Group verwendet.
 2+| *Ressourcen*
 | Verrechnung | muss noch mit der Projektleitung abgestimmt werden, voraussichtlich wird
 nach Aufwand/Zeit abgerechnet
@@ -68,5 +69,5 @@ aber mit der Phase 3 ist ein internationaler Einsatz vorgesehen
 
 === Konventionen
 
-Für die Architektur sind keine relevanten Konventionen vorgesehen.
+Für die Architektur sind keine speziellen Konventionen vorgesehen.
 Es gelten die allgemeinen Programmier-, Dokumentations- und Versionsmanagementrichtlinien der Z Group.
