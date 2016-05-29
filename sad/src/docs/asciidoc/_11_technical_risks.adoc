@@ -5,7 +5,7 @@ image::11_risikoanalyse.png[scaledwidth="80%","Risikoanalyse zum Online Ticketin
 
 Für das OTS wurden folgende Risiken erkannt:
 
-[cols="1,2" options="header"]
+[cols="2,2" options="header"]
 .Risiken
 |===
 |Risiko
@@ -13,7 +13,7 @@ Für das OTS wurden folgende Risiken erkannt:
 |Verfügbarkeit
 |Hoch
 
-|Performance
+|Performanz
 |Hoch
 
 |Security
@@ -22,50 +22,47 @@ Für das OTS wurden folgende Risiken erkannt:
 |Single Point of Failure
 |Mittel
 
+|Ausfall externer Paymentdienstleister
+|Niedrig
+
 |===
 [[risk-1]]
 
 
-.Verfügbarkeit
-* Wenn die Verfügbarkeit, z.B. die Applikation läuft nur auf einem Server und dieser geht während eines Konzertverkaufs kaputt, so kann dies zu finanziellen Schaden führen.
-* Eine schlechte Verfügbarkeit kann zu Reputationsschaden führen
-
-Empfehlung:
-
-mehrere Server verwenden.
-
-Mit dem Anbieter der Zahlungsschnittstelle muss ein SLA vereinbart werden. (Es sollten mindesten 99,7% angestrebt werden)
-
-
-.Performanz
+=== Performanz
+.Beschreibung:
 * Das OTS muss mit Peak-Szenarien (Überlast) umgehen können.
 
-Empfehlung:
-
-Mittels eines Prototyps einen geeigneten Algorithmus finden.
-
-Mittels Lasttests das Verhalten des Systems prüfen und gegebenenfalls Optimierungen vornehmen.
+.Empfehlung:
+* Mittels eines Prototyps einen geeigneten Algorithmus finden.
+* Mittels Lasttests das Verhalten des Systems prüfen und gegebenenfalls Optimierungen vornehmen.
 
 
-.Security
+=== Security
+.Beschreibung:
 * Das System sollte gegen Betrug gesichert sein, z.B:
 ** es dürfen keine Sitzplätze mehrfach belegt (verkauft) werden
 ** die Architektur der Software muss so ausgelegt werden, dass es Hacker nicht möglich ist, in das OTS einzudringen.
-* Administratoren arbeiten nur im local LAN
 
-Empfehlung:
-
-Den Reservierungsalgorithmus mittels Unittests prüfen.
-
-Bei der Implementierung die Empfehlungen des OWSP berücksichtigen.
-Ein (externer) Sicherheitsexperte sollte die Webapplikation testen.
+.Empfehlung:
+* Den Reservierungsalgorithmus mittels Unittests prüfen.
+* Bei der Implementierung die Empfehlungen des OWASP berücksichtigen.
+* Ein (externer) Sicherheitsexperte sollte die Webapplikation testen.
+* Administrationszugriff nur im lokalen Netz erlauben.
 
 
-.Single Point of Failure
-* Es gibt nur eine Datenbank bei der Z-Group, Problematik, wenn die Datenbank offline ist.(siehe Verfügbarkeit)
+=== Single Point of Failure / Verfügbarkeit
+.Beschreibung:
+* Es gibt nur eine Datenbank bei der Z-Group. Dies ist problematisch, wenn die Datenbank offline ist.
+* Wenn die Verfügbarkeit, z.B. die Applikation läuft nur auf einem Server und dieser geht während eines Konzertverkaufs kaputt, so kann dies zu finanziellen Schaden führen (keine Tickets werden verkauft).
+
+.Empfehlung:
+* Die Datenbank sollte geclustert werden d.h. mehrere Server (Redundanz), um die Verfügbarkeit zu gewährleisten.
 * Ausbildung der Mitarbeiter: es sollten mehrere Administratoren das OTS beherrschen.
 
+=== Ausfall externer Paymentdienstleister
+.Beschreibung:
+* Der externe Paymentdienstleister fällt aus oder hat eine schlechte Verfügbarkeit.
 
-Empfehlung:
-
-Die Datenbank sollte geclustert werden, um die Verfügbarkeit zu gewährleisten.
+.Empfehlung:
+* Mit dem Anbieter der Zahlungsschnittstelle muss ein SLA vereinbart werden. (Es sollten mindesten 99,7% angestrebt werden)

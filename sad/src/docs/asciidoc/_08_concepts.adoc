@@ -108,9 +108,8 @@ Die zu versendenden E-Mails werden in eine Warteliste eingetragen. Dadurch erfol
 
 === Verteilung
 
-Die gesamte Logik befindet sich auf dem Applikationsserver,
-in dem Sinne ist es daher kein verteiltest System.
-Vom Applikationsserver aus wird allerdings über Schnittstellen auf die Zahlungsschnittstelle,
+Die gesamte Business Logik befindet sich auf dem Applikationsserver.
+Vom Applikationsserver aus wird über Schnittstellen auf das Zahlungssystem,
 dem Mailserver und die Datenbank zugegriffen.
 
 
@@ -126,11 +125,10 @@ Fachliche Fehler sind z.B. eine falsche Kreditkartennummer oder Zahlung abgelehn
 Treten sie auf muss dem Nutzer eine benutzerfreundliche Fehlermeldung angezeigt werden.
 Weiterhin muss der Nutzer die Möglichkeit bekommen, den Fehler zu korrigieren.
 Technische Fehler haben keine fachliche Ursache, sondern weisen auf Programm- oder Konfigurationsfehler hin.
-Eine Nullpointer Exception ist ein Beispiel für einen technischen Fehler.
+//Eine Nullpointer Exception ist ein Beispiel für einen technischen Fehler.
 Technische Fehler dürfen dem Nutzer nicht angezeigt werden, stattdessen muss eine allgemeine Fehlermeldung angezeigt werden.
-Besondere Technische Fehler sind _Laufzeitfehler_.
-Laufzeitfehler können zum Beispiel sein: keine Verbindung zur Datenbank oder das Paymentsystem ist nicht verfügbar.
-Tritt ein Laufzeitfehler auf, muss der Benutzer eine Fehlermeldung bekommen, die es ihm erlaubt den Vorgang zu wiederholen.
+Besondere Technische Fehler sind _Laufzeitfehler_ wie zum Beispiel keine Verbindung zur Datenbank oder das Paymentsystem ist nicht verfügbar.
+Tritt ein solcher Laufzeitfehler auf, muss der Benutzer eine Fehlermeldung bekommen, die es ihm erlaubt den Vorgang zu wiederholen.
 
 Weiterhin gelten die folgenden Prinzipien:
 
@@ -138,6 +136,8 @@ Weiterhin gelten die folgenden Prinzipien:
 * Jeder bekannte Fehler wird mit einem Fehlercode benannt und in der Liste der Fehlercodes dokumentiert.
 * Alle Exceptions, die innerhalb von OTS erzeugt werden, müssen von der OTSException erben, damit die Quelle leichter zu finden ist.
 * Alle aufgetretenen Exceptions müssen zum Zeitpunkt des Auftretens ins Logfile geschrieben werden, damit eine Nachverfolgung möglich ist.
+* Bei den technischen Fehlern muss noch eine Notifikation an den Betrieb gesendet werden.
+
 
 //ye: es ist zwischen Fachliche Fehler und Technische Fehler zu unterscheiden.
 //Fachliche Fehler: falsche Angaben, Kreditkarte ungültig, Zahlung abgelehnt. Es muss eine Benutzerfreundliche Meldung geben,
