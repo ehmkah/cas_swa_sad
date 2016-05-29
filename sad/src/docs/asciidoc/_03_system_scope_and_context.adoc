@@ -54,8 +54,8 @@ footnote:[https://pilot.datatrans.biz/showcase/doc/Technical_Implementation_Guid
 
 
 ===== Mengengerüste
-* Annahme Normal-Auslastung: 12000 Transaktionen pro Tag (Annahme 2 Performances pro Tag mit 15000 Plätzen und durchschnittlich 2.5 Karten pro Bestellung)
-* Annahme Peak-Szenario: 12000 Transaktionen in 10min müssen bewältigt werden können
+* Annahme Normal-Auslastung: 10000 Transaktionen pro Tag (Annahme 2 Performances pro Tag mit 15000 Plätzen und durchschnittlich 3 Karten pro Bestellung)
+* Annahme Peak-Szenario: 10000 Transaktionen in 10min müssen bewältigt werden können
 * Zeit für eine Transaktion darf maximal 10 Sekunden in Anspruch nehmen
 (Vergleiche auch "Qualitätsziele" Kapitel 1.2)
 
@@ -153,9 +153,9 @@ siehe https://www.datatrans.ch/showcase/authorisation/lightbox-mode
 * für jede erfolgreiche Buchung wird ein Buchungsbestätigung-E-Mail versandt
 
 ===== Mengengerüste
-* Das System muss 12000 E-Mails pro Tag verarbeiten und versenden können.
-(Annahme 2 Performances pro Tag mit 15000 Plätzen und durchschnittlich 2.5 Karten pro Bestellung)
-* Unter Hochlast muss das System muss bis zu 12000 Mails innerhalb von 10min entgegennehmen können,
+* Das System muss 10000 E-Mails pro Tag verarbeiten und versenden können.
+(Annahme 2 Performances pro Tag mit 15000 Plätzen und durchschnittlich 3 Karten pro Bestellung)
+* Unter Hochlast muss das System muss bis zu 10000 Mails innerhalb von 10min entgegennehmen können,
 die Mails müssen jedoch nicht in diesem Zeitraum versandt werden
 
 ===== Syntax: Daten und Formate

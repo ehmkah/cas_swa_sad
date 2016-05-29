@@ -27,7 +27,6 @@ Schnittstellen::
 (siehe auch Kapitel 3.3)
 [cols="1,4" options=""]
 |===
-| User-Schnittstelle | Webbasiertes User-Interface
 | E-Mail-Schnittstelle | Schnittstelle zum Externen E-Mail System
 | Payment-Schnittstelle | Schnittstelle zum Externen Payment System
 |===
@@ -37,19 +36,20 @@ Schnittstellen::
 
 Externes E-Mail System. Das vorhandene E-Mail System der Z-Group.
 
-*Zweck:* Versenden von Buchungsbestätigunen
+*Zweck:* Versenden von Buchungsbestätigungen
 
 .Schnittstellen _Bausteinname_:
 [cols="1,2" options=""]
 |===
-| E-Mail-Schnittstelle | Schnittstelle welche vom OTS genutzt wird um Buchungsbestätigunen zu versenden
+| E-Mail-Schnittstelle | Schnittstelle welche vom OTS genutzt wird um Buchungsbestätigungen zu versenden
 |===
 
 ==== Paymentsystem (Blackbox)
 
-Externes Payment System. Im moment ist noch nicht definiert welches konkrete System hier angebunden wird.
+Externes Payment System. Im Moment wird Datatrans als Dienstleister vorgesehen
 
-*Zweck:* Abwicklung der Zahlung für Ticket-Käufe per Kredit-Karte
+
+*Zweck:* Abwicklung der Zahlung für Ticket-Käufe per Kreditkarte
 
 .Schnittstellen _Bausteinname_:
 [cols="1,2" options=""]
@@ -71,8 +71,8 @@ image::05_bausteinsicht_level1.png["Baustein Sicht Level 1"]
 
 Begründung::
 Schichten Architektur, mit User-Interface auf der ersten Ebene (Frontend),
-Buissness-Logik in der Mitte und einer Infrastruktur Komponente für die Abstraktion
-Der externen Schnittstellen unten dran.
+Businesslogik in der Mitte und einer Infrastruktur Komponente für die Abstraktion
+der externen Schnittstellen unten dran.
 
 
 Enthaltene Bausteine::
@@ -80,7 +80,7 @@ Enthaltene Bausteine::
 [cols="2,4,1" options=""]
 |===
 | Frontend            | Web-Applikations-Frontend für Online-User und Box-Office-User |
-| Admininterface      | Vorerst *nicht* implementiertes Administrations Interface |
+| Admininterface      | Vorerst *nicht* implementiertes Administrations-Interface (Bestandteil Phase 3) |
 | Buchungsverwaltung  | Logik für die Platzreservation und Buchung inkl. Bezahlung | siehe 5.3.1
 | Showverwaltung      | Logik zur Verknüpfung von Show und Saal-Konfiguration | siehe 5.3.2
 | Saalverwaltung      | Logik zur Konfiguration des Saales | siehe 5.3.2
@@ -90,6 +90,9 @@ Enthaltene Bausteine::
 | Mailsystem          | Externes E-Mail-System  | siehe 5.1.1
 |===
 
+////
+
+Anmerkung FMO: Datenbank und Frontends sind keine Schnittstellen!
 
 Schnittstellen::
 
@@ -97,10 +100,11 @@ Schnittstellen::
 |===
 | Datenbank-Schnittstelle | Datenbank Zugriff für Show- und Buchungs-Verwaltung
 |===
-
+////
 ===== Frontend (Blackbox)
 
-*Zweck:* Zuriff auf die Show-Auswahl und das Buchungs-System
+*Zweck:* Zugriff auf die Show-Auswahl und das Buchungssystem
+////
 
 .Schnittstellen _Bausteinname_:
 [cols="1,2" options=""]
@@ -108,13 +112,14 @@ Schnittstellen::
 | User-Schnittstelle | Web-Interface für Online- und Box-Office-User
 |===
 
+////
 
 ===== Buchungsverwaltung (Blackbox)
 
 *Zweck:* Zentrale Logik für Reservations- und Buchungs-Verarbeitung
 
 
-===== Showverwaltung (Blackbox)
+===== Show-Verwaltung (Blackbox)
 
 *Zweck:* Definiert Shows und Performances inkl. Preisgestaltung und zugehöriger Saalkonfiguration
 
@@ -130,7 +135,7 @@ Hier werden die Daten welche von verschiedenen Modulen benötigt werden verwalte
 
 * Saal-Konfiguration
 * Show/Performance Information inkl. Preisgestaltung
-* Kunden-Daten (keine Kreditkarten Daten)
+* Kundendaten (keine Kreditkartendaten)
 * Buchungen und Reservationen
 
 === Ebene 3
@@ -190,7 +195,7 @@ Enthaltene Bausteine::
 ==== _Show- und Saal-Verwaltung_ (Whitebox)
 
 Übersicht / Struktur::
-Baustein übersicht der Show- und Saal-Verwaltung
+Bausteinübersicht der Show- und Saal-Verwaltung
 
 .Bausteinsicht Show- und Saalverwaltung Level 2
 image::05_bausteinsicht_showverwaltung.png["Baustein Sicht Level 2"]
@@ -198,7 +203,7 @@ image::05_bausteinsicht_showverwaltung.png["Baustein Sicht Level 2"]
 Begründung::
 * Eine Performance definiert sich aus der Verknüpfung einer Show mit einer gewissen Preisgestaltung,
 und findet zu einem gewissen Zeitpunkt statt.
-* Die Preisgestaltung defniert einen Preis für eine gewisse Sitzplatzkategorie.
+* Die Preisgestaltung definiert einen Preis für eine gewisse Sitzplatzkategorie.
 * Eine Show findet in einem Saal mit einer gewissen Konfiguration statt.
 * Ein Saalkonfiguration basiert auf einem Saal mit der zusätzlichen Information,
 welche Sitzplätze aktiv sind und welcher Kategorie sie angehören.
@@ -211,6 +216,6 @@ Enthaltene Bausteine::
 | Show | Definition einer Show | siehe Glossar
 | Performance | Definition einer Performance | siehe Glossar
 | Preisgestaltung | Definition einer Preisgestaltung: Preis pro Kategorie | siehe Glossar
-| Saalkonfiguration | Defition einer Saalkonfiguration: aktive Sitzplätze inkl. Kategorie | siehe Glossar
+| Saalkonfiguration | Definition einer Saalkonfiguration: aktive Sitzplätze inkl. Kategorie | siehe Glossar
 | Saal | Definition eines Saals | siehe Glossar
 |===
