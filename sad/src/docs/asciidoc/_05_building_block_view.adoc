@@ -196,7 +196,7 @@ Enthaltene Bausteine::
 |===
 
 
-==== _Show- und Saal-Verwaltung_ (Whitebox)
+==== Show- und Saal-Verwaltung (Whitebox)
 
 Übersicht / Struktur::
 Bausteinübersicht der Show- und Saal-Verwaltung

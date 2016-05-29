@@ -22,7 +22,7 @@
 
 
 2+| *Vorgaben des Systembetriebs*
-| Zugriff auf GUI | Der Zugriff auf das GUI für Verkäufer ist nur aus dem Firmen-LAN gestattet
+| Zugriff auf GUI | Der Zugriff auf das GUI für Box-Office-User ist nur aus dem Firmen-LAN gestattet
 | Externe Systeme | Paymentsystem, Emailsystem
 
 2+| *Programmiervorgaben*
@@ -40,22 +40,23 @@
 Die organisatorischen Randbedingungen müssen noch mit der Projektleitung abgestimmt werden
 und können sich daher noch ändern.
 
+.Organisatorische Randbedingungen
 [[orgRand-1]]
 [options="header"]
 |===
 2+| *Organisation und Struktur*
 | Organisationsstruktur Projektteam | kleines internes Team ohne Unterauftragnehmer
-| Eigenentwicklung | Die Applikation wird nur innerhalb der Z Group verwendet.
+| Eigenentwicklung                  | Die Applikation wird nur innerhalb der Z Group verwendet.
 2+| *Ressourcen*
-| Verrechnung | muss noch mit der Projektleitung abgestimmt werden, voraussichtlich wird
+| Verrechnung                       | muss noch mit der Projektleitung abgestimmt werden, voraussichtlich wird
 nach Aufwand/Zeit abgerechnet
-| Zeitplan | "as soon as posible" -
+| Zeitplan                          | "as soon as posible" -
 daher muss mit einem engen Zeitplan gerechnet werden
-| Release-Plan | Phase 1: Sitzplatzreservierung (Kunden und Backoffice-User)
+| Release-Plan                      | Phase 1: Sitzplatzreservierung (Online-User und Box-Office-User)
 Phase 2: Admin-Interface
 Phase 3: Erweiterung der Webseite (Premium services und Internationalisierung)
-| Projekt-Budget | muss noch mit der Projektleitung abgestimmt werden
-| Team | muss noch mit der Projektleitung abgestimmt werden
+| Projekt-Budget                    | muss noch mit der Projektleitung abgestimmt werden
+| Team                              | muss noch mit der Projektleitung abgestimmt werden
 
 |===
 [options="header"]

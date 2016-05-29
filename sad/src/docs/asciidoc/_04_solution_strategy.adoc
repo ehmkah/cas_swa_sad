@@ -1,16 +1,15 @@
 [[section-solution-strategy]]
 == Lösungsstrategie
 
-Die Umsetzung erfolgt nach den Java und JavaEE Best Practices sowie unter der Verwendung von bewährten
-Entwurfs- und Architekturmustern. Die Lösung soll über ein Web-Frontend bedient werden können. Als grundlegender Aufbau
-der Lösung wurde eine Schichtenarchitektur gewählt, damit die Wiederverwendbarkeit resp. die Austauschbarkeit der
-einzelnen Schichten garantiert werden kann.
+Die Umsetzung erfolgt nach den Java und JavaEE Best Practices sowie unter der Verwendung von bewährten Entwurfs- und Architekturmustern.
+Die Lösung soll über ein Web-Frontend bedient werden können.
+Als grundlegender Aufbau der Lösung wurde eine Schichtenarchitektur gewählt, damit die Wiederverwendbarkeit resp. die Austauschbarkeit der einzelnen Schichten garantiert werden kann.
 
 === Performance
 
 Um die Verfügbarkeit der Applikation für die Box-Office-User bei hoher Last (z.B. bei einem Verkauf von Tickets für einen Grossanlass)
-zu garantieren, sollen die Mitarbeiter und die Online-User auf zwei getrennte Applikationsserver zugreifen (siehe <<section-performance-box-office,Entwurfsentscheidungen>>).
-Die Kriterien an die Antwortzeit während dem Peak-Szenatio zu gewährleisten, soll die Applikation mit Hilfe von Lasttest
+zu garantieren, sollen die Box-Office-User und die Online-User auf zwei getrennte Applikationsserver zugreifen (siehe <<section-performance-box-office,Entwurfsentscheidungen>>).
+Um die Kriterien an die Antwortzeit während dem Peak-Szenatio zu gewährleisten, soll die Applikation mit Hilfe von Lasttest
 regelmässig überprüft werden.
 
 === Buchungsalgorithmus
