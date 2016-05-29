@@ -58,6 +58,8 @@ Externes Payment System. Im Moment wird Datatrans als Dienstleister vorgesehen
 | Payment-Schnittstelle | Schnittstelle welche vom OTS genutzt wird um die Bezahlung von Ticketkäufen abzuwickeln
 |===
 
+<<<<
+
 === Ebene 2
 [[ch5-level2-1]]
 ==== OTS (Whitebox)
@@ -139,6 +141,8 @@ Hier werden die Daten welche von verschiedenen Modulen benötigt werden verwalte
 * Kundendaten (keine Kreditkartendaten)
 * Buchungen und Reservationen
 
+<<<<
+
 === Ebene 3
 
 ==== Buchungs-Verwaltung (Whitebox)
@@ -214,9 +218,9 @@ Enthaltene Bausteine::
 
 [cols="2,4,1" options=""]
 |===
-| Show | Definition einer Show | siehe Glossar
-| Performance | Definition einer Performance | siehe Glossar
-| Preisgestaltung | Definition einer Preisgestaltung: Preis pro Kategorie | siehe Glossar
-| Saalkonfiguration | Definition einer Saalkonfiguration: aktive Sitzplätze inkl. Kategorie | siehe Glossar
-| Saal | Definition eines Saals | siehe Glossar
+| Show | Definition einer Show | siehe <<section-glossary>>
+| Performance | Definition einer Performance | siehe <<section-glossary>>
+| Preisgestaltung | Definition einer Preisgestaltung: Preis pro Kategorie | siehe <<section-glossary>>
+| Saalkonfiguration | Definition einer Saalkonfiguration: aktive Sitzplätze inkl. Kategorie | siehe <<section-glossary>>
+| Saal | Definition eines Saals | siehe <<section-glossary>>
 |===
