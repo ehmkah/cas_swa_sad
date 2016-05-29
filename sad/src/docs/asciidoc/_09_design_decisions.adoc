@@ -126,12 +126,6 @@ muss der Algorithmus auch in der Lage sein, den geforderten Durchsatz zu erreich
 
 Im Rahmen des SADs wurden daher mehrere Prototypen entwickelt auf ihre Funktionalität und Performance getestet.
 
-.Die Performancetests wurden auf einem älteren Laptop (Lenovo T530) mit folgenden Hardware ausgeführt:
- * Intel Core i7-3630QM
- * 16 GB Systemspeicher
-
-Die Resultate der Lasttests mit 100 parallelen Threads und jeweils 40 Anfragen pro Thread sind jeweils bei jeder Variante ersichtlich.
-
 ==== Rahmenbedingungen
 
 Gemäss den Anforderungen (siehe <<QZ,Qualitätsziele>>) sollen 15'000 Plätze innerhalb von 10 Minuten verkauft werden können.
@@ -139,11 +133,19 @@ Das bedeutet das der Algorithmus rund rund 25 Reservationen pro Sekunden ermögl
 
 Beim Buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und die Sitzplätze sollten (sofern noch vorhanden) benachbart sein.
 
+.Die Performancetests wurden auf einem älteren Laptop (Lenovo T530) mit folgenden Hardware ausgeführt:
+ * Intel Core i7-3630QM
+ * 16 GB Systemspeicher
+
+Die Resultate der Lasttests mit 100 parallelen Threads und jeweils 40 Anfragen pro Thread sind jeweils bei jeder Variante ersichtlich.
+
 ==== Variante 1: Zufälliger Sitz wählen
 Alle freie Sitzplätze der gewünschten Kategorie werden gelesen. Es wird mit einem zufälligen Platz begonnen, die benachbarten Plätze zu suchen. Falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Sonst wird dieser Vorgang maximal 5 mal wiederholt..
 
 Vorteil: kurze Latenzzeit.
+
 Nachteil: viele Plätze sind nicht reserviert worden, reservierte Plätze sind fehlerhaft.
+
 [source]
 ----
 Strategy: RandomSeatSelectionStrategy
@@ -171,6 +173,7 @@ Throughput:      148 requests/s
 Nur einen zufälligen Sektor der gewünschten Kategorie mit genügend freie Sitzplätze wird auswählt. Dann werden die benachbarte Plätze in diesem Sektor gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert und dabei wird ein Optimistic Locking beim persistieren verwendet.
 
 Vorteil: kurze Latenzzeit.
+
 Nachteil: viele Plätze sind nicht reserviert worden.
 [source]
 ----
@@ -199,6 +202,7 @@ Throughput:      166 requests/s
 Alle Sektoren der gewünschten Kategorie mit genügend freien Sitzplätzen werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Die benachbarten Plätze werden in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking beim persistieren verwendet und beim Konflikt werden die Sitzplätze neu geladen.
 
 Vorteil: mehr Plätze können reserviert werden.
+
 Nachteil: relativ lange, maximale Latenzzeit.
 [source]
 ----
@@ -236,8 +240,9 @@ dass der Algorithmus auch im Falle von mehreren Serverinstanzen niemals zweimal 
 Als Cache wird das bewährte und quelloffene Produkt Ehcache verwendet. Mit Ehcache lassen sich die gecachten Daten auch
 über mehrere Server replizieren, so dass die Lösung auch mit einer vertikalen Skalierung kompatibel wäre.
 
-Vorteil: sehr hohe Performance
-Nachteil: Hoher Resourcenbedarf, zusätzliche Komplexität
+Vorteil: sehr hohe Performance.
+
+Nachteil: Hoher Resourcenbedarf, zusätzliche Komplexität.
 
 [source]
 ----
