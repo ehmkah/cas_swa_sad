@@ -108,9 +108,8 @@ Die zu versendenden E-Mails werden in eine Warteliste eingetragen. Dadurch erfol
 
 === Verteilung
 
-Die gesamte Logik befindet sich auf dem Applikationsserver,
-in dem Sinne ist es daher kein verteiltest System.
-Vom Applikationsserver aus wird allerdings über Schnittstellen auf die Zahlungsschnittstelle,
+Die gesamte Business Logik befindet sich auf dem Applikationsserver.
+Vom Applikationsserver aus wird über Schnittstellen auf das Zahlungssystem,
 dem Mailserver und die Datenbank zugegriffen.
 
 
