@@ -30,25 +30,42 @@ Für das OTS wurden folgende Risiken erkannt:
 * Wenn die Verfügbarkeit, z.B. die Applikation läuft nur auf einem Server und dieser geht während eines Konzertverkaufs kaputt, so kann dies zu finanziellen Schaden führen.
 * Eine schlechte Verfügbarkeit kann zu Reputationsschaden führen
 
+Empfehlung:
+
+mehrere Server verwenden.
+
+Mit dem Anbieter der Zahlungsschnittstelle muss ein SLA vereinbart werden. (Es sollten mindesten 99,7% angestrebt werden)
+
+
 .Performanz
 * Das OTS muss mit Peak-Szenarien (Überlast) umgehen können.
 
+Empfehlung:
+
+Mittels eines Prototyps einen geeigneten Algorithmus finden.
+
+Mittels Lasttests das Verhalten des Systems prüfen und gegebenenfalls Optimierungen vornehmen.
+
+
 .Security
 * Das System sollte gegen Betrug gesichert sein, z.B:
-** es dürfen keine Sitzplätze mehrfachbelegt (verkauft) werden
-** die Architektur der Software muss ausgelegt werden, dass es Hacker nicht möglich ist, in das OTS einzudringen.
+** es dürfen keine Sitzplätze mehrfach belegt (verkauft) werden
+** die Architektur der Software muss so ausgelegt werden, dass es Hacker nicht möglich ist, in das OTS einzudringen.
 * Administratoren arbeiten nur im local LAN
+
+Empfehlung:
+
+Den Reservierungsalgorithmus mittels Unittests prüfen.
+
+Bei der Implementierung die Empfehlungen des OWSP berücksichtigen.
+Ein (externer) Sicherheitsexperte sollte die Webapplikation testen.
+
 
 .Single Point of Failure
 * Es gibt nur eine Datenbank bei der Z-Group, Problematik, wenn die Datenbank offline ist.(siehe Verfügbarkeit)
 * Ausbildung der Mitarbeiter: es sollten mehrere Administratoren das OTS beherrschen.
 
 
+Empfehlung:
 
-////
-Todo:
-In den Anforderungen steht ziemlich weit hinten, dass das Management der Meinung ist,
-ein Server sei ausreichend.
-Diese Anforderung sollte als Risiko aufgeführt werden.
-In Kapitel 8 weisen wir darauf hin, dass für die Hochverfügbarbeit mindestens zwei Server verwendet werden sollten.
-////
+Die Datenbank sollte geclustert werden, um die Verfügbarkeit zu gewährleisten.
