@@ -5,7 +5,7 @@ image::11_risikoanalyse.png[scaledwidth="80%","Risikoanalyse zum Online Ticketin
 
 Für das OTS wurden folgende Risiken erkannt:
 
-[cols="1,2" options="header"]
+[cols="2,2" options="header"]
 .Risiken
 |===
 |Risiko
@@ -22,18 +22,11 @@ Für das OTS wurden folgende Risiken erkannt:
 |Single Point of Failure
 |Mittel
 
+|Ausfall externer Paymentdienstleister
+|Niedrig
+
 |===
 [[risk-1]]
-
-
-=== Verfügbarkeit
-.Beschreibung:
-* Wenn die Verfügbarkeit, z.B. die Applikation läuft nur auf einem Server und dieser geht während eines Konzertverkaufs kaputt, so kann dies zu finanziellen Schaden führen.
-* Eine schlechte Verfügbarkeit kann zu Reputationsschaden führen
-
-.Empfehlung:
-* Mehrere Server verwenden (Redundanz).
-* Mit dem Anbieter der Zahlungsschnittstelle muss ein SLA vereinbart werden. (Es sollten mindesten 99,7% angestrebt werden)
 
 
 === Performanz
@@ -58,10 +51,18 @@ Für das OTS wurden folgende Risiken erkannt:
 * Administrationszugriff nur im lokalen Netz erlauben.
 
 
-=== Single Point of Failure
+=== Single Point of Failure / Verfügbarkeit
 .Beschreibung:
-* Es gibt nur eine Datenbank bei der Z-Group. Dies ist problematisch, wenn die Datenbank offline ist. (siehe Verfügbarkeit)
+* Es gibt nur eine Datenbank bei der Z-Group. Dies ist problematisch, wenn die Datenbank offline ist.
+* Wenn die Verfügbarkeit, z.B. die Applikation läuft nur auf einem Server und dieser geht während eines Konzertverkaufs kaputt, so kann dies zu finanziellen Schaden führen (keine Tickets werden verkauft).
 
 .Empfehlung:
-* Die Datenbank sollte geclustert werden, um die Verfügbarkeit zu gewährleisten.
+* Die Datenbank sollte geclustert werden d.h. mehrere Server (Redundanz), um die Verfügbarkeit zu gewährleisten.
 * Ausbildung der Mitarbeiter: es sollten mehrere Administratoren das OTS beherrschen.
+
+=== Ausfall externer Paymentdienstleister
+.Beschreibung:
+* Der externe Paymentdienstleister fällt aus oder hat eine schlechte Verfügbarkeit.
+
+.Empfehlung:
+* Mit dem Anbieter der Zahlungsschnittstelle muss ein SLA vereinbart werden. (Es sollten mindesten 99,7% angestrebt werden)
