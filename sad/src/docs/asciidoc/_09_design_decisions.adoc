@@ -264,7 +264,7 @@ Throughput:      342 requests/s
 
 ==== Entscheidung
 
-Alle Varianten erfüllen auf dem Testgerät die Anforderungen an den Datendurchsatz. Die erste Variante und die Variante 2a
+Alle Varianten erfüllen auf dem Testgerät die Anforderungen an den Datendurchsatz. Die Variante 1 und die Variante 2
 haben allerdings eine hohe Anzahl von nicht verkauften Sitzplätzen und werden deshalb verworfen.
 
 
