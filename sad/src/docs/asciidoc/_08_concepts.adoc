@@ -160,7 +160,7 @@ Jeder Aufruf nach OTS erhält eine CorrelationId, diese muss beim loggen zwingen
 === Geschäftsregeln
 
 Die Geschäftslogik wird in den Java-Klassen implementiert.
-Die Geschäftsregeln sind relativ simple, so dass der Initialaufwand für eine Regelmaschine zu gross wäre.
+Die Geschäftsregeln sind relativ einfach, so dass der Initialaufwand für eine Regelmaschine zu gross wäre.
 
 === Konfigurierbarkeit
 
