@@ -10,7 +10,7 @@
 image::07_verteilungsdiagram.png["Verteilungsdiagram"]
 [[verteilungsdiagramm-1]]
 
-Das Verteilungsdiagramm stell das Deployment von OTS dar.
+Das Verteilungsdiagramm stellt das Deployment von OTS dar.
 
 OTS wird innerhalb des Rechenzentrums der Z-Group auf einem eigenen Linux Server deployed.
 Die Anwendung wird auf zwei verschiedenen Applikationsservern deployed. Als Applikationsserver ist GlassFish v4.0 vorgesehen.
