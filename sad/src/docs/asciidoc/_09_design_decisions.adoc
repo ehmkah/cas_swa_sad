@@ -66,11 +66,11 @@ Wir haben uns für Variante 3 entschieden.
 Die Vorteil der Flexibilität der DAOs überwiegt unserer Meinung nach den geringfügigen
 Einfluss auf die Performance.
 
-=== MVC-Pattern verwenden
+=== Präsentationsschicht
 
 ==== Fragestellung
 
-Wie wird sichergestellt, dass das GUI ausgetauscht werden kann?
+Wie soll die Präsentationsschicht umgesetzt werden?
 
 ==== Variante 1: JavaServer Faces
 Vorteil: etabliertes Framework. Erleichtert die Umsetzung des MVC-Patterns.
