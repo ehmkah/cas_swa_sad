@@ -135,7 +135,7 @@ Die Resultate der Lasttests mit 100 parallelen Threads und jeweils 40 Anfragen p
 ==== Rahmenbedingungen
 
 Gemäss den Anforderungen (siehe <<QZ,Qualitätsziele>>) sollen 15'000 Plätze innerhalb von 10 Minuten verkauft werden können.
-Das bedeutet das der Algorithmus rund rund 25 Reservationen pro Sekunden bei einer Antwortzeit von maximal zwei Sekunden ermöglichen muss.
+Das bedeutet das der Algorithmus rund rund 25 Reservationen pro Sekunden ermöglichen muss.
 
 Beim Buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und die Sitzplätze sollten (sofern noch vorhanden) benachbart sein.
 
@@ -196,7 +196,7 @@ Throughput:      166 requests/s
 ----
 
 ==== Variante 3: Sektoren mit zufälliger Reihenfolge
-Alle Sektoren der gewünschten Kategorie mit genügend freien Sitzplätzen werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Die benachbarte Plätze werden in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking beim persistieren verwendet und beim Konflikt werden die Sitzplätze neu geladen.
+Alle Sektoren der gewünschten Kategorie mit genügend freien Sitzplätzen werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Die benachbarten Plätze werden in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking beim persistieren verwendet und beim Konflikt werden die Sitzplätze neu geladen.
 
 Vorteil: mehr Plätze können reserviert werden.
 Nachteil: relativ lange, maximale Latenzzeit.
@@ -205,22 +205,22 @@ Nachteil: relativ lange, maximale Latenzzeit.
 Strategy: RandomOrderSectorStrategy
 Seats
   available:     13660
-  reserved:      11176
-  remaining:     2484
+  reserved:      13547
+  remaining:     113
 Reservations
   total:         4000
-  rejected:      1736
-  adjacent:      2264
+  rejected:      1327
+  adjacent:      2673
   non-adjacent:  0
   incorrect:     0
 Latency Time
   minimum:       0.0s
-  maximum:       6.876s
-  average:       0.583s
-  deviation:     0.229s
+  maximum:       4.531s
+  average:       0.55s
+  deviation:     0.546s
 
-Total Time:      24s
-Throughput:      166 requests/s
+Total Time:      22s
+Throughput:      176 requests/s
 ----
 
 ==== Variante 4: Cache basierte Lösung
