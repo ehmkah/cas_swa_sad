@@ -19,14 +19,15 @@ image::01_usecase.png["Use Case - Online Ticketing System"]
 
 ==== Beschreibung der Usecases
 
-Es gibt drei Akteure von OTS: Online-User, Boxoffice-User, Administratoren.
+Es gibt drei Akteure von OTS: Online-User, Boxoffice-User und Administratoren.
 Ausserdem interagieren die beiden Umsysteme Emailsystem und Paymentsystem mit OTS.
 
+.Usecases
 [options="header" cols="1,2"]
 |===
 | Usecase                   | Kurzbeschreibung
 | Show auswählen            | Aus einer Liste von Shows wird eine Show ausgewählt
-| Performance auswählen     | Nach der Auswahl einer Show wird eine konkrete Performance ausgewählt
+| Performance auswählen     | Nach Auswahl einer Show wird eine konkrete Performance ausgewählt
 | Sitzplatz reservieren     | Ein Sitzplatz wird für 5 Minuten durch OTS reserviert. In dieser Zeit kann er nicht anderweitig reserviert werden
 | Show bezahlen             | Um ein Ticket zu erhalten, muss ein Ticket gekauft werden
 | Buchung verwalten         | Damit die Box-Office-User reservierte Tickets ausdrucken und annullieren können, müssen sie auf die Buchungen zugreifen können
@@ -44,7 +45,7 @@ Das Online Ticketing System, nachfolgend OTS genannt, ist ein System um ein oder
 
 Die Tickets können bei Bedarf auch reserviert und vor Ort abgeholt werden.
 Die Anordnung der Sitzplätze variiert von Show zu Show und muss daher konfigurierbar sein.
-Die Anwendung steht sowohl Kunden übers Internet als auch internen Mitarbeitern zur Verfügung.
+Die Anwendung steht sowohl Online-Usern übers Internet als auch Box-Office-Usern zur Verfügung.
 
 ==== wichtige Begriffe
 
@@ -59,7 +60,7 @@ Das OTS ist ein interaktives Online System.
 ==== Schnittstellen
 
 * Schnittstelle zu einem externen Paymentsystem
-* E-Mail werden über ein externes Emailsystem geschickt
+* E-Mail werden über ein externes Emailsystem verschickt
 
 ==== Datenhaltung
 
@@ -101,8 +102,8 @@ Annahme: Eine Kauf-Session benötigt etwa 100 HTTP Requests und 10 DB-Queries, d
 
 .Änderbarkeit (Priorität 2)
 * Wenn eine Saalkonfigurationen verändert werden muss, dann muss dies ausschliesslich konfigurativ geschehen.
-* Die Applikation muss innerhalb von 5 Personentagen auf andere Show-Locations erweitert werden können. (Branding der Oberfläche, neuer Sitzplan)
-* Internationalization und Sprach-Auswahl wird in Zukunft gefordert sein und sollte nicht verbaut werden.
+* Die Applikation muss innerhalb von 5 Personentagen auf andere Show-Locations erweitert werden können. (Branding der Oberfläche, neuer Sitzplan).
+* Internationalisierung und Sprach-Auswahl wird in Zukunft gefordert werden und sollte nicht verbaut werden.
 
 .Bedienbarkeit / Testbarkeit (Priorität 3)
 * Funktion vor Bedienbarkeit.

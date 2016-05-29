@@ -8,6 +8,7 @@
 
 | Administrator         | Ein Angestellter der Z-Group, welcher berechtigt ist im OTS neue Shows hinzuzufügen
 | Benachbarte Sitzplätze | Wann immer möglich, sollen dem Kunden benachbarte Sitzplätze angeboten werden. Durch die Gänge werden die Sitzplätze von einander getrennt. Wenn zwischen Platz 20 und 21 ein Gang befindet, sind sie nicht benachbart.
+| Benutzer            	| Verschiedene Benutzer (Online-User, Box-Office_User, Administrator) die auf das OTS zugreifen.
 | Box-Office-User      	| Ein Angestellter der Z-Group, der Tickets an Kunden verkauft.
 | bps                   | Bits per Second (Übertragungsrate)
 | Branding              | Anpassung des OTS an eine andere Show-Location

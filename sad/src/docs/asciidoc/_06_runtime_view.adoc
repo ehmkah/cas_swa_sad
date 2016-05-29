@@ -4,10 +4,10 @@
 
 === Laufzeitszenario Verkaufsprozess
 
-Das folgenden Diagramm stellt den Verkaufsprozess von der Showauswahl bis zum Bestätigungsmailversand dar.
-
 .Aktivitätsdiagramm Verkaufsprozess
-image::06-verkaufsprozess_uebersicht.png[Caption="Verkaufsprozess", width="353", height="849"]
+image::06-verkaufsprozess_uebersicht.png[Caption="Verkaufsprozess", width="327", height="730"]
+
+Das Aktivitätsdiagram stellt den Verkaufsprozess von der Showauswahl bis zum Bestätigungsmailversand dar.
 
 Zu den abgebildeten Prozessschritten folgende Erläuterungen:
 
@@ -60,8 +60,6 @@ JA - Plätze konnten erfolgreich gebucht werden
 | OTS sendet Online-User Bestätigungsmail
 | nach einer erfolgreichen Buchung wird dem Online-User eine Bestätigungsmail gesendet, damit er seine Tickets ausdrucken kann
 
-| reservierte Plätze freigeben
-| Online-User will Zahlung nicht mehr fortsetzen, die reservierte Plätze werden wieder freigegeben.
 //um Tickets möglichst schnell nach einer Reservierung wieder verkaufen zu können, werden sie explizit auch vor Ablauf der //maximal möglichen Reservierungsfrist freigegeben. Es behandelt sich bereits um eine Optimierung.
 // TODO:
 // meierfra: Mir war das nicht bewusst. War das so spezifiziert?
@@ -69,4 +67,5 @@ JA - Plätze konnten erfolgreich gebucht werden
 // soll es wieder raus?
 // meierfra: ich würde es rausnehmen, denn so ist die Reservierung eigentlich keine richtige Reservierung mehr.
 //ye: Tickets durch Plätze ersetzt, und letzen Teil anderes formuliert. Bitte graphic noch anpassen.
+// ehmkah: DONE (reservierte Plätze freiegeben auch entfernt)
 |===

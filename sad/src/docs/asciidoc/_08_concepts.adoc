@@ -108,9 +108,8 @@ Die zu versendenden E-Mails werden in eine Warteliste eingetragen. Dadurch erfol
 
 === Verteilung
 
-Die gesamte Logik befindet sich auf dem Applikationsserver,
-in dem Sinne ist es daher kein verteiltest System.
-Vom Applikationsserver aus wird allerdings über Schnittstellen auf die Zahlungsschnittstelle,
+Die gesamte Business Logik befindet sich auf dem Applikationsserver.
+Vom Applikationsserver aus wird über Schnittstellen auf das Zahlungssystem,
 dem Mailserver und die Datenbank zugegriffen.
 
 
@@ -223,6 +222,7 @@ Die Zeitspanne kann konfiguriert werden.
 
 === Drucken
 OTS generiert die Tickets als PDF-Dokument, welche zu einem späteren Zeitpunkt mit einem gewöhnlichen PDF-Viewer oder direkt aus dem Browser ausgedruckt werden können. Das Drucken ist nicht Bestandteil des OTS.
+
 === Reporting
 
 Ein Reporting ist nicht Bestandteil dieser Projektphase, sondern wird in der Phase 3 umgesetzt.
