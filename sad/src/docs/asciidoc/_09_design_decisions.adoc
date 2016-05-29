@@ -140,7 +140,7 @@ Beim Buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und di
 Die Resultate der Lasttests mit 100 parallelen Threads und jeweils 40 Anfragen pro Thread sind jeweils bei jeder Variante ersichtlich.
 
 ==== Variante 1: Zufälliger Sitz wählen
-Alle freie Sitzplätze der gewünschten Kategorie werden gelesen. Es wird mit einem zufälligen Platz begonnen, die benachbarten Plätze zu suchen. Falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Sonst wird dieser Vorgang maximal 5 mal wiederholt..
+Alle freie Sitzplätze der gewünschten Kategorie werden gelesen. Es wird mit einem zufälligen Platz begonnen, die benachbarten Plätze zu suchen. Falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Sonst wird dieser Vorgang maximal 5 mal wiederholt.
 
 Vorteil: kurze Latenzzeit.
 
