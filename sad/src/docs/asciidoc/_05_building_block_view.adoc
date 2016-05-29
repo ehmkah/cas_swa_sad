@@ -70,7 +70,7 @@ Externes Payment System. Im Moment wird die Firma Datatrans als Dienstleister vo
 Die folgende Abbildung zeigt die inneren Bestandteile des OTS
 und dessen Abhängigkeiten.
 
-.Bausteinsicht Level 1
+.Bausteinsicht Ebene 2
 image::05_bausteinsicht_level1.png[scaledwidth="90%","Baustein Sicht Level 1"]
 
 Begründung::
@@ -151,7 +151,7 @@ Hier werden die Daten, welche von verschiedenen Modulen benötigt werden, verwal
 *Übersicht / Struktur*::
 Baustein Übersicht der Show- und Saal-Verwaltung
 
-.Bausteinsicht Buchungs-Verwaltung Level 2
+.Bausteinsicht Buchungs-Verwaltung Ebene 3
 image::05_bausteinsicht_level2-BuchungsVerwaltung.png["Baustein Sicht Level 2 der Buchungs-Verwaltung"]
 
 Begründung::
@@ -202,7 +202,7 @@ Enthaltene Bausteine::
 *Übersicht / Struktur*::
 Bausteinübersicht der Show- und Saal-Verwaltung
 
-.Bausteinsicht Show- und Saalverwaltung Level 2
+.Bausteinsicht Show- und Saalverwaltung Ebene 3
 image::05_bausteinsicht_showverwaltung.png["Baustein Sicht Level 2"]
 
 Begründung::
