@@ -119,7 +119,7 @@ Wenn ein Server ausfällt, können die Benutzer auf den anderen Server umgeleite
 
 ==== Fragestellung
 
-Die zuverlässigkeit des Reservationsablaufs ist einer der wichtigsten Faktoren für den Projekterfolgt. Entscheidend
+Die Zuverlässigkeit des Reservationsablaufs ist einer der wichtigsten Faktoren für den Projekterfolg. Entscheidend
 ist, dass einzelne Plätze nicht mehrmals verkauft werden und dass durch eine möglichst optimale Verteilung eine
 hohe Anzahl an Plätzen anhand der Buchungswünsche verkauft werden können. Bei vielen simultanen Reservationen
 muss der Algorithmus auch in der Lage sein, den geforderten Durchsatz zu erreichen.
@@ -139,7 +139,7 @@ Beim Buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und di
 
 ==== Variante 1: Zufälliger Sitz wählen
 Idee:
-Alle freie Sitzplätze der gewünschten Kategorie werden gelesen. Es wird mit einem zufälligen Platz beginen die benachbarte Plätze zu suchen. Falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Sonst wird es noch mal wiederholt.
+Alle freie Sitzplätze der gewünschten Kategorie werden gelesen. Es wird mit einem zufälligen Platz begonnen, die benachbarten Plätze zu suchen. Falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Sonst wird es noch mal wiederholt.
 
 [source]
 ----
@@ -193,7 +193,7 @@ Throughput:      166 requests/s
 
 ==== Variante 2b: Sektoren mit zufälliger Reihenfolge
 Idee:
-Alle Sektoren der gewünschten Kategorie mit genügend freie Sitzplätze werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Die benachbarte Plätze werden in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking beim persistieren verwendet und beim Konflikt werden die Sitzplätze neue geladen.  
+Alle Sektoren der gewünschten Kategorie mit genügend freien Sitzplätzen werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Die benachbarte Plätze werden in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking beim persistieren verwendet und beim Konflikt werden die Sitzplätze neu geladen.
 
 [source]
 ----
@@ -218,7 +218,7 @@ Total Time:      24s
 Throughput:      166 requests/s
 ----
 
-==== Variante 3: Chache basierte Lösung
+==== Variante 3: Cache basierte Lösung
 
 TODO
 

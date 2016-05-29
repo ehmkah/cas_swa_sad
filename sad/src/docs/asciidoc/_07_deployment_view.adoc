@@ -10,15 +10,18 @@
 image::07_verteilungsdiagram.png["Verteilungsdiagram"]
 [[verteilungsdiagramm-1]]
 
-Das Verteilungsdiagram stell das Deployment von OTS dar.
+Das Verteilungsdiagramm stell das Deployment von OTS dar.
+
 OTS wird innerhalb des Rechenzentrums der Z-Group auf einem eigenen Linux Server deployed.
-OTS wird vollständig mit allen Modulen auf einem ApplikationServer deployed.
-Die Anwendung wird auf zwei verschiedenen Application Servern deployed.
+Die Anwendung wird auf zwei verschiedenen Applikationsservern deployed. Als Applikationsserver ist GlassFish v4.0 vorgesehen.
 Eine Instanz steht den BoxOffice-Userx exklusiv zur Verfügung, damit stellen wir sicher, dass sie immer arbeiten können.
-Vor dem ApplicationServer befindet sich eine Firewall, um OTS vor Angriffen aus dem Internetz zu schützen.
+
+Vor dem Applikationsserver befindet sich eine Firewall, um OTS vor Angriffen aus dem Internet zu schützen.
+
 Die Kommunikation zwischen OTS und dem Paymentsystem geschieht über eine verschlüsselte HTTP-Verbindung.
-Die Kommunikation zwischen OTS und der Datenbank geshieht mittelts JDBC.
+
+Die Kommunikation zwischen OTS und der Datenbank geschieht mittels JDBC.
+
 Die Kommunikation zwischen OTS und dem Mailserver geschieht mit Hilfe des SMTP-Protokolls.
 
 //==== Offene Punkte
-

@@ -8,7 +8,7 @@ In folgender Tabelle werden verschiedene für OTS relevante
 zugeordnet.
 [options="header" cols="4,4,10,2"]
 |===
-2+| Qualitäsmerkmale (DIN/ISO 9126)       | Bewertungs-Szenario | Prio
+2+| Qualitätsmerkmale (DIN/ISO 9126)       | Bewertungs-Szenario | Prio
 .2+.^|Funktionalität    .1+.^|Richtigkeit  | BS10 Abnahme | B
                         .1+.^|Sicherheit      | BS20 Blackbox-Analyse | A
 .2+.^|Zuverlässigkeit   .2+.^|Fehlertoleranz  | BS30 Ausfall Paymentsystem | A

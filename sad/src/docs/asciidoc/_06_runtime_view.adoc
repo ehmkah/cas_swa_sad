@@ -6,7 +6,7 @@
 
 Das folgenden Diagramm stellt den Verkaufsprozess von der Showauswahl bis zum Bestätigungsmailversand dar.
 
-.Aktivitätsdiagram Verkaufsprozess
+.Aktivitätsdiagramm Verkaufsprozess
 image::06-verkaufsprozess_uebersicht.png[Caption="Verkaufsprozess", width="353", height="849"]
 
 Zu den abgebildeten Prozessschritten folgende Erläuterungen:
@@ -18,13 +18,13 @@ Zu den abgebildeten Prozessschritten folgende Erläuterungen:
 | Der Online-User wählt eine Show aus, die er besuchen möchte
 
 | Online-User wählt Performance, die Platzkategorie, Anzahl Plätze
-| Online-User sagt, welche Performance er besuchen möchte und in welcher Platzkategorie er wieviele Plätze benötigt
+| Online-User sagt, welche Performance er besuchen möchte und in welcher Platzkategorie er wie viele Plätze benötigt
 
 | Performance hat genügen freie Plätze
 | es erfolgt eine Prüfung, ob die Kundenwünsche erfüllt werden können
 
 | Entscheidung Online-User will sich einloggen
-|OTS erlaubt es Online-User sich einzuloggen, damit müssen sie Rechnungsadresse und Bestätigungsemailadresse nicht mehr angeben
+|OTS erlaubt es Online-User sich einzuloggen, damit müssen sie Rechnungsadresse und Bestätigungsmailadresse nicht mehr angeben
 
 | Online-User loggt sich ein
 | Online-User meldet sich mit seiner E-Mail Adresse (Bestätigungsmailadresse) und Password erfolgreich an
@@ -44,7 +44,7 @@ Zu den abgebildeten Prozessschritten folgende Erläuterungen:
 | Bezahlungsergebnis
 | Wenn der Online-User, falsche Zahlungsinformationen eingeben hat, so muss er die Zahlungsinformationen erneut eingeben. +
  +
-Wenn ein Sonstiger Zahlungsfehler auftrat, darf der Online-User entscheiden, ob die Zahlunge erneut durchgeführt werden soll. +
+Wenn ein Sonstiger Zahlungsfehler auftrat, darf der Online-User entscheiden, ob die Zahlung erneut durchgeführt werden soll. +
  +
 Wenn die Zahlung erfolgreich war, geht es im Verkaufsprozess ordnungsgemäss weiter
 

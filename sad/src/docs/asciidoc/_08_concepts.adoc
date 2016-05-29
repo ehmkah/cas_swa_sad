@@ -16,12 +16,12 @@ Jedem Saal können beliebig viele Saalkonfigurationen zugeordnet werden.
 Eine Saalkonfiguration besteht aus beliebig vielen Sitzplätzen.
 Jeder Sitzplatz gehört zu genau einer Sitzplatzkategorie und wird über eine Reihennummer und Sitzplatznummer innerhalb der Reihe definiert.
 Die Sitzplatzkategorie ist die Basis für die spätere Preisfestlegung einer Performance.
-Ein Sitzplatz hat einen Status, damit erkannt werden kann, ob er frei, reserviert oder ebreits verkauft wurde.
+Ein Sitzplatz hat einen Status, damit erkannt werden kann, ob er frei, reserviert oder bereits verkauft wurde.
 
 ==== Fachdomäne Show
 Eine Show wird in beliebig vielen Performances aufgeführt und einer Show wird eine Saalkonfiguration zugeordnet.
 Für jede Performance können die Preise für eine Sitzplatzkategorie individuell festgelegt werden, indem Sitzplatzkategorie-Verkaufspreise definiert werden.
-Dies geschieht über die Preisfesetzung der zugewiesenen Sitzplätze.
+Dies geschieht über die Preisfestsetzung der zugewiesenen Sitzplätze.
 
 ==== Fachdomäne Buchung
 Wenn ein Online-User ein Ticket kauft, dann erhält er eine Buchung.
@@ -82,6 +82,7 @@ damit die Daten dem Benutzer zugewiesen werden können.
 Dafür wird ein Session-Cookie verwendet.
 //Todo (Gibt es Alternativen, um Cookies zu vermeiden?)
 // ehmkah: gäbe es mit z.B. HTML offline storage. Wollt Ihr das hier noch erwähnen?
+//FMO: ich glaub wir belassen es bei den Session-Cookies.
 Die Session endet entweder nach 5 Minuten oder nach dem Versenden der Bestätigungsmail.
 
 
@@ -90,7 +91,6 @@ Die Session endet entweder nach 5 Minuten oder nach dem Versenden der Bestätigu
 Die Webapplikation wird immer mittels https aufgerufen. Dadurch ist die Kommunikation zwischen dem Webserver und dem Browser geschützt.
 
 Der Zugriff auf die Datenbank erfolgt nur für berechtigte Benutzer.
-//Todo User/Passwort oder gibt es Alternativen?
 
 Die Passwörter der registrierten Online-User werden verschlüsselt in der Datenbank abgelegt. Dazu wird für jedes Passwort ein zusätzlicher zufälliger Salt-Wert generiert und zusammen mit dem Passwort mittels SHA-3 verschlüsselt.
 
@@ -127,7 +127,7 @@ Treten sie auf muss dem Nutzer eine benutzerfreundliche Fehlermeldung angezeigt 
 Weiterhin muss der Nutzer die Möglichkeit bekommen, den Fehler zu korrigieren.
 Technische Fehler haben keine fachliche Ursache, sondern weisen auf Programm- oder Konfigurationsfehler hin.
 Eine Nullpointer Exception ist ein Beispiel für einen technischen Fehler.
-Technische Fehler dürfen dem Nutzer nicht angezeigt werden, stattdessen muss eine allgemeine Fehlermeledung angezeigt werden.
+Technische Fehler dürfen dem Nutzer nicht angezeigt werden, stattdessen muss eine allgemeine Fehlermeldung angezeigt werden.
 Besondere Technische Fehler sind _Laufzeitfehler_.
 Laufzeitfehler können zum Beispiel sein: keine Verbindung zur Datenbank oder das Paymentsystem ist nicht verfügbar.
 Tritt ein Laufzeitfehler auf, muss der Benutzer eine Fehlermeldung bekommen, die es ihm erlaubt den Vorgang zu wiederholen.
@@ -221,8 +221,7 @@ und dann alle 5 min stapelweise versendet.
 Die Zeitspanne kann konfiguriert werden.
 
 === Drucken
-OTS generiert die Tickets als PDF-Dokument, welche zu einem späteren Zeitpunkt mit einem gewöhlichen PDF-Viewer oder direkt aus dem Browser ausgedruckt werden können. Das Drucken ist nicht Bestandteil des OTS-systems.
-
+OTS generiert die Tickets als PDF-Dokument, welche zu einem späteren Zeitpunkt mit einem gewöhnlichen PDF-Viewer oder direkt aus dem Browser ausgedruckt werden können. Das Drucken ist nicht Bestandteil des OTS.
 === Reporting
 
 Ein Reporting ist nicht Bestandteil dieser Projektphase, sondern wird in der Phase 3 umgesetzt.
