@@ -14,7 +14,7 @@ Das Verteilungsdiagramm stellt das Deployment von OTS dar.
 
 OTS wird innerhalb des Rechenzentrums der Z-Group auf einem eigenen Linux Server deployed.
 Die Anwendung wird auf zwei verschiedenen Applikationsservern deployed. Als Applikationsserver ist GlassFish v4.0 vorgesehen.
-Eine Instanz steht den BoxOffice-Userx exklusiv zur Verfügung, damit stellen wir sicher, dass sie immer arbeiten können.
+Eine Instanz steht den BoxOffice-Usern exklusiv zur Verfügung, damit stellen wir sicher, dass sie immer arbeiten können.
 
 Vor dem Applikationsserver befindet sich eine Firewall, um OTS vor Angriffen aus dem Internet zu schützen.
 
