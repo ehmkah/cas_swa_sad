@@ -140,6 +140,8 @@ Beim Buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und di
 ==== Variante 1: Zufälliger Sitz wählen
 Alle freie Sitzplätze der gewünschten Kategorie werden gelesen. Es wird mit einem zufälligen Platz begonnen, die benachbarten Plätze zu suchen. Falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Sonst wird es noch mal wiederholt.
 
+Vorteil: kurze Latenzzeit.
+Nachteil: viele Plätze sind geblieben, reservierte Plätze sind fehlerhaft.
 [source]
 ----
 Strategy: RandomSeatSelectionStrategy
@@ -166,6 +168,8 @@ Throughput:      148 requests/s
 ==== Variante 2: Zufälliger Sektor wählen
 Nur einen zufälligen Sektor der gewünschten Kategorie mit genügend freie Sitzplätze wird auswählt. Dann werden die benachbarte Plätze in diesem Sektor gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert und dabei wird ein Optimistic Locking beim persistieren verwendet.
 
+Vorteil: kurze Latenzzeit.
+Nachteil: viele Plätze sind geblieben.
 [source]
 ----
 Strategy: RandomSectorSelectionStrategy
@@ -192,6 +196,8 @@ Throughput:      166 requests/s
 ==== Variante 3: Sektoren mit zufälliger Reihenfolge
 Alle Sektoren der gewünschten Kategorie mit genügend freien Sitzplätzen werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Die benachbarte Plätze werden in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking beim persistieren verwendet und beim Konflikt werden die Sitzplätze neu geladen.
 
+Vorteil: mehr Plätze können reserviert werden.
+Nachteil: lange Latenzzeit.
 [source]
 ----
 Strategy: RandomOrderSectorStrategy
