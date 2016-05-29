@@ -122,6 +122,9 @@ Wird durch den Zahlungsanbieter definiert (TBD)
 ===== Einschränkungen
 * Datatrans unterstützt folgende Browserversionen: Chrome 28, Firefox 31, IE9, Safari 6, Opera 24
 
+Hinweis: Als Randbedingung sollen alle Firefox-Versionen seit 2012 unterstützt werden.
+Firefox 31 ist allerdings im Juli 2014 veröffentlicht worden.
+Unserer Meinung nach sollte eine Anpassung der Randbindung aber möglich sein, damit die Schnittstelle trotzdem verwendet werden kann.
 
 ===== Metainformation der Schnittstelle
 noch nicht verfügbar (TBD)
