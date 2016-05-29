@@ -32,6 +32,7 @@ image::05_bausteinsicht_level0.png["Baustein Sicht Level 0"]
 | Payment-Schnittstelle | Schnittstelle zum Externen Payment System
 |===
 
+<<<<
 
 ==== Emailsystem (Blackbox)
 
