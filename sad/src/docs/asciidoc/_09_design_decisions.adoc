@@ -140,11 +140,10 @@ Das bedeutet das der Algorithmus rund rund 25 Reservationen pro Sekunden bei ein
 Beim Buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und die Sitzplätze sollten (sofern noch vorhanden) benachbart sein.
 
 ==== Variante 1: Zufälliger Sitz wählen
-Idee:
-Alle freie Sitzplätze der gewünschten Kategorie werden gelesen. Es wird mit einem zufälligen Platz begonnen
-die benachbarten Plätze zu suchen. Falls genügende Plätze vorhanden sind, werden die Plätze direkt reserviert.
-Sonst wird dieser Vorgang maximal 5 mal wiederholt.
+Alle freie Sitzplätze der gewünschten Kategorie werden gelesen. Es wird mit einem zufälligen Platz begonnen, die benachbarten Plätze zu suchen. Falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Sonst wird dieser Vorgang maximal 5 mal wiederholt..
 
+Vorteil: kurze Latenzzeit.
+Nachteil: viele Plätze sind nicht reserviert worden, reservierte Plätze sind fehlerhaft.
 [source]
 ----
 Strategy: RandomSeatSelectionStrategy
@@ -169,11 +168,10 @@ Throughput:      148 requests/s
 ----
 
 ==== Variante 2: Zufälliger Sektor wählen
-Idee:
-Nur einen zufälligen Sektor der gewünschten Kategorie mit genügend freie Sitzplätze wird auswählt.
-Dann werden die benachbarte Plätze in diesem Sektor gesucht und falls genügende Plätze vorhanden sind,
-werden die Plätze reserviert und dabei wird ein Optimistic Locking beim persistieren verwendet.
+Nur einen zufälligen Sektor der gewünschten Kategorie mit genügend freie Sitzplätze wird auswählt. Dann werden die benachbarte Plätze in diesem Sektor gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert und dabei wird ein Optimistic Locking beim persistieren verwendet.
 
+Vorteil: kurze Latenzzeit.
+Nachteil: viele Plätze sind nicht reserviert worden.
 [source]
 ----
 Strategy: RandomSectorSelectionStrategy
@@ -197,39 +195,36 @@ Total Time:      24s
 Throughput:      166 requests/s
 ----
 
-==== Variante 2b: Sektoren mit zufälliger Reihenfolge
-Idee:
-Alle Sektoren der gewünschten Kategorie mit genügend freien Sitzplätzen werden ausgelesen.
-Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Die benachbarte Plätze werden in den Sektoren gesucht
-und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking
-beim persistieren verwendet und beim Konflikt werden die Sitzplätze neu geladen.
+==== Variante 3: Sektoren mit zufälliger Reihenfolge
+Alle Sektoren der gewünschten Kategorie mit genügend freien Sitzplätzen werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Die benachbarte Plätze werden in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking beim persistieren verwendet und beim Konflikt werden die Sitzplätze neu geladen.
 
+Vorteil: mehr Plätze können reserviert werden.
+Nachteil: relativ lange, maximale Latenzzeit.
 [source]
 ----
 Strategy: RandomOrderSectorStrategy
 Seats
   available:     13660
-  reserved:      13517
-  remaining:     143
+  reserved:      11176
+  remaining:     2484
 Reservations
   total:         4000
-  rejected:      1365
-  adjacent:      2635
+  rejected:      1736
+  adjacent:      2264
   non-adjacent:  0
   incorrect:     0
 Latency Time
   minimum:       0.0s
-  maximum:       6.904s
-  average:       0.699s
-  deviation:     0.787s
+  maximum:       6.876s
+  average:       0.583s
+  deviation:     0.229s
 
-Total Time:      31s
-Throughput:      127 requests/s
+Total Time:      24s
+Throughput:      166 requests/s
 ----
 
-==== Variante 3: Cache basierte Lösung
+==== Variante 4: Cache basierte Lösung
 
-Idee:
 Beim Starten des Systems wird als Singleton ein Cache erzeugt, der alle noch freien Sitzplätze einer Veranstaltung im
 Arbeitsspeicher behält. Die Startzeit wird durch das Erstellen des Caches etwas erhöht,
 dafür läuft der Reservierungsprozess danach sehr performant ab. Der Algorithmus sucht dabei jeweils einen Sektor der
@@ -240,6 +235,9 @@ Durch Verwendung von Optimistic Locking beim persistieren wird sichergestellt,
 dass der Algorithmus auch im Falle von mehreren Serverinstanzen niemals zweimal die gleichen Sitzplätze reserviert.
 Als Cache wird das bewährte und quelloffene Produkt Ehcache verwendet. Mit Ehcache lassen sich die gecachten Daten auch
 über mehrere Server replizieren, so dass die Lösung auch mit einer vertikalen Skalierung kompatibel wäre.
+
+Vorteil: sehr hohe Performance
+Nachteil: Hoher Resourcenbedarf, zusätzliche Komplexität
 
 [source]
 ----
@@ -270,15 +268,15 @@ Alle Varianten erfüllen auf dem Testgerät die Anforderungen an den Datendurchs
 haben allerdings eine hohe Anzahl von nicht verkauften Sitzplätzen und werden deshalb verworfen.
 
 
-Die Anzahl der nicht reservierten Sitze sind in den Tests von Variante 3 und Variante 2b vergleichbar, der Durchsatz ist
-allerdings bei Variante 3 fast drei mal höher. Da alle Daten bei Variante 3 gecacht werden, muss auf
+Die Anzahl der nicht reservierten Sitze sind in den Tests von Variante 3 und Variante 4 vergleichbar, der Durchsatz ist
+allerdings bei Variante 4 fast drei mal höher. Da alle Daten bei Variante 4 gecacht werden, muss auf
 dem Server wesentlich mehr Arbeitsspeicher vorhanden sein und die Java Virtual Machine (JVM) entsprechend konfiguriert werden.
-Bei den Lasttests von Variante 3 musste der Arbeitsspeicher der JVM auf mindestens 1024 MB erhöht werden, ansonsten wurde das
+Bei den Lasttests von Variante 4 musste der Arbeitsspeicher der JVM auf mindestens 1024 MB erhöht werden, ansonsten wurde das
 Programm mit einem OutOfMemoryError unerwartet beendet.
 
 
 Aufgrund der geringeren Komplexität des Algorithmus, des tieferen Resourcenbedarfs und der Tatsache das kein zusätzliches
-Produkt (Ehcache) verwendet, konfiguriert und gewartet werden muss wurde die Entscheidung zugunsten von Variante 2b gefällt.
+Produkt (Ehcache) verwendet, konfiguriert und gewartet werden muss wurde die Entscheidung zugunsten von Variante 3 gefällt.
 
 Um die Anzahl der frei bleibenden Sitze zu verringern wird der Algorithmus für die produktive Version noch so optimiert,
 dass ebenfalls Einzelplätze gebucht werden können. Falls bei der Buchung keine genügend hohe Anzahl von nebeneinander liegenden
