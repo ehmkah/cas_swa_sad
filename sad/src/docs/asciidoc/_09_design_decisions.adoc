@@ -197,22 +197,22 @@ Alle Sektoren der gewünschten Kategorie mit genügend freien Sitzplätzen werde
 Strategy: RandomOrderSectorStrategy
 Seats
   available:     13660
-  reserved:      11176
-  remaining:     2484
+  reserved:      13530
+  remaining:     130
 Reservations
   total:         4000
-  rejected:      1736
-  adjacent:      2264
+  rejected:      1399
+  adjacent:      2601
   non-adjacent:  0
   incorrect:     0
 Latency Time
   minimum:       0.0s
-  maximum:       2.076s
-  average:       0.583s
-  deviation:     0.229s
+  maximum:       6.705s
+  average:       0.652s
+  deviation:     0.728s
 
-Total Time:      24s
-Throughput:      166 requests/s
+Total Time:      28s
+Throughput:      138 requests/s
 ----
 
 ==== Variante 3: Cache basierte Lösung
