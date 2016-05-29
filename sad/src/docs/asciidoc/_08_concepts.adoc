@@ -4,7 +4,7 @@
 === Fachliche Strukturen und Modelle
 
 .Domainmodell
-image::08_domainmodel.png["Domainmodel"]
+image::08_domainModel.png["Domainmodel"]
 //ye: in kap6 ist der Bgriff Online-User, aber hier Kunden
 // ehmkah: DONE habe den Begriff Kunde, durch online-user ersetzt
 Das Domainmodell stellt die wesentlichen Fachbegriffe und ihre Beziehungen untereinander dar.
