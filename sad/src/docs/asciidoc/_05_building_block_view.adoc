@@ -8,22 +8,22 @@
 *Übersicht / Struktur*::
 Die folgende Abbildung zeigt das Gesamtsystem mit externen Bestandteilen
 
-.Kontextabgrenzung
+.Kontextabgrenzung des OTS
 image::05_bausteinsicht_level0.png["Baustein Sicht Level 0"]
 
 
-Enthaltene Bausteine::
+*Enthaltene Bausteine*::
 
 [cols="2,4,1" options=""]
 |===
-| OTS | Das Online Ticketing System (Dieses Projekt) | siehe Kapitel 5.2  <<ch5-level2-1>>
-| Benutzer | Verschiedene Benutzer (Online-User, Box-Office_User, Administrator) die auf das OTS zugreifen | siehe <<section-glossary>>
+| OTS | Das Online Ticketing System (dieses Projekt) | siehe Kapitel 5.2  <<ch5-level2-1>>
+| Benutzer | Verschiedene Benutzer (Online-User, Box-Office_User, Administrator), die auf das OTS zugreifen | siehe <<section-glossary>>
 | Emailsystem | Externes E-Mail System | siehe <<section-glossary>>
 | Paymentsystem | Externer Zahlungsdienstleister | siehe <<section-glossary>>
 |===
 
 
-Schnittstellen::
+*Schnittstellen*::
 
 (siehe auch Kapitel <<section-system-scope-and-context,3.3>> )
 [cols="1,4" options=""]
@@ -35,27 +35,27 @@ Schnittstellen::
 
 ==== Emailsystem (Blackbox)
 
-Externes E-Mail System. Das vorhandene E-Mail System der Z-Group.
+Externes E-Mail System. Das vorhandene E-Mail System der Firma Z-Group.
 
 *Zweck:* Versenden von Buchungsbestätigungen
 
 .Schnittstellen _Bausteinname_:
 [cols="2,2" options=""]
 |===
-| E-Mail-Schnittstelle | Schnittstelle welche vom OTS genutzt wird um Buchungsbestätigungen zu versenden
+| E-Mail-Schnittstelle | Schnittstelle welche vom OTS genutzt wird, um Buchungsbestätigungen zu versenden
 |===
 
 ==== Paymentsystem (Blackbox)
 
-Externes Payment System. Im Moment wird Datatrans als Dienstleister vorgesehen
+Externes Payment System. Im Moment wird die Firma Datatrans als Dienstleister vorgesehen.
 
 
-*Zweck:* Abwicklung der Zahlung für Ticket-Käufe per Kreditkarte
+*Zweck:* Abwicklung der Zahlung für Ticket-Käufe per Kreditkarte.
 
 .Schnittstellen _Bausteinname_:
 [cols="1,2" options=""]
 |===
-| Payment-Schnittstelle | Schnittstelle welche vom OTS genutzt wird um die Bezahlung von Ticketkäufen abzuwickeln
+| Payment-Schnittstelle | Schnittstelle ,welche vom OTS genutzt wird, um die Bezahlung von Ticketkäufen abzuwickeln.
 |===
 
 <<<<
@@ -134,7 +134,7 @@ Schnittstellen::
 
 *Zweck:* Persistierung der OTS Daten
 
-Hier werden die Daten welche von verschiedenen Modulen benötigt werden verwaltet/gespeichert:
+Hier werden die Daten, welche von verschiedenen Modulen benötigt werden, verwaltet/gespeichert:
 
 * Saal-Konfiguration
 * Show/Performance Information inkl. Preisgestaltung
@@ -147,14 +147,14 @@ Hier werden die Daten welche von verschiedenen Modulen benötigt werden verwalte
 
 ==== Buchungs-Verwaltung (Whitebox)
 
-Übersicht / Struktur::
+*Übersicht / Struktur*::
 Baustein Übersicht der Show- und Saal-Verwaltung
 
 .Bausteinsicht Buchungs-Verwaltung Level 2
 image::05_bausteinsicht_level2-BuchungsVerwaltung.png["Baustein Sicht Level 2 der Buchungs-Verwaltung"]
 
 Begründung::
-Die Buchungsverwaltung stellt über den Buchungs-Service eine Schnittstelle zur Verfügung
+Die Buchungsverwaltung stellt über den Buchungs-Service eine Schnittstelle zur Verfügung,
 über die das Frontend Informationen zu Shows und Performaces abrufen, sowie Sitzplatz-Buchungen
 durchgeführt werden können.
 
@@ -173,7 +173,7 @@ Enthaltene Bausteine::
 *Zweck:* Zugriff auf Show-Information und den Reservations- und Buchungs-Prozess
 
 Dieses Modul ist zuständig, dass freie Sitze gefunden werden und eine Reservation erzeugt wird.
-Weiter führt es eine Reservation bei erfolgreicher Bezahlung in eine definitive Buchung über.
+Weiter führt es bei einer erfolgreicher Bezahlung die Reservation in eine definitive Buchung über.
 Hier wird der Algorithmus zur Suche nach freien Sitzen implementiert (Prototyp-Phase I).
 
 ===== Show-Accessor (Blackbox)
@@ -183,7 +183,7 @@ Hier wird der Algorithmus zur Suche nach freien Sitzen implementiert (Prototyp-P
 
 ==== Infrastruktur-Modul (Whitebox)
 
-Das Infrastruktur-Modul beinhaltet Adapter zur Kommunikation mit externen Systemen sowie zur
+Das Infrastruktur-Modul bietet Adapter zur Kommunikation mit externen Systemen sowie zur
 Perstistierung von Daten an.
 
 Enthaltene Bausteine::
@@ -198,7 +198,7 @@ Enthaltene Bausteine::
 
 ==== _Show- und Saal-Verwaltung_ (Whitebox)
 
-Übersicht / Struktur::
+*Übersicht / Struktur*::
 Bausteinübersicht der Show- und Saal-Verwaltung
 
 .Bausteinsicht Show- und Saalverwaltung Level 2
