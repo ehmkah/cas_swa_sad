@@ -16,15 +16,16 @@ Enthaltene Bausteine::
 
 [cols="2,4,1" options=""]
 |===
-| OTS | Das Online Ticketing System (Dieses Projekt) | siehe Kapitel 5.2
-| Benutzer | verschiedene Benutzer die auf das OTS zugreifen |
-| Emailsystem | Externes E-Mail System |
-| Paymentsystem | Externer Zahlungsdienstleister |
+| OTS | Das Online Ticketing System (Dieses Projekt) | siehe Kapitel 5.2  <<ch5-level2-1>>
+| Benutzer | Verschiedene Benutzer (Online-User, Box-Office_User, Administrator) die auf das OTS zugreifen | siehe <<section-glossary>>
+| Emailsystem | Externes E-Mail System | siehe <<section-glossary>>
+| Paymentsystem | Externer Zahlungsdienstleister | siehe <<section-glossary>>
 |===
 
 
 Schnittstellen::
-(siehe auch Kapitel 3.3)
+
+(siehe auch Kapitel <<section-system-scope-and-context,3.3>> )
 [cols="1,4" options=""]
 |===
 | E-Mail-Schnittstelle | Schnittstelle zum Externen E-Mail System
@@ -39,7 +40,7 @@ Externes E-Mail System. Das vorhandene E-Mail System der Z-Group.
 *Zweck:* Versenden von Buchungsbestätigungen
 
 .Schnittstellen _Bausteinname_:
-[cols="1,2" options=""]
+[cols="2,2" options=""]
 |===
 | E-Mail-Schnittstelle | Schnittstelle welche vom OTS genutzt wird um Buchungsbestätigungen zu versenden
 |===
@@ -58,7 +59,7 @@ Externes Payment System. Im Moment wird Datatrans als Dienstleister vorgesehen
 |===
 
 === Ebene 2
-
+[[ch5-level2-1]]
 ==== OTS (Whitebox)
 
 Übersicht / Struktur::
@@ -67,7 +68,7 @@ Die folgende Abbildung zeigt die inneren Bestandteile des OTS
 und dessen Abhängigkeiten.
 
 .Bausteinsicht Level 1
-image::05_bausteinsicht_level1.png["Baustein Sicht Level 1"]
+image::05_bausteinsicht_level1.png[scaledwidth="90%","Baustein Sicht Level 1"]
 
 Begründung::
 Schichten Architektur, mit User-Interface auf der ersten Ebene (Frontend),
