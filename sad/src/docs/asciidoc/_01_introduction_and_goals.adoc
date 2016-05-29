@@ -1,6 +1,15 @@
 [[section-introduction-and-goals]]
 ==	Einführung und Ziele
 
+Die Z Group setzt sich aus einer Reihe von Konzertveranstaltern zusammen.
+Um auch in der Zukunft am Markt bestehen zu können, sollen die Tickets auch über eine Webapplikation verkauft werden können.
+Als Pilotprojekt wird dies für das X Center umgesetzt.
+Wenn das Projekt OTS erfolgreich verläuft, wird die Applikation für alle Veranstalter der Z Group eingeführt.
+Das Projekt wurde vom Management als business-kritisch eingestuft und soll schnellstmöglich eingeführt werden.
+Ausserdem wurde festgelegt, die gesamte Applikation in drei Phasen einzuteilen.
+Dieses SAD (Softwarearchitekturdokument) dient für die Umsetzung der ersten Phase, die Anforderungen der beiden anderen Phasen werden – soweit bekannt – bei der Erstellung der Architektur berücksichtigt.
+
+
 === Aufgabenstellung
 
 Das folgende Diagramm zeigt die Anwendungsfälle von OTS
@@ -20,7 +29,7 @@ Ausserdem interagieren die beiden Umsysteme Emailsystem und Paymentsystem mit OT
 | Performance auswählen     | Nach der Auswahl einer Show wird eine konkrete Performance ausgewählt
 | Sitzplatz reservieren     | Ein Sitzplatz wird für 5 Minuten durch OTS reserviert. In dieser Zeit kann er nicht anderweitig reserviert werden
 | Show bezahlen             | Um ein Ticket zu erhalten, muss ein Ticket gekauft werden
-| Buchung verwalten         | Damit die Box-Office-User reservierte Tickets ausdrucken und anullieren können, müssen sie auf die Buchungen zugreifen können
+| Buchung verwalten         | Damit die Box-Office-User reservierte Tickets ausdrucken und annullieren können, müssen sie auf die Buchungen zugreifen können
 | Show verwalten            | Es werden Shows angelegt und modifiziert
 | Saalkonfiguration         | Es werden verschiedene Saalkonfigurationen angelegt und modifiziert
 | Preise festlegen          | Es können für Sitzplatzkategorien in verschiedenen Performances die Preise verwaltetet werden
@@ -41,9 +50,11 @@ Die Anwendung steht sowohl Kunden übers Internet als auch internen Mitarbeitern
 
 Show, Performance, Sitzplatzkategorie, Benachbarte Sitzplätze, Reservierung
 
+Eine Erklärung der Begriffe findet sich im Glossar.
+
 ==== Art des Systems
 
-Das OTS ist ein "Interaktives Online System"
+Das OTS ist ein interaktives Online System.
 
 ==== Schnittstellen
 
@@ -56,8 +67,8 @@ Das OTS ist ein "Interaktives Online System"
 
 ==== Steuerung
 
-* Ereignis-getrieben Steuerung (Web-GUI)
-* Administratorens können direkt auf der DB arbeiten (Phase I)
+* Ereignis-getriebene Steuerung (Web-GUI)
+* Administratoren können direkt auf der DB arbeiten (Phase I)
 
 === Qualitätsziele [[QZ]]
 
@@ -79,7 +90,7 @@ Im Rahmen der Phase I von OTS soll auf folgende Qualitätsziele  mit absteigende
 | Zahlung verarbeiten   | < 15s
 |===
 
-* Im extrem Fall müssen bis zu 15'000 Plätze in 10min verkauft werden können.
+* Im Extremfall müssen bis zu 15'000 Plätze in 10min verkauft werden können.
 Annahme: Eine Kauf-Session benötigt etwa 100 HTTP Requests und 10 DB-Queries, dies entspricht einer Last von etwa 2500 HTTP und 250 SQL Transactions pro Sekunde.
 ** Auch in einem solchen Szenario soll die HTTP Antwortzeiten die geforderten Grenzen nicht überschreiten.
 ** Auch bei Überlast, wenn der Public Teil der Applikation nicht mehr zuverlässig erreichbar ist, sollte der Zugriff für Box-Office User unbehindert bleiben.
@@ -89,7 +100,7 @@ Annahme: Eine Kauf-Session benötigt etwa 100 HTTP Requests und 10 DB-Queries, d
 * Sicherheit (siehe <<risk-1,Kap. Risiken>>).
 
 .Änderbarkeit (Priorität 2)
-* Wenn Saalkonfigurationen verändert werden muss, dann muss dies ausschliesslich konfigurativ geschehen.
+* Wenn eine Saalkonfigurationen verändert werden muss, dann muss dies ausschliesslich konfigurativ geschehen.
 * Die Applikation muss innerhalb von 5 Personentagen auf andere Show-Locations erweitert werden können. (Branding der Oberfläche, neuer Sitzplan)
 * Internationalization und Sprach-Auswahl wird in Zukunft gefordert sein und sollte nicht verbaut werden.
 
@@ -107,31 +118,34 @@ Die folgende Tabelle zeigt die Stakeholder des OTS Systems.
 |   Rolle               |   Ziel/Intention  |   Bemerkung
 
 | Auftraggeber: Z Group
-|   Wünscht schnellstmögliche Einführung und Einhaltung des Budgets
+| Wünscht schnellstmögliche Einführung und Einhaltung des Budgets
 | Hat keine Zeit und steht für Nachfragen nicht zur Verfügung
 
 | Anwendungsvertreter (Externer Teil)
 | Formuliert die Anforderungen für den Kundenbereich
-|Verantwortlich für die Abnahme der Phase 1
+| Verantwortlich für die Abnahme der Phase 1
 
 | Anwendungsvertreter (Fachbereich)
 | Formuliert die Anforderungen für die internen und den Admin-Bereich
 | Erst relevant für die Phasen 2 und 3. Kann die Einführung dieser beiden Phasen verzögern
 
 | Projektleiter
-| Verantwortlich für das Projekt und damit auch für die Termine und Ressourcen |
+| Verantwortlich für das Projekt und damit auch für die Termine und Ressourcen
+|
 
 | Betriebsverantwortlicher
 | Die Anwendung muss in die gestehende Infrastruktur einfach eingebunden werden können und möglichst wenig Aufwand generieren
-Marketing-Abteilung	"Wünscht rechtzeitig vor Betriebsaufnahme informiert zu werden, damit die Info-Kampagne gestartet werden kann.
-Ist bei der Spezifizierung des GUI beteiligt"
 |
+
+| Marketing-Abteilung
+| Wünscht rechtzeitig vor Betriebsaufnahme informiert zu werden, damit die Info-Kampagne gestartet werden kann.
+| Ist bei der Spezifizierung des GUI beteiligt
 
 | Entwickler
 | Verwenden dieses Dokument als Referenz für die Entwicklung
 |
 
-| DataTrans
+| Datatrans
 | Unterstützt bei der Einbindung der Zahlungsschnittstelle.
 | Abnahme der Zahlungsschnittstelle (kann daher Phase 1 verzögern)
 
