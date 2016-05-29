@@ -222,6 +222,7 @@ Die Zeitspanne kann konfiguriert werden.
 
 === Drucken
 OTS generiert die Tickets als PDF-Dokument, welche zu einem späteren Zeitpunkt mit einem gewöhnlichen PDF-Viewer oder direkt aus dem Browser ausgedruckt werden können. Das Drucken ist nicht Bestandteil des OTS.
+
 === Reporting
 
 Ein Reporting ist nicht Bestandteil dieser Projektphase, sondern wird in der Phase 3 umgesetzt.
