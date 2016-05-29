@@ -133,7 +133,7 @@ Im Rahmen des SADs wurden daher mehrere Prototypen entwickelt auf ihre Funktiona
 ==== Rahmenbedingungen
 
 Gemäss den Anforderungen (siehe <<QZ,Qualitätsziele>>) sollen 15'000 Plätze innerhalb von 10 Minuten verkauft werden können.
-Das bedeutet das der Algorithmus rund rund 25 Reservationen pro Sekunden bei einer Antwortzeit von maximal zwei Sekunden ermöglichen muss.
+Das bedeutet, dass der Algorithmus rund 25 Reservationen pro Sekunde, bei einer Antwortzeit von maximal zwei Sekunden, ermöglichen muss.
 
 Beim Buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und die Sitzplätze sollten (sofern noch vorhanden) benachbart sein.
 
