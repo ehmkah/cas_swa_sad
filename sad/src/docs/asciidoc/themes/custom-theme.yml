@@ -11,6 +11,9 @@ title_page:
   authors_font_size: $base_font_size_large
   authors_font_color: 181818
   revision_margin_top: $base_font_size * 1.25
+toc:
+  dot_leader:
+    color: #E0E0E0
 page:
   layout: portrait
   margin: [1.2in, 1in, 1.2in, 1in]
@@ -59,3 +62,8 @@ caption:
   font_style: normal
   font_color: #000001
   font_size: 12
+table:
+  head:
+    background_color: #f0f0f0
+  even_row:
+    background_color: #f9f9f9

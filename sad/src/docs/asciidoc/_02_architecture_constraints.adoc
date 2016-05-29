@@ -8,7 +8,7 @@
 [[techRand-1]]
 |===
 2+| *Hardware-Vorgaben*
-|DatenBank Server| bestehender Sun Server 
+|DatenBank Server| bestehender Sun Server
 
 2+| *Software-Infrastruktur*
 | Application Server		| GlassFish v4.0
@@ -40,6 +40,7 @@ Die organisatorischen Randbedingungen müssen noch mit der Projektleitung abgest
 und können sich daher noch ändern.
 
 [[orgRand-1]]
+[options="header"]
 |===
 2+| *Organisation und Struktur*
 | Organsisationsstruktur Projektteam | kleines internes Team ohne Unterauftragnehmer
@@ -54,6 +55,10 @@ Phase 2: Admin-Interface
 Phase 3: Erweiterung der Webseite (Premium services und Internationalisierung)
 | Projekt-Budget | muss noch mit der Projektleitung abgestimmt werden
 | Team | muss noch mit der Projektleitung abgestimmt werden
+
+|===
+[options="header"]
+|===
 2+| *Juristische Faktoren*
 | Datenschutz | Kreditkartennummern dürfen nicht im System gespeichert werden
 | Internationale Rechtsfragen | müssen für diese Phase noch nicht berücksichtigt werden,

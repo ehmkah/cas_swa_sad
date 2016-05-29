@@ -68,6 +68,7 @@ Im Rahmen der Phase I von OTS soll auf folgende Qualitätsziele  mit absteigende
 [options="header"]
 
 .Antwortzeiten in Sekunden [[QZ-TAB1]]
+[options="header" cols="1,2"]
 |===
 | Seitenname            | Antwortzeit
 | Welcome               | <  1s
