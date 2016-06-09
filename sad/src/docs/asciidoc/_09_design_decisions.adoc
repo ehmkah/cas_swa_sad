@@ -66,11 +66,11 @@ Wir haben uns für Variante 3 entschieden.
 Die Vorteil der Flexibilität der DAOs überwiegt unserer Meinung nach den geringfügigen
 Einfluss auf die Performance.
 
-=== MVC-Pattern verwenden
+=== Präsentationsschicht
 
 ==== Fragestellung
 
-Wie wird sichergestellt, dass das GUI ausgetauscht werden kann?
+Wie soll die Präsentationsschicht umgesetzt werden?
 
 ==== Variante 1: JavaServer Faces
 Vorteil: etabliertes Framework. Erleichtert die Umsetzung des MVC-Patterns.
@@ -126,24 +126,26 @@ muss der Algorithmus auch in der Lage sein, den geforderten Durchsatz zu erreich
 
 Im Rahmen des SADs wurden daher mehrere Prototypen entwickelt auf ihre Funktionalität und Performance getestet.
 
+==== Rahmenbedingungen
+
+Gemäss den Anforderungen (siehe <<QZ,Qualitätsziele>>) sollen 15'000 Plätze innerhalb von 10 Minuten verkauft werden können.
+Das bedeutet das der Algorithmus rund rund 25 Reservationen pro Sekunden ermöglichen muss.
+
+Beim Buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und die Sitzplätze sollten (sofern noch vorhanden) benachbart sein.
+
 .Die Performancetests wurden auf einem älteren Laptop (Lenovo T530) mit folgenden Hardware ausgeführt:
  * Intel Core i7-3630QM
  * 16 GB Systemspeicher
 
 Die Resultate der Lasttests mit 100 parallelen Threads und jeweils 40 Anfragen pro Thread sind jeweils bei jeder Variante ersichtlich.
 
-==== Rahmenbedingungen
-
-Gemäss den Anforderungen (siehe <<QZ,Qualitätsziele>>) sollen 15'000 Plätze innerhalb von 10 Minuten verkauft werden können.
-Das bedeutet das der Algorithmus rund rund 25 Reservationen pro Sekunden bei einer Antwortzeit von maximal zwei Sekunden ermöglichen muss.
-
-Beim Buchen von Sitzplätzen dürfen zudem keine Überbuchungen entstehen und die Sitzplätze sollten (sofern noch vorhanden) benachbart sein.
-
 ==== Variante 1: Zufälliger Sitz wählen
-Alle freie Sitzplätze der gewünschten Kategorie werden gelesen. Es wird mit einem zufälligen Platz begonnen, die benachbarten Plätze zu suchen. Falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Sonst wird dieser Vorgang maximal 5 mal wiederholt..
+Alle freie Sitzplätze der gewünschten Kategorie werden gelesen. Es wird mit einem zufälligen Platz begonnen, die benachbarten Plätze zu suchen. Falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Sonst wird dieser Vorgang maximal 5 mal wiederholt.
 
 Vorteil: kurze Latenzzeit.
+
 Nachteil: viele Plätze sind nicht reserviert worden, reservierte Plätze sind fehlerhaft.
+
 [source]
 ----
 Strategy: RandomSeatSelectionStrategy
@@ -171,6 +173,7 @@ Throughput:      148 requests/s
 Nur einen zufälligen Sektor der gewünschten Kategorie mit genügend freie Sitzplätze wird auswählt. Dann werden die benachbarte Plätze in diesem Sektor gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert und dabei wird ein Optimistic Locking beim persistieren verwendet.
 
 Vorteil: kurze Latenzzeit.
+
 Nachteil: viele Plätze sind nicht reserviert worden.
 [source]
 ----
@@ -196,31 +199,32 @@ Throughput:      166 requests/s
 ----
 
 ==== Variante 3: Sektoren mit zufälliger Reihenfolge
-Alle Sektoren der gewünschten Kategorie mit genügend freien Sitzplätzen werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Die benachbarte Plätze werden in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking beim persistieren verwendet und beim Konflikt werden die Sitzplätze neu geladen.
+Alle Sektoren der gewünschten Kategorie mit genügend freien Sitzplätzen werden ausgelesen. Dann werden die Sektoren in einer zufälligen Reihenfolge gemischt. Die benachbarten Plätze werden in den Sektoren gesucht und falls genügende Plätze vorhanden sind, werden die Plätze reserviert. Dabei wird ein Optimistic Locking beim persistieren verwendet und beim Konflikt werden die Sitzplätze neu geladen.
 
 Vorteil: mehr Plätze können reserviert werden.
+
 Nachteil: relativ lange, maximale Latenzzeit.
 [source]
 ----
 Strategy: RandomOrderSectorStrategy
 Seats
   available:     13660
-  reserved:      11176
-  remaining:     2484
+  reserved:      13547
+  remaining:     113
 Reservations
   total:         4000
-  rejected:      1736
-  adjacent:      2264
+  rejected:      1327
+  adjacent:      2673
   non-adjacent:  0
   incorrect:     0
 Latency Time
   minimum:       0.0s
-  maximum:       6.876s
-  average:       0.583s
-  deviation:     0.229s
+  maximum:       4.531s
+  average:       0.55s
+  deviation:     0.546s
 
-Total Time:      24s
-Throughput:      166 requests/s
+Total Time:      22s
+Throughput:      176 requests/s
 ----
 
 ==== Variante 4: Cache basierte Lösung
@@ -236,8 +240,9 @@ dass der Algorithmus auch im Falle von mehreren Serverinstanzen niemals zweimal 
 Als Cache wird das bewährte und quelloffene Produkt Ehcache verwendet. Mit Ehcache lassen sich die gecachten Daten auch
 über mehrere Server replizieren, so dass die Lösung auch mit einer vertikalen Skalierung kompatibel wäre.
 
-Vorteil: sehr hohe Performance
-Nachteil: Hoher Resourcenbedarf, zusätzliche Komplexität
+Vorteil: sehr hohe Performance.
+
+Nachteil: Hoher Resourcenbedarf, zusätzliche Komplexität.
 
 [source]
 ----

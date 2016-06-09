@@ -10,7 +10,7 @@ Für das OTS wurden folgende Risiken erkannt:
 |===
 |Risiko
 |Priorität
-|Verfügbarkeit
+|Single Point of Failure / Verfügbarkeit
 |Hoch
 
 |Performanz
@@ -18,9 +18,6 @@ Für das OTS wurden folgende Risiken erkannt:
 
 |Security
 |Hoch
-
-|Single Point of Failure
-|Mittel
 
 |Ausfall externer Paymentdienstleister
 |Niedrig
