@@ -1,3 +1,5 @@
+Bitte nur ein Satz pro Zeile, sonst kracht es beim Mergen gewaltig ??
+
 == Wie stellt Starbucks die Integrät des Geschäftsprozesses sicher?
 
 == Funktioniert das Verfahren in jedem Fall?
