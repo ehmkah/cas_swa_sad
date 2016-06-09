@@ -1,11 +1,49 @@
-Bitte nur ein Satz pro Zeile, sonst kracht es beim Mergen gewaltig ??
+//Bitte nur ein Satz pro Zeile, sonst kracht es beim Mergen gewaltig ??
 
 == Wie stellt Starbucks die Integrät des Geschäftsprozesses sicher?
 
+Retry-Mechanismus
+
 == Funktioniert das Verfahren in jedem Fall?
+
+Falsche CorrelationId zugewiesen -> Der Kunde erhält entweder keinen oder einen falschen Kaffee.
+Die Bestellung wird zwar aufgegeben, aber aus irgendeinen Grund findet die Zubereitung nicht statt.
+Diese Probleme können durch den Retry-Mechanismus behoben werden.
+
+Die Bestellung wurde bereits aufgegeben und soll nachträglich abgebrochen werden.
+Eventuell ist die Zubereitung bereits in Gange.
+
 
 == Welche Vor- und Nachteile sehen Sie?
 
+Ein Vorteil ist, dass ein Teil der Verarbeitung parallel gemacht wird.
+Dadurch ist die Durchlaufzeit kürzer, als wenn ein Bearbeiter sowohl das Geld kassiert als auch den Kaffee zubereitet.
+Wichtig ist, dass die Zubereitung mindestens so schnell ist, wie das Kassieren.
+Anderenfalls würde die Warteschlange immer länger werden und die Kundenzufriedenheit sinken (Timeout-Problem).
+
+Nachteilig ist, dass der Kunde aufpassen muss, um seinen Aufruf nicht zu verpassen (Zumindest ist es aus Kundensicht besser, wenn er den Kaffee sofort erhält).
+Ausserdem sollte bei der Herausgabe validiert werden, ob der Kaffee dem richtigen Kunden überreicht wird.
+Diese Validierung kostet auch etwas Zeit.
+Man kann darauf verzichten, aber dann gibt es wahrscheinlich mehr Reklamationen und ein neuer Kaffee muss zubereitet werden.
+
+Generell ist asynchrone Verarbeitung fehleranfälliger als synchrone (siehe oben).
+
+
 == Wie kann man das Verfahren auf Anwendungsintegration übertragen?
 
+Siehe Figure 2.
+Der Cashier schreibt in eine Queue. Ein oder mehrere Barista arbeiten diese Queue ab und liefern das Ergebnis.
+Entspricht dem asynchronen Request-Reply-Pattern?
+
+
 == Sehen Sie andere Verfahren?
+
+Im Real-Life findet man auch bei anderen Läden Messageing-Varianten.
+
+Im Detailmarkt kann man zwischen verschieden Warteschlangen wählen und hoffen, dass man die schnellste erwischt hat.
+Eine verbesserte Variante ist, zu Beginn ein Ticket zu ziehen und dann auf den nächsten freien Operator zu warten, so wie es beispielsweise bei der Post oder der SBB gemacht wird.
+Die Verarbeitung findet dann synchron statt.
+Die Integrität ist dadurch leicht zu gewährleisten und auch das Rollback ist einfach.(entspricht dem „Competing Consumers“–Pattern?)
+
+In Schnellrestaurants werden auf Vorrat Pommes und Burger erstellt und die Zubereitungszeit sinkt gegen null (Vergleichbar mit einem Cache).
+Am Ende des Bezahlvorganges kann dem Kunden das bestellte sofort mitgegeben werden.
