@@ -12,6 +12,7 @@ Retry-Mechanismus
 // Write-Off: Wenn der Kunde nicht bezahlen kann, bzw. der Becher wird entfernt und gar nichts gemacht
 // Compensating: wenn die Kaffeemaschinen ihnen um die Ohren fliegt
 // Wäre es hier nicht wichtiger drauf hinzuweisen, dass der Gesamtgeschäftsprozess in einen synchronen Bezahlvorgang und einen asynchronen Herstellprozess aufgebrochen wird.
+// johndilbert. müsste man nicht noch daraufhinweisen, dass dieser Mechanismus mit Queues funktioniert und somit ein entkoppelter Prozess ist?
 
 _Beispiel für einen fertigen Text (bitte auskommentierten Teil beachten_ )
 
@@ -138,7 +139,9 @@ Hier zieht der Kunde am Anfang ein Ticket und wird dem nächsten freien Operator
 Die eigentliche Verarbeitung erfolgt dann synchron.
 Die Integrität ist dadurch gewährleist und auch das Rollback ist einfach (entspricht dem „Competing Consumers“–Pattern).
 
+// Johndilbert: In Schnellrestaurants werden auf Vorrat Pommes und Burger in einem Batch-Prozess erstellt
+//
+
 In Schnellrestaurants werden auf Vorrat Pommes und Burger erstellt und die Zubereitungszeit sinkt gegen null (Vergleichbar mit einem Cache).
 Am Ende des Bezahlvorganges erhält der Kunde seine Bestellung sofort.
 Die Integrität ist dadurch gewährleistet, dass der Kunde sofort seine Bestellung prüfen kann.
-
