@@ -12,7 +12,6 @@ Retry-Mechanismus
 // Write-Off: Wenn der Kunde nicht bezahlen kann, bzw. der Becher wird entfernt und gar nichts gemacht
 // Compensating: wenn die Kaffeemaschinen ihnen um die Ohren fliegt
 // Wäre es hier nicht wichtiger drauf hinzuweisen, dass der Gesamtgeschäftsprozess in einen synchronen Bezahlvorgang und einen asynchronen Herstellprozess aufgebrochen wird.
-// johndilbert. müsste man nicht noch daraufhinweisen, dass dieser Mechanismus mit Queues funktioniert und somit ein entkoppelter Prozess ist?
 
 _Beispiel für einen fertigen Text (bitte auskommentierten Teil beachten_ )
 
@@ -83,7 +82,7 @@ _Beispiel für einen fertigen Text (bitte auskommentierten Teile beachten)_
 
 . ein Teil der Verarbeitung findet parallel statt - Die Herstellung des Kaffees findet unabhängig vom Bezahlen statt.
 Die beiden Prozessschritte können separat skaliert werden, indem zum Beispiel mehr Barista Kaffees die Bestellungen bearbeiten.
-// johndilbert: indem zum Beispiel mehr Barista 's, Bestellungen abarbeiten.
+// johndilbert: indem zum Beispiel mehrere Baristas, die Bestellungen abarbeiten.
 Das ist notwendig, da die Bestellung zubereiten und Bestellung aufnehmen etwa gleichschnell ablaufen müssen.
 . Kunden bezahlen am Prozessanfang - Nachdem Kunden bezahlt haben, fällt es ihnen wahrscheinlich schwerer, dass System wieder zu verlassen. Hätten sie noch nicht bezahlt, können sie die Filiale wieder verlassen ohne etwas zu kaufen.
 . Kostengünstig herstellbares Produkt - bei kostengünstigen Produkten lässt sich ein Fehler günstig kompensieren. Gegenbeispiel wäre die Herstellung eines Airbus 380, wenn hier die Bestellung falsch realisiert wurde, kostet das Airbus viel Geld.
@@ -91,7 +90,7 @@ Das ist notwendig, da die Bestellung zubereiten und Bestellung aufnehmen etwa gl
 === Nachteile
 
 . Die Kunden müssen aufpassen ihren Aufruf nicht zu verpassen. Aus Kundensicht wäre es besser den Kaffee sofort zu erhalten.
-// johndilbert oder der Kaffee wird direkt an Platz geliefert.
+// johndilbert ...oder der Kaffee wird direkt an Platz geliefert.
 . Validierung bei Herausgabe des Kaffees - kostet Zeit, stellt aber sicher, dass ein Kunde, die richtige Bestellung erhält
 . Alle für die Bestellung notwendigen Wünsche müssen auf den Becher -
  es gibt für den Barista keine Rückfrage an den Cashier, so das nicht vorgesehene Extrawünsche schwer realisiert werden können
@@ -102,7 +101,7 @@ Das ist notwendig, da die Bestellung zubereiten und Bestellung aufnehmen etwa gl
 == Wie kann man das Verfahren auf Anwendungsintegration übertragen?
 
 Siehe Figure 2.
-Der Cashier schreibt in eine Queue. Ein oder mehrere Barista arbeiten diese Queue ab und liefern das Ergebnis.
+Der Cashier schreibt in eine Queue. Ein oder mehrere Baristas arbeiten diese Queue ab und liefern das Ergebnis.
 Entspricht dem asynchronen Request-Reply-Pattern?
 Es muss sich sich für den Gesamtprozess Kompensationsstrategien überlegt werden.
 Bei Fehlern muss automatisch erkannt werden, ob ein Retry sinnvoll ist. Bei fachlichen Fehlern nein, bei technischen ja.
@@ -142,7 +141,7 @@ Eine verbesserte Variante bieten die Post an.
 Hier zieht der Kunde am Anfang ein Ticket und wird dem nächsten freien Operator zugewiesen.
 Die eigentliche Verarbeitung erfolgt dann synchron.
 Die Integrität ist dadurch gewährleistet und auch das Rollback ist einfach (entspricht dem „Competing Consumers“–Pattern).
-// johndilbert " oder FIFO-Prinzip?"
+// johndilbert " First in First out oder FIFO-Prinzip?"
 
 // johndilbert: In Schnellrestaurants werden auf Vorrat Pommes und Burger in einem Batch-Prozess erstellt
 In Schnellrestaurants werden auf Vorrat Pommes und Burger erstellt und die Zubereitungszeit sinkt gegen null (Vergleichbar mit einem Cache).
