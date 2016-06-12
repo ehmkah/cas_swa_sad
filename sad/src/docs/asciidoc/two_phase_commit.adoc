@@ -40,6 +40,7 @@ Die Bestellung wurde bereits aufgegeben und soll nachträglich abgebrochen werde
 Eventuell ist die Zubereitung bereits in Gange.
 // ehmkah: wäre für mich auch ein Beispiel wo das Verfahren funktioniert
 //   (wäre UNDO Action, entweder Becher wegschmeissen oder Kaffee weggiessen)
+//yezhao: wenn so viele Kunden bestellen dann gleich stornieren führt auch zum Problem
 
 Wenn Kunden ihren Kaffee nicht abholen, läuft die Queue der fertigen Kaffees über.
 // ehmkah: habe ich nach unten übernommen
