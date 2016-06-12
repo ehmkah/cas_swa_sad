@@ -1,8 +1,18 @@
 //Bitte nur ein Satz pro Zeile, sonst kracht es beim Mergen gewaltig ??
+// ehmkah: wenn Du Absätze schreibst, kriegt man das beim Umbauen der Sätze nicht mehr hin, weil es fast immer Konflikte gibt.
+// Git arbeitet zeilenbasiert.
+
 
 == Wie stellt Starbucks die Integrät des Geschäftsprozesses sicher?
 
 Retry-Mechanismus
+
+// ehmkah:
+// Ich würde sagen, es werden alle drei genannten Verfahren eingesetzt
+// Retry: wenn es falsch gemacht wurde
+// Write-Off: Wenn der Kunde nicht bezahlen kann, bzw. der Becher wird entfernt und gar nichts gemacht
+// Compensating: wenn die Kaffeemaschinen ihnen um die Ohren fliegt
+// Wäre es hier nicht wichtiger drauf hinzuweisen, dass der Gesamtgeschäftsprozess in einen synchronen Bezahlvorgang und einen asynchronen Herstellprozess aufgebrochen wird.
 
 == Funktioniert das Verfahren in jedem Fall?
 
@@ -10,13 +20,20 @@ Falsche CorrelationId zugewiesen -> Der Kunde erhält entweder keinen oder einen
 Die Bestellung wird zwar aufgegeben, aber aus irgendeinen Grund findet die Zubereitung nicht statt.
 Diese Probleme können durch den Retry-Mechanismus behoben werden.
 
+Correllation nicht eindeutig genug.
+Fall 1: Zuviele Andrés bestellen alle gleichzeitig Latte. -> eventuell könnte der erste André den Latte vom zweiten erhalten. Aber kein Problem.
+Fall 2: Zuviele Andrés bestellen unterschiedliche Kaffes -> die Correlation wird noch um den Kaffeenamen erweitert und die Zuordnung funktioniert wieder.
+
 Die Bestellung wurde bereits aufgegeben und soll nachträglich abgebrochen werden.
 Eventuell ist die Zubereitung bereits in Gange.
+
+Wenn Kunden ihren Kaffee nicht abholen, läuft die Queue der fertigen Kaffees über.
 
 
 == Welche Vor- und Nachteile sehen Sie?
 
 Ein Vorteil ist, dass ein Teil der Verarbeitung parallel gemacht wird.
+Prozessbestandteile "Kaffee zubereiten" und "Bezahlen" lassen sich unabhängig voneinander skalieren.
 Dadurch ist die Durchlaufzeit kürzer, als wenn ein Bearbeiter sowohl das Geld kassiert als auch den Kaffee zubereitet.
 Wichtig ist, dass die Zubereitung mindestens so schnell ist, wie das Kassieren.
 Anderenfalls würde die Warteschlange immer länger werden und die Kundenzufriedenheit sinken (Timeout-Problem).
@@ -25,6 +42,8 @@ Nachteilig ist, dass der Kunde aufpassen muss, um seinen Aufruf nicht zu verpass
 Ausserdem sollte bei der Herausgabe validiert werden, ob der Kaffee dem richtigen Kunden überreicht wird.
 Diese Validierung kostet auch etwas Zeit.
 Man kann darauf verzichten, aber dann gibt es wahrscheinlich mehr Reklamationen und ein neuer Kaffee muss zubereitet werden.
+Beim Aufgeben der Bestellung durch den Cashier müssen alle für die Zubereitung notwendigen Informationen auf den Becher geschrieben werden.
+Extrawünsche, die nicht vorgesehen sind, werden schwieriger zu realisieren, da keine Kommunikation zwischen Kunde und Barista erfolgt
 
 Generell ist asynchrone Verarbeitung fehleranfälliger als synchrone (siehe oben).
 
@@ -34,7 +53,8 @@ Generell ist asynchrone Verarbeitung fehleranfälliger als synchrone (siehe oben
 Siehe Figure 2.
 Der Cashier schreibt in eine Queue. Ein oder mehrere Barista arbeiten diese Queue ab und liefern das Ergebnis.
 Entspricht dem asynchronen Request-Reply-Pattern?
-
+Es muss sich sich für den Gesamtprozess Kompensationsstrategien überlegt werden.
+Bei Fehlern muss automatisch erkannt werden, ob ein Retry sinnvoll ist. Bei fachlichen Fehlern nein, bei technischen ja.
 
 == Sehen Sie andere Verfahren?
 
@@ -42,8 +62,11 @@ Im Real-Life findet man auch bei anderen Läden Messageing-Varianten.
 
 Im Detailmarkt kann man zwischen verschieden Warteschlangen wählen und hoffen, dass man die schnellste erwischt hat.
 Eine verbesserte Variante ist, zu Beginn ein Ticket zu ziehen und dann auf den nächsten freien Operator zu warten, so wie es beispielsweise bei der Post oder der SBB gemacht wird.
+// Weiteres Beispiel ist Spectacollo. Hier steht man in der Schlange und wird dem nächsten freien Barista zugewiesen, der kassiert auch gleichzeitig ein.
+// Wäre ein eher monolithischer Ansatz
 Die Verarbeitung findet dann synchron statt.
 Die Integrität ist dadurch leicht zu gewährleisten und auch das Rollback ist einfach.(entspricht dem „Competing Consumers“–Pattern?)
 
 In Schnellrestaurants werden auf Vorrat Pommes und Burger erstellt und die Zubereitungszeit sinkt gegen null (Vergleichbar mit einem Cache).
 Am Ende des Bezahlvorganges kann dem Kunden das bestellte sofort mitgegeben werden.
+
