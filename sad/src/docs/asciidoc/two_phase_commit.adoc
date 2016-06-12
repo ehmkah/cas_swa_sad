@@ -18,9 +18,11 @@ _Beispiel für einen fertigen Text (bitte auskommentierten Teil beachten_ )
 Starbucks stellt die Integrität seines Geschäftsprozesses mit Hilfe des _Half-sync, Half-async_ Patterns sicher.
 Für die Integrität verwenden sie dafür die drei verschiedene Strategien: _Undo_, _Retry_, _Compensation strategy_.
 _Undo_ wird verwendet, wenn die Bestellung aufgegeben wurde und der Kunde nicht bezahlen kann.
+//yezhao: verwenden wir den Begriff Undo oder Write-off? es wird auch bei der Stornierung verwendet.
 _Retry_ wird verwendet, wenn die Bestellung falsch ausgeführt wurde und die Zubereitung wiederholt werden muss.
 _Compensation strategy_ wird verwendet, wenn die Ausführung der Bestellung unmöglich ist, z.B. Stromausfall.
-
+//yezhao: ich würde sagen, compensation wird verwendet wenn der Kunde falschen Kaffee bekommt und dann zurückgibt.
+//yezhao: es fehlt noch message buffer (pickup counter), welcher die Asynchron Zubereitung und die Synchron Abgabe trennt.
 == Funktioniert das Verfahren in jedem Fall?
 
 Falsche CorrelationId zugewiesen -> Der Kunde erhält entweder keinen oder einen falschen Kaffee.
@@ -39,7 +41,7 @@ Die Bestellung wurde bereits aufgegeben und soll nachträglich abgebrochen werde
 Eventuell ist die Zubereitung bereits in Gange.
 // ehmkah: wäre für mich auch ein Beispiel wo das Verfahren funktioniert
 //   (wäre UNDO Action, entweder Becher wegschmeissen oder Kaffee weggiessen)
-//yezhao: wenn so viele Kunden bestellen dann gleich stornieren führt auch zum Problem
+//yezhao: wenn zu viele Kunden bestellen dann gleich stornieren führt auch zum Problem
 
 Wenn Kunden ihren Kaffee nicht abholen, läuft die Queue der fertigen Kaffees über.
 // ehmkah: habe ich nach unten übernommen
@@ -115,7 +117,8 @@ Bei asynchroner Verarbeitung ist es wichtig zu unterscheiden, ob ein _retry_ sin
 Bei technischen Problemen ja bei fachlichen Problemen nein.
 Bei Verwendung des vorgestellten Patterns muss sich eine Kompensationsstrategie überlegt werden.
 Wird bei einer Anwendungsintegration auf _two phase commit_ verzichtet, dann erhöht sich der Gesamtdurchsatz im System.
-
+//yezhao: es musss überlegt werden, was mit ungültiger Message passiert wird, write-off, retry?
+//yezhao: Queue muss überwacht werden, es darf nicht überlaufen.
 
 == Sehen Sie andere Verfahren?
 
