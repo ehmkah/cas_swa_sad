@@ -141,7 +141,7 @@ Im Detailmarkt kann man zwischen verschiedenen Warteschlangen wählen und hoffen
 Eine verbesserte Variante bieten die Post an.
 Hier zieht der Kunde am Anfang ein Ticket und wird dem nächsten freien Operator zugewiesen.
 Die eigentliche Verarbeitung erfolgt dann synchron.
-Die Integrität ist dadurch gewährleist und auch das Rollback ist einfach (entspricht dem „Competing Consumers“–Pattern).
+Die Integrität ist dadurch gewährleistet und auch das Rollback ist einfach (entspricht dem „Competing Consumers“–Pattern).
 // johndilbert " oder FIFO-Prinzip?"
 
 // johndilbert: In Schnellrestaurants werden auf Vorrat Pommes und Burger in einem Batch-Prozess erstellt
