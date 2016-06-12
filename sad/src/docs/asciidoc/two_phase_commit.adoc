@@ -119,7 +119,7 @@ Wird bei einer Anwendungsintegration auf _two phase commit_ verzichtet, dann erh
 
 == Sehen Sie andere Verfahren?
 
-Im Real-Life findet man auch bei anderen Läden Messageing-Varianten.
+Im Real-Life findet man auch bei anderen Läden Messaging-Varianten.
 
 Im Detailmarkt kann man zwischen verschieden Warteschlangen wählen und hoffen, dass man die schnellste erwischt hat.
 Eine verbesserte Variante ist, zu Beginn ein Ticket zu ziehen und dann auf den nächsten freien Operator zu warten, so wie es beispielsweise bei der Post oder der SBB gemacht wird.
