@@ -28,8 +28,7 @@ _Write-off_ wird verwendet, wenn die Bestellung aufgegeben wurde und der Kunde n
 //yezhao: verwenden wir den Begriff Undo oder Write-off? es wird auch bei der Stornierung verwendet.
 // ehmkah: undo durch write-off ersetzt.
 _Retry_ wird verwendet, wenn die Bestellung falsch ausgeführt wurde und die Zubereitung wiederholt werden muss.
-_Compensation strategy_ wird verwendet, wenn ausgehändigten Kaffee zurückgerufen werden muss.
-//wenn die Ausführung der Bestellung unmöglich ist, z.B. Stromausfall.
+_Compensation strategy_ wird verwendet, wenn die Ausführung der Bestellung nicht mehr unmöglich ist und Geld zurückerstattet werden muss.
 //yezhao: ich würde sagen, compensation wird verwendet wenn der Kunde falschen Kaffee bekommt und dann zurückgibt.
 // ehmkah: ich trinke fast nie bei Starbucks. Ich hätte gedacht, der Kaffee wird dann neu gemacht wäre "retry."
 //         wenn Du denkst es ist nicht so, kannst Du das gerne umformulieren
