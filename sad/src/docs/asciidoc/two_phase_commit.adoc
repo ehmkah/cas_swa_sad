@@ -16,13 +16,23 @@ Retry-Mechanismus
 _Beispiel für einen fertigen Text (bitte auskommentierten Teil beachten_ )
 
 Starbucks stellt die Integrität seines Geschäftsprozesses mit Hilfe des _Half-sync, Half-async_ Patterns sicher.
+//yezhao: es fehlt noch message buffer (pickup counter), welcher die Asynchron Zubereitung und die Synchron Abgabe trennt.
+// ehmkah: habs geschrieben. Passt das so? Bitte gerne korrigieren (Gilt eigentlich immer)
+Der synchrone Prozessbestandteil ist die Bestellung.
+Nachdem der Kunde bestellt hat, erhält er synchron Feedback, dass seine Bestellung in die Bestellqueue übernommen wurde (Sein Name wird auf einen Becher geschrieben).
+Die asynchronen Prozessbestandteile sind die Zubereitung der Kaffees (Quelle: Bestellqueue, Ziel: pickup counter) und die Abholung des Kaffees durch den Kunden (Quelle: pickup-counter).
+Sowohl Bestellqueue, als auch Pickup-counter können sich als _Message Buffer_ vorgestellt werden.
+
 Für die Integrität verwenden sie dafür die drei verschiedene Strategien: _Undo_, _Retry_, _Compensation strategy_.
-_Undo_ wird verwendet, wenn die Bestellung aufgegeben wurde und der Kunde nicht bezahlen kann.
+_Write off_ wird verwendet, wenn die Bestellung aufgegeben wurde und der Kunde nicht bezahlen kann.
 //yezhao: verwenden wir den Begriff Undo oder Write-off? es wird auch bei der Stornierung verwendet.
+// ehmkah: undo durch write-off ersetzt.
 _Retry_ wird verwendet, wenn die Bestellung falsch ausgeführt wurde und die Zubereitung wiederholt werden muss.
 _Compensation strategy_ wird verwendet, wenn die Ausführung der Bestellung unmöglich ist, z.B. Stromausfall.
 //yezhao: ich würde sagen, compensation wird verwendet wenn der Kunde falschen Kaffee bekommt und dann zurückgibt.
-//yezhao: es fehlt noch message buffer (pickup counter), welcher die Asynchron Zubereitung und die Synchron Abgabe trennt.
+// ehmkah: ich trinke fast nie bei Starbucks. Ich hätte gedacht, der Kaffee wird dann neu gemacht wäre "retry."
+//         wenn Du denkst es ist nicht so, kannst Du das gerne umformulieren
+
 == Funktioniert das Verfahren in jedem Fall?
 
 Falsche CorrelationId zugewiesen -> Der Kunde erhält entweder keinen oder einen falschen Kaffee.
@@ -42,6 +52,7 @@ Eventuell ist die Zubereitung bereits in Gange.
 // ehmkah: wäre für mich auch ein Beispiel wo das Verfahren funktioniert
 //   (wäre UNDO Action, entweder Becher wegschmeissen oder Kaffee weggiessen)
 //yezhao: wenn zu viele Kunden bestellen dann gleich stornieren führt auch zum Problem
+// ehmkah: gute Idee, habe ich übernommen
 
 Wenn Kunden ihren Kaffee nicht abholen, läuft die Queue der fertigen Kaffees über.
 // ehmkah: habe ich nach unten übernommen
@@ -56,6 +67,9 @@ Trotzdem können die folgenden Situationen auftreten:
 * CorrelationID nicht eindeutig genug   - Der Kunde erhält entweder keinen oder einen falschen Kaffee.
 * Kunden holen fertigen Kaffee nicht ab - Es können keine fertigen Kaffees mehr produziert werden.
 Es gibt keinen Platz um weitere fertige Kaffees abzustellen.
+* zu viele Stornierungen                -
+ Wenn zeitgleich viele Kunden bestellen und stornieren, führt das zu Schwierigkeiten, weil die Bestellqueue immer wieder bearbeitet werden muss
+
 
 == Welche Vor- und Nachteile sehen Sie?
 
@@ -83,8 +97,9 @@ _Beispiel für einen fertigen Text (bitte auskommentierten Teile beachten)_
 === Vorteile
 
 . ein Teil der Verarbeitung findet parallel statt - Die Herstellung des Kaffees findet unabhängig vom Bezahlen statt.
-Die beiden Prozessschritte können separat skaliert werden, indem zum Beispiel mehr Barista Kaffees die Bestellungen bearbeiten.
+Die beiden Prozessschritte können separat skaliert werden, indem zum Beispiel mehrere Baristas, die Bestellungen bearbeiten.
 // johndilbert: indem zum Beispiel mehrere Baristas, die Bestellungen abarbeiten.
+// ehmkah:      habs übernommen. gerne gleich im richtigen Text reparieren. :-)
 Das ist notwendig, da die Bestellung zubereiten und Bestellung aufnehmen etwa gleichschnell ablaufen müssen.
 . Kunden bezahlen am Prozessanfang - Nachdem Kunden bezahlt haben, fällt es ihnen wahrscheinlich schwerer, dass System wieder zu verlassen. Hätten sie noch nicht bezahlt, können sie die Filiale wieder verlassen ohne etwas zu kaufen.
 . Kostengünstig herstellbares Produkt - bei kostengünstigen Produkten lässt sich ein Fehler günstig kompensieren. Gegenbeispiel wäre die Herstellung eines Airbus 380, wenn hier die Bestellung falsch realisiert wurde, kostet das Airbus viel Geld.
@@ -93,11 +108,14 @@ Das ist notwendig, da die Bestellung zubereiten und Bestellung aufnehmen etwa gl
 
 . Die Kunden müssen aufpassen ihren Aufruf nicht zu verpassen. Aus Kundensicht wäre es besser den Kaffee sofort zu erhalten.
 // johndilbert ...oder der Kaffee wird direkt an Platz geliefert.
+// ehmkah      :-)
 . Validierung bei Herausgabe des Kaffees - kostet Zeit, stellt aber sicher, dass ein Kunde, die richtige Bestellung erhält
 . Alle für die Bestellung notwendigen Wünsche müssen auf den Becher -
  es gibt für den Barista keine Rückfrage an den Cashier, so das nicht vorgesehene Extrawünsche schwer realisiert werden können
 . Asynchrone Verarbeitung ist generell fehleranfälliger als synchrone -
+Entkoppelte Systeme sind komplexer und aufwändiger zu realisieren
 // johndilbert . Entkoppelte Systeme sind komplexer und sind aufwändiger zu realisieren
+// ehmkah        übernommen
 
 
 == Wie kann man das Verfahren auf Anwendungsintegration übertragen?
@@ -112,13 +130,18 @@ _Beispiel für einen fertigen Text (bitte auskommentierten Teile beachten)_
 
 Soll das Pattern auf eine andere Anwendungsintegration übertragen werden, muss überlegt werden, welche Prozessteile synchron ablaufen müssen und welche asynchron durchgeführt werden können.
 Für die Anwendung, die in die Queue schreibt ist es irrelevant, wieviele Anwendungen aus der Queue lesen und die Nachrichten abarbeiten.
+Für die Anwendung, die in die Queue schreibt ist es irrelevant, wieviele Anwendungen aus der Queue lesen und die Nachrichten abarbeiten.
 Bei der Realisierung müssen die  Anwendungen soweit wie möglich entkoppelt sein.
 Bei asynchroner Verarbeitung ist es wichtig zu unterscheiden, ob ein _retry_ sinnvoll ist.
 Bei technischen Problemen ja bei fachlichen Problemen nein.
 Bei Verwendung des vorgestellten Patterns muss sich eine Kompensationsstrategie überlegt werden.
 Wird bei einer Anwendungsintegration auf _two phase commit_ verzichtet, dann erhöht sich der Gesamtdurchsatz im System.
-//yezhao: es musss überlegt werden, was mit ungültiger Message passiert wird, write-off, retry?
+Weiterhin muss sich bei diesem Verfahren überlegt werden, was mit ungültigen Nachrichten passieren soll (_Write-off_ oder _Retry_).
+Schlussendlich braucht es auch eine Überwachung der verwendeten Queues, damit diese nicht überlaufen.
+//yezhao:  es musss überlegt werden, was mit ungültiger Message passiert wird, write-off, retry?
+// ehmkah: habs eingetippt
 //yezhao: Queue muss überwacht werden, es darf nicht überlaufen.
+// ehmkah: habs eingetippt
 
 == Sehen Sie andere Verfahren?
 
@@ -145,6 +168,7 @@ Hier zieht der Kunde am Anfang ein Ticket und wird dem nächsten freien Operator
 Die eigentliche Verarbeitung erfolgt dann synchron.
 Die Integrität ist dadurch gewährleistet und auch das Rollback ist einfach (entspricht dem „Competing Consumers“–Pattern).
 // johndilbert " First in First out oder FIFO-Prinzip?"
+// ehmkah: d.h. wenn ich bestelle kriege ich ältesten Pommes? :-)
 
 // johndilbert: In Schnellrestaurants werden auf Vorrat Pommes und Burger in einem Batch-Prozess erstellt
 In Schnellrestaurants werden auf Vorrat Pommes und Burger erstellt und die Zubereitungszeit sinkt gegen null (Vergleichbar mit einem Cache).
