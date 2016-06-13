@@ -76,7 +76,7 @@ Es gibt keinen Platz um weitere fertige Kaffees abzustellen.
 Ein Vorteil ist, dass ein Teil der Verarbeitung parallel gemacht wird.
 // ehmkah: übernommen
 Prozessbestandteile "Kaffee zubereiten" und "Bezahlen" lassen sich unabhängig voneinander skalieren.
-// ehmkah: übernommen
+// ehmkah: übernommensich sich f
 Dadurch ist die Durchlaufzeit kürzer, als wenn ein Bearbeiter sowohl das Geld kassiert als auch den Kaffee zubereitet.
 // ehmkah: das glaube ich nicht, da zusätzliche Kommunikation notwendig ist.
 //    eher ist der Durchsatz für Starbucks optimal und können nicht flüchten nach dem Bezahlen
@@ -88,7 +88,7 @@ Ausserdem sollte bei der Herausgabe validiert werden, ob der Kaffee dem richtige
 Diese Validierung kostet auch etwas Zeit.
 Man kann darauf verzichten, aber dann gibt es wahrscheinlich mehr Reklamationen und ein neuer Kaffee muss zubereitet werden.
 Beim Aufgeben der Bestellung durch den Cashier müssen alle für die Zubereitung notwendigen Informationen auf den Becher geschrieben werden.
-Extrawünsche, die nicht vorgesehen sind, werden schwieriger zu realisieren, da keine Kommunikation zwischen Kunde und Barista erfolgt
+Extrawünsche, die nicht vorgesehen sind, werden schwieriger zu realisieren, da keine Kommunikation zwischen Kunde und Barista erfolgt.
 
 Generell ist asynchrone Verarbeitung fehleranfälliger als synchrone (siehe oben).
 
@@ -123,18 +123,17 @@ Entkoppelte Systeme sind komplexer und aufwändiger zu realisieren
 Siehe Figure 2.
 Der Cashier schreibt in eine Queue. Ein oder mehrere Baristas arbeiten diese Queue ab und liefern das Ergebnis.
 Entspricht dem asynchronen Request-Reply-Pattern?
-Es muss sich sich für den Gesamtprozess Kompensationsstrategien überlegt werden.
+Für den Gesamtprozess müssen Kompensationsstrategien überlegt werden.
 Bei Fehlern muss automatisch erkannt werden, ob ein Retry sinnvoll ist. Bei fachlichen Fehlern nein, bei technischen ja.
 
 _Beispiel für einen fertigen Text (bitte auskommentierten Teile beachten)_
 
 Soll das Pattern auf eine andere Anwendungsintegration übertragen werden, muss überlegt werden, welche Prozessteile synchron ablaufen müssen und welche asynchron durchgeführt werden können.
 Für die Anwendung, die in die Queue schreibt ist es irrelevant, wieviele Anwendungen aus der Queue lesen und die Nachrichten abarbeiten.
-Für die Anwendung, die in die Queue schreibt ist es irrelevant, wieviele Anwendungen aus der Queue lesen und die Nachrichten abarbeiten.
 Bei der Realisierung müssen die  Anwendungen soweit wie möglich entkoppelt sein.
 Bei asynchroner Verarbeitung ist es wichtig zu unterscheiden, ob ein _retry_ sinnvoll ist.
-Bei technischen Problemen ja bei fachlichen Problemen nein.
-Bei Verwendung des vorgestellten Patterns muss sich eine Kompensationsstrategie überlegt werden.
+Bei technischen Problemen ist dies der Fall, bei fachlichen Problemen nicht.
+Bei Verwendung des vorgestellten Patterns muss eine Kompensationsstrategie überlegt werden.
 Wird bei einer Anwendungsintegration auf _two phase commit_ verzichtet, dann erhöht sich der Gesamtdurchsatz im System.
 Weiterhin muss sich bei diesem Verfahren überlegt werden, was mit ungültigen Nachrichten passieren soll (_Write-off_ oder _Retry_).
 Schlussendlich braucht es auch eine Überwachung der verwendeten Queues, damit diese nicht überlaufen.
