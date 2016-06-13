@@ -23,12 +23,13 @@ Nachdem der Kunde bestellt hat, erhält er synchron Feedback, dass seine Bestell
 Die asynchronen Prozessbestandteile sind die Zubereitung der Kaffees (Quelle: Bestellqueue, Ziel: pickup counter) und die Abholung des Kaffees durch den Kunden (Quelle: pickup-counter).
 Sowohl Bestellqueue, als auch Pickup-counter können sich als _Message Buffer_ vorgestellt werden.
 
-Für die Integrität verwenden sie dafür die drei verschiedene Strategien: _Undo_, _Retry_, _Compensation strategy_.
-_Write off_ wird verwendet, wenn die Bestellung aufgegeben wurde und der Kunde nicht bezahlen kann.
+Für die Integrität verwenden sie dafür die drei verschiedene Strategien: _Write-off_, _Retry_, _Compensation strategy_.
+_Write-off_ wird verwendet, wenn die Bestellung aufgegeben wurde und der Kunde nicht bezahlen kann.
 //yezhao: verwenden wir den Begriff Undo oder Write-off? es wird auch bei der Stornierung verwendet.
 // ehmkah: undo durch write-off ersetzt.
 _Retry_ wird verwendet, wenn die Bestellung falsch ausgeführt wurde und die Zubereitung wiederholt werden muss.
-_Compensation strategy_ wird verwendet, wenn die Ausführung der Bestellung unmöglich ist, z.B. Stromausfall.
+_Compensation strategy_ wird verwendet, wenn ausgehändigten Kaffee zurückgerufen werden muss.
+//wenn die Ausführung der Bestellung unmöglich ist, z.B. Stromausfall.
 //yezhao: ich würde sagen, compensation wird verwendet wenn der Kunde falschen Kaffee bekommt und dann zurückgibt.
 // ehmkah: ich trinke fast nie bei Starbucks. Ich hätte gedacht, der Kaffee wird dann neu gemacht wäre "retry."
 //         wenn Du denkst es ist nicht so, kannst Du das gerne umformulieren
