@@ -34,7 +34,7 @@ Statement:Data is defined consistently throughout the enterprise, and the defini
 ##Ambiguities resulting from multiple parochial definitions of data must give way to accepted enterprise-wide definitions and understanding.
 ##Multiple data standardization initiatives need to be co-ordinated.
 ##Functional data administration responsibilities must be assigned.
-
+//ye 
 
 
 Principle 15: Data Security
