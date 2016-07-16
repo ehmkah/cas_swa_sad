@@ -45,7 +45,7 @@ wer auf welche Daten zugreifen kann und den Zugriff für unberechtige Sperren.
 Das kann dazu führen das einzelne Informationen doppelt geführt werden (z.B. bei Applikationen im Justizumfeld),
 wo aus Datenschutzgründen Profile nicht verknüpft werden dürfen.
 
-Vorteile:
+.Vorteile:
 * Erfüllung der gesetzlichen Auflagen: Firmen die in Bereichen mit erhöhten Sicherheitsanforderungen arbeiten,
 müssen zwingend die gesetzliche Anforderungen erfüllen.
 * Wissensvorsprung behalten: Je nach Marktsegment sind die Daten resp. die Technologie ein essenzieller Teil des Geschäftsmodells.
@@ -53,11 +53,11 @@ müssen zwingend die gesetzliche Anforderungen erfüllen.
 * Verkaufsargument: Aspekte der Datensicherheit sind für viele Kunden ein wichtiger Aspekt bei der Evaluation einer Software
  oder eines Produktes (z.B. als Cloudanbieter)
 
-Nachteile:
+.Nachteile:
 * Aufwand: Die sicherstellung aller Anforderung der Datensicherheit ist mit einem hohen Aufwand verbunden.
 * Know-How: Ein hoher Standard bei der Datensicherheit ist technisch anspruchsvoll und erforder Fachkräfte.
 
-Akzeptanz:
+.Akzeptanz:
 Dieses Architekturprinzip zwingend berücksichtigt werden, kann aber zu einem sehr hohen finanziellen und personellen
 Aufwand führen. Der Aufwand steigt zusätzlich wenn die Datensicherheit erst nachträglich in eine Software
 eingebaut werden muss. Je nach Firma ist die Akzeptant für solche nicht-funktionalen Anforderungen, die keinen
