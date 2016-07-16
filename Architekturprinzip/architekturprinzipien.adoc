@@ -39,9 +39,9 @@ Statement:Data is defined consistently throughout the enterprise, and the defini
 
 == Data Security
 Sensible Daten müssten zwingend vor unberechtigtem Zugriff geschützt werden. Dabei müssen sowohl
-gesetztliche Rahmenbedingungen als auch die technischen Sicherstellung der Datenschutzkriterien
+gesetztliche Rahmenbedingungen als auch die technischen Massnahmen der Datenschutzkriterien
 idealerweise bereits beim Projektstart berücksichtigt werden. Interne Stellen müssen festlegen und überwachen,
-wer auf welche Daten zugreifen kann und den Zugriff für unberechtige Sperren.
+wer auf welche Daten zugreifen kann und den Zugriff für unberechtige Personen und Systeme sperren.
 Das kann dazu führen das einzelne Informationen doppelt geführt werden (z.B. bei Applikationen im Justizumfeld),
 wo aus Datenschutzgründen Profile nicht verknüpft werden dürfen.
 
@@ -58,8 +58,8 @@ müssen zwingend die gesetzliche Anforderungen erfüllen.
 * Know-How: Ein hoher Standard bei der Datensicherheit ist technisch anspruchsvoll und erforder Fachkräfte.
 
 .Akzeptanz:
-Dieses Architekturprinzip zwingend berücksichtigt werden, kann aber zu einem sehr hohen finanziellen und personellen
+Dieses Architekturprinzip sollte zwingend berücksichtigt werden, kann aber zu einem sehr hohen finanziellen und personellen
 Aufwand führen. Der Aufwand steigt zusätzlich wenn die Datensicherheit erst nachträglich in eine Software
 eingebaut werden muss. Je nach Firma ist die Akzeptant für solche nicht-funktionalen Anforderungen, die keinen
-"direkten Nutzen" gegenüber dem Business bringen und nur Kosten verursachen, schwierig zu verkaufen.
+"direkten Nutzen" gegenüber dem Business bringen und Kosten verursachen, schwierig zu verkaufen.
 
