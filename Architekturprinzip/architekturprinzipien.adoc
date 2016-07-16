@@ -1,0 +1,65 @@
+= Architekturprinzipien
+
+== Primacy of Principles
+Statement:These principles of information management apply to all organizations within the enterprise.Rationale:The only way we can provide a consistent and measurable level of quality information to decision-makers is if all organizations abide by the principles.Implications:
+##Without this principle, exclusions, favoritism, and inconsistency would rapidly undermine the management of information.
+##Information management initiatives will not begin until they are examined for compliance with the principles.
+##A conflict with a principle will be resolved by changing the framework of the initiative.
+
+
+
+
+== Common Use Applications
+Statement:Development of applications used across the enterprise is preferred over the development of similar or duplicative applications which are only provided to a particular organization.Rationale:Duplicative capability is expensive and proliferates conflicting data.Implications:
+##Organizations which depend on a capability which does not serve the entire enterprise must change over to the replacement enterprise-wide capability. This will require establishment of and adherence to a policy requiring this.
+##Organizations will not be allowed to develop capabilities for their own use which are similar/duplicative of enterprise-wide capabilities. In this way, expenditures of scarce resources to develop essentially the same capability in marginally different ways will be reduced.
+##Data and information used to support enterprise decision-making will be standardized to a much greater extent than previously. This is because the smaller, organizational capabilities which produced different data (which was not shared among other organizations) will be replaced by enterprise-wide capabilities. The impetus for adding to the set of enterprise-wide capabilities may well come from an organization making a convincing case for the value of the data/information previously produced by its organizational capability, but the resulting capability will become part of the enterprise-wide system, and the data it produces will be shared across the enterprise.
+
+
+== Data Trustee
+Statement:Each data element has a trustee accountable for data quality.Rationale:One of the benefits of an architected environment is the ability to share data (e.g., text, video, sound, etc.) across the enterprise. As the degree of data sharing grows and business units rely upon common information, it becomes essential that only the data trustee makes decisions about the content of data. Since data can lose its integrity when it is entered multiple times, the data trustee will have sole responsibility for data entry which eliminates redundant human effort and data storage resources.  Note:A trustee is different than a steward - a trustee is responsible for accuracy and currency of the data, while responsibilities of a steward may be broader and include data standardization and definition tasks.Implications:
+##Real trusteeship dissolves the data "ownership" issues and allows the data to be available to meet all users' needs. This implies that a cultural change from data "ownership" to data "trusteeship" may be required.
+##The data trustee will be responsible for meeting quality requirements levied upon the data for which the trustee is accountable.
+##It is essential that the trustee has the ability to provide user confidence in the data based upon attributes such as "data source".
+##It is essential to identify the true source of the data in order that the data authority can be assigned this trustee responsibility. This does not mean that classified sources will be revealed nor does it mean the source will be the trustee.
+##Information should be captured electronically once and immediately validated as close to the source as possible. Quality control measures must be implemented to ensure the integrity of the data.
+##As a result of sharing data across the enterprise, the trustee is accountable and responsible for the accuracy and currency of their designated data element(s) and, subsequently, must then recognize the importance of this trusteeship responsibility.
+
+
+== Common Vocabulary and Data Definitions
+Statement:Data is defined consistently throughout the enterprise, and the definitions are understandable and available to all users.Rationale:The data that will be used in the development of applications must have a common definition throughout the Headquarters to enable sharing of data. A common vocabulary will facilitate communications and enable dialog to be effective. In addition, it is required to interface systems and exchange data.Implications:
+##We are lulled into thinking that this issue is adequately addressed because there are people with "data administration" job titles and forums with charters implying responsibility. Significant additional energy and resources must be committed to this task. It is key to the success of efforts to improve the information environment. This is separate from but related to the issue of data element definition, which is addressed by a broad community - this is more like a common vocabulary and definition.
+##The enterprise must establish the initial common vocabulary for the business. The definitions will be used uniformly throughout the enterprise.
+##Whenever a new data definition is required, the definition effort will be co-ordinated and reconciled with the corporate "glossary" of data descriptions. The enterprise data administrator will provide this co-ordination.
+##Ambiguities resulting from multiple parochial definitions of data must give way to accepted enterprise-wide definitions and understanding.
+##Multiple data standardization initiatives need to be co-ordinated.
+##Functional data administration responsibilities must be assigned.
+//ye
+
+
+== Data Security
+Sensible Daten müssten zwingend vor unberechtigtem Zugriff geschützt werden. Dabei müssen sowohl
+gesetztliche Rahmenbedingungen als auch die technischen Sicherstellung der Datenschutzkriterien
+idealerweise bereits beim Projektstart berücksichtigt werden. Interne Stellen müssen festlegen und überwachen,
+wer auf welche Daten zugreifen kann und den Zugriff für unberechtige Sperren.
+Das kann dazu führen das einzelne Informationen doppelt geführt werden (z.B. bei Applikationen im Justizumfeld),
+wo aus Datenschutzgründen Profile nicht verknüpft werden dürfen.
+
+Vorteile:
+* Erfüllung der gesetzlichen Auflagen: Firmen die in Bereichen mit erhöhten Sicherheitsanforderungen arbeiten,
+müssen zwingend die gesetzliche Anforderungen erfüllen.
+* Wissensvorsprung behalten: Je nach Marktsegment sind die Daten resp. die Technologie ein essenzieller Teil des Geschäftsmodells.
+ Bei einem Datenleck kann unter Umständen ein grosser Teil des Wissensvorsprungs gegenüber Mitkonkurenten verloren gehen.
+* Verkaufsargument: Aspekte der Datensicherheit sind für viele Kunden ein wichtiger Aspekt bei der Evaluation einer Software
+ oder eines Produktes (z.B. als Cloudanbieter)
+
+Nachteile:
+* Aufwand: Die sicherstellung aller Anforderung der Datensicherheit ist mit einem hohen Aufwand verbunden.
+* Know-How: Ein hoher Standard bei der Datensicherheit ist technisch anspruchsvoll und erforder Fachkräfte.
+
+Akzeptanz:
+Dieses Architekturprinzip zwingend berücksichtigt werden, kann aber zu einem sehr hohen finanziellen und personellen
+Aufwand führen. Der Aufwand steigt zusätzlich wenn die Datensicherheit erst nachträglich in eine Software
+eingebaut werden muss. Je nach Firma ist die Akzeptant für solche nicht-funktionalen Anforderungen, die keinen
+"direkten Nutzen" gegenüber dem Business bringen und nur Kosten verursachen, schwierig zu verkaufen.
+
