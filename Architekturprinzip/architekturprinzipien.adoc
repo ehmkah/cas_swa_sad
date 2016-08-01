@@ -10,10 +10,41 @@ Statement:These principles of information management apply to all organizations 
 
 
 == Common Use Applications
-Statement:Development of applications used across the enterprise is preferred over the development of similar or duplicative applications which are only provided to a particular organization.Rationale:Duplicative capability is expensive and proliferates conflicting data.Implications:
-##Organizations which depend on a capability which does not serve the entire enterprise must change over to the replacement enterprise-wide capability. This will require establishment of and adherence to a policy requiring this.
-##Organizations will not be allowed to develop capabilities for their own use which are similar/duplicative of enterprise-wide capabilities. In this way, expenditures of scarce resources to develop essentially the same capability in marginally different ways will be reduced.
-##Data and information used to support enterprise decision-making will be standardized to a much greater extent than previously. This is because the smaller, organizational capabilities which produced different data (which was not shared among other organizations) will be replaced by enterprise-wide capabilities. The impetus for adding to the set of enterprise-wide capabilities may well come from an organization making a convincing case for the value of the data/information previously produced by its organizational capability, but the resulting capability will become part of the enterprise-wide system, and the data it produces will be shared across the enterprise.
+//Statement:Development of applications used across the enterprise is preferred over the development of similar or duplicative applications which are only provided to a particular organization. Rationale:Duplicative capability is expensive and proliferates conflicting data. Implications:
+//##Organizations which depend on a capability which does not serve the entire enterprise must change over to the replacement enterprise-wide capability. This will require establishment of and adherence to a policy requiring this.
+//##Organizations will not be allowed to develop capabilities for their own use which are similar/duplicative of enterprise-wide capabilities. In this way, expenditures of scarce resources to develop essentially the same capability in marginally different ways will be reduced.
+//##Data and information used to support enterprise decision-making will be standardized to a much greater extent than previously. This is because the smaller, organizational capabilities which produced different data (which was not shared among other organizations) will be replaced by enterprise-wide capabilities. The impetus for adding to the set of enterprise-wide capabilities may well come from an organization making a convincing case for the value of the data/information previously produced by its organizational capability, but the resulting capability will become part of the enterprise-wide system, and the data it produces will be shared across the enterprise.
+
+Die Entwicklung von Anwendungen, die unternehmensweit eingesetzt werden, wird bevorzugt gegenüber Anwendungen, die nur einzelnen Abteilungen zur Verfügung stehen.
+Abteilungen wird nicht gestattet eingene Anwendungen zu entwickeln, wenn bereits unternehmensweite Anwendungen zur Verfügung stehen.
+Im Ergebnis kann für unternehmensweite Entscheidungen auf viel breite Daten zugegriffen werden.
+Wenn Abteilungen eigene Daten erzeugen, dann werden sie ebenfalls unternehmensweit zur Verfügung gestellt
+
+.Vorteile
+* Kosteneinsparung : werden Anwendungen nur einmal entwickelt und betreut entstehen weniger Kosten für Wartung und Weiterentwicklung
+* Wissensverteilung : der Einsatz gleicher Anwendung erlaubt es Mitarbeiter eines Unternehmens einfacher zwischen den Abteilungen zu wechseln, weil die Anwendungen schon bekannt ist
+* Datenkonsistenz : Die Verwendung von gemeinsamen Daten erlaubt es, dass der Masterdatensatz eindeutig definiert ist und es zu keinen Konflikten bei Datenänderungen kommen kann
+
+.Nachteile
+
+* Flaschenhälse entstehen :
+wenn Abteilungen die gleiche Anwendung verwenden, dann muss die Abteilung, die diese Anwendung betreut in der Lage sein, die verschiedenen Anforderungen schnell zu realisieren.
+Geschieht das nicht, kann das Unternehmen nur langsamer auf den sich änderrnden Markt einstellen.
+
+* Vendor lock in :
+Die Verwendung von gleichen Anwendungen führt zu einer starken Abhängigkeit vom Hersteller dieser Anwendung.
+Ändert der Hersteller seine Lizenzpolitik, kann das zu hohen Kosten in Form von neuen Lizenzen oder einem Ersatzprodukt führen
+
+* Nicht Optimale Lösung für jede Abteilung
+Die Standdardlösung muss nicht für jede Abteilung die bestmögliche Lösung darstellen.
+Die konkreten Anforderungen einer Abteilungen können komplexer sein, als die Anwendung verarbeiten kann, oder einfacher als die Anwendung.
+
+.Akzeptanz
+
+Dieses Architekturprinzip sollte berücksichtigt werden, wenn es im Unternehmen Aufgaben gibt, die in verschiedenen Abteilungen gleich gelöst werden (z.B. Zeiterfassung).
+Wenn bereits bestehende Anwendungen einer Abteilung durch neue zentrale Anwendungen abgelöst werden sollen, kann dies zu Akzeptanzproblemen der neuen Software führen, da die Mitarbeiter sich umstellen müssen.
+
+
 
 
 == Data Trustee
