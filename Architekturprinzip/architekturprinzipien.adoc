@@ -1,12 +1,21 @@
 = Architekturprinzipien
 
 == Primacy of Principles
-Statement:These principles of information management apply to all organizations within the enterprise.Rationale:The only way we can provide a consistent and measurable level of quality information to decision-makers is if all organizations abide by the principles.Implications:
-##Without this principle, exclusions, favoritism, and inconsistency would rapidly undermine the management of information.
-##Information management initiatives will not begin until they are examined for compliance with the principles.
-##A conflict with a principle will be resolved by changing the framework of the initiative.
+//Statement:These principles of information management apply to all organizations within the enterprise.Rationale:The only way we can provide a consistent and measurable level of quality information to decision-makers is if all organizations abide by the principles.Implications:
+//##Without this principle, exclusions, favoritism, and inconsistency would rapidly undermine the management of information.
+//##Information management initiatives will not begin until they are examined for compliance with the principles.
+//##A conflict with a principle will be resolved by changing the framework of the initiative.
 
+- Die Architekturprinzipen sind für alle Abteilungen verbindlich
+- Projekte müssen die Prinzipen berücksichtigen
 
+.Vorteile
+- Konsistente Anwendungslandschaft (Vermeidung von Wildwuchs)
+- Qualitätssicherung (Prinzipen sollten die Best Practise abbilden)
+
+.Konsequenzen
+- eventuell erhöhter Projektaufwand, um die Prinzipien einzuhalten
+- wenn ein Prinzip nicht eingehalten werden kann, muss das Regelwerk eventuell überarbeitet werden
 
 
 == Common Use Applications
@@ -93,4 +102,3 @@ Dieses Architekturprinzip sollte zwingend berücksichtigt werden, kann aber zu e
 Aufwand führen. Der Aufwand steigt zusätzlich wenn die Datensicherheit erst nachträglich in eine Software
 eingebaut werden muss. Je nach Firma ist die Akzeptant für solche nicht-funktionalen Anforderungen, die keinen
 "direkten Nutzen" gegenüber dem Business bringen und Kosten verursachen, schwierig zu verkaufen.
-
