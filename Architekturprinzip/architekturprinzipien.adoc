@@ -56,6 +56,19 @@ Statement:Each data element has a trustee accountable for data quality.Rationale
 ##Information should be captured electronically once and immediately validated as close to the source as possible. Quality control measures must be implemented to ensure the integrity of the data.
 ##As a result of sharing data across the enterprise, the trustee is accountable and responsible for the accuracy and currency of their designated data element(s) and, subsequently, must then recognize the importance of this trusteeship responsibility.
 
+.Vorteile:
+* Keine Datenredunanz: Daten werden nur einmal erfasst und gespeichert.
+* Datenkonsistenz: Die Daten werden bei der Erzeugung validiert, dies erhöht die Qualität der Daten
+und können somit leichter im gesamten Unternehmen verwendet werden.
+
+.Nachteile
+* Die Datenhoheit und Kontrolle über die Daten können verloren gehen, wenn sie durch eine Data Trustee verwaltet werden.
+Problematisch bei sicherheitskritischen Daten, sowie bei Cloudlösungen.
+
+.Akzeptanz
+* Dieses Architekturprinzip sollte berücksichtigt werden, wo Daten im Unternehmen mehrfach verwendet werden.
+Dabei soll sichergestellt werden das die Daten  validiert sind und wenn möglich nur noch eine Quelle haben.
+
 
 == Common Vocabulary and Data Definitions
 Statement:Data is defined consistently throughout the enterprise, and the definitions are understandable and available to all users.Rationale:The data that will be used in the development of applications must have a common definition throughout the Headquarters to enable sharing of data. A common vocabulary will facilitate communications and enable dialog to be effective. In addition, it is required to interface systems and exchange data.Implications:
@@ -93,4 +106,3 @@ Dieses Architekturprinzip sollte zwingend berücksichtigt werden, kann aber zu e
 Aufwand führen. Der Aufwand steigt zusätzlich wenn die Datensicherheit erst nachträglich in eine Software
 eingebaut werden muss. Je nach Firma ist die Akzeptant für solche nicht-funktionalen Anforderungen, die keinen
 "direkten Nutzen" gegenüber dem Business bringen und Kosten verursachen, schwierig zu verkaufen.
-
