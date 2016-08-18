@@ -1,0 +1,73 @@
+= Sicherheitsarchitektur OTS
+
+== Schutzbedarfsanalyse
+
+=== Inventar der Daten (Grobübersicht)
+
+1 ist unkritisch, 3 ist kritisch
+
+|===
+| Datengruppierung | Bemerkung | Vertraulichkeit | Verfügbarkeit | Integrität
+
+| Logdaten
+| Generierte Logdaten des Systems
+| 1
+| 1
+| 1
+
+| Kundendaten
+| Daten der Kunden wie Name, Adresse, E-Mail, Buchungshistorie
+| 2
+| 2
+| 2
+
+
+| Zugangsdaten
+| Zugangsdaten der Kunden und der Administratoren aufs Portal
+| 3
+| 3
+| 3
+
+| IT-Infrastruktur
+| Zugangsdaten für Servermanagement, Datenbankzugang, etc.
+| 3
+| 3
+| 3
+
+| Buchungsdaten
+| Aktueller Buchungsstand der einzelnen Events
+| 2
+| 3
+| 3
+
+| Eventdaten
+| Inventar der vergangenen und zukünftigen Events, inkl. den Saalkonfigurationen
+| 1
+| 3
+| 3 (Preis muss Konsistent bleiben)
+
+|===
+
+Die Zahlungsdaten wie z.B. die Kreditkarten sind gemäss der Anforderung aus dem SAD bei einem externen Finanzdienstleister
+ (Datatrans) hinterlegt.
+
+== Schutzbedarf
+
+==== Logdaten
+
+=== Vertraulichkeit
+
+=== Verfügbarkeit
+
+=== Integrität
+
+=== Nachvollziehbarkeit
+
+== Schutzkriterien
+
+|===
+| Datengruppierung | Bemerkung | Vertraulichkeit | Verfügbarkeit | Integrität
+| Vertraulichkeit
+|===
+
+
