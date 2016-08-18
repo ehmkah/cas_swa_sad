@@ -4,6 +4,10 @@
 
 === Inventar der Daten (Grobübersicht)
 
+
+// Einige Aspekte: Passwort (Salt), Schnittstellen Kommunikation (Verschlüsselung),Konfigurationsdateien,
+// DB-Zugriff, Rechtliche Aspekte
+
 1 ist unkritisch, 3 ist kritisch
 
 |===
@@ -69,5 +73,4 @@ Die Zahlungsdaten wie z.B. die Kreditkarten sind gemäss der Anforderung aus dem
 | Datengruppierung | Bemerkung | Vertraulichkeit | Verfügbarkeit | Integrität
 | Vertraulichkeit
 |===
-
 
