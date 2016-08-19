@@ -6,7 +6,8 @@
 
 
 // Einige Aspekte: Passwort (Salt), Schnittstellen Kommunikation (Verschlüsselung),Konfigurationsdateien,
-// DB-Zugriff, Rechtliche Aspekte
+// DB-Zugriff, Rechtliche Aspekte, bei der Preisgestaltung muss die Integrität gewährleistet werden
+//
 
 1 ist unkritisch, 3 ist kritisch
 
@@ -70,7 +71,65 @@ Die Zahlungsdaten wie z.B. die Kreditkarten sind gemäss der Anforderung aus dem
 == Schutzkriterien
 
 |===
-| Datengruppierung | Bemerkung | Vertraulichkeit | Verfügbarkeit | Integrität
-| Vertraulichkeit
+| Beurteilung betreffend der ... | Frage | Antworten
+.10+| **Vertraulichkeit**
+.4+| Welche Art von Personendaten werden bearbeitet (nach Datenschutzgesetz, DSG)?
+| Nicht-personenbezogen
+
+| Nicht-sensible Personendaten (geringes-/mittleres Risiko)
+
+| Sensible Personendaten (hohes Risiko)
+
+| Hochsensible Personendaten (sehr hohes Risiko)
+
+.4+| Sind die Daten / Informationen  zu klassifizieren (nach  Informationsschutzverordnung ISchV)?
+| Nicht klassifiziert
+
+| Klassifikation: INTERN
+
+| Klassifikation: VERTRAULICH
+
+| Klassifikation: GEHEIM
+
+.2+| Werden schutzwürdige Daten (nicht DSG / ISchV relevant)  bearbeitet?
+| Keine erhöhten Anforderungen an die Schutzwürdigkeit (nicht DSG/ISchV relevant)
+
+| Erhöhte Anforderungen an die Schutzwürdigkeit (nicht DSG/ISchV relevant)
+
+.8+| **Verfügbarkeit**
+.3+| Max zulässige Ausfalldauer
+| Grösser 1 Tag
+
+| Max 1 Tag
+
+| Kleiner als  1 Tag
+
+.3+|Servicezeiten
+| Servicezeiten Standard
+
+| Servicezeiten erhöht
+
+| Servicezeiten 7*24
+
+.2+| ITSCM-relevant als Teil des  Business Continuity Management
+| Nein
+
+| Ja
+
+.2+| **Integrität**
+.2+| Muss die Echtheit, Korrektheit und/oder Unversehrtheit der  Daten gewährleistet werden können?
+| Keine speziellen Anforderungen
+
+| Spezielle Anforderungen
+
+.2+| **Nachvollziehbarkeit**
+.2+| Müssen bestimmte Arbeitsvorgänge nachgewiesen werden können?
+| Keine speziellen Anforderungen
+
+| Spezielle Anforderungen
+
+
+
 |===
+Quelle: Schutzbedarfsanalyse des Bundes, V3.0
 
