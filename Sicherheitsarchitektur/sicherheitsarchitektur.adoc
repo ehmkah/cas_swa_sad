@@ -7,7 +7,9 @@
 
 // Einige Aspekte: Passwort (Salt), Schnittstellen Kommunikation (Verschlüsselung),Konfigurationsdateien,
 // DB-Zugriff, Rechtliche Aspekte, bei der Preisgestaltung muss die Integrität gewährleistet werden
-//
+// wenn Konfigdateien keine besonderen Schutz geniessen, dürfen sie keine Passworte enthalten
+// oder Passworte dürfen nur verschlüsselt abgelegt werden
+// Integrität -
 
 Die folgende Übersicht gibt eine grobe Übersicht über den Schutzberdarf verschiedener Daten wieder.
 Anhand der Details im nächsten Kapitel, kann sich ein genauerer Überblick verschafft werden.
