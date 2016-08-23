@@ -1,0 +1,13 @@
+== Sicherheitsanforderungen
+
+- Das System MUSS verschlüsselt via SSL mit den Umsystemen kommunizieren
+- Der Kunde MUSS sicher über eine verschlüsselte Verbindung anmelden
+- Passwörter MÜSSEN verschlüsselt und gesalzen werden
+- Sicherheitsrelevante Systempatches MÜSSEN zeitnah eingespielt werden
+- Kundendaten MÜSSEN vor unberechtigtem Zugriff geschützt werden
+- Nur berechtige Benutzer dürfen aufs Adminportal zugreifen
+- Das System darf KEINE Kreditkartendaten speichern
+- Systempasswörter MÜSSEN regelmässig geändert werden
+- Datenänderungen MÜSSEN historisiert und nachvollziehbar gemacht werden
+- Für Testzwecke DÜRFEN keine produktiven Kundendaten verwendet werden
+- Nach drei falschen Eingaben MUSS der Kunde temperär für einige Minuten gesperrt
