@@ -10,6 +10,7 @@
 // wenn Konfigdateien keine besonderen Schutz geniessen, dürfen sie keine Passworte enthalten
 // oder Passworte dürfen nur verschlüsselt abgelegt werden
 // Integrität -
+// Kunde darf nur eigene Daten sehen
 
 Die folgende Übersicht gibt eine grobe Übersicht über den Schutzberdarf verschiedener Daten wieder.
 Anhand der Details im nächsten Kapitel, kann sich ein genauerer Überblick verschafft werden.
@@ -61,6 +62,8 @@ Die Zahlungsdaten wie z.B. die Kreditkarten sind gemäss der Anforderung aus dem
  (Datatrans) hinterlegt.
 
 == Schutzbedarf
+
+==== Allgemeines
 
 ==== Logdaten
 
@@ -122,11 +125,27 @@ Die Zahlungsdaten wie z.B. die Kreditkarten sind gemäss der Anforderung aus dem
 
 |===
 
+In den Logdaten befinden sich keine sensiblen Daten sondern zumeist Statusinformationen
+zur Laufzeit des Systems. Die Logdaten befinden sich auf den Applikationsservern und können
+nur von den Systemadministratoren eingesehen werden.
+
+=== Kundendaten
+
+Die Kundendaten sind grundsätzlich persönlich und können nur vom jeweiligen Kunden eingesehen und
+verändert werden. Bei Bedarf könnne Systemadministratoren die Daten ebenfalls einsehen.
+Nach Datenschutzgesetzt als heikel  einzustufende Daten wie Gesundheitsdaten oder Religionszugehörigkeit
+werden nicht abgefragt.
+
+Die Kundendaten gehören dem Kunden und sollen nicht an Dritte weitergegeben werden. Die Datenschatzbestimmungen sollen
+für den Kunden auf der Webseite einfach eingesehen und verständlich dargestellt werden.
 
 
-=== Vertraulichkeit
+=== Zugangsdaten
 
-=== Verfügbarkeit
+Ein Kunde meldet sich mit Username und Passwort beim Portal an und verbindetsich über eine
+ gesicherte Verbindung (HTTPS). Die Passwörter sich in der Datenbank und sind verschlüsselt
+ und mit einem Salt versehen. Optional können Kunden für die Anmeldung eine Two-Step-Verifikation
+ wählen, wo zusätzlich zum Passwort noch ein via SMS versendeter Key geschickt werden.
 
 === Integrität
 
@@ -176,7 +195,7 @@ Für eine Kategorie wird die Summe der Punkte ermittelt, um zu einer Einschätzu
 | Hochsensible Personendaten (sehr hohes Risiko)
 | 4
 
-.4+| Sind die Daten / Informationen  zu klassifizieren (nach  Informationsschutzverordnung ISchV)?
+.4+| Sind die Daten / Geschäftsgeheimniss Informationen  zu klassifizieren (nach  Informationsschutzverordnung ISchV)?
 | Nicht klassifiziert
 | 1
 
