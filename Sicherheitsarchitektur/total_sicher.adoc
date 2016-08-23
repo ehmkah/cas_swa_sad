@@ -1,3 +1,0 @@
-include::sicherheitsarchitektur.adoc[]
-include::risiken_einschaetzung.adoc[]
-
