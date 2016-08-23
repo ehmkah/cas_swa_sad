@@ -1,5 +1,3 @@
-= Sicherheitsarchitektur OTS
-
 == Schutzbedarfsanalyse
 
 === Inventar der Daten (Grobübersicht)
