@@ -65,18 +65,53 @@ Z.B. Mitarbeiterrabatte verwenden, nicht erlaubte Stornierungen durchführen
 | Verfügbarkeit
 | Vermeiden
 
+| R6
+| Bestechung
+| 5
+| 5
+| 25
+| Angestellte können bestochen werden um Kundendaten zu verkaufen.
+| Vertraulichkeit
+| Vermeiden
 
+| R7
+| Ungepatchte Systeme
+| 5
+| 5
+| 25
+| Eine Sicherheitslücke in einem System führt dazu, dass Angreifer Schadcode ausführen können und unkontrolliert auf das System zugreifen können.
+| Integrität
+| Vermeiden
+
+| R8
+| System nicht verfügbar
+| 5
+| 5
+| 25
+| Durch einen Stromausfall oder Hardwaredefekt ist das System nicht verfügbar
+| Verfügbarkeit
+| Vermeiden
+
+| R9
+| Ausfall Zahlungsystem
+| 5
+| 5
+| 25
+| Das System für die Abwicklung der Bezahlung ist nicht verfügbar.
+| Verfügbarkeit
+| Vermeiden
+
+| R9
+| Unberechtigter Zugriff auf Adminsystem
+| 5
+| 5
+| 25
+| Es erfolgt ein unberechtigter Zugriff auf das Adminsystem.
+| Verfügbarkeit
+| Vermeiden
 
 |===
 
-* R5 -
-* R6 - Bestechung
-** Mitarbeiter verkaufen vertrauliche Daten
-* R7 - Ungepatchte Systeme
-* R8 - System ist nicht verfügbar
-** z.B Stromausfall, Hardwareausfall
-* R9 - Ausfall Zahlungssystem
-* R10 - unberechtiger Zugriff admin system
 
 
 
