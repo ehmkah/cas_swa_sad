@@ -1,0 +1,89 @@
+
+
+|===
+
+| | | |
+| | | |
+| | | |
+| | | |
+
+|===
+
+== Risiken
+
+|===
+| Nr | Bezeichnung | Wahrscheinlichkeit | Auswirkung | Bewertung | Begründung | Auswirkung auf | Aktion
+
+| R1
+| SQL Injection
+| 5
+| 5
+| 25
+| Es handelt sich um eine der bekanntesten Angriffszenarien.
+Es gibt zahlreiche Tools für die automatische Ausführung.
+Gefähredet Integrität der Daten.
+| Integrität
+| Vermeiden
+
+
+| R2
+| Zugangsdaten werden gestohlen
+| 5
+| 5
+| 25
+| Kundenanmeldungsdaten werden gestohlen und Angreifer melden sich in falschem Namen an.
+Adminzugangsdaten werden gestohlen.
+| Vertraulichkeit
+| Vermeiden
+
+| R3
+| Denial of Service Attacke
+| 5
+| 5
+| 25
+| Das OTS wird in einer Denial of Service Attacke angegriffen.
+Die Systeme stehen dann nicht zur Verfügung.
+| Verfügbarkeit
+| Vermeiden
+
+| R4
+| Security Misconfiguration
+| 5
+| 5
+| 25
+| Die Sicherheitskonfiguration ist falsch konfiguriert
+| Verfügbarkeit
+| Vermeiden
+
+| R5
+| Manipulation am Verkauf
+| 5
+| 5
+| 25
+| Angestellte können mit ihren Manipulationen am Verkaufsprozess vornehmen.
+Z.B. Mitarbeiterrabatte verwenden, nicht erlaubte Stornierungen durchführen
+| Verfügbarkeit
+| Vermeiden
+
+
+
+|===
+
+* R5 -
+* R6 - Bestechung
+** Mitarbeiter verkaufen vertrauliche Daten
+* R7 - Ungepatchte Systeme
+* R8 - System ist nicht verfügbar
+** z.B Stromausfall, Hardwareausfall
+* R9 - Ausfall Zahlungssystem
+* R10 - unberechtiger Zugriff admin system
+
+
+
+* Legende
+** Wahrscheinlich 1 (sehr niedrig) - 5 (sehr hoch)
+** Auswirkung 1 (sehr niedrig) - 5 (sehr hoch)
+** Bewertung = Wahrscheinlich X Auswirkung
+** Aktion Vermeiden, Akzeptieren (keine Gegenmassnahmen)
+
+
