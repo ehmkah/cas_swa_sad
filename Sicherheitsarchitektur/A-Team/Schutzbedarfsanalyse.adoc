@@ -3,7 +3,12 @@
 OTS enthält wichtige Geschäftsinformationen die nur berechtigten Personen zugänglich sein dürfen.
 Der Zugriff auf die Daten muss daher geschützt sein.
 Eine hohe Verfügbarkeit der Anwendung muss gewährleistet sein. (siehe Anforderungen)
+
+=== Allgemeines
+
 Gründsätzlich dürfen keine Passwörter im Klartext gespeichert sein.
+Kommunikation übers Netz ist immer verschlüsselt.
+
 
 === Übersicht
 
@@ -18,7 +23,7 @@ Für die Bewertung werden 1, 2 oder 3 Punkte vergeben, wobei 1 geringer Schutzbe
 |4 |Logdateien | DataTrans- Zugangsdaten |  |  |  |
 |5 |Bestelldaten | z.B. reservierte Plätze |  |  |  |
 |6 |Backups | |  |  |  |
-
+| 7 | Konfig-Dateien | |  |  |  |
 |===
 
 
@@ -26,12 +31,18 @@ Für die Bewertung werden 1, 2 oder 3 Punkte vergeben, wobei 1 geringer Schutzbe
 
 ==== Personendaten
 Es muss sichergestellt werden, dass nur berechtigte Sachbearbeiter die Kundendaten sehen und ändern kann.
-Jeder Kunde dard nur seine eigenen Daten sehen und ändern.
-Das Login-Passwort darf nur gehast in der Datenbank gespeichert werden.
+Jeder Kunde darf nur seine eigenen Daten sehen und ändern.
+Das Login-Passwort darf nur gehasht in der Datenbank gespeichert werden.
+
 
 ==== DB-Verbindung
 Auf die Datenbank darf nicht über das Internet direkt zugegriffen werden können.
 Der Zugang erfolgt entweder über die Web-Applikation oder über das interne Admin-Tool.
+Der interner Zugriff auf die DB erfolgt mittels Zertifikaten und nicht über Benutzer/Passwort.
+
+
+Es werden verschiedene Rollen definiert. Nur Admins dürfen die Saalkonfiguration und Preiskategorien ändern.
+
 
 ==== Payment-Schnittstelle
 Der Zahlungsvorgang wird durch einen externen Anbieter durchgeführt.
@@ -44,6 +55,7 @@ Eine Archivierung der Zahlungsdaten ist nicht notwendig.
 
 ==== Logdateien
 Die Logdateien dürfen keine personenbezogenen Daten enthalten.
+Betreibersicht: Der Zugriff muss über Filepermissions geschützt werden.
 
 ==== Bestelldaten
 Es muss sichergestellt sein, dass die Bestelldaten nicht nachträglich vom Kunden geändert werden können.
@@ -53,3 +65,6 @@ Nur Sachbearbeiter dürfen beispielsweise die Adresse korrigieren.
 ==== Backups & Archivierung
 Es müssen in regelmässigen Abständen Backups erstellt werden, damit nach einem Ausfall der Datenbank nicht zu viele Daten verloren gehen.
 Eine Archivierung der Daten ist nicht notwendig, für spätere Auswertungen aber wünschenswert.
+
+==== Konfigdateien
+Dürfen nicht über das Netz einsehbar sein.
