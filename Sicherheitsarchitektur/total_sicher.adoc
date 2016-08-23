@@ -1,3 +1,3 @@
-include::sicherheitsarchitektur.adoc[]
+include::schutzbedarfsanalyse.adoc[]
 include::risiken_einschaetzung.adoc[]
 
