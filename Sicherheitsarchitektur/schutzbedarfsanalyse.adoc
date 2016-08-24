@@ -3,12 +3,12 @@
 === Inventar der Daten (Grobübersicht)
 
 
-// Einige Aspekte: Passwort (Salt), Schnittstellen Kommunikation (Verschlüsselung),Konfigurationsdateien,
-// DB-Zugriff, Rechtliche Aspekte, bei der Preisgestaltung muss die Integrität gewährleistet werden
-// wenn Konfigdateien keine besonderen Schutz geniessen, dürfen sie keine Passworte enthalten
-// oder Passworte dürfen nur verschlüsselt abgelegt werden
-// Integrität -
-// Kunde darf nur eigene Daten sehen
+ Einige Aspekte: Passwort (Salt), Schnittstellen Kommunikation (Verschlüsselung),Konfigurationsdateien,
+ DB-Zugriff, Rechtliche Aspekte, bei der Preisgestaltung muss die Integrität gewährleistet werden
+ wenn Konfigdateien keine besonderen Schutz geniessen, dürfen sie keine Passworte enthalten
+ oder Passworte dürfen nur verschlüsselt abgelegt werden
+ Integrität -
+ Kunde darf nur eigene Daten sehen. Eventdaten - (Preis muss Konsistent bleiben)
 
 Die folgende Übersicht gibt eine grobe Übersicht über den Schutzberdarf verschiedener Daten wieder.
 Anhand der Details im nächsten Kapitel, kann sich ein genauerer Überblick verschafft werden.
@@ -58,19 +58,18 @@ Fragen zur Methodik und die bedeutung der einzelnen Werte werden im letzten Kapi
 | Inventar der vergangenen und zukünftigen Events, inkl. den Saalkonfigurationen
 | 1
 | 3
-| 3 (Preis muss Konsistent bleiben)
+| 3
 |
 
 |===
 
-== Schutzbedarf
 
-==== Allgemeines
+=== Allgemeines
 
 Die Zahlungsdaten wie z.B. die Kreditkarten sind gemäss der Anforderung aus dem SAD bei einem externen Finanzdienstleister
  (Datatrans) hinterlegt.
 
-==== Logdaten
+=== Logdaten
 
 [cols="20%,35%,35%,^10%"]
 |===
@@ -138,6 +137,65 @@ nur von den Systemadministratoren eingesehen werden.
 
 === Kundendaten
 
+[cols="20%,35%,35%,^10%"]
+|===
+| Beurteilung betreffend der  | Frage | Antwort | Bewertung
+.4+| **Vertraulichkeit**
+
+| Welche Art von Personendaten werden bearbeitet (nach Datenschutzgesetz, DSG)?
+| Nicht-sensible Personendaten (geringes-/mittleres Risiko)
+^| 2
+
+| Sie die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
+| Nicht klassifiziert
+^| 1
+
+| Werden schutzwürdige Daten (nicht DSG / ISchV relevant)  bearbeitet?
+| Keine erhöhten Anforderungen an die Schutzwürdigkeit (nicht DSG/ISchV relevant)
+^| 1
+
+| *Summe*
+|
+^| 4
+
+
+.4+| **Verfügbarkeit**
+| Max zulässige Ausfalldauer
+| Kleiner 1 Tag
+| 3
+
+|Servicezeiten
+| Servicezeiten Standard
+^| 1
+
+| ITSCM-relevant als Teil des  Business Continuity Management
+| Nein
+^| 1
+
+| *Summe*
+|
+^| 3
+
+.2+| **Integrität**
+| Muss die Echtheit, Korrektheit und/oder Unversehrtheit der  Daten gewährleistet werden können?
+| Keine speziellen Anforderungen
+^| 1
+
+| *Summe*
+|
+^| 1
+
+
+.2+| **Nachvollziehbarkeit**
+| Müssen bestimmte Arbeitsvorgänge nachgewiesen werden können?
+| Spezielle Anforderungen
+^| 1
+
+| *Summe*
+|
+^| 1
+
+|===
 
 Die Kundendaten sind grundsätzlich persönlich und können nur vom jeweiligen Kunden eingesehen und
 verändert werden. Bei Bedarf könnne Systemadministratoren die Daten ebenfalls einsehen.
@@ -155,11 +213,8 @@ Ein Kunde meldet sich mit Username und Passwort beim Portal an und verbindetsich
  und mit einem Salt versehen. Optional können Kunden für die Anmeldung eine Two-Step-Verifikation
  wählen, wo zusätzlich zum Passwort noch ein via SMS versendeter Key geschickt werden.
 
-=== Integrität
 
-=== Nachvollziehbarkeit
-
-== Erläuterungen
+=== Erläuterungen
 
 Die Schutzwürdigkeit der Daten wurde mit Hilfe der folgenden Tabelle ermittelt.
 In jeder Schutzkategorie wurde eine Antwort mit einer Punktezahl belegt.
@@ -260,7 +315,7 @@ Nur ausgewählte Mitarbeiter haben Zugriff
 ^| 2
 
 .2+| **Integrität**
-.2+| Muss die Echtheit, Korrektheit und/oder Unversehrtheit der  Daten gewährleistet werden können?
+.2+| Muss die Echtheit, Korrektheit und/oder Unversehrtheit der Daten gewährleistet werden können?
 | Keine speziellen Anforderungen
 ^| 1
 
