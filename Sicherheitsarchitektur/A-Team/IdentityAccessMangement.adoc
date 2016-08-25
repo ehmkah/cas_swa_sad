@@ -1,0 +1,41 @@
+== Identity & Access Management
+
+==Identitäten
+=DB
+
+SysAdmin
+Internen Admins
+Onlineuser
+Boxoffice-User
+
+registrierte Onlinebenutzer
+
+=Filesystem
+Admin (Pflege Anwendung)
+Überwachung Logdateien
+
+=Umsysteme
+Systembenutzer für Payment-Schnittstelle
+Systembenutzer für Exchange
+
+
+==Wo speichern sie die Identitäten?
+SysAdmin, interne Admins, Boxoffice-User, Webservice-User, Filesystem: zentrale Benutzerverwaltung (LDAP-Server, Kerberos) 
+Registrierte Onlinebenutzer: in der DB
+Umsystem: in einer lokalen Config-Datei
+
+==Unterstützen sie eine Federation
+Für die internen Benutzer wird eine zentrale Benutzerverwaltung verwendet. Die Anmeldung an die DB erfolgt durch 
+Kerberos-Zertifikate
+Vorteil: Benutzerfreudlich für die Endbenutzer, man muss sich nur einmal anmelden
+
+Für die externen Benutzer steht nur Benutzername/Passwort zur Verfügung. Die Registrierung ist optional, daher lohnt sich die Implementierung nicht.
+
+== Welche Authentifizierungmethoden werden unterstützt?
+Für die externen Benutzer steht nur Benutzername/Passwort zur Verfügung. Die Registrierung ist optional, daher lohnt sich die Implementierung nicht.
+
+== Initialer Zugang?
+extern: E-mail zur Bestätigung senden
+
+== vergessene Auth-Mittel
+extern: E-Mail mit Link schicken, damit das Passwort zurückgesetzt werden kann
