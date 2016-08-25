@@ -1,0 +1,44 @@
+Welche Typen von Identitäten gibt es?
+- Online-User
+- Administrator
+- Box-Office-User
+
+Wie werden die Identitäten generiert und bereit gestellt?
+
+- Online-User : registrieren sich selbst müssen nicht freigeschaltet werden, Bestätigung per Mail; oder per Google
+- Administratoren : Datenbanknutzer für jeden Administrator von Administratoren angelegt
+- Box-Office-User : zentral gemapped über LDAP, Nutzer werden von LDAP-Administratoren angelegt
+
+Wo speichern Sie die Identitäten?
+
+- Online User : in unserer Datenbank oder Google oAUth
+- Administratoren -> Datenbank
+- Box-Office-User : LDAP
+
+Unterstützen Sie eine Förderation von Identitäten, was sind die Vor- und Nachteile?
+
+- verwenden der Förderation von Online-User (vereinfacht Management)
+- verwenden LDAP für Box-Office-User
+
+* Vorteile
+** Zentrale Verwaltung von Nutzern und Profilen
+** Nutzerpasswörter werden nicht in der Anwendung gespeichert
+** Nutzer muss sich nur ein Passwort merken
+
+* Nachteile
+** LDAP Server aufwendig aufzubauen und zu verwalten
+** Man muss externen Provider vertrauen
+
+Welche Authentifizierungsmethoden unterstützen Sie?
+* Federated Identity
+* Single Sign On
+
+
+Wie lösen Sie das Problem des initialen Zugangs?
+- Online-User - können sich bei google anmelden oder selbst einen Account anlegen
+- interne Nutzer werden explizit angelegt durch Verwaltung
+
+
+Wie lösen Sie das Problem von vergessenen /  verlorenen Authentisierungsmitteln?
+
+-
