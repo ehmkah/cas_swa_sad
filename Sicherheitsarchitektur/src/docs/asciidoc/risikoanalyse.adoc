@@ -11,24 +11,28 @@
 
 == Risiken
 
+Die Detailbeschreibung zu den genannten Risiken, kann der folgenden Tabelle entnommen werden.
+Die Abkürzung der Tabellenspalten werden in der Legende unterhalb der Tabelle erklärt.
+
+[cols="1,3,1,1,1,5,1,2"]
 |===
-| Nr | Bezeichnung | Wahrscheinlichkeit | Auswirkung | Bewertung | Begründung | Auswirkung auf | Aktion
+| Nr | Bezeichnung | Wahr. | Ausw. | Bew. | Begründung | AuswAuf | Aktion
 
 | R1
 | SQL Injection
-| 5
+| 2
 | 5
 | 25
 | Es handelt sich um eine der bekanntesten Angriffszenarien.
 Es gibt zahlreiche Tools für die automatische Ausführung.
-Gefähredet Integrität der Daten.
+Gefährdet Integrität der Daten.
 | Integrität
 | Vermeiden
 
 
 | R2
 | Zugangsdaten werden gestohlen
-| 5
+| 1
 | 5
 | 25
 | Kundenanmeldungsdaten werden gestohlen und Angreifer melden sich in falschem Namen an.
@@ -38,7 +42,7 @@ Adminzugangsdaten werden gestohlen.
 
 | R3
 | Denial of Service Attacke
-| 5
+| 2
 | 5
 | 25
 | Das OTS wird in einer Denial of Service Attacke angegriffen.
@@ -48,8 +52,8 @@ Die Systeme stehen dann nicht zur Verfügung.
 
 | R4
 | Security Misconfiguration
-| 5
-| 5
+| 2
+| 3
 | 25
 | Die Sicherheitskonfiguration ist falsch konfiguriert
 | Verfügbarkeit
@@ -57,18 +61,18 @@ Die Systeme stehen dann nicht zur Verfügung.
 
 | R5
 | Manipulation am Verkauf
-| 5
-| 5
+| 2
+| 3
 | 25
-| Angestellte können mit ihren Manipulationen am Verkaufsprozess vornehmen.
+| Angestellte können den Verkaufsprozess manipulieren.
 Z.B. Mitarbeiterrabatte verwenden, nicht erlaubte Stornierungen durchführen
 | Verfügbarkeit
 | Vermeiden
 
 | R6
 | Bestechung
-| 5
-| 5
+| 1
+| 3
 | 25
 | Angestellte können bestochen werden um Kundendaten zu verkaufen.
 | Vertraulichkeit
@@ -76,26 +80,26 @@ Z.B. Mitarbeiterrabatte verwenden, nicht erlaubte Stornierungen durchführen
 
 | R7
 | Ungepatchte Systeme
-| 5
-| 5
+| 2
+| 3
 | 25
 | Eine Sicherheitslücke in einem System führt dazu, dass Angreifer Schadcode ausführen können und unkontrolliert auf das System zugreifen können.
 | Integrität
 | Vermeiden
 
-| R8
-| System nicht verfügbar
-| 5
-| 5
-| 25
-| Durch einen Stromausfall oder Hardwaredefekt ist das System nicht verfügbar
-| Verfügbarkeit
-| Vermeiden
+//| R8
+//| System nicht verfügbar
+//| 1
+//| 4
+//| 25
+//| Durch einen Stromausfall oder Hardwaredefekt ist das System nicht verfügbar
+//| Verfügbarkeit
+//| Vermeiden
 
 | R9
 | Ausfall Zahlungsystem
-| 5
-| 5
+| 1
+| 4
 | 25
 | Das System für die Abwicklung der Bezahlung ist nicht verfügbar.
 | Verfügbarkeit
@@ -103,8 +107,8 @@ Z.B. Mitarbeiterrabatte verwenden, nicht erlaubte Stornierungen durchführen
 
 | R9
 | Unberechtigter Zugriff auf Adminsystem
-| 5
-| 5
+| 1
+| 4
 | 25
 | Es erfolgt ein unberechtigter Zugriff auf das Adminsystem.
 | Verfügbarkeit
@@ -112,10 +116,11 @@ Z.B. Mitarbeiterrabatte verwenden, nicht erlaubte Stornierungen durchführen
 
 |===
 
-
-
-
 * Legende
+** Ausw. : Abkürzung für Auswirkung
+** AuswAuf : Abkürzug für Auswirkung auf
+** Bew. : Abkürzung für Bewertung
+** Wahr. : Abkürzung für Wahrscheinlichkeit
 ** Wahrscheinlich 1 (sehr niedrig) - 5 (sehr hoch)
 ** Auswirkung 1 (sehr niedrig) - 5 (sehr hoch)
 ** Bewertung = Wahrscheinlich X Auswirkung

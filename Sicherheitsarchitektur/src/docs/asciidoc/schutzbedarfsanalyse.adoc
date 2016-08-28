@@ -2,7 +2,6 @@
 
 === Inventar der Daten (Grobübersicht)
 
-
  Einige Aspekte: Passwort (Salt), Schnittstellen Kommunikation (Verschlüsselung),Konfigurationsdateien,
  DB-Zugriff, Rechtliche Aspekte, bei der Preisgestaltung muss die Integrität gewährleistet werden
  wenn Konfigdateien keine besonderen Schutz geniessen, dürfen sie keine Passworte enthalten
