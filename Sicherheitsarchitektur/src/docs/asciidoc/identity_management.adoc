@@ -1,0 +1,76 @@
+==  Identity und Access Management
+
+=== Welche Typen von Identitäten gibt es?
+
+* Online-User (Ein Kunde, der sein Ticket selbständig über die Webseite kauft)
+* Administrator (Ein Angestellter der Z-Group, welcher berechtigt ist im OTS neue Shows hinzuzufügen)
+* Box-Office-User (Ein Angestellter der Z-Group, der Tickets an Kunden verkauft.)
+
+=== Wie werden die Identitäten generiert und bereit gestellt?
+
+* Online-User
+** Registriert sich selbstständig und muss nicht freigeschaltet werden
+*** Bevorzugt: Anbinden von Google als IdentityProvider (Goolgle generiert und stellt Identitäten bereit)
+*** Alternativ für Google Skeptiker: Eigene Nutzerverwaltung
+* Administrator
+** jeder Administrator erhält einen separaten Datenbanknutzer.
+Es handelt sich um eine Übergangslösung, bis die Administrationsoberfläche zur Verfügung gestellt wird.
+Der Nutzer wird vom Database-Chief-Engineer angelegt.
+Der Database-Chief-Engineer verantwortet, dass die Administratoren nur die minimal notwendigen Rechte für Ihre Aufgaben erhalten.
+* Box-Office-User
+** werden zentral über LDAP angelegt und verwaltet
+** LDAP-Administratoren legen die Nutzer an und mutieren sie
+
+=== Wo speichern Sie die Identitäten?
+
+* Online-User
+** Identityprovider Google : Google speichert die Identitäten
+** Identityprovider OTS : emailadresse und gehashtes Password plus Salt werden in der OTS Datenbank gespeichert
+* Administrator
+** werden durch die Oracle Datenbank gespeichert
+* Box-Office-User
+** Werden im LDAP gespeichert
+
+=== Unterstützen Sie eine Förderation von Identitäten, was sind die Vor- und Nachteile?
+
+Ja es wird eine Förderation für die Online-User (Google) und die Box-Office-User (LDAP) verwendet.
+
+* Vorteile
+** Zentrale Verwaltung von Nutzern und Profilen
+** Nutzerpasswörter werden nicht in der Anwendung gespeichert
+** Nutzer muss sich nur ein Nutzernamen und Passwort merken
+
+* Nachteile
+** LDAP Server aufwendig aufzubauen und zu verwalten
+** Man muss externen Provider vertrauen
+** wird der Zugang zum zentralen IdentityProvider gestohlen, hat der Angreifer zu allen erlaubten Systemen
+
+=== Welche Authentifizierungsmethoden unterstützen Sie?
+
+* Passwörter
+** Administratoren melden sich an der Datenbank an
+* Single Sign On
+** Online-User melden sich über Google an
+** Box-Office User melden sich über LDAP an
+
+=== Wie lösen Sie das Problem des initialen Zugangs?
+
+* Online-User
+** Melden sich initial selbstständig bei Google an
+** Legen sich selbst einen Account an
+* Administrator
+** werden explizit durch die Verwaltung angelegt
+* Box-Office-User
+** werden explizit durch die Verwaltung angelegt
+
+
+=== Wie lösen Sie das Problem von vergessenen /  verlorenen Authentisierungsmitteln?
+
+* Online-User
+** Müssen sich selbstständig bei Google um einen neuen Zugang kümmern
+** Können sich eine eMail zu schicken lassen, mit der Ihr Passwort zurückgesetzt wird (Kein Password per eMail)
+* Administrator
+** muss sich beim Database-Chief-Engineer melden.
+Dieser gibt ihm einen neuen Zugang.
+* Box-Office-User
+** muss in der Verwaltung anrufen, das Passwort wird zurückgesetzt (es werden persönliche Daten, wie Mitarbeiternummer und Geburtsdatum abgefragt, die nur der Box-Office Nutzer kennt)
