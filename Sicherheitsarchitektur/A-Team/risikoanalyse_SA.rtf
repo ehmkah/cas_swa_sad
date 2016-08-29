@@ -1,0 +1,72 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red63\green105\blue30;\red0\green90\blue124;\red0\green121\blue165;
+\red85\green142\blue40;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww21320\viewh14520\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Risiken \
+\
+\
+-(A) \cf2 DDos Attacke (c,4)	\cf0 \
+	 (wann passiert es ?, Abendkasse,    Nachteile: Imageschaden, wirtschaftlicher Verlust \
+	\
+\cb3 (- Peak-scenario  -> gewolltes Scenario)\cb1 \
+\cf4 (B) Kunden- Zugangsdaten k\'f6nnen gehackt werden \
+	(Passwortrules)  \
+\cf0 (B) unberechtigter Zugriff zu Admintool (d, 3) Imageschaden, wirtschaftlicher Verlust (Schleuderpreis)\
+\
+\
+\
+(C) \cf5 SQL injection (a,1)  ( eingaben werden gepr\'fcft, SQL parameter verwenden)\cf0 \
+\
+(D) \cf5  Paymentprovider:\
+		 umleiten der Geldstr\'f6me, (man-in-the-middle) (c,2) \cf0 \
+(E)
+\f1\fs30 \cf2 \expnd0\expndtw0\kerning0
+Cross-Site Scripting (XSS) (a,2) (image schaden)
+\fs24 \cf0 \
+\
+\
+\
+Auswirkung\
+4 sehr hoch (>1MCHF\
+3 hoch    ( <1MCHF)\
+2 klein     (< 100kCHF)\
+1 niedrig  (<10k CHF)\
+\
+Wahrscheinlichkeit\
+a h\'e4ufig (fast jeden Tag)\
+b wahrscheinlich (alle 10 Tag)\
+c gelegentlich ( alle 100Tage)\
+d selten (alle1000 Tage)\
+e unwahrscheinlich ( alle 10000 Tage)\
+\
+\
+\
+\
+\
+Sicherheitsanforderung\
+\
+1)  Passw\'f6rter MUSS Sonderzeichen und eine Mindestens 8 Zeichen enthalten.  Das Passwort MUSS mittels SHA-256 verschl\'fcsselt abgespeichert werden.\
+\
+2)  Alle internen Benutzer M\'dcSSEN  mittels Zertifikate eine Datenbankverbindung aufbauen.  \
+\
+3)  Alle Loginversuche  (erfolgreich/nicht erfolgreich) M\'dcSSEN protokolliert werden. Der Zeitpunkt, Benutzername, IP-Adresse, erfolgreich/nichterfolgreich.  (B)\
+\
+4)  Alle Benutzereingaben M\'dcSSEN validiert werden. Pr\'fcfung Datentyp, Maskierung Sonderzeichen.\
+\
+5) Web-Kommunikation MUSS  HTTPS verschl\'fcsselt sein.\
+\
+6)  Die Applikation MUSS redundant betrieben werden.\
+\
+7)  Die Verf\'fcgbarkeit der Webapplikation MUSS durch ein SLA gew\'e4hrleistet werden. (Peak-Scenarion werden im Dokument Softwarearchitektur ber\'fccksichtigt)\
+\
+8)  Kreditkarten-Daten D\'dcRFEN nicht persistiert werden.\
+\
+9)  Das Filesystem  MUSS mit Filepermissions gesichert sein. (Configfiles, Logfiles)\
+\
+10)  Config-Files D\'dcRFEN keine Passw\'f6rter im Klartext enthalten. \
+\
+\
+}
