@@ -8,11 +8,12 @@ v1.0, 02.09.2016
 include::_config.adoc[]
 
 
-include::schutzbedarfsanalyse.adoc[]
-include::risikoanalyse.adoc[]
-include::sicherheitsanforderungen.adoc[]
-include::netzwerksicherheit.adoc[]
+include::_schutzbedarfsanalyse.adoc[]
+include::_risikoanalyse.adoc[]
+include::_sicherheitsanforderungen.adoc[]
+include::_identity_management.adoc[]
+include::_netzwerksicherheit.adoc[]
 
 = Anhang
 
-include::uebung_zertifikate.adoc[]
+include::_uebung_zertifikate.adoc[]
