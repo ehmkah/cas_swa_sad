@@ -35,4 +35,12 @@
 | DB Server mit einer DB Firewall abgrenzen
 | technische Massnahme
 
+| Eventuell veralte WLAN WEP-Verschlüsselung
+| durch moderne Verschlüsselung WPA ersetzen
+| technisch
+
+| (nicht ganz ernst gemeint). Verantwortlicher managed sein Gesamtsystem schlecht.
+| Verantwortlichen für veraltete Infrastruktur zum Rapport bitten
+| organisatorisch
+
 |===
