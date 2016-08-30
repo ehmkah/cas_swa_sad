@@ -1,0 +1,46 @@
+== Netzwerksicherheit
+
+|===
+| Risiko | Massnahme | Atz der Massnahme
+
+| Veraltete Software und Betriebssysteme
+| Update auf neue Software version
+| technische Massnahme
+
+| Veraltete Software und Betriebssysteme
+| Updateprozess definieren
+| organisatorische Massnahme
+
+| keine Firewall zwischen DMZ und internem Netz
+| Firewall zwischen DMZ und internem Netz einrichten
+| technische Massnahme
+
+| PPTP Protokol für Heimnutzer wird verwendet (PPTP ist veraltet)
+| PPTP ersetzen durch IPSec
+| technische Massnahme
+
+| uneinheitliche Appliktionsslandschaft
+| Applikationen vor allem Betriebssysteme vereinheitlichen
+| technische Massnahme
+
+| Exchange Server in DMZ (nicht notwendig da Anwender sowieso im VPM sein müssen)
+| Exchange Server in Firmennetz verschoben werden
+| technische Massnahme
+
+| Firewallregeln zu grosszügig eingerichtet
+| Firewallregeln prüfen
+| organisatorische Massnahme
+
+| Zuviele Zugriffe theoretisch auf DB Server möglich
+| DB Server mit einer DB Firewall abgrenzen
+| technische Massnahme
+
+| Eventuell veralte WLAN WEP-Verschlüsselung
+| durch moderne Verschlüsselung WPA ersetzen
+| technisch
+
+| (nicht ganz ernst gemeint). Verantwortlicher managed sein Gesamtsystem schlecht.
+| Verantwortlichen für veraltete Infrastruktur zum Rapport bitten
+| organisatorisch
+
+|===
