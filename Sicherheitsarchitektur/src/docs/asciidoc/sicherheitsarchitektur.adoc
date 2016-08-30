@@ -16,6 +16,8 @@ include::_sicherheitsanforderungen.adoc[]
 include::_identity_management.adoc[]
 include::_netzwerksicherheit.adoc[]
 
+// TODO: Erläuterungen in den Anhang
+// TODO: Vorwort mit Erklörung der Dokumentstruktur
 = Anhang
 
 include::_uebung_zertifikate.adoc[]
