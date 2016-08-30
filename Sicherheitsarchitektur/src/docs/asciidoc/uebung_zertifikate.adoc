@@ -1,4 +1,4 @@
-= Übung Zertifikate
+== Übung Zertifikate
 
 * https://mail.google.com
 ** Welche CA hat das Zertifikat ausgestellt: Google Internet Authority G2; GeoTrust Global CA
