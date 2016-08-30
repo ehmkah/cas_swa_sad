@@ -20,12 +20,12 @@ Systembenutzer für Exchange
 
 
 ==Wo speichern sie die Identitäten?
-SysAdmin, interne Admins, Boxoffice-User, Webservice-User, Filesystem: zentrale Benutzerverwaltung (LDAP-Server, Kerberos) 
+SysAdmin, interne Admins, Boxoffice-User, Webservice-User, Filesystem: zentrale Benutzerverwaltung (ActiveDirectory)
 Registrierte Onlinebenutzer: in der DB
 Umsystem: in einer lokalen Config-Datei
 
 ==Unterstützen sie eine Federation
-Für die internen Benutzer wird eine zentrale Benutzerverwaltung verwendet. Die Anmeldung an die DB erfolgt durch 
+Für die internen Benutzer wird eine zentrale Benutzerverwaltung verwendet. Die Anmeldung an die DB erfolgt durch
 Kerberos-Zertifikate
 Vorteil: Benutzerfreudlich für die Endbenutzer, man muss sich nur einmal anmelden
 
