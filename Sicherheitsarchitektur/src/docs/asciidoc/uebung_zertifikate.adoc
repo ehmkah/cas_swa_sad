@@ -1,0 +1,32 @@
+= Übung Zertifikate
+
+* https://mail.google.com
+** Welche CA hat das Zertifikat ausgestellt: Google Internet Authority G2; GeoTrust Global CA
+** Welche Angaben sind im Zertifikat gemacht:
+** Gibt es eine CRL : URI: http://pki.google.com/GIAG2.crl
+** Welche Algorithmen kommen zum Einsatz : PKCS #1 SHA-256 With RSA Encryption
+** Wird es vom Browser akzeptiert     : ja
+** Gibt es Angaben zum zugelassen Schlüsselgebrauch : Web Server Authentification , Client Authentification
+
+
+* https://www.cacert.org
+** Welche CA hat das Zertifikat ausgestellt: CACert Class 3 Root, CA Cert Signing Authority
+** Welche Angaben sind im Zertifikat gemacht:
+** Gibt es eine CRL : URI: https://www.cacert.org/revoke.crl
+** Welche Algorithmen kommen zum Einsatz : PKCS #1 MD5 With RSA Encryption
+** Wird es vom Browser akzeptiert     : nein
+** Gibt es Angaben zum zugelassen Schlüsselgebrauch :
+*** TLS Web Client Authentication (1.3.6.1.5.5.7.3.2), TLS Web Server Authentication (1.3.6.1.5.5.7.3.1), Netscape Server Gated Crypto (2.16.840.1.113730.4.1),Microsoft Server Gated Crypto (1.3.6.1.4.1.311.10.3.3)
+
+
+* https://www.postfinance.ch
+** Welche CA hat das Zertifikat ausgestellt: CN = Symantec Class 3 EV SSL CA - G3
+                                             OU = Symantec Trust Network
+                                             O = Symantec Corporation
+** Welche Angaben sind im Zertifikat gemacht:
+** Gibt es eine CRL : URI: http://sr.symcb.com/sr.crl
+** Welche Algorithmen kommen zum Einsatz : PKCS #1 SHA-256 With RSA Encryption
+** Wird es vom Browser akzeptiert     : nja
+** Gibt es Angaben zum zugelassen Schlüsselgebrauch :
+*** TLS Web Server Authentication (1.3.6.1.5.5.7.3.1)
+*** TLS Web Client Authentication (1.3.6.1.5.5.7.3.2)
