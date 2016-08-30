@@ -22,6 +22,7 @@ Die detaillierte Einschätzung kann dem folgenden Unterkapitel entnommen werden.
 Die Detailbeschreibung zu den genannten Risiken, kann der folgenden Tabelle entnommen werden.
 Die Abkürzung der Tabellenspalten werden in der Legende unterhalb der Tabelle erklärt.
 
+// TODO: gleiche Flughöhe für alle Punkte. R7 und R1/R3 sind verwandt
 [cols="1,4,1,1,1,7,1,2"]
 |===
 | Nr | Bezeichnung | W. | A. | B. | Begründung | Au. | Aktion

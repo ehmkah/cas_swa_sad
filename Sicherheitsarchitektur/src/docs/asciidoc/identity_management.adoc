@@ -3,7 +3,7 @@
 === Welche Typen von Identitäten gibt es?
 
 * Online-User (Ein Kunde, der sein Ticket selbständig über die Webseite kauft)
-* Administrator (Ein Angestellter der Z-Group, welcher berechtigt ist im OTS neue Shows hinzuzufügen)
+* Administrator (Ein Angestellter der Z-Group, welcher berechtigt ist im OTS neue Events hinzuzufügen)
 * Box-Office-User (Ein Angestellter der Z-Group, der Tickets an Kunden verkauft.)
 
 === Wie werden die Identitäten generiert und bereit gestellt?
@@ -13,6 +13,7 @@
 *** Bevorzugt: Anbinden von Google als IdentityProvider (Goolgle generiert und stellt Identitäten bereit)
 *** Alternativ für Google Skeptiker: Eigene Nutzerverwaltung
 * Administrator
+// TODO: Haben wir nicht ein Adminportal?
 ** jeder Administrator erhält einen separaten Datenbanknutzer.
 Es handelt sich um eine Übergangslösung, bis die Administrationsoberfläche zur Verfügung gestellt wird.
 Der Nutzer wird vom Database-Chief-Engineer angelegt.
@@ -24,10 +25,10 @@ Der Database-Chief-Engineer verantwortet, dass die Administratoren nur die minim
 === Wo speichern Sie die Identitäten?
 
 * Online-User
-** Identityprovider Google : Google speichert die Identitäten
-** Identityprovider OTS : emailadresse und gehashtes Password plus Salt werden in der OTS Datenbank gespeichert
+** Identityprovider Google: Google speichert die Identitäten
+** Identityprovider OTS: E-Mail-Adresse und gehashtes Password plus Salt werden in der OTS Datenbank gespeichert
 * Administrator
-** werden durch die Oracle Datenbank gespeichert
+** werden in der Oracle-Datenbank gespeichert
 * Box-Office-User
 ** Werden im LDAP gespeichert
 
@@ -44,6 +45,7 @@ Ja es wird eine Förderation für die Online-User (Google) und die Box-Office-Us
 ** LDAP Server aufwendig aufzubauen und zu verwalten
 ** Man muss externen Provider vertrauen
 ** wird der Zugang zum zentralen IdentityProvider gestohlen, hat der Angreifer zu allen erlaubten Systemen
+** Schwierigere Rückverfolgung im Fehler- und Betrugsfall
 
 === Welche Authentifizierungsmethoden unterstützen Sie?
 
@@ -57,7 +59,7 @@ Ja es wird eine Förderation für die Online-User (Google) und die Box-Office-Us
 
 * Online-User
 ** Melden sich initial selbstständig bei Google an
-** Legen sich selbst einen Account an
+** Legen sich selbst einen Account an. Als Bestätigung wird eine E-Mail mit einem Verifikationslink versendet.
 * Administrator
 ** werden explizit durch die Verwaltung angelegt
 * Box-Office-User
@@ -68,7 +70,7 @@ Ja es wird eine Förderation für die Online-User (Google) und die Box-Office-Us
 
 * Online-User
 ** Müssen sich selbstständig bei Google um einen neuen Zugang kümmern
-** Können sich eine eMail zu schicken lassen, mit der Ihr Passwort zurückgesetzt wird (Kein Password per eMail)
+** Können sich eine E-Mail zu schicken lassen, mit der Ihr Passwort zurückgesetzt wird (Kein Password per E-Mail)
 * Administrator
 ** muss sich beim Database-Chief-Engineer melden.
 Dieser gibt ihm einen neuen Zugang.
