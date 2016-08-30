@@ -3,6 +3,7 @@
 * Das System MUSS verschlüsselt via SSL mit den Umsystemen kommunizieren
 * Der Kunde MUSS sich über eine verschlüsselte Verbindung anmelden
 * Passwörter MÜSSEN verschlüsselt und gesalzen werden
+* Passwörter in Konfigurationsdateien MÜSSEN verschlüsselt sein
 * Sicherheitsrelevante Systempatches MÜSSEN zeitnah eingespielt werden
 * Kundendaten MÜSSEN vor unberechtigtem Zugriff geschützt werden
 * Nur berechtige Benutzer DÜRFEN aufs Adminportal zugreifen
@@ -12,4 +13,5 @@
 * Alle Benutzereingaben MÜSSEN validiert werden
 * Die Verfügbarkeit des System und der Umsysteme müssen in einem SLA definiert werden
 * Nach drei falschen Passworteingaben MUSS der Kunde temporär für einige Minuten gesperrt werden
-
+* Die Verbindungen zwischen den internen Servern sowie den externen Schnittstellen (Datatrans) sind verschlüsselt.
+* Die Daten müssen auf einen physisch getrennten Standort repliziert werden
