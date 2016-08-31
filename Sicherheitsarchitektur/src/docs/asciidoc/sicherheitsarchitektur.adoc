@@ -8,8 +8,6 @@ v1.0, 02.09.2016
 // configure DE settings for asciidoc
 include::_config.adoc[]
 
-// TODO: Übersichtstabelle nachführen
-// TODO: Zahlen nachführen
 include::_schutzbedarfsanalyse.adoc[]
 include::_risikoanalyse.adoc[]
 include::_sicherheitsanforderungen.adoc[]

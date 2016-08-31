@@ -11,39 +11,39 @@ Fragen zur Methodik und die Bedeutung der einzelnen Bewertungen werden im letzte
 
 | Logdaten
 | Generierte Logdaten des Systems
-| 3
+| 2
 | 2
 | 1
 | 1
 
 | Kundendaten
 | Daten der Kunden wie Name, Adresse, E-Mail, Buchungshistorie
-| 2
-| 2
-| 2
-|
+| 5
+| 6
+| 1
+| 1
 
 
 | Zugangsdaten
 | Zugangsdaten der Kunden und der Administratoren aufs Portal
-| 3
-| 3
-| 3
-|
+| 6
+| 6
+| 1
+| 1
 
 | Buchungsdaten
 | Aktueller Buchungsstand der einzelnen Events
+| 5
+| 6
 | 2
-| 3
-| 3
-|
+| 2
 
 | Eventdaten
 | Inventar der vergangenen und zukünftigen Events, inkl. den Saalkonfigurationen
-| 1
-| 3
-| 3
-|
+| 2
+| 6
+| 2
+| 2
 
 
 |===
@@ -86,7 +86,7 @@ Die Zahlungsdaten wie z.B. die Kreditkarten sind gemäss der Anforderung aus dem
 
 | *Summe*
 |
-^| 3
+^| 2
 
 .2+| **Integrität**
 | Muss die Echtheit, Korrektheit und/oder Unversehrtheit der  Daten gewährleistet werden können?
@@ -132,7 +132,7 @@ zur Laufzeit des Systems. Die Dateien befinden sich auf den Filesystemen auf den
 
 | *Summe*
 |
-^| 3
+^| 5
 
 
 .3+| **Verfügbarkeit**
@@ -147,7 +147,7 @@ zur Laufzeit des Systems. Die Dateien befinden sich auf den Filesystemen auf den
 
 | *Summe*
 |
-^| 3
+^| 6
 
 .2+| **Integrität**
 | Muss die Echtheit, Korrektheit und/oder Unversehrtheit der  Daten gewährleistet werden können?
@@ -267,7 +267,7 @@ bei Google hinterlegt sind.
 ^| 5
 
 
-.4+| **Verfügbarkeit**
+.3+| **Verfügbarkeit**
 | Max zulässige Ausfalldauer
 | 7 * 24
 | 3
@@ -377,14 +377,14 @@ Für eine Kategorie wird die Summe der Punkte ermittelt, um zu einer Einschätzu
 | Kategorie | wenig | mittel | hoch
 
 | Vertraulichkeit
-| 3 - 5
-| 6- 7
-| 8 - 9
-
-| Verfügbarkeit
+| 2
 | 3 - 4
 | 5 - 6
-| 7 - 8
+
+| Verfügbarkeit
+| 2
+| 3 - 4
+| 5 - 6
 
 | Integrität
 | 1
@@ -476,5 +476,5 @@ Nur ausgewählte Mitarbeiter haben Zugriff
 
 
 |===
-Diese Tabelle ist eine leicht modifizierte Version der Schutzbedarfsanalyse des Bundes, V3.0.
+Diese Tabelle ist eine angepasste Version der Schutzbedarfsanalyse des Bundes, V3.0.
 
