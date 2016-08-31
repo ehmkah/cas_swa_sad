@@ -81,7 +81,7 @@ Die Zahlungsdaten wie z.B. die Kreditkarten sind gemäss der Anforderung aus dem
 | 1
 
 |Servicezeiten
-| Servicezeiten Standard
+| Standard
 ^| 1
 
 | *Summe*
@@ -127,7 +127,7 @@ zur Laufzeit des Systems. Die Dateien befinden sich auf den Filesystemen auf den
 ^| 2
 
 | Sie die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
-| Nicht klassifiziert
+| Nur ausgewählte Mitarbeiter haben Zugriff
 ^| 3
 
 | *Summe*
@@ -141,7 +141,7 @@ zur Laufzeit des Systems. Die Dateien befinden sich auf den Filesystemen auf den
 | 3
 
 |Servicezeiten
-| Servicezeiten Standard
+| 7 * 24
 ^| 3
 
 
@@ -192,7 +192,7 @@ Die Datenschatzbestimmungen sollen für den Kunden auf der Webseite einfach eing
 .3+| **Vertraulichkeit**
 
 | Welche Art von Personendaten werden bearbeitet (nach Datenschutzgesetz, DSG)?
-| Sensible Personendaten (geringes-/mittleres Risiko)
+| Sensible Personendaten (hohes Risiko)
 ^| 3
 
 | Sie die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
@@ -269,11 +269,11 @@ bei Google hinterlegt sind.
 
 .3+| **Verfügbarkeit**
 | Max zulässige Ausfalldauer
-| 7 * 24
+| Kleiner als 1 Tag
 | 3
 
 |Servicezeiten
-| Servicezeiten Standard
+| 7 * 24
 ^| 3
 
 | *Summe*
@@ -282,7 +282,7 @@ bei Google hinterlegt sind.
 
 .2+| **Integrität**
 | Muss die Echtheit, Korrektheit und/oder Unversehrtheit der  Daten gewährleistet werden können?
-| Keine speziellen Anforderungen
+| Spezielle Anforderungen
 ^| 2
 
 | *Summe*
@@ -292,7 +292,7 @@ bei Google hinterlegt sind.
 
 .2+| **Nachvollziehbarkeit**
 | Müssen bestimmte Arbeitsvorgänge nachgewiesen werden können?
-| Keine speziellen Anforderungen
+| Spezielle Anforderungen
 ^| 2
 
 | *Summe*
@@ -315,7 +315,7 @@ Lieferadresse ändern.
 .3+| **Vertraulichkeit**
 
 | Welche Art von Personendaten werden bearbeitet (nach Datenschutzgesetz, DSG)?
-| Nicht-sensible Personendaten (geringes-/mittleres Risiko)
+| Nicht-personenbezogen
 ^| 1
 
 | Sie die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
@@ -343,7 +343,7 @@ Lieferadresse ändern.
 
 .2+| **Integrität**
 | Muss die Echtheit, Korrektheit und/oder Unversehrtheit der  Daten gewährleistet werden können?
-| Speziellen Anforderungen
+| Spezielle Anforderungen
 ^| 2
 
 | *Summe*
@@ -353,7 +353,7 @@ Lieferadresse ändern.
 
 .2+| **Nachvollziehbarkeit**
 | Müssen bestimmte Arbeitsvorgänge nachgewiesen werden können?
-| Speziellen Anforderungen
+| Spezielle Anforderungen
 ^| 2
 
 | *Summe*
@@ -377,9 +377,9 @@ Für eine Kategorie wird die Summe der Punkte ermittelt, um zu einer Einschätzu
 | Kategorie | wenig | mittel | hoch
 
 | Vertraulichkeit
-| 2
-| 3 - 4
-| 5 - 6
+| 2 - 3
+| 4 - 5
+| 6 - 7
 
 | Verfügbarkeit
 | 2
@@ -402,7 +402,7 @@ Für eine Kategorie wird die Summe der Punkte ermittelt, um zu einer Einschätzu
 |===
 | Beurteilung betreffend der | Frage | Antworten | Bewertung
 
-.9+| **Vertraulichkeit**
+.7+| **Vertraulichkeit**
 .4+| Welche Art von Personendaten werden bearbeitet (nach Datenschutzgesetz, DSG)?
 | Nicht-personenbezogen
 ^| 1
@@ -430,12 +430,6 @@ Alle Mitarbeiter haben Zugriff
 Nur ausgewählte Mitarbeiter haben Zugriff
 ^| 3
 
-.2+| Werden schutzwürdige Daten (nicht DSG / ISchV relevant)  bearbeitet?
-| Keine erhöhten Anforderungen an die Schutzwürdigkeit (nicht DSG/ISchV relevant)
-^| 1
-
-| Erhöhte Anforderungen an die Schutzwürdigkeit (nicht DSG/ISchV relevant)
-^| 2
 
 .6+| **Verfügbarkeit**
 .3+| Max zulässige Ausfalldauer
