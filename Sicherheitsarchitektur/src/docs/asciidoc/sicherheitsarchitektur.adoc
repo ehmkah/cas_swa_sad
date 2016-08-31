@@ -2,7 +2,7 @@
 :title-logo-image: image:ots-logo.png[arc42][scaledwidth=100%,align=left]
 
 = Sicherheitsarchitektur OTS
-Christian Feuz; Klas Klassen
+Christian Feuz; Michael Krausse
 v1.0, 02.09.2016
 
 // configure DE settings for asciidoc
