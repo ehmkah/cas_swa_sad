@@ -5,13 +5,31 @@
 
 * Beschreibung, warum Sie den Ticketshop gefährtet könnte
 
-** Angreifer kann durch SQL Injection die gespeicherten Daten verändern
-** kann sich Zugriff auf die Plattform einen Zugriff erschleichen
-**
+Angreifer kann durch SQL Injection unauthorisiert auf Daten zugreifen und diese teilweise auch verändern.
+Angreifer kann sich Zugriff auf OTS und das Firmennetz erschleichen
+
 
 * Massnahmen
 ** technisch:
+*** API verwenden, die Nutzereingaben validiert.
 *** Nutzereingaben über die Webseite müssen immer escapped werden (keine direkte Verarbeitung)
-***
+** Organisatorisch
+*** OTS wird regelmässig mit Tools gegen SQL Injection geprüft (Penetration Test)
+*** Entwickler für SQL Injection sensibilisieren
+*** Coding Convention etablierren, das Input immer validiert werden muss.
 
-==  Cross Site Scripting
+== Nutzung von Komponenten mit bekannten Schwachstellen
+
+* Beschreibung
+
+OTS verwendet verschiedene Bibliotheken, wenn einzelne davon angreifbar sind, können sie die Gesamtanwendung und das Firmennetz gefährden.
+Es gibt verschiedene Tools, mit denen automatisiert automatisiert Schwächen aus.
+
+* Massnahmen
+** Technisch
+*** Austausch der betroffenen Bibliotheken durch neuere Versionen
+*** Automatisierte Prüfung der Java Bibliotheken mit Hilfe des _OWASP Dependency Check_ Maven Plugins bei jedem Build.
+*** Übersicht aller eingesetzten Bibliotheken in allen Anwendungen
+** Organisatorisch :
+*** Regelmässige Prüfung der verwendeten Bibliotheken auf bekannte Schwächen
+*** Prozess etablieren, der prüft, ob die Bibliotheken verwundbar sind
