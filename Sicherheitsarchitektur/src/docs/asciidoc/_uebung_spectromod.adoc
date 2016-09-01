@@ -114,7 +114,10 @@ Netzwerk ist unter https://www.spectromod.ch/schulung/spectromod/downloads/netzw
 
     root / spectromod
 
-. Versuch via MySQL-Client eine Verbindung aufzubauen funktioniert nicht
+. Versuch via MySQL-Client eine Verbindung aufzubauen funktioniert nicht. Ein Portscanner (http://www.dnstools.ch/port-scanner.html oder
+https://pentest-tools.com/network-vulnerability-scanning/tcp-port-scanner-online-nmap) zeigt das der Standard MySQL-Port (3306) geschlossen ist.
+Offen ist scheinbar nur der Port 443/tcp für https.
+
 
 === XSS
 
@@ -166,4 +169,9 @@ Netzwerk ist unter https://www.spectromod.ch/schulung/spectromod/downloads/netzw
 
     Kandidat:
     https://github.com/MariaDB/server/commit/9d72fb4af0d87f6a69a3ccb9202b4029acf2bd56
+
+. (Verzweifelter) Versuch das Passwd File zu laden.
+
+    ' UNION SELECT load_file("/etc/passwd"), '', 1 from DUAL WHERE '1%' = '1
+
 
