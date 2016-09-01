@@ -1,0 +1,17 @@
+= Anwendungssicherheit
+
+
+== SQL Injection
+
+* Beschreibung, warum Sie den Ticketshop gefährtet könnte
+
+** Angreifer kann durch SQL Injection die gespeicherten Daten verändern
+** kann sich Zugriff auf die Plattform einen Zugriff erschleichen
+**
+
+* Massnahmen
+** technisch:
+*** Nutzereingaben über die Webseite müssen immer escapped werden (keine direkte Verarbeitung)
+***
+
+==  Cross Site Scripting
