@@ -1,0 +1,15 @@
+
+[[abkuerzungen]]
+== Abkürzungen
+
+** A. : Abkürzung für Auswirkung
+** Au : Abkürzung für Auswirkung auf
+** B. : Abkürzung für Bewertung
+** Bew. : Abkürzung für Bewertung
+** In : Abkürzung für Integrität
+** Ve : Abkürzung für Vermeiden
+** Vt : Abkürzung für Vertraulichkeit
+** Vf : Abkürzung für Verfügbarkeit
+** W. : Abkürzung für Wahrscheinlichkeit
+
+

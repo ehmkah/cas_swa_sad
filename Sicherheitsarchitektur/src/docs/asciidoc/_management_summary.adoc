@@ -1,0 +1,7 @@
+== Execution Summary
+
+Das folgende Dokument enthält die Lösung für die Aufgaben im Rahmen der Vorlesung Sicherheitsarchitektur.
+Die verwendeten Abkürzungen werden im Anhang <<abkuerzungen>> erklärt.
+Weiterhin befinden sich im Anhang die Zusatzaufgaben für die Zertifikate und dem Einbruch auf spectromod.ch.
+
+
