@@ -11,7 +11,7 @@ Angreifer kann sich Zugriff auf OTS und das Firmennetz erschleichen
 
 ==== Massnahmen
 
-===== technisch:
+===== technisch
 
 * Bibliothek verwenden, die Nutzereingaben validiert.
 * Nutzereingaben über die Webseite müssen immer escapped werden (keine direkte Verarbeitung)
@@ -31,13 +31,13 @@ Es gibt verschiedene Tools, mit denen automatisiert automatisiert Schwächen aus
 
 ==== Massnahmen
 
-===== Technisch
+===== technisch
 
 * Austausch der betroffenen Bibliotheken durch neuere Versionen
 * Automatisierte Prüfung der Java Bibliotheken mit Hilfe des _OWASP Dependency Check_ Maven Plugins bei jedem Build.
 * Übersicht aller eingesetzten Bibliotheken in allen Anwendungen
 
-===== Organisatorisch
+===== organisatorisch
 
 * Regelmässige Prüfung der verwendeten Bibliotheken auf bekannte Schwächen
 * Prozess etablieren, der prüft, ob die Bibliotheken verwundbar sind
