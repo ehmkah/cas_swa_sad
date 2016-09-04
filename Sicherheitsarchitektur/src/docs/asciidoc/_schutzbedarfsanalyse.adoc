@@ -3,11 +3,11 @@
 === Inventar der Daten (Grobübersicht)
 
 Das folgende Kapitel gibt eine grobe Übersicht über den Schutzberdarf des OTS (Online Ticketing Systems) wieder.
-Fragen zur Methodik und die Bedeutung der einzelnen Bewertungen werden im letzten Abschnitt beantwortet.
+Fragen zur Methodik und die Bedeutung der einzelnen Bewertungen werden im Kapitel <<sb_erlaeuterung>> beantwortet.
 
-[cols="20%,40%,^10%,^10%,^10%,^10%"]
+[cols="22%,38%,^10%,^10%,^10%,^10%"]
 |===
-| Datengruppierung | Bemerkung | Vertraulichkeit | Verfügbarkeit | Integrität | Nachvollzieh-barkeit
+| Datengruppierung | Bemerkung | Vertrau- lichkeit | Verfüg- barkeit | Integ- rität | Nach- voll- zieh- barkeit
 
 | Logdaten
 | Generierte Logdaten des Systems
@@ -58,14 +58,14 @@ Die Zahlungsdaten wie z.B. die Kreditkarten sind gemäss der Anforderung aus dem
 
 [cols="20%,35%,35%,^10%"]
 |===
-| Beurteilung betreffend der  | Frage | Antwort | Bewertung
+| Beurteilung betreffend der  | Frage | Antwort | Bew
 .3+| **Vertraulichkeit**
 
 | Welche Art von Personendaten werden bearbeitet (nach Datenschutzgesetz, DSG)?
 | Nicht-personenbezogen
 ^| 1
 
-| Sie die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
+| Sind die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
 | Nicht klassifiziert
 ^| 1
 
@@ -98,7 +98,7 @@ Die Zahlungsdaten wie z.B. die Kreditkarten sind gemäss der Anforderung aus dem
 ^| 1
 
 
-.2+| **Nachvollziehbarkeit**
+.2+| **Nachvollzieh- barkeit**
 | Müssen bestimmte Arbeitsvorgänge nachgewiesen werden können?
 | Keine speziellen Anforderungen
 ^| 1
@@ -109,7 +109,7 @@ Die Zahlungsdaten wie z.B. die Kreditkarten sind gemäss der Anforderung aus dem
 
 |===
 
-In den Logdaten befinden sich keine sensiblen Daten sondern zumeist Statusinformationen
+In den Logdaten befinden sich keine sensiblen Daten, sondern zumeist Statusinformationen
 zur Laufzeit des Systems. Die Dateien befinden sich auf den Filesystemen auf den Applikationsservern
  und können nur von den Systemadministratoren eingesehen werden. In den Logdateien befinden sich nur
  technische Daten, die für die Wartung und die Nachvollziehbarkeit notwendig sind.  Es
@@ -119,14 +119,14 @@ zur Laufzeit des Systems. Die Dateien befinden sich auf den Filesystemen auf den
 
 [cols="20%,35%,35%,^10%"]
 |===
-| Beurteilung betreffend der  | Frage | Antwort | Bewertung
+| Beurteilung betreffend der  | Frage | Antwort | Bew
 .3+| **Vertraulichkeit**
 
 | Welche Art von Personendaten werden bearbeitet (nach Datenschutzgesetz, DSG)?
 | Nicht-sensible Personendaten (geringes-/mittleres Risiko)
 ^| 2
 
-| Sie die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
+| Sind die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
 | Nur ausgewählte Mitarbeiter haben Zugriff
 ^| 3
 
@@ -159,7 +159,7 @@ zur Laufzeit des Systems. Die Dateien befinden sich auf den Filesystemen auf den
 ^| 1
 
 
-.2+| **Nachvollziehbarkeit**
+.2+| **Nachvollzieh- barkeit**
 | Müssen bestimmte Arbeitsvorgänge nachgewiesen werden können?
 | Keine speziellen Anforderungen
 ^| 1
@@ -188,14 +188,14 @@ Die Datenschatzbestimmungen sollen für den Kunden auf der Webseite einfach eing
 
 [cols="20%,35%,35%,^10%"]
 |===
-| Beurteilung betreffend der  | Frage | Antwort | Bewertung
+| Beurteilung betreffend der  | Frage | Antwort | Bew
 .3+| **Vertraulichkeit**
 
 | Welche Art von Personendaten werden bearbeitet (nach Datenschutzgesetz, DSG)?
 | Sensible Personendaten (hohes Risiko)
 ^| 3
 
-| Sie die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
+| Sind die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
 | Nur ausgewählte Mitarbeiter haben Zugriff
 ^| 3
 
@@ -228,7 +228,7 @@ Die Datenschatzbestimmungen sollen für den Kunden auf der Webseite einfach eing
 ^| 1
 
 
-.2+| **Nachvollziehbarkeit**
+.2+| **Nachvollzieh- barkeit**
 | Müssen bestimmte Arbeitsvorgänge nachgewiesen werden können?
 | Keine speziellen Anforderungen
 ^| 1
@@ -251,14 +251,14 @@ bei Google hinterlegt sind.
 
 [cols="20%,35%,35%,^10%"]
 |===
-| Beurteilung betreffend der  | Frage | Antwort | Bewertung
+| Beurteilung betreffend der  | Frage | Antwort | Bew
 .3+| **Vertraulichkeit**
 
 | Welche Art von Personendaten werden bearbeitet (nach Datenschutzgesetz, DSG)?
 | Nicht-sensible Personendaten (geringes-/mittleres Risiko)
 ^| 2
 
-| Sie die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
+| Sind die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
 | Nur ausgewählte Mitarbeiter haben Zugriff
 ^| 3
 
@@ -290,7 +290,7 @@ bei Google hinterlegt sind.
 ^| 2
 
 
-.2+| **Nachvollziehbarkeit**
+.2+| **Nachvollzieh- barkeit**
 | Müssen bestimmte Arbeitsvorgänge nachgewiesen werden können?
 | Spezielle Anforderungen
 ^| 2
@@ -311,14 +311,14 @@ Lieferadresse ändern.
 
 [cols="20%,35%,35%,^10%"]
 |===
-| Beurteilung betreffend der  | Frage | Antwort | Bewertung
+| Beurteilung betreffend der  | Frage | Antwort | Bew
 .3+| **Vertraulichkeit**
 
 | Welche Art von Personendaten werden bearbeitet (nach Datenschutzgesetz, DSG)?
 | Nicht-personenbezogen
 ^| 1
 
-| Sie die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
+| Sind die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
 | Nicht klassifiziert
 ^| 1
 
@@ -351,7 +351,7 @@ Lieferadresse ändern.
 ^| 2
 
 
-.2+| **Nachvollziehbarkeit**
+.2+| **Nachvollzieh- barkeit**
 | Müssen bestimmte Arbeitsvorgänge nachgewiesen werden können?
 | Spezielle Anforderungen
 ^| 2
@@ -365,6 +365,7 @@ Lieferadresse ändern.
 Um keine Kunden zu verärgern dürfen für die Events, für die bereits Tickets verkauft wurden,
 keine Preisanpassungen mehr gemacht werden. Bereits bebuchte Events dürfen auch nicht gelöscht werden.
 
+[[sb_erlaeuterung]]
 === Erläuterungen
 
 Die Schutzwürdigkeit der Daten wurde mit Hilfe der folgenden Tabelle ermittelt.
@@ -400,7 +401,7 @@ Für eine Kategorie wird die Summe der Punkte ermittelt, um zu einer Einschätzu
 
 [cols="20%,35%,35%,^10%"]
 |===
-| Beurteilung betreffend der | Frage | Antworten | Bewertung
+| Beurteilung betreffend der | Frage | Antworten | Bew
 
 .7+| **Vertraulichkeit**
 .4+| Welche Art von Personendaten werden bearbeitet (nach Datenschutzgesetz, DSG)?
@@ -416,7 +417,7 @@ Für eine Kategorie wird die Summe der Punkte ermittelt, um zu einer Einschätzu
 | Hochsensible Personendaten (sehr hohes Risiko)
 ^| 4
 
-.3+| Sie die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
+.3+| Sind die Daten aus geschäftlicher Sicht geheim (Geschäftsgeheimnis)?
 | Nicht klassifiziert
 ^| 1
 
@@ -460,7 +461,7 @@ Nur ausgewählte Mitarbeiter haben Zugriff
 | Spezielle Anforderungen
 ^| 2
 
-.2+| **Nachvollziehbarkeit**
+.2+| **Nachvollzieh- barkeit**
 .2+| Müssen bestimmte Arbeitsvorgänge nachgewiesen werden können?
 | Keine speziellen Anforderungen
 ^| 1

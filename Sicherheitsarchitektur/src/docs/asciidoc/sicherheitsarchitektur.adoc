@@ -8,15 +8,18 @@ v1.0, 02.09.2016
 // configure DE settings for asciidoc
 include::_config.adoc[]
 
+
+include::_management_summary.adoc[]
 include::_schutzbedarfsanalyse.adoc[]
 include::_risikoanalyse.adoc[]
 include::_sicherheitsanforderungen.adoc[]
 include::_identity_management.adoc[]
 include::_netzwerksicherheit.adoc[]
 include::_anwendungssicherheit.adoc[]
+
 // TODO: Erläuterungen in den Anhang
 // TODO: Vorwort mit Erklörung der Dokumentstruktur
 = Anhang
-
+include::_abkuerzungen.adoc[]
 include::_uebung_zertifikate.adoc[]
 include::_uebung_spectromod.adoc[]

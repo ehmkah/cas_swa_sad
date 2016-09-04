@@ -3,7 +3,7 @@
 === Übersicht
 
 Im folgenden __Zürich Diagram__ werden die wichtigsten Risiken, die wir identifiziert haben dargestellt.
-Die detaillierte Einschätzung kann dem folgenden Unterkapitel entnommen werden.
+Die detaillierte Einschätzung kann dem Kapitel <<risiko_details>> entnommen werden.
 
 [cols="2,1,1,1,1"]
 |===
@@ -17,10 +17,11 @@ Die detaillierte Einschätzung kann dem folgenden Unterkapitel entnommen werden.
 |*Auswirkung* | *niedrig*   | *klein* | *hoch*      | *sehr hoch*
 |===
 
+[[risiko_details]]
 === Details
 
 Die Detailbeschreibung zu den genannten Risiken, kann der folgenden Tabelle entnommen werden.
-Die Abkürzung der Tabellenspalten werden in der Legende unterhalb der Tabelle erklärt.
+Die Abkürzung der Tabellenspalten werden in <<abkuerzungen>> erklärt.
 
 [cols="1,4,1,1,1,7,1,2"]
 |===
@@ -125,17 +126,7 @@ Die Systeme stehen dann nicht zur Verfügung.
 
 |===
 
-* Legende
-** A. : Abkürzung für Auswirkung
-** Au : Abkürzung für Auswirkung auf
-** B. : Abkürzung für Bewertung
-** In : Abkürzung für Integrität
-** Ve : Abkürzung für Vermeiden
-** Vt : Abkürzung für Vertraulichkeit
-** Vf : Abkürzung für Verfügbarkeit
-** W. : Abkürzung für Wahrscheinlichkeit
 ** Wahrscheinlich 1 (sehr niedrig) - 4 (sehr hoch)
 ** Auswirkung 1 (sehr niedrig) - 4 (sehr hoch)
 ** Bewertung = Wahrscheinlich X Auswirkung
 ** Aktion Vermeiden, Akzeptieren (keine Gegenmassnahmen)
-
