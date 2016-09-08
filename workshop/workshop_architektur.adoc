@@ -1,0 +1,71 @@
+== Workshop Architekturantrag
+
+=== Problemstellung
+
+==== In welchem Unternehmen, Projekt, System stellt sich das Problem?
+
+==== Worin besteht genau das zu lösende Problem (Scope)?
+
+==== Wer sind die Interessenvertreter?
+
+=== Randbedingungen
+
+==== Technische Randbedingungen (z.B. Applikationsplattform, Referenz-Architektur)
+
+==== Organisatorische Randbedingungen
+
+=== Architekturziele
+
+==== Welche wichtigsten Architekturziele sollen mit der Lösung erreicht werden?
+
+
+== Lösungsvarianten
+
+=== Variante 1
+
+==== Kontextdiagramm
+
+==== Möglichst präzise Beschreibung (Schlüsselaspekte)
+
+==== Technologische Umsetzung
+
+==== Vor- und Nachteile
+
+==== Risiken
+
+=== Variante 2
+
+==== Kontextdiagramm
+
+==== Möglichst präzise Beschreibung (Schlüsselaspekte)
+
+==== Technologische Umsetzung
+
+==== Vor- und Nachteile
+
+==== Risiken
+
+=== Variante 3
+==== Kontextdiagramm
+==== Möglichst präzise Beschreibung (Schlüsselaspekte)
+==== Technologische Umsetzung
+==== Vor- und Nachteile
+==== Risiken
+
+==Auswertung
+
+=== Variantenbewertung
+
+=== Gewichtete Bewertungskriterien, nach denen die Varianten beurteilt werden
+
+*
+
+=== Begründete Bewertung der verschiedenen Varianten in einer Bewertungsmatrix
+
+== Antrag
+
+=== Begründeter Antrag zur Umsetzung einer Variante
+
+=== Kosten- und Aufwandschätzung (Infrastruktur, Ressourcen)
+
+=== Mögliche Risiken und Massnahmen (Minderung, Behandlung, Akzeptieren)
