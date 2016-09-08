@@ -8,9 +8,15 @@
 
 ==== Worin besteht genau das zu lösende Problem (Scope)?
 
+* Umgang mit den Schadens
+
 ==== Wer sind die Interessenvertreter?
 
 === Randbedingungen
+
+Die Sicherheitsstufe der Protokolldaten entspricht der Sicherheitsstufe der Fachdaten.
+Die Protokolldaten dürfen von Fachdaten geographisch getrennt gespeichert werden.
+Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 
 ==== Technische Randbedingungen (z.B. Applikationsplattform, Referenz-Architektur)
 
@@ -71,3 +77,9 @@
 === Kosten- und Aufwandschätzung (Infrastruktur, Ressourcen)
 
 === Mögliche Risiken und Massnahmen (Minderung, Behandlung, Akzeptieren)
+
+
+== Sonstige Dokumentation
+
+* Konsistenz: dürfen wir selbst definieren, wie konsistent die Daten sein müssen
+
