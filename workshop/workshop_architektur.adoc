@@ -4,6 +4,8 @@
 
 ==== In welchem Unternehmen, Projekt, System stellt sich das Problem?
 
+* Unternehmen Mobiliar : Umgang mit den Kundenschadendaten
+
 ==== Worin besteht genau das zu lösende Problem (Scope)?
 
 ==== Wer sind die Interessenvertreter?
