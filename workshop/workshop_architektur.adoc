@@ -66,7 +66,79 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 
 === Gewichtete Bewertungskriterien, nach denen die Varianten beurteilt werden
 
-*
+
+|===
+| Bewertungskriterium | Gewichtung | Beschreibung
+
+| Genug passende Mitarbeiter
+| 1
+| Verfügeb wir über genügend Mitarbeiter um die Variante zu implementieren
+
+| Verfügen wir im gewählten Bereich über Know-How
+| 1
+| Haben wir mit der Technologie bereits Erfahrungen gesammelt
+
+| Kann die Lösung eingekauft werden
+| 1
+| Wenn wir ein fertiges Produkt einkaufen, müssen wir nichts entwickeln
+
+| Realisierungsaufwand
+| 1
+| Wie aufwendig ist die Lösung zu bauen
+
+| Wartbarkeit
+| 1
+| -
+
+| Integrierbar in unsere IT-Landschaft
+| 1
+| Kann das Produkt nahtlos in unsere bestehende Landschaft integriert werden
+
+| Skalierbarkeit
+| 1
+| Skaliert das Produkt mit wachsender Anzahl von Requests
+
+| Sicherheit
+| 1
+| -
+
+| Verfügbarkeit
+| 1
+| -
+
+| Stabilitäöt
+| 1
+| -
+
+| Erweiterbarkeit
+| 1
+| -
+
+| Mengengerüst
+| 1
+| -
+
+| Redundanz
+| 1
+| -
+
+| Backup
+| 1
+| -
+
+| Konsistenz
+| 1
+| -
+
+| Prüfbarkeit
+| 1
+| -
+
+| Analysierbarkeit
+| 1
+| -
+
+|===
 
 === Begründete Bewertung der verschiedenen Varianten in einer Bewertungsmatrix
 
