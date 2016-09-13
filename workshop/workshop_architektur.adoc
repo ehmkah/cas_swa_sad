@@ -32,6 +32,7 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 ==== Welche wichtigsten Architekturziele sollen mit der Lösung erreicht werden?
 
 
+
 == Lösungsvarianten
 
 === Variante 1
@@ -176,4 +177,3 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 * Topdown approach (vom abstrakten zum konkreten)
 
 
-* Varianten
