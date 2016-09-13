@@ -60,7 +60,7 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 ==== Vor- und Nachteile
 ==== Risiken
 
-==Auswertung
+== Auswertung
 
 === Variantenbewertung
 
