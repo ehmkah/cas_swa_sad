@@ -1,0 +1,17 @@
+== Abgreifen
+
+=== Varianten 1
+
+* Vor der Fachanwendung wird der Aufruf
+* Vorwebservice, Proxy Zwischen Präsentationsschicht und Fachanwendung
+* Alle Requests protokollieren
+
+
+=== Varianten 2
+
+*
+
+=== Variante 3
+
+* Bibliothek zur Verfügung stellen
+* jede Fachanwendung muss Bibliothek aufrufen

@@ -8,7 +8,7 @@
 
 ==== Worin besteht genau das zu lösende Problem (Scope)?
 
-* Umgang mit den Schadens
+* Umgang mit den Schadensdaten
 
 ==== Wer sind die Interessenvertreter?
 
@@ -19,6 +19,11 @@ Die Protokolldaten dürfen von Fachdaten geographisch getrennt gespeichert werde
 Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 
 ==== Technische Randbedingungen (z.B. Applikationsplattform, Referenz-Architektur)
+
+* Technologie JEE
+* Applikationsserver JBoss
+* Datenbank Orcale/ PostgresSQL
+* Standarprotokoll SOAP/REST
 
 ==== Organisatorische Randbedingungen
 
@@ -169,3 +174,6 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 ** Löschen
 
 * Topdown approach (vom abstrakten zum konkreten)
+
+
+* Varianten
