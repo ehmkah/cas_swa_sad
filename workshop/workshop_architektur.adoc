@@ -8,7 +8,7 @@
 
 ==== Worin besteht genau das zu lösende Problem (Scope)?
 
-* Umgang mit den Schadens
+* Umgang mit den Schadensdaten
 
 ==== Wer sind die Interessenvertreter?
 
@@ -20,11 +20,19 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 
 ==== Technische Randbedingungen (z.B. Applikationsplattform, Referenz-Architektur)
 
+* Technologie JEE
+* Applikationsserver JBoss
+* Datenbank Orcale/ PostgresSQL
+* Standarprotokoll SOAP/REST
+* ESB Bus darf eingesetzt werden
+* kein Cachen von Daten aus dem Backend
+
 ==== Organisatorische Randbedingungen
 
 === Architekturziele
 
 ==== Welche wichtigsten Architekturziele sollen mit der Lösung erreicht werden?
+
 
 
 == Lösungsvarianten
@@ -60,7 +68,7 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 ==== Vor- und Nachteile
 ==== Risiken
 
-==Auswertung
+== Auswertung
 
 === Variantenbewertung
 
@@ -169,3 +177,5 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 ** Löschen
 
 * Topdown approach (vom abstrakten zum konkreten)
+
+
