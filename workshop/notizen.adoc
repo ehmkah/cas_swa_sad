@@ -67,6 +67,10 @@
 
 * Dateien Löschen, je nach Tag
 
+=== Variante L3
+
+* Dateien Löschen, je nach Tag, automatisch
+
 
 == Anforderungen
 
