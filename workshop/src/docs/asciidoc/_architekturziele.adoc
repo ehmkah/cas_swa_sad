@@ -16,8 +16,8 @@ Es muss sichergestellt werden, dass die protokollierten Daten nicht verändert k
 
 ==== Stabilität
 
-Fehler in der Implementierung der Protokollierung dürfen zu keinen Fehlern in den Fachanwendungen führen.
-Die Verfügbarkeit der Fachanwendungen darf nicht wegen der Protokollierung beeinflusst werden.
+Fehler in der Implementierung der Protokollierung dürfen zu keinen Fehlern in den Fachapplikationen führen.
+Die Verfügbarkeit der Fachapplikationen darf nicht wegen der Protokollierung beeinflusst werden.
 
 ==== Zeitverhalten
 
@@ -26,4 +26,4 @@ Die Protokollierung muss drei Millionen Anfragen an einem Tag verarbeiten könne
 
 ==== Interoperabilität
 
-Die Protokollierung muss so implementiert werden, dass neue Fachanwendungen  leicht angebunden werden können.
+Die Protokollierung muss so implementiert werden, dass neue Fachapplikationen  leicht angebunden werden können.
