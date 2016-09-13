@@ -29,7 +29,7 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 
 ==== Organisatorische Randbedingungen
 
-=== Architekturziele
+include::_architekturziele.adoc[]
 
 ==== Welche wichtigsten Architekturziele sollen mit der Lösung erreicht werden?
 
