@@ -44,7 +44,7 @@ header:
     left: image:logo.png[width=100]
     center: Software Architektur Antrag
   verso_content:
-    left: image:ots-logo.png[width=100]
+    left: image:logo.png[width=100]
     center: Software Architektur Antrag
 footer:
   height: 0.75in
