@@ -1,6 +1,7 @@
 |===
 
-| Anzahl        | Getränke  | Preis | Summe | Rechnungsempfänger
+| Anzahl        | Betreff  | Preis | Summe | Rechnungsempfänger
 | 6             | Bier      | 5.00  | 30.00 | Chrigu & Frank (wegen Abwesenheit)
+| 4             | Mittagessen      | 20.00  | 80.00 | Michael (wegen Abwesenheit)
 
 |===
