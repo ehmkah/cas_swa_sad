@@ -17,7 +17,7 @@ Es muss sichergestellt werden, dass die protokollierten Daten nicht verändert k
 ==== Stabilität
 
 Fehler in der Implementierung der Protokollierung dürfen zu keinen Fehlern in den Fachanwendungen führen.
-Die Verfügbarkeit der Fachlichen Anwendungen darf nicht wegen der Protokollierung beeinflusst werden.
+Die Verfügbarkeit der Fachanwendungen darf nicht wegen der Protokollierung beeinflusst werden.
 
 ==== Zeitverhalten
 
