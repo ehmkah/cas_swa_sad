@@ -41,8 +41,10 @@ header:
   vertical_align: center
   image_vertical_align: 2
   recto_content:
+    left: image:logo.png[width=100]
     center: Software Architektur Antrag
   verso_content:
+    left: image:ots-logo.png[width=100]
     center: Software Architektur Antrag
 footer:
   height: 0.75in
