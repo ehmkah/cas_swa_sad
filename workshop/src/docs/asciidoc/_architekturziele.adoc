@@ -1,0 +1,30 @@
+=== Architekturziele
+
+Die folgenden Architekturziele sollen mit der Lösung erreicht werden.
+Sie sind nach Ihrer Wichtigkeit aufgeführt
+
+==== Zeitverhalten
+
+Die Performanz darf wegen der Protokollierung sich nicht zu viel verschlechtern.
+Die Protokollierung muss drei Millionen Anfragen an einem Tag verarbeiten können.
+
+==== Stabilität
+
+Fehler in der Implementierung der Protokollierung dürfen zu keinen Fehlern in den Fachapplikationen führen.
+Die Verfügbarkeit der Fachapplikationen darf nicht wegen der Protokollierung beeinflusst werden.
+
+==== Sicherheit
+
+Nur der Datenschutzbeauftragte darf die Protokollierungsdaten anschauen.
+Es muss sichergestellt werden, dass die protokollierten Daten nicht verändert können.
+
+==== Interoperabilität
+
+Die Protokollierung muss so implementiert werden, dass neue Fachapplikationen  leicht angebunden werden können.
+
+==== Richtigkeit
+
+Es sollen nur die tatsächlich durchgeführten Änderungen protokolliert werden.
+Die erfassten Protokolldaten müssen vollständig sein.
+Es dürfen keine Daten mutiert oder abgefragt werden, wenn die Protokollierung nicht funktioniert.
+
