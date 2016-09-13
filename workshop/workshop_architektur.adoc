@@ -167,3 +167,5 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 ** Speichern
 ** Abfragen
 ** Löschen
+
+* Topdown approach (vom abstrakten zum konkreten)
