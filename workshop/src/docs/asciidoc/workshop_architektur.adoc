@@ -1,3 +1,11 @@
+// configure DE settings for asciidoc
+include::_config.adoc[]
+
+
+= Software Architektur Antrag "Logging"
+Christian Feuz; Frank Moritz; Jan Klominsky; Michael Krausse; Ye Zhao
+v1.0, 2016-13-09
+
 == Workshop Architekturantrag
 
 === Problemstellung
@@ -41,6 +49,8 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 
 ==== Kontextdiagramm
 
+image::kontext_variante1.png["Kontextdiagramm  Variante 1"]
+
 ==== Möglichst präzise Beschreibung (Schlüsselaspekte)
 
 ==== Technologische Umsetzung
@@ -50,6 +60,8 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 ==== Risiken
 
 === Variante 2
+
+image::kontext_variante2.png["Kontextdiagramm Variante 2"]
 
 ==== Kontextdiagramm
 
@@ -63,6 +75,9 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 
 === Variante 3
 ==== Kontextdiagramm
+
+image::kontext_variante3.png["Kontextdiagramm Variante 2"]
+
 ==== Möglichst präzise Beschreibung (Schlüsselaspekte)
 ==== Technologische Umsetzung
 ==== Vor- und Nachteile
