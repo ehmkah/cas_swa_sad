@@ -195,9 +195,94 @@ image::kontext_variante3.png["Kontextdiagramm Variante 2"]
 
 *Begründung der Gewichtung*
 
-todo
+* Performanz, Verfügbarkeit sind wichtige Architekturziele, darum werden sie mit 10 Punkten bewertet.
+* Skalierbarkeit, Sicherheit, Batchprozesse und Integrierbarkeit werden mit 8 Punkten bewertet, weil sie intergrale Bestandteile der Nicht-Funktionalen Anforderungen sind.
+* Betriebs- und Wartungskosten, die Erfüllung der fachlichen Anforderungen sind wichtiger als die Kosten, daher werden die Kosten nur mit 4 bzw. mit 6 Punkten bewertet. Da die Lebensdauer der Anwendung mehrere Jahre dauert, werden die die laufenden Kosten höher bewertet.
+* Die Software wird nicht ständig erweitert, somit wird die Erweiterbarkeit mit 5 Punkten bewertet.
+* Das Know-How der Mitarbeiter bewerten wir mit 5 Punkten, weil wir nach Bedarf kurzfristig externe Ressourcen  einkaufen  oder mittelfristig die Mitarbeiter  ausbilden können.
+* Die Konfigurierung der Aufbewahrungsfrist wird nicht häufig vorgenommen, somit bewerten wir sie mit 3 Punkten.
+
+
 
 === Begründete Bewertung der verschiedenen Varianten in einer Bewertungsmatrix
+
+*Variante 1*
+
+|===
+| Bewertungskriterium | Begründung | Punkte
+
+| Performanz
+| -
+| -
+
+| Verfügbarkeit Fachapplikation
+| -
+| -
+
+
+| Verfügbarkeit Protokollierung
+| -
+| -
+
+
+| Skalierbarkeit
+| -
+| -
+
+
+| Genug passende Mitarbeiter mit Know-How
+| -
+| -
+
+
+| Realisierungskosten (einmalig)
+| -
+| -
+
+| Betriebs- und Wartungskosten (pro Jahr)
+| -
+| -
+
+| Erweiterbarkeit Protokollierung
+| -
+| -
+
+| Erweiterbarkeit Fachapplikation
+| -
+| -
+
+
+| Integrierbar in unsere IT-Landschaft
+| -
+| -
+
+| Sicherheit
+| -
+| -
+
+| Batchprozesse
+| -
+| -
+
+
+| Konfigurierung der Aufbewahrungsfrist
+| -
+| -
+
+
+| Gesamtbwertung
+| -
+| -
+
+
+|===
+
+
+
+
+
+
+
 
 == Antrag
 
