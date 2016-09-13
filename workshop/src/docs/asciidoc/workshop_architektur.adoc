@@ -91,7 +91,7 @@ image::kontext_variante3.png["Kontextdiagramm Variante 2"]
 
 
 |===
-| Bewertungskriterium | Gewichtung | Variante 1 | Variante 2 | Variante 3 | Beschreibung
+| Bewertungs- kriterium | Gewichtung | Variante 1 | Variante 2 | Variante 3 | Beschreibung
 
 | Performanz
 | 10
