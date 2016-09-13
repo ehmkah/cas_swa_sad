@@ -21,7 +21,7 @@ Die Verfügbarkeit der Fachanwendungen darf nicht wegen der Protokollierung beei
 
 ==== Zeitverhalten
 
-Die Performance darf wegen der Protokollierung sich nicht zu viel verschlechtern.
+Die Performanz darf wegen der Protokollierung sich nicht zu viel verschlechtern.
 Die Protokollierung muss drei Millionen Anfragen an einem Tag verarbeiten können.
 
 ==== Interoperabilität
