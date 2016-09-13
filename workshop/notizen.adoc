@@ -1,0 +1,77 @@
+== Abgreifen
+
+=== Varianten AB1
+
+* Vor der Fachanwendung wird der Aufruf
+* Vorwebservice, Proxy Zwischen Präsentationsschicht und Fachanwendung
+* Alle Requests protokollieren
+* zum Beispiel ESB
+
+=== Varianten AB2
+
+* auf Datenbankebene mit Hilfe eines Triggers
+
+=== Variante AB3
+
+* Bibliothek zur Verfügung stellen
+* jede Fachanwendung muss Bibliothek aufrufen
+
+== Speichern
+
+=== Variante S1
+
+* zentrale Datenbank für alle Fachanwendungen speichern
+
+=== Variante S2
+
+* dezentrale Datenbank für jede Fachanwendung
+
+=== Variante S3
+
+* zentrale Logdatei, pro Tag eine Datei
+
+=== Variante S4
+
+* für jede Fachanwendung eine eigene Logdatei, pro Tag eine Datei
+
+=== Variante S5
+
+* Queue asynchron speichern
+
+== Abfragen
+
+=== Variante A1
+
+* Einsetzen von Logauswertungstools (Splunk, ELK-Stack)
+
+=== Variante A2
+
+* Eigene Anwendung bauen
+* Reportingtool verwenden
+
+=== Variante A3
+
+* Direkter lesender Zugriff auf Datenbank
+
+== Löschen
+
+=== Variante L1
+
+* Cronjob/ Batch der täglich läuft und die alten Daten löscht
+
+=== Variante L2
+
+* Manuelles Löschen der Daten
+
+=== Variante L3
+
+* Dateien Löschen, je nach Tag
+
+=== Variante L3
+
+* Dateien Löschen, je nach Tag, automatisch
+
+
+== Anforderungen
+
+* ohne Protokollierung gibt es keine Mutation
