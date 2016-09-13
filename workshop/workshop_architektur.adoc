@@ -160,4 +160,10 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 ** CQRS
 ** Aspect Orientierted Einbau
 
-
+* Teilprobleme
+** Fragen
+*** Wo/ wie?, Abhängigkeiten
+** Abreifen
+** Speichern
+** Abfragen
+** Löschen
