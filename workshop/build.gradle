@@ -22,6 +22,8 @@ asciidoctor {
     //backends    'html5'
     attributes	'build-gradle': file('build.gradle'),
             'sourcedir': project.sourceSets.main.java.srcDirs[0],
+            'pdf-stylesdir': 'themes',
+            'pdf-style': 'custom',
             'endpoint-url': 'http://example.org',
             'source-highlighter' : 'coderay',
             'imagesdir':'./images',

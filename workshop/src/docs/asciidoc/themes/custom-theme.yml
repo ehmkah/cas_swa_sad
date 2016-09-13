@@ -1,0 +1,66 @@
+title_page:
+  align: right
+  title_top: 55%
+  title_font_size: $heading_h1_font_size
+  title_font_color: 999999
+  title_line_height: 0.9
+  subtitle_font_size: $heading_h3_font_size
+  subtitle_font_style: bold_italic
+  subtitle_line_height: 1
+  authors_margin_top: $base_font_size * 1.25
+  authors_font_size: $base_font_size_large
+  authors_font_color: 181818
+  revision_margin_top: $base_font_size * 1.25
+toc:
+  dot_leader:
+    color: #E0E0E0
+page:
+  layout: portrait
+  margin: [1.2in, 1in, 1.2in, 1in]
+  size: A4
+base:
+  align: justify
+  font_size: 11
+  font_family: Times-Roman
+  font_color: #333333
+  line_height_length: 12
+  line_height: $base_line_height_length / $base_font_size
+heading:
+  font_family: Helvetica
+  font_color: #0080c0
+  font_size: 17
+  font_style: bold
+  line_height: 1.2
+link:
+  font_color: #0000ee
+outline_list:
+  indent: $base_font_size * 1.5
+header:
+  height: 0.75in
+  line_height: 1
+  vertical_align: center
+  image_vertical_align: 2
+  recto_content:
+    center: Software Architektur Antrag
+  verso_content:
+    center: Software Architektur Antrag
+footer:
+  height: 0.75in
+  line_height: 1
+  recto_content:
+    center: '*{page-number}*'
+  verso_content:
+    center: '*{page-number}*'
+image:
+  align: center
+caption:
+  align: left
+  font_style: normal
+  font_color: #000001
+  font_size: 12
+table:
+  align: center
+  head:
+    background_color: #f0f0f0
+  even_row:
+    background_color: #f9f9f9
