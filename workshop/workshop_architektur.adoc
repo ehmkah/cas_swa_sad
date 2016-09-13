@@ -24,6 +24,8 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 * Applikationsserver JBoss
 * Datenbank Orcale/ PostgresSQL
 * Standarprotokoll SOAP/REST
+* ESB Bus darf eingesetzt werden
+* kein Cachen von Daten aus dem Backend
 
 ==== Organisatorische Randbedingungen
 

@@ -5,6 +5,7 @@
 * Vor der Fachanwendung wird der Aufruf
 * Vorwebservice, Proxy Zwischen Präsentationsschicht und Fachanwendung
 * Alle Requests protokollieren
+* zum Beispiel ESB
 
 === Varianten AB2
 
@@ -14,7 +15,6 @@
 
 * Bibliothek zur Verfügung stellen
 * jede Fachanwendung muss Bibliothek aufrufen
-
 
 == Speichern
 
@@ -28,11 +28,11 @@
 
 === Variante S3
 
-* zentrale Logdatei
+* zentrale Logdatei, pro Tag eine Datei
 
 === Variante S4
 
-* für jede Fachanwendung eine eigene Logdatei
+* für jede Fachanwendung eine eigene Logdatei, pro Tag eine Datei
 
 === Variante S5
 
@@ -42,9 +42,30 @@
 
 === Variante A1
 
-* Einsetzen von Splunk
+* Einsetzen von Logauswertungstools (Splunk, ELK-Stack)
+
+=== Variante A2
+
+* Eigene Anwendung bauen
+* Reportingtool verwenden
+
+=== Variante A3
+
+* Direkter lesender Zugriff auf Datenbank
 
 == Löschen
+
+=== Variante L1
+
+* Cronjob/ Batch der täglich läuft und die alten Daten löscht
+
+=== Variante L2
+
+* Manuelles Löschen der Daten
+
+=== Variante L3
+
+* Dateien Löschen, je nach Tag
 
 
 == Anforderungen
