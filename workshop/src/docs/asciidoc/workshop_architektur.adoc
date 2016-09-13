@@ -208,21 +208,23 @@ todo
 === Mögliche Risiken und Massnahmen (Minderung, Behandlung, Akzeptieren)
 
 
-== Sonstige Dokumentation
-
-* Konsistenz: dürfen wir selbst definieren, wie konsistent die Daten sein müssen
-* 10 Mal mehr Lesen, als Speichern
-
-* Ansätze
-** CQRS
-** Aspect Orientierted Einbau
-
-* Teilprobleme
-** Fragen
-*** Wo/ wie?, Abhängigkeiten
-** Abreifen
-** Speichern
-** Abfragen
-** Löschen
-
-* Topdown approach (vom abstrakten zum konkreten)
+// Notizen nur zur Information, aber keine ANforderung sie zu liefern
+//
+//== Sonstige Dokumentation
+//
+//* Konsistenz: dürfen wir selbst definieren, wie konsistent die Daten sein müssen
+//* 10 Mal mehr Lesen, als Speichern
+//
+//* Ansätze
+//** CQRS
+//** Aspect Orientierted Einbau
+//
+//* Teilprobleme
+//** Fragen
+//*** Wo/ wie?, Abhängigkeiten
+//** Abreifen
+//** Speichern
+//** Abfragen
+//** Löschen
+//
+//* Topdown approach (vom abstrakten zum konkreten)
