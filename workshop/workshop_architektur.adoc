@@ -154,4 +154,5 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 == Sonstige Dokumentation
 
 * Konsistenz: dürfen wir selbst definieren, wie konsistent die Daten sein müssen
+* 10 Mal mehr Lesen, als Speichern
 
