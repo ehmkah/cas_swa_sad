@@ -1,0 +1,69 @@
+=== Speichern
+
+==== Zentrale Datenbank
+
+Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
+
+|===
+| Vorteile | Nachteile
+
+| Einfach zum Betreiben
+| Zentrale Datenbank kann zum Flaschenhals werden
+
+| ermöglicht schnelle Fachanwendungsübergreifende Abfragen
+| Single Point of failure
+
+| Lizenkosten
+| Höchste Sicherheitsstufe einer Fachanwendung gilt automatisch für alle
+
+| Wartbarkeit
+|
+|===
+
+==== Dezentrale Datenbank
+
+Die Protokollierungsdaten werden bei jeder Fachanwendung (entweder in der Daqtenbank der Fachanwendung, oder eine separaten Datenbank) gespeichert.
+
+|===
+| Vorteile | Nachteile
+
+| Performance beim Schreiben
+| Lizenkosten (können wenn mehr Datenbanken benötigt werden steigen)
+
+| Keine Abhägigkeit zwischen den Fachanwendungen
+|
+
+|===
+
+
+// TODO in morp uebernehmen
+==== Protokollierungsdaten zentral in Datei loggen
+
+Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
+
+|===
+| Vorteile | Nachteile
+
+| Einfach zu imoplementieren
+| eventuell gegenseitige Behinderung, wenn ein Filehandle zwischen Fachanwendungen geshared wird
+
+| Alle Protokollierungsdaten können an einer Stelle zentrale gefunden werden
+|
+
+|
+|
+
+|===
+
+// TODO in morp uebernehmen
+==== Protokollierungsdaten denzentral in Datei speichern
+
+Die Fachanwendungen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei.
+
+|===
+| Vorteile | Nachteile
+
+| Einfach zu imoplementieren
+|
+
+|===

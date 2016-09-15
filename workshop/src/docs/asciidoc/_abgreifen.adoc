@@ -1,0 +1,48 @@
+==== Abgreifen
+
+===== Vor der Fachanwendung
+
+Die Request werden im Proxy protokolliert.
+
+|===
+| Vorteile | Nachteile
+
+| alle Daten weren abgegriffen
+| technisch komplex
+
+|
+| https ist "state less", darum muss muss
+
+
+|===
+
+
+===== Direkt in DB schreiben
+
+Es wird mit Stored Procedures in die DB protokolliert
+
+|===
+| Vorteile | Nachteile
+
+| Jede Mutation wird protokolliert
+| Plattform abhängigkeiten
+
+| Performanz
+| nicht alle Daten verfügbar, z.B. ausführende Fachdomiane
+
+|===
+
+===== Integration in der Fachanwendung
+
+Die Protokollierung findet in der Fachanwendung statt
+
+|===
+| Vorteile | Nachteile
+
+| Flexible, Plattformunabhängig
+| es muss überall eingebunden werden
+
+| Umsysteme werden nicht protokolliert
+|
+
+|===

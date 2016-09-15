@@ -10,6 +10,18 @@ v0.1, 2016-13-09
 
 == Workshop Architekturantrag
 
+//ToDo List:
+//
+//- Longlist Vor- und Nachteile
+//- Weshalb werden diese Varianten gewählt?
+//- Protokollieren bei HTTPS
+//- Verfügbarkeit der einzelnen Lösungen
+//- Wie wird sichergestellt das auf den Fileserver geschrieben wird?
+//- Verbindungsprokolle zwischen den Schichten
+//- Anforderungsmapping ->
+//- Bei Longlist gleich Killerkriterien ausschliessen
+//- Synchroner Aufruf
+
 === Problemstellung
 
 ==== In welchem Unternehmen, Projekt, System stellt sich das Problem?
@@ -47,15 +59,16 @@ include::_architekturziele.adoc[]
 
 == Lösungsvarianten
 
+image::morphologischer_kasten.jpg["Lösungsraum"]
 
 * Blau: Variante 1
 * Rot: Variante 2
 * Grün: Variante 3
 
-image::morphologischer_kasten.jpg["Lösungsraum"]
-
 include::_abgreifen.adoc[]
-
+include::_abfragen.adoc[]
+include::_speichern.adoc[]
+include::_loeschen.adoc[]
 
 
 === Variante 1
@@ -327,3 +340,5 @@ image::kontext_variante3.png["Kontextdiagramm Variante 2"]
 //** Löschen
 //
 //* Topdown approach (vom abstrakten zum konkreten)
+
+// Bei Shortlist auf Anforderungen bezug nehmen, welche Anforderungen werden nicht erfüllt
