@@ -84,3 +84,7 @@ Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelösch
 | darf nicht vergessen werden
 
 |===
+
+===== Fazit
+
+Die Protokollierungsdaten manuell zu löschen wird nicht weiter verfolgt, weil sie zuviele Nachteile haben.
