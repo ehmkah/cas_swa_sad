@@ -53,5 +53,10 @@ Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslic
 | Einfache Implementierung
 | Usability
 
+|
+| Wenn eine zentrale Datenbank für alle Applikationen gemacht wird, kann via SQL auf alle Logdaten zugegriffen werden
+
+|
+|
 
 |===
