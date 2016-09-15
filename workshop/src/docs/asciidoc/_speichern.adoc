@@ -1,6 +1,6 @@
-==== Speichern
+=== Speichern
 
-===== Zentrale Datenbank
+==== Zentrale Datenbank
 
 Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
 
@@ -20,7 +20,7 @@ Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
 |
 |===
 
-===== Dezentrale Datenbank
+==== Dezentrale Datenbank
 
 Die Protokollierungsdaten werden bei jeder Fachanwendung (entweder in der Daqtenbank der Fachanwendung, oder eine separaten Datenbank) gespeichert.
 
