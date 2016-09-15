@@ -1,6 +1,6 @@
 ==== Löschen
 
-===== Cronjob/ Batch löschen der Daten in DB
+===== Cronjob/ Batch löscht Protokollierungsdaten in DB
 
 Ein Batch wird eingerichtet, der direkt auf der Protokollierungsdatenbank, die Daten löscht, die ausserhalb des Speicherungszeitraums liegen
 
@@ -8,7 +8,48 @@ Ein Batch wird eingerichtet, der direkt auf der Protokollierungsdatenbank, die D
 | Vorteile | Nachteile
 
 | Wird automatisch ausgeführt
-| Realisierungskosten
+| Initialkosten
+
+| Korrektes Verhalten durch Automatisierung sichergestellt
+| bei dezentralen Datenbank höherer Aufwand beim Nachziehen der Batches
+
+| Kann leicht getestet werden
+|
+|===
+
+// TODO: in morphokasten anpassen
+===== Anwender löscht Protokollierungsdaten in DB
+
+Die Daten werden manuell durch einen Anwender gelöscht.
+
+|===
+| Vorteile | Nachteile
+
+| kein Implementierungsaufwand
+| Fehleranfällig durch Anwenderinteraktion
+
+| Flexibilität
+| Anwender kann aufgrund falscher Rechte mehr löschen, als er darf
+
+|
+| Organisatorischer Aufwand Schulund der Anwender wie gelöscht wird
+
+|
+| darf nicht vergessen werden
+
+
+|===
+
+// TODO in morpho kasten hinzufügen
+===== Cronjob/ Batch löscht
+
+Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelöscht.
+
+|===
+| Vorteile | Nachteile
+
+| Wird automatisch ausgeführt
+| möglicherweise sind die Protokollierungsdaten in Backups weiterhin verfügbar
 
 | Korrektes Verhalten durch Automatisierung sichergestellt
 |
@@ -16,4 +57,34 @@ Ein Batch wird eingerichtet, der direkt auf der Protokollierungsdatenbank, die D
 | Kann leicht getestet werden
 |
 
+| Einfacher implementierbar als Datenbankbatch
+|
+
 |===
+
+
+// TODO: in morphokasten anpassen
+===== Anwender löscht Protokollierungsdateien manuell
+
+Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelöscht.
+
+|===
+| Vorteile | Nachteile
+
+| Flexibilität
+| Fehleranfällig
+
+|
+| Anwender kann aufgrund falscher Rechte mehr löschen, als er darf
+
+|
+| Organisatorischer Aufwand Schulund der Anwender wie gelöscht wird
+
+|
+| darf nicht vergessen werden
+
+|===
+
+===== Fazit
+
+Die Protokollierungsdaten manuell zu löschen wird nicht weiter verfolgt, weil sie zuviele Nachteile haben.
