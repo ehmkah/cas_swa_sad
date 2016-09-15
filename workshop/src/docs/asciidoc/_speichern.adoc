@@ -8,30 +8,36 @@ Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
 | Vorteile | Nachteile
 
 | Einfach zum Betreiben
-| Zentrale Datenbank kann zum Flaschenhals werden
+| Durch hohe  Last eventuell Performanceprobleme
 
-| ermöglicht schnelle Fachanwendungsübergreifende Abfragen
-| Single Point of failure
+| Ermöglicht schnelle Fachanwendungsübergreifende Abfragen
+| Single Point of Failure
 
-| Lizenkosten
+| Lizenzkosten tiefer, da weniger DB-Instanzen notwendig sind
 | Höchste Sicherheitsstufe einer Fachanwendung gilt automatisch für alle
 
 | Wartbarkeit
-|
+| Keine klare Abgrenzung zwischen den Applikationen (Datenschutz)
+
 |===
 
 ==== Dezentrale Datenbank
 
-Die Protokollierungsdaten werden bei jeder Fachanwendung (entweder in der Daqtenbank der Fachanwendung, oder eine separaten Datenbank) gespeichert.
+Die Protokollierungsdaten werden bei jeder Fachanwendung (entweder innerhalb der Datenbank der Fachanwendung
+oder in einer separaten Datenbank) gespeichert.
 
 |===
 | Vorteile | Nachteile
 
 | Performance beim Schreiben
-| Lizenkosten (können wenn mehr Datenbanken benötigt werden steigen)
+| Lizenzkosten bei einer separaten DB höher, da mehr Instanzen benötigt werden
 
-| Keine Abhägigkeit zwischen den Fachanwendungen
+| Keine Abhägigkeiten zwischen den Fachanwendungen
+| Abfragen über mehrere Anwendungen / Datenbanken aufwendiger
+
+| Performance beim Lesen, da weniger Daten vorhanden sind
 |
+
 
 |===
 
@@ -45,12 +51,12 @@ Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
 | Vorteile | Nachteile
 
 | Einfach zu imoplementieren
-| eventuell gegenseitige Behinderung, wenn ein Filehandle zwischen Fachanwendungen geshared wird
+| Eventuell gegenseitige Behinderung (Lock), wenn ein Filehandle zwischen Fachanwendungen geteilt wird
 
-| Alle Protokollierungsdaten können an einer Stelle zentrale gefunden werden
-|
+| Alle Protokollierungsdaten können an einer Stelle zentral gefunden werden
+| Keine klare Abgrenzung zwischen den Applikationen (Datenschutz)
 
-|
+| Keine Datenbank Lizenzkosten notwendig
 |
 
 |===
@@ -58,15 +64,23 @@ Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
 // TODO in morp uebernehmen
 ==== Protokollierungsdaten dezentral in Datei speichern
 
-Die Fachanwendungen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei.
+Die Fachanwendungen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei. Die Datei könnte auch auf einem
+von allen Applikationen geteilten Folder geschrieben werden, was die Auswertung über mehrere Applikationen erleichtert.
 
 |===
 | Vorteile | Nachteile
 
-| Einfach zu imoplementieren
+| Einfach zu implementieren
+| Daten liegen verstreut auf den Applikationsservern
+
+| Fachanwendungen behindern sich nicht gegenseitig beim Schreiben
+|
+
+| Keine Datenbank Lizenzkosten notwendig
 |
 
 |===
+
 
 ==== Queue
 
@@ -79,3 +93,10 @@ Die Protokollierungsdaten werden in eine persistence Queue geschrieben.
 | Queue als Technologie komplexer
 
 |===
+
+Fazit: Die Variante mit einer zentralen Datei schliessen wir wegen der gegenseitigen Schreibbehinderung aus.
+Damit die Anforderungen an die Protokollierung zuverlässig gewährleistet werden können, wird der
+ einfachere Ansatz mit einer synchronen Implementierung gewählt.
+ Die Variante mit der Queue wird deshalb nicht weiter verfolgt.
+
+// TODO: Service-Call für die Loganwendung (siehe kontext-diagramme) berücksichtigen

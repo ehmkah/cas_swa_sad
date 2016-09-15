@@ -1,48 +1,68 @@
 ==== Abgreifen
 
+
 ===== Vor der Fachanwendung
 
-Die Request werden im Proxy protokolliert.
+Die Requests werden im Proxy protokolliert.
 
 |===
 | Vorteile | Nachteile
 
-| alle Daten weren abgegriffen
-| technisch komplex
+| Alle Requests werden abgegriffen
+| Technisch komplex
 
+| Keine Implementierung auf Anwendungsebene notwendig
+| Je nach Anfrage nicht alle benötigten Log-Informationen vorhanden
+
+// TODO muss muss muss noch überarbeitet werden
 |
 | https ist "state less", darum muss muss
 
-
 |===
 
-
+// TODO: Abbildung anpassen
 ===== Direkt in DB schreiben
 
-Es wird mit Stored Procedures in die DB protokolliert
+Die Datenbankabfragen werden via Stored Procedures gemacht. Innerhalb der Prozeduren wird der Request
+ in eine Tabelle gespeichert. Alternativ könnte eine Stored Procedure auch eine Java-Funktion aufrufen,
+ was aber aus architektonischer Sicht nicht sinnvoll ist. Diese Lösung bietet sich vor allem an, wenn
+ die Logdaten in eine Datenbank geschrieben werden.
 
 |===
 | Vorteile | Nachteile
 
-| Jede Mutation wird protokolliert
-| Plattform abhängigkeiten
+| Jedes DB-Query wird protokolliert
+| Plattform Abhängigkeiten
 
 | Performanz
-| nicht alle Daten verfügbar, z.B. ausführende Fachdomiane
+| Nicht alle Daten verfügbar, z.B. ausführende Fachdomäne
+
+|
+| Für jede Abfrage muss eine Stored-Procedure vorhanden sein
 
 |===
 
 ===== Integration in der Fachanwendung
 
-Die Protokollierung findet in der Fachanwendung statt
+// TODO: Wie wird der Webservice berücksichtigt?
+// TODO: Schreibt die Bibliothek direkt in die DB oder wird ein Service-Call gemacht
+Die Protokollierung findet in der Fachanwendung statt. Es wird eine
+Bibliothek erstellt, die das Protokollieren mit einfachen Aufrufen aus den Fachanwendung
+ermöglicht.
 
+Die gleiche Bibliothek wird in allen Fachanwendungen verwendet.
+
+// TODO: Noch a bisserl was mehr
 |===
 | Vorteile | Nachteile
 
-| Flexible, Plattformunabhängig
-| es muss überall eingebunden werden
+| Flexibel, plattformunabhängig
+| Muss in allen Anwendungen eingebunden werden
 
 | Umsysteme werden nicht protokolliert
+| Schränkt die Implementierungsmöglichkeiten der Fachanwendung ein (von Java auf C#)
+
 |
+| Organisatorische Massnahmen notwendig, damit die Bibliothek in allen notwendigen Fachapplikationen eingebunden wird
 
 |===
