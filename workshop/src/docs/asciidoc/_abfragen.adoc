@@ -1,5 +1,4 @@
-// TODO:
-==== Abgreifen
+==== Abfragen
 
 ===== Logtool
 
@@ -8,6 +7,8 @@ verfügbare Tools (ELK-Stack), mit denene Logdateien von Applikationen schnell u
 Die Applikationen könnten dabei die Requests in eigene Logdateien schreiben, die dann vom Logtool indexiert würden.
  kann man feingranular konfigurieren, welcher  Benutzer auf welche Logdateien zugreifen kann.
 
+ Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Logdateien Sinn.
+
 |===
 | Vorteile | Nachteile
 
@@ -15,34 +16,34 @@ Die Applikationen könnten dabei die Requests in eigene Logdateien schreiben, di
 | Kommerzielle Lösungen (Splunk) sehr teuer bei grossen Datenmengen
 
 | Keine Eigenentwicklung notwendig
-|
+| Keine strickte Trennung zwischen Applikationslogdaten (z.B. Fehler, Warnungen) und den Protokolldaten
 
-|
-|
 
 |===
 
 ===== Eigene Anwendung
 
 Für die Auswertung wird eine eigene, auf die spezifischen Fachbedürfnisse zugeschnittene Applikation gebaut.
-Die Applikation kann dabei entweder intern oder von einem Dienstleister gebaut werden.
+Die Applikation kann dabei entweder intern oder von einem externen Dienstleister im Rahmen eines Auftrages entwickelt werden.
 
 |===
 | Vorteile | Nachteile
 
-| Bedarfsgerechte Lösung notwendig
-| Hoher Initialaufwand
+| Bedarfsgerechte Lösung möglich
+| Hoher finanzieller Initialaufwand
 
 | Kein Vendor-Lockin
 | Weiterentwicklung  muss selbst gesteuert werden
 
+| Sowohl mit DB als auch mit Dateien als Speichermedium möglich
+|
 
 |===
 
 ===== Plain SQL-Abfragen
 
 Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslich Leserechten auf die Logtabellen
- gegeben. Diese Variante ist nur sinnvoll wenn die Persistierung der Logdatne in der Datenbank gemacht wird.
+ gegeben. Diese Variante ist nur sinnvoll wenn die Persistierung der Logdateien in der Datenbank gemacht wird.
 
 |===
 | Vorteile | Nachteile
@@ -50,7 +51,7 @@ Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslic
 | Viele Auswertungsmöglichkeiten dank SQL
 | SQL Know-How nötig
 
-| Einfache Implementierung
+| Wenig Implementierungsaufwand
 | Usability
 
 |

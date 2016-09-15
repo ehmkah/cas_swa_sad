@@ -1,20 +1,23 @@
 === Löschen
 
-==== Cronjob/ Batch löscht Protokollierungsdaten in DB
+==== Cronjob / Batch löscht Protokollierungsdaten in DB
 
-Ein Batch wird eingerichtet, der direkt auf der Protokollierungsdatenbank, die Daten löscht, die ausserhalb des Speicherungszeitraums liegen
+Ein Batch wird eingerichtet, der direkt auf der Protokollierungsdatenbank die Daten
+die ausserhalb des Speicherungszeitraums liegen löscht.
 
 |===
 | Vorteile | Nachteile
 
-| Wird automatisch ausgeführt
-| Initialkosten
+| Wird automatisch und zuverlässig ausgeführt
+| Initialkosten für die Entwicklung des Batches (im Vergleich zum manuellen Löschen)
 
 | Korrektes Verhalten durch Automatisierung sichergestellt
-| bei dezentralen Datenbank höherer Aufwand beim Nachziehen der Batches
+| Bei dezentralen Datenbank höherer Verwaltungsaufwand der Batches, da mehrere Datenbanken verwaltet werden müssen.
 
-| Kann leicht getestet werden
-|
+| Kann leicht getestet und nachvollzogen werden
+| möglicherweise sind die Protokollierungsdaten in Backups weiterhin verfügbar
+
+
 |===
 
 // TODO: in morphokasten anpassen
@@ -32,16 +35,18 @@ Die Daten werden manuell durch einen Anwender gelöscht.
 | Anwender kann aufgrund falscher Rechte mehr löschen, als er darf
 
 |
-| Organisatorischer Aufwand Schulund der Anwender wie gelöscht wird
+| Organisatorischer Aufwand für die Schulung des Anwenders
 
 |
-| darf nicht vergessen werden
+| Löschung nicht gewährleistet (Ferien, Wochenende, Krankheit, etc)
 
 
 |===
 
+Diese Variante wird aus Gründen der Praktikabilität verworfen.
+
 // TODO in morpho kasten hinzufügen
-==== Cronjob/ Batch löscht
+==== Cronjob / Batch löscht Log-Dateien
 
 Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelöscht.
 
@@ -55,9 +60,6 @@ Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelösch
 |
 
 | Kann leicht getestet werden
-|
-
-| Einfacher implementierbar als Datenbankbatch
 |
 
 |===
@@ -78,14 +80,17 @@ Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelösch
 | Anwender kann aufgrund falscher Rechte mehr löschen, als er darf
 
 |
-| Organisatorischer Aufwand Schulund der Anwender wie gelöscht wird
+| Organisatorischer Aufwand für die Schulung des Anwenders
 
 |
-| darf nicht vergessen werden
+| Löschung nicht gewährleistet (Ferien, Wochenende, Krankheit, etc)
 
 |===
 
 ==== Fazit
 
 Die Protokollierungsdaten manuell zu löschen wird nicht weiter verfolgt, weil sie zuviele Nachteile haben.
-Ausserdem ist beim manuellen Löschen fehleranfällig und intransparent, was die Anwender gewlöscht haben.
+Ausserdem ist der Vorgang beim manuellen Löschen fehleranfällig und intransparent, weil nicht nachvollzogen werden kann,
+was der Anwender gelöscht hat.
+
+Bei der Löschung sollte ausserdem abgeklärt werden, wie mit den Daten auf externen Backup-Medien umgegangen wird.
