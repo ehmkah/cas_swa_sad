@@ -53,6 +53,9 @@ image::morphologischer_kasten.jpg["Lösungsraum"]
 * Rot: Variante 2
 * Grün: Variante 3
 
+include::_loeschen.adoc[]
+
+
 === Variante 1
 
 ==== Kontextdiagramm
@@ -98,6 +101,8 @@ image::kontext_variante3.png["Kontextdiagramm Variante 2"]
 === Gewichtete Bewertungskriterien, nach denen die Varianten beurteilt werden
 
 
+
+[cols="1,1,1,1,1,5]
 |===
 | Bewertungs- kriterium | Gewichtung | Variante 1 | Variante 2 | Variante 3 | Beschreibung
 

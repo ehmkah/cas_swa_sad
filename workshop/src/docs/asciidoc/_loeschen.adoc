@@ -1,0 +1,19 @@
+==== Löschen
+
+===== Cronjob/ Batch löschen der Daten in DB
+
+Ein Batch wird eingerichtet, der direkt auf der Protokollierungsdatenbank, die Daten löscht, die ausserhalb des Speicherungszeitraums liegen
+
+|===
+| Vorteile | Nachteile
+
+| Wird automatisch ausgeführt
+| Realisierungskosten
+
+| Korrektes Verhalten durch Automatisierung sichergestellt
+|
+
+| Kann leicht getestet werden
+|
+
+|===
