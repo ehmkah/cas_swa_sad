@@ -1,0 +1,42 @@
+==== Speichern
+
+===== Zentrale Datenbank
+
+Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
+
+|===
+| Vorteile | Nachteile
+
+| Einfach zum Betreiben
+| Zentrale Datenbank kann zum Flaschenhals werden
+
+| ermöglicht schnelle Fachanwendungsübergreifende Abfragen
+| Single Point of failure
+
+| Lizenkosten
+| Höchste Sicherheitsstufe einer Fachanwendung gilt automatisch für alle
+
+| Wartbarkeit
+|
+|===
+
+===== Dezentrale Datenbank
+
+Die Protokollierungsdaten werden bei jeder Fachanwendung (entweder in der Daqtenbank der Fachanwendung, oder eine separaten Datenbank) gespeichert.
+
+|===
+| Vorteile | Nachteile
+
+| Performance beim Schreiben
+| Lizenkosten (können wenn mehr Datenbanken benötigt werden steigen)
+
+| Keine Abhägigkeit zwischen den Fachanwendungen
+| Wartbarkeit schlechter
+
+| Sicherheitsstufe lässt sich individuell pro Fachanwendung einstellen
+|
+
+|
+|
+
+|===
