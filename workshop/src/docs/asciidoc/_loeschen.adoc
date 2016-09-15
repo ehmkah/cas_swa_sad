@@ -1,6 +1,6 @@
-==== Löschen
+=== Löschen
 
-===== Cronjob/ Batch löscht Protokollierungsdaten in DB
+==== Cronjob/ Batch löscht Protokollierungsdaten in DB
 
 Ein Batch wird eingerichtet, der direkt auf der Protokollierungsdatenbank, die Daten löscht, die ausserhalb des Speicherungszeitraums liegen
 
@@ -18,7 +18,7 @@ Ein Batch wird eingerichtet, der direkt auf der Protokollierungsdatenbank, die D
 |===
 
 // TODO: in morphokasten anpassen
-===== Anwender löscht Protokollierungsdaten in DB
+==== Anwender löscht Protokollierungsdaten in DB
 
 Die Daten werden manuell durch einen Anwender gelöscht.
 
@@ -41,7 +41,7 @@ Die Daten werden manuell durch einen Anwender gelöscht.
 |===
 
 // TODO in morpho kasten hinzufügen
-===== Cronjob/ Batch löscht
+==== Cronjob/ Batch löscht
 
 Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelöscht.
 
@@ -64,7 +64,7 @@ Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelösch
 
 
 // TODO: in morphokasten anpassen
-===== Anwender löscht Protokollierungsdateien manuell
+==== Anwender löscht Protokollierungsdateien manuell
 
 Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelöscht.
 
@@ -85,6 +85,6 @@ Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelösch
 
 |===
 
-===== Fazit
+==== Fazit
 
 Die Protokollierungsdaten manuell zu löschen wird nicht weiter verfolgt, weil sie zuviele Nachteile haben.

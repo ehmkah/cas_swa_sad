@@ -65,9 +65,9 @@ image::morphologischer_kasten.jpg["Lösungsraum"]
 * Rot: Variante 2
 * Grün: Variante 3
 
-include::_abfragen.adoc[]-
-
-include::_loeschen.adoc[]-
+include::_abfragen.adoc[]
+include::_speichern.adoc[]
+include::_loeschen.adoc[]
 
 
 === Variante 1
@@ -341,3 +341,5 @@ image::kontext_variante3.png["Kontextdiagramm Variante 2"]
 //** Löschen
 //
 //* Topdown approach (vom abstrakten zum konkreten)
+
+// Bei Shortlist auf Anforderungen bezug nehmen, welche Anforderungen werden nicht erfüllt
