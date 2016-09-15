@@ -1,10 +1,12 @@
 // configure DE settings for asciidoc
 include::_config.adoc[]
 
+:title-logo-image: image:logo.png[Logo][scaledwidth=100%,align=right]
+
 
 = Software Architektur Antrag "Logging"
 Christian Feuz; Frank Moritz; Jan Klominsky; Michael Krausse; Ye Zhao
-v1.0, 2016-13-09
+v0.1, 2016-13-09
 
 == Workshop Architekturantrag
 
@@ -44,6 +46,12 @@ include::_architekturziele.adoc[]
 
 
 == Lösungsvarianten
+
+image::morphologischer_kasten.jpg["Lösungsraum"]
+
+* Blau: Variante 1
+* Rot: Variante 2
+* Grün: Variante 3
 
 === Variante 1
 
