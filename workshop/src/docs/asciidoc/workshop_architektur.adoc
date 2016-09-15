@@ -10,6 +10,18 @@ v0.1, 2016-13-09
 
 == Workshop Architekturantrag
 
+//ToDo List:
+//
+//- Longlist Vor- und Nachteile
+//- Weshalb werden diese Varianten gewählt?
+//- Protokollieren bei HTTPS
+//- Verfügbarkeit der einzelnen Lösungen
+//- Wie wird sichergestellt das auf den Fileserver geschrieben wird?
+//- Verbindungsprokolle zwischen den Schichten
+//- Anforderungsmapping ->
+//- Bei Longlist gleich Killerkriterien ausschliessen
+//- Synchroner Aufruf
+
 === Problemstellung
 
 ==== In welchem Unternehmen, Projekt, System stellt sich das Problem?
