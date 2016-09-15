@@ -31,12 +31,39 @@ Die Protokollierungsdaten werden bei jeder Fachanwendung (entweder in der Daqten
 | Lizenkosten (können wenn mehr Datenbanken benötigt werden steigen)
 
 | Keine Abhägigkeit zwischen den Fachanwendungen
-| Wartbarkeit schlechter
+|
 
-| Sicherheitsstufe lässt sich individuell pro Fachanwendung einstellen
+|===
+
+
+// TODO in morp uebernehmen
+==== Protokollierungsdaten zentral in Datei loggen
+
+Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
+
+|===
+| Vorteile | Nachteile
+
+| Einfach zu imoplementieren
+| eventuell gegenseitige Behinderung, wenn ein Filehandle zwischen Fachanwendungen geshared wird
+
+| Alle Protokollierungsdaten können an einer Stelle zentrale gefunden werden
 |
 
 |
+|
+
+|===
+
+// TODO in morp uebernehmen
+==== Protokollierungsdaten denzentral in Datei speichern
+
+Die Fachanwendungen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei.
+
+|===
+| Vorteile | Nachteile
+
+| Einfach zu imoplementieren
 |
 
 |===
