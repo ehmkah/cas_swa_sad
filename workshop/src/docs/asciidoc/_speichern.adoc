@@ -56,7 +56,7 @@ Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
 |===
 
 // TODO in morp uebernehmen
-==== Protokollierungsdaten denzentral in Datei speichern
+==== Protokollierungsdaten dezentral in Datei speichern
 
 Die Fachanwendungen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei.
 
