@@ -67,3 +67,16 @@ Die Fachanwendungen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei
 |
 
 |===
+
+
+==== Queue
+
+Die Protokollierungsdaten werden in eine persistence Queue geschrieben.
+
+|===
+| Vorteile | Nachteile
+
+| Protokollierungsdaten werden asynchron geschrieben und asynchron verarbeitet werden
+| Queue als Technologie komplexer
+
+|===
