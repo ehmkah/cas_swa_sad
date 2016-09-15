@@ -53,7 +53,9 @@ image::morphologischer_kasten.jpg["Lösungsraum"]
 * Rot: Variante 2
 * Grün: Variante 3
 
-include::_loeschen.adoc[]
+include::_abfragen.adoc[]-
+
+include::_loeschen.adoc[]-
 
 
 === Variante 1
