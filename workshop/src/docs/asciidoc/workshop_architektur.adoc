@@ -330,6 +330,12 @@ Da die Lebensdauer der Applikation mehrere Jahre dauert, werden die die laufende
 |===
 
 
+include::_begruendungV1.adoc[]
+
+include::_begruendungV2.adoc[]
+
+include::_begruendungV3.adoc[]
+
 include::_begruendungV4.adoc[]
 
 
