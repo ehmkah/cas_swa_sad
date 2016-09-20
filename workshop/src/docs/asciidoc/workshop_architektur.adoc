@@ -354,7 +354,7 @@ include::_antrag.adoc[]
 * JSR-352 : Standard für die Erstellung von Batches im Java Ökosystemen. https://jcp.org/en/jsr/detail?id=352
 * Splunk : Kommerzielles Tool für Auswertung von Logdateien. https://www.splunk.com/
 
-// Notizen nur zur Information, aber keine ANforderung sie zu liefern
+// Notizen nur zur Information, aber keine ANforderung sie zu gewliefern
 //
 //== Sonstige Dokumentation
 //
