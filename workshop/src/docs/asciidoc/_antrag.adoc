@@ -7,7 +7,7 @@ In unserer Bewertung liegen Variante3 und Variante 4 dicht beieinander.
 Beide erfüllen die fachlichen Anforderungen, wobei für die Realisierung von Variante 3 auf ein Standardprodukt zurückgegriffen werden kann.
 Damit sparen wir erheblich Entwicklungsaufwände und können schneller die Prokollierungsdaten erfassen.
 
-=== Kosten- und Aufwandschätzung (Infrastruktur, Ressourcen)
+=== Kosten- und Aufwandschätzung
 
 ==== Realisierungskosten
 
