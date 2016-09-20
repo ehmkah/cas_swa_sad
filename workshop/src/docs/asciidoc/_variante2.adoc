@@ -42,7 +42,7 @@ Der Datenschutzbeauftragte muss somit keine Software lokal installieren und aktu
 - Relativ hoher Aufwand, da alle Teile selbst entwickelt werden müssen
 - Die Bibliothek muss in jede Applikation eingefügt werden.
 Eine neue Deploymenteinheit ist für jede Fachapplikation notwendig.
-- Alle Protokolldaten sind zentral in einer Datenbank (Datenschutz, Abgrenzung zwischen den Fachapplikationen)
+- Alle Protokollierungsdaten sind zentral in einer Datenbank (Datenschutz, Abgrenzung zwischen den Fachapplikationen)
 
 ===== Risiken
 

@@ -54,7 +54,7 @@ Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Lo
 | Kommerzielle Lösungen (_Splunk_) teuer bei grossen Datenmengen (10 GB pro Tag 7800 USD)
 
 | Keine Eigenentwicklung notwendig
-| Keine strikte Trennung zwischen Applikationslogdaten (z.B. Fehler, Warnungen) und den Protokolldaten
+| Keine strikte Trennung zwischen Applikationslogdaten (z.B. Fehler, Warnungen) und den Protokollierungsdaten
 
 
 |===

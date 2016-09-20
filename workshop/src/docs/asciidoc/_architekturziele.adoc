@@ -25,5 +25,5 @@ Die Protokollierung muss so implementiert werden, dass neue Fachapplikationen le
 ==== Richtigkeit
 
 Es sollen nur die tatsächlich durchgeführten Änderungen protokolliert werden.
-Die erfassten Protokolldaten müssen vollständig sein.
+Die erfassten Protokollierungsdaten müssen vollständig sein.
 Es dürfen keine Daten mutiert oder abgefragt werden, wenn die Protokollierung nicht funktioniert.

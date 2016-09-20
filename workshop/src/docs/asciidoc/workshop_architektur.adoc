@@ -7,8 +7,6 @@ include::_config.adoc[]
 Christian Feuz; Frank Moritz; Jan Klominsky; Michael Krausse; Ye Zhao
 v 1.0, 2016-20-09
 
-== Workshop Architekturantrag
-
 //ToDo List:
 //- Longlist Vor- und Nachteile
 //- Weshalb werden diese Varianten gewählt?
@@ -21,10 +19,6 @@ v 1.0, 2016-20-09
 //- Synchroner Aufruf
 
 include::_problemstellung.adoc[]
-
-include::_randbedingungen.adoc[]
-
-include::_architekturziele.adoc[]
 
 include::_loesungsvarianten.adoc[]
 
