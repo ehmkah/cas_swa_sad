@@ -1,6 +1,7 @@
 
-*Variante 4*
+==== Variante 4
 
+[cols="2,4,1"]
 |===
 | Bewertungskriterium | Begründung | Punkte
 
