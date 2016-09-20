@@ -28,7 +28,7 @@ Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslic
 | Vorteile | Nachteile
 
 | Viele Auswertungsmöglichkeiten dank SQL
-| SQL Know-How nötig
+| SQL Know-How nötig, lokal installation
 
 | Wenig Implementierungsaufwand
 | Usability
@@ -58,5 +58,9 @@ Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Lo
 
 
 |===
+
+==== Fazit
+Die Protokollierungsdaten mit SQL-Client zu lesen wird nicht weiter verfolgt, weil es SQL Know-How für
+die Datenschutzbeauftragten vorausgesetzt ist.
 
 
