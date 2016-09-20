@@ -308,6 +308,7 @@ Da die Lebensdauer der Applikation mehrere Jahre dauert, werden die die laufende
 == Glossar
 
 * ELK-Stack : Elasticsearch, Logstash, and Kibana, Tool zum Auswerten von Logdateien. https://www.elastic.co/webinars/introduction-elk-stack
+* JSR-352 : Standard für die Erstellung von Batches im Java Ökosystemen. https://jcp.org/en/jsr/detail?id=352
 * Splunk : Kommerzielles Tool für Auswertung von Logdateien. https://www.splunk.com/
 
 // Notizen nur zur Information, aber keine ANforderung sie zu liefern
