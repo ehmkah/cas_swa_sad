@@ -78,6 +78,7 @@ include::_architekturziele.adoc[]
 
 == Lösungsvarianten
 
+.Lösungsraum
 image::morphologischer_kasten.jpg["Lösungsraum"]
 
 * Blau: Variante 1
@@ -94,6 +95,7 @@ include::_loeschen.adoc[]
 
 ==== Kontextdiagramm
 
+.Kontextdiagramm  Variante 1
 image::kontext_variante1.png["Kontextdiagramm  Variante 1"]
 
 ==== Möglichst präzise Beschreibung (Schlüsselaspekte)
@@ -106,6 +108,7 @@ image::kontext_variante1.png["Kontextdiagramm  Variante 1"]
 
 === Variante 2
 
+.Kontextdiagramm Variante 2
 image::kontext_variante2.png["Kontextdiagramm Variante 2"]
 
 ==== Kontextdiagramm
@@ -122,7 +125,8 @@ image::kontext_variante2.png["Kontextdiagramm Variante 2"]
 
 ==== Kontextdiagramm
 
-image::kontext_variante3.png["Kontextdiagramm Variante 2"]
+.Kontextdiagramm Variante 3
+image::kontext_variante3.png["Kontextdiagramm Variante 3"]
 
 ==== Möglichst präzise Beschreibung (Schlüsselaspekte)
 
