@@ -41,4 +41,3 @@ Ausserdem steht sie damit dem Datenschutzbeauftragten stets in der neuesten Form
 ==== Risiken
 
 * wird die zentrale Datenbank manipuliert sind keine Rückschlüsse mehr möglich
-*
