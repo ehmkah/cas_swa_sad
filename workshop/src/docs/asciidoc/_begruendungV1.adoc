@@ -5,19 +5,19 @@
 | Bewertungskriterium | Begründung | Punkte
 
 | Performanz
-| hohe Performanz,
+| Performanz der Fachapplikation wird leicht beeinflusst wegen WebService Aufruf.
 | 4
 
 | Verfügbarkeit Fachapplikation
-|
+| Die Verfügbarkeit der Fachapplikation wird leicht beeinflusst.
 | 3
 
 | Verfügbarkeit Protokollierung
-| Die Daten stehen sofort zur Verfügung
+| Die Daten stehen sofort zur Verfügung.
 | 5
 
 | Skalierbarkeit
-| Gut skalierbar, aber wegen zentral Datenbank kann nicht beliebig skaliert werden
+| Gut skalierbar, aber wegen zentral Datenbank kann nicht beliebig skaliert werden.
 | 4
 
 | Integrierbar in unsere IT-Landschaft
@@ -25,12 +25,12 @@
 | 5
 
 | Sicherheit
-|
+| Die Sicherheit wird durch Vergabe der Berechtigung gewährleistet.
 | 5
 
 
 | Batchprozesse
-| Durch den Proxy wird zentral die Überprüfung vorgenommen
+| Durch den Proxy wird zentral die Überprüfung vorgenommen.
 | 5
 
 | Betriebs- und Wartungskosten (pro Jahr)
@@ -40,20 +40,20 @@ Es gibt bereits ein bestehenden DBMS, daher fallen keine zusätzlichen Lizenzkos
 
 
 | Erweiterbarkeit Protokollierung
-|
+| Fachapplikationen werden durch Proxy nicht beeinflusst.
 | 5
 
 | Erweiterbarkeit Fachapplikation
-|
+| Fachapplikationen werden durch Proxy nicht beeinflusst, es sind keine Änderungen an den Fachapplikationen nötig.
 | 5
 
 | Genug passende Mitarbeiter mit Know-How
-| Hoher Realisierungsaufwand, aber Standardtechnologie
+| Hoher Realisierungsaufwand, aber Standardtechnologie.
 | 2
 
 
 | Realisierungskosten (einmalig)
-| Hoher Realisierungsaufwand, aber Standardtechnologie
+| Hoher Realisierungsaufwand, aber Standardtechnologie.
 | 2
 
 
