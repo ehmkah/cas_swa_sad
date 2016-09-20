@@ -28,17 +28,11 @@ v0.1, 2016-13-09
 
 ==== In welchem Unternehmen, Projekt, System stellt sich das Problem?
 Die Firma *High Five Company* soll für das Unternehmen *Mobiliar Versicherung* eine Softwarearchitektur zur Protokollierung von Abfragen und Mutation der Kundendaten erstellen.
-// Diese Kundendaten sind vertraulich und es muss nachträglich festgestellt werden, zu welchem Zweck die Daten und von wem sie verwendet werden.
 Es soll mithilfe der Protokollierung sichergestellt werden, dass die Mitarbeiter korrekt mit Kundendaten umgehen.
 Änderungen sollen nachvollzogen werden können und Mitarbeiter sollen nicht ohne Auftrag in den Kundendaten suchen.
 
+==== Worin besteht genau das zu lösende Problem?
 
-// * Unternehmen Mobiliar : Umgang mit den Kundenschadendaten
-
-==== Worin besteht genau das zu lösende Problem (Scope)?
-
-// Es soll mithilfe der Protokollierung sichergestellt werden, dass die Mitarbeiter korrekt mit Kundendaten umgehen.
-// Änderungen sollen nachvollzogen werden können und Mitarbeiter sollen nicht ohne Auftrag in den Kundendaten suchen.
 
 *Funktionale Anforderungen*
 
@@ -128,7 +122,7 @@ Von der Mobiliar Versicherung folgende Interessenvertreter einbezogen und müsse
 ==== Technische Randbedingungen (z.B. Applikationsplattform, Referenz-Architektur)
 
 |===
-| Randbedingung | Ausprägung
+| Randbedingung | Beschreibung
 
 | Technologie
 | JEE, Java
@@ -151,6 +145,17 @@ Von der Mobiliar Versicherung folgende Interessenvertreter einbezogen und müsse
 |===
 
 ==== Organisatorische Randbedingungen
+
+|===
+| Randbedinung | Beschreibung
+
+| Homogene IT-Landschaft
+| Die Mobiliar legt Wert darauf, dass die IT-Landschaft so homogen wie möglich bleibt.
+
+| Mitarbeiterpool
+| Die Mobiliar verfügt über eine ausreichend grosse Zahl von qualifizierten Mitarbeitern im Bereich Java
+
+|===
 
 ==== Welche wichtigsten Architekturziele sollen mit der Lösung erreicht werden?
 
