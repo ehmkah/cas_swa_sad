@@ -74,6 +74,6 @@ Bei der "Speicher-Applikation" muss die neue Fachapplikation auch in die Liste e
 
 | Gesamtbewertung
 | -
-| 186
+| 190
 
 |===
