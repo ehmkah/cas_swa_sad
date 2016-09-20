@@ -1,0 +1,69 @@
+
+*Variante 1*
+
+|===
+| Bewertungskriterium | Begründung | Punkte
+
+| Performanz
+| hohe Performanz,
+| 4
+
+| Verfügbarkeit Fachapplikation
+|
+| 3
+
+| Verfügbarkeit Protokollierung
+| Die Daten stehen sofort zur Verfügung
+| 5
+
+| Skalierbarkeit
+| Gut skalierbar, aber wegen zentral Datenbank kann nicht beliebig skaliert werden
+| 4
+
+| Integrierbar in unsere IT-Landschaft
+| Es wird eine bestehende Technologie verwendet und daher gut integrierbar.
+| 5
+
+| Sicherheit
+|
+| 5
+
+
+| Batchprozesse
+| Durch den Proxy wird zentral die Überprüfung vorgenommen
+| 5
+
+| Betriebs- und Wartungskosten (pro Jahr)
+| Es muss den Proxy, Applikation zum lesen und der DB-Job zum löschen gewartet werden.
+Es gibt bereits ein bestehenden DBMS, daher fallen keine zusätzlichen Lizenzkosten an.
+| 3
+
+
+| Erweiterbarkeit Protokollierung
+|
+| 5
+
+| Erweiterbarkeit Fachapplikation
+|
+| 5
+
+| Genug passende Mitarbeiter mit Know-How
+| Hoher Realisierungsaufwand, aber Standardtechnologie
+| 2
+
+
+| Realisierungskosten (einmalig)
+| Hoher Realisierungsaufwand, aber Standardtechnologie
+| 2
+
+
+| Konfigurierung der Aufbewahrungsfrist
+| Die Frist kann beim Löschskript konfiguriert werden.
+| 5
+
+
+| Gesamtbewertung
+| -
+|
+
+|===

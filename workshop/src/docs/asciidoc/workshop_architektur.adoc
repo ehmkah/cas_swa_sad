@@ -90,12 +90,17 @@ Es soll mithilfe der Protokollierung sichergestellt werden, dass die Mitarbeiter
 | Abfragen von automatisch gestarteten Prozessen dürfen nicht protokolliert werden.
 |===
 
+==== Welche Daten werden bei einer Protokollierung gespeichert
+
+image::anforderungen_protokollierungsdaten.png["Protokollierungsdaten"]
+
 ==== Welche Daten werden bei einer Anfrage gespeichert
 
+image::anforderungen_anfrage.png["Speicherung der Daten bei einer Anfrage "]
 
+==== Welche Daten werden bei einer Mutation gespeichert
 
-
-
+image::anforderungen_mutation.png["peicherung der Daten bei einer Mutation "]
 
 ==== Wer sind die Interessenvertreter?
 
@@ -109,7 +114,7 @@ Die Interessenvertreter sind: Mitarbeiter, Datenschutzbeauftragter.
 * Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 
 
-==== Technische Randbedingungen (z.B. Applikationsplattform, Referenzarchitektur)
+==== Technische Randbedingungen (z.B. Applikationsplattform, Referenz-Architektur)
 
 |===
 | Randbedingung | Ausprägung
@@ -179,19 +184,21 @@ include::_variante4.adoc[]
 
 
 .Bewertungstabelle
-[cols="2,1,1,1,1,4"]
+[cols="2,1,1,1,1,1,4"]
 |===
-| Bewertungs- kriterium | Gewich- tung | V1 | V2 | V3 | Beschreibung
+| Bewertungs- kriterium | Gewich- tung | V1 | V2 | V3 | V4| Beschreibung
 
 | Performanz
 | 5
 | -
 | -
 | -
-| Die Protokollierung soll einen möchlichst kleinen Performanceimpact auf die Fachapplikation haben.
+| -
+| Die Protokollierung soll einen möchlichst kleinen Performanzimpact auf die Fachapplikation haben.
 
 | Verfügbarkeit Fachapplikation
 | 5
+| -
 | -
 | -
 | -
@@ -202,10 +209,12 @@ include::_variante4.adoc[]
 | -
 | -
 | -
+| -
 | Die Verfügbarkeit muss so hoch wie möglich sein
 
 | Skalierbarkeit
 | 4
+| -
 | -
 | -
 | -
@@ -216,10 +225,12 @@ include::_variante4.adoc[]
 | -
 | -
 | -
+| -
 | Kann das Produkt nahtlos in unsere bestehende Landschaft integriert werden
 
 | Sicherheit
 | 4
+| -
 | -
 | -
 | -
@@ -230,10 +241,12 @@ include::_variante4.adoc[]
 | -
 | -
 | -
-| Automatische Prozesse werden nicht protokolliert
+| -
+| Automatiche Prozesse werden nicht protokolliert
 
 | Betriebs- und Wartungskosten (pro Jahr)
 | 3
+| -
 | -
 | -
 | -
@@ -244,6 +257,7 @@ include::_variante4.adoc[]
 | -
 | -
 | -
+| -
 | Zusätzliche Funktionalität der bestehenden Protokollierung
 
 | Erweiterbarkeit Fachapplikation
@@ -251,10 +265,12 @@ include::_variante4.adoc[]
 | -
 | -
 | -
+| -
 | Neue Fachapplikationen müssen auch protokolliert werden
 
 | Realisierungskosten (einmalig)
 | 2
+| -
 | -
 | -
 | -
@@ -266,6 +282,7 @@ include::_variante4.adoc[]
 | -
 | -
 | -
+| -
 | Verfügen wir über genügend verfügbare und qualifizierte Mitarbeiter um die Variante selber zu implementieren
 
 | Konfigurierung der Aufbewahrungs- frist
@@ -273,16 +290,19 @@ include::_variante4.adoc[]
 | -
 | -
 | -
+| -
 | Die Aufbewahrungsfrist der Protokollierungsdaten muss konfigurierbar sein (z.B 1 Jahr)
 
 | Gesamtbewertung
-| 46
+| -
+| -
 | -
 | -
 | -
 |
 
 |===
+
 Gewichtung:1 nicht relevant, 2 unwichtig, 2 weniger wichtig, 3 wichtig, 4 ziemlich wichtig  5 sehr wichtig
 
 
@@ -420,11 +440,11 @@ include::_begruendungV4.adoc[]
 
 
 
-= Anhang
+== Anhang
 
-== nicht näher untersuchte Varianten
+=== nicht näher untersuchte Varianten
 
-=== Speichern
+==== Speichern
 *Dezentrale Datenbank*
 
 Erhöhte Komplexität, erschwert die Auswertung und das Löschen der Protokollierungsdaten.
@@ -439,12 +459,12 @@ Zu hohes Risiko, dass es zu gegenseitigen Blockierungen kommt und dadurch die Ve
 Zu wenig Erfahrung mit der Technologie und daher zu hohes Projektrisiko. Wahrscheinlich hohe Realisierungskosten.
 
 
-=== Abfragen
+==== Abfragen
 *Plain-SQL-Abfragen*
 
 Wir gehen davon aus, dass der Datenschutzbeauftragte nicht über die Notwendigen Kenntnisse verfügt.
 
-=== Löschen
+==== Löschen
 *Anwender löscht in Datenbank*
 
 Zu fehleranfällig
@@ -455,10 +475,10 @@ Zu fehleranfällig
 
 
 
-== Implementierungsdetails Variante 4
+=== Implementierungsdetails Variante 4
 
 
-===== Abgreifen
+====== Abgreifen
 
 Neue Bibliothek erstellen, die eine Methode zur Protokollierung bereitstellt.
 Die Methode hat als Übergabeparameter das SecurityToken, den Methodenname, die Fachapplikation usw.
@@ -484,7 +504,7 @@ Es stehen sämtliche erforderlichen Protokollierungsdaten zur Verfügung.
 Jede Fachapplikation muss angepasst werden und es muss sichergestellt werden, dass auch jede Fachapplikation den Aufruf durchführt.
 
 
-===== Speichern
+====== Speichern
 
 Es wird eine neue Applikation implementiert, die täglich die Daten der einzelnen Textdateien in einer zentralen Datenbank speichert.
 Gleichzeitig wird das Abfrageergebnis beim ursprünglichen Eintrag ergänzt, damit es pro ID nur einen Datensatz gibt.
@@ -504,7 +524,7 @@ Die Daten stehen erst mit einiger Verzögerung zur Auswertung zur Verfügung.
 
 Es muss sichergestellt werden, dass alle Fachapplikationen berücksichtigt werden.
 
-===== Abfragen
+====== Abfragen
 
 *Untervariante1 - Direkte Abfrage über die Datenbank*
 
@@ -536,7 +556,7 @@ Zusätzlich wäre es aber trotzdem möglich, die Eingabe von SQL-Statements zu e
 Zusätzlicher Implementierungsaufwand.
 
 
-===== Löschen
+====== Löschen
 
 Die Daten liegen zentral in einer Datenbank.
 Es wird ein Datenbank-Job eingerichtet, der jede Nacht die Daten löscht, die älter als ein 1 Jahr sind.

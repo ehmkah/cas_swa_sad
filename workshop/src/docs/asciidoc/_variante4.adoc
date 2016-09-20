@@ -36,7 +36,7 @@ Die Lösung ist performant und ermöglicht durch die zentrale Ablage der Daten e
 
 Nachteilig ist, dass alle Fachapplikationen angepasst werden müssen.
 Es ist ein relativ hoher Entwicklungsaufwand notwendig.
-TODO: Lifecycle der Bibliothek --> Einfluss auf alle Applikationen
+//TODO: Lifecycle der Bibliothek --> Einfluss auf alle Applikationen
 
 ===== Risiken
 
