@@ -46,12 +46,14 @@ Es gibt bereits ein bestehenden DBMS, daher fallen keine zusätzlichen Lizenzkos
 
 
 | Erweiterbarkeit Protokollierung
-| -
-| -
+| Je nach Art der Erweiterung muss entweder nur die Bibliothek angepasst werden.
+Unter Umständen müssen aber auch die Fachapplikationen erweitert werden.
+| 3
 
 | Erweiterbarkeit Fachapplikation
-| -
-| -
+| Wenn neue Fachapplikationen implementiert werden, muss dort die Bibliothek eingebunden werden.
+Bei der "Speicher-Applikation" muss die neue Fachapplikation auch in die Liste eingetragen werden.
+| 4
 
 | Genug passende Mitarbeiter mit Know-How
 | Hoher Realisierungsaufwand, aber Standardtechnologie
@@ -60,16 +62,16 @@ Es gibt bereits ein bestehenden DBMS, daher fallen keine zusätzlichen Lizenzkos
 
 | Realisierungskosten (einmalig)
 | Hoher Realisierungsaufwand, aber Standardtechnologie
-| -
+| 2
 
 
 | Konfigurierung der Aufbewahrungsfrist
-| -
-| -
+| Die Frist kann beim Löschskript konfiguriert werden.
+| 5
 
 
 | Gesamtbewertung
 | -
-| -
+| 186
 
 |===
