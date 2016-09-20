@@ -111,6 +111,8 @@ image::morphologischer_kasten.jpg["Lösungsraum"]
 * Grün: Variante 3
 * Schwarz: Variante 4
 
+Im Anhang ist beschrieben, wieso die anderen Varianten nicht weiter berücksichtigt werden.
+
 include::_abgreifen.adoc[]
 include::_speichern.adoc[]
 include::_abfragen.adoc[]
@@ -369,6 +371,39 @@ include::_begruendungV4.adoc[]
 
 
 = Anhang
+
+== nicht näher untersuchte Varianten
+
+=== Speichern
+*Dezentrale Datenbank*
+
+Erhöhte Komplexität, erschwert die Auswertung und das Löschen der Protokollierungsdaten.
+Kaum Vorteile gegenüber einer zentralen Datenbank
+
+*Zentrale Logdatei*
+
+Zu hohes Risiko, dass es zu gegenseitigen Blockierungen kommt und dadurch die Verfügbarkeit leidet.
+
+*Queue*
+
+Zu wenig Erfahrung mit der Technologie und daher zu hohes Projektrisiko. Wahrscheinlich hohe Realisierungskosten.
+
+
+=== Abfragen
+*Plain-SQL-Abfragen*
+
+Wir gehen davon aus, dass der Datenschutzbeauftragte nicht über die Notwendigen Kenntnisse verfügt.
+
+=== Löschen
+*Anwender löscht in Datenbank*
+
+Zu fehleranfällig
+
+*Anwender löscht Logdatei*
+
+Zu fehleranfällig
+
+
 
 == Implementierungsdetails Variante 4
 
