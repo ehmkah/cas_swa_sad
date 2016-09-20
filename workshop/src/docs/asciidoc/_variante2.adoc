@@ -18,23 +18,23 @@ Die abgelaufenen Daten werden durch einen automatischen Batch täglich gelöscht
 
 Die Bibliothek wird wie alle Applikationen mit Java entwickelt und als JAR via Maven importiert.
 Die Bibliothek bietet ein Interface mit den Protokollierungsfunktionen.
-Intern wird jeder Aufruf eine solchen Funktion via SOAP verschlüsselt an den Webservice weitergeleite.
+Intern wird jeder Aufruf eine solchen Funktion via SOAP verschlüsselt an den Webservice weitergeleitet.
 Die Kommunikation geschieht dabei stets synchron.
 
 Der Webservice wird mit JEE implementiert und in die bestehende Applikationslandschaft integriert.
 
 Der Batch wird mit Hilfe des _JSR 352_ mit JEE implementiert, damit er in die bestehende Architekturlandschaft der Mobiliar passt.
 
-Die Applikation für die Abfrage wird als Webapplikation aus Basis von _AngularJS_ mit einem _JEE_ basierten REST-Backend implementiert.
+Die Applikation für die Abfrage wird als Webapplikation auf Basis von _AngularJS_ mit einem _JEE_ basierten REST-Backend implementiert.
 Die Kommunikation zwischen der Webapplikation und dem Backend erfolgt via _REST_.
-Der Datenschutzbeauftrage muss somit keine Software lokal installieren und aktualisieren.
+Der Datenschutzbeauftragte muss somit keine Software lokal installieren und aktualisieren.
 
 ===== Vor- und Nachteile
 
 ====== Vorteile
 
 - Da alle Teile selber entwickelt werden, kann spezifisch auf die einzelnen Bedürfnisse aller Beteiligten eingegangen werden.
-- Alle notwendigen Protokollierungsdaten (Kontextdaten) sind innerhalb der Fachaplikation vorhanden.
+- Alle notwendigen Protokollierungsdaten (Kontextdaten) sind innerhalb der Fachapplikation vorhanden.
 - Auswertungen über mehrere Applikationen einfach möglich.
 
 ====== Nachteile

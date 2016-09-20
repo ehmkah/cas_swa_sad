@@ -19,7 +19,7 @@
 | Skalierbarkeit
 | Wenn eine neue Fachapplikation hinzukommt, hat es keinen Einfluss auf die bestehenden Fachapplikationen.
 
-Es werden alle Daten in einer zentralen Datenbank gespeichert, welche schlecht skalliert.
+Es werden alle Daten in einer zentralen Datenbank gespeichert, welche schlecht skaliert.
 //TODO: besser formulieren
 | 3
 

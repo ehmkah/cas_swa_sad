@@ -10,7 +10,7 @@ Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
 | Einfach zum Betreiben
 | Durch hohe  Last eventuell Performanceprobleme
 
-| Ermöglicht schnelle Fachapplikationsübergreifende Abfragen
+| Ermöglicht schnelle Fachapplikations übergreifende Abfragen
 | Single Point of Failure
 
 | Lizenzkosten tiefer, da weniger Datenbank-Instanzen notwendig sind
@@ -30,7 +30,7 @@ Ein zentrale Batch liest die dezentralen Logdateien der Applikationen und speich
 | Vorteile | Nachteile
 
 | Zentrale Datenbank muss während des Schreibens der Protokollierungsdaten nicht verfügbar sein
-| Aufwender als die jeweils einzelnen Bestandteile dezentral Loggen und Zentrale Datenbank, weil zusätzlich noch ein Synchronisationsbatch benötigt wird
+| Aufwändiger als die jeweils einzelnen Bestandteile dezentral zu loggen und oder eine zentrale Datenbank, weil zusätzlich noch ein Batch für die Synchronisation benötigt wird
 
 | Datenbank kann während des Loggens nicht zum Flaschenhals werden
 |
@@ -64,7 +64,7 @@ Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
 |===
 | Vorteile | Nachteile
 
-| Einfach zu imoplementieren
+| Einfach zu implementieren
 | Eventuell gegenseitige Behinderung (Lock), wenn ein Filehandle zwischen Fachapplikationen geteilt wird
 
 | Alle Protokollierungsdaten können an einer Stelle zentral gefunden werden
@@ -98,7 +98,7 @@ oder in einer separaten Datenbank) gespeichert.
 | Performance beim Schreiben
 | Lizenzkosten bei einer separaten Datenbank höher, da mehr Instanzen benötigt werden
 
-| Keine Abhägigkeiten zwischen den Fachapplikation
+| Keine Abhängigkeiten zwischen den Fachapplikation
 | Abfragen über mehrere Fachapplikationen / Datenbanken aufwendiger
 
 | Performance beim Lesen, da weniger Daten vorhanden sind
@@ -108,7 +108,7 @@ oder in einer separaten Datenbank) gespeichert.
 
 ==== Fazit
 
-Die Variante mit einer zentralen Datei schliessen wir wegen der gegenseitigen Schreibbehinderung aus.
+Die Variante mit einer zentralen Datei schliessen wir wegen der gegenseitigen Behinderung beim Schreiben aus.
 Damit die Anforderungen an die Protokollierung zuverlässig gewährleistet werden können, wird der
  einfachere Ansatz mit einer synchronen Implementierung gewählt.
  Die Variante mit der Queue wird deshalb nicht weiter verfolgt.
