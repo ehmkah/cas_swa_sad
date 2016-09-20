@@ -90,12 +90,17 @@ Es soll mithilfe der Protokollierung sichergestellt werden, dass die Mitarbeiter
 | Abfragen von automatisch gestarteten Prozessen dürfen nicht protokolliert werden.
 |===
 
+==== Welche Daten werden bei einer Protokollierung gespeichert
+
+image::anforderungen_protokollierungsdaten.png["Protokollierungsdaten"]
+
 ==== Welche Daten werden bei einer Anfrage gespeichert
 
+image::anforderungen_anfrage.png["Speicherung der Daten bei einer Anfrage "]
 
+==== Welche Daten werden bei einer Mutation gespeichert
 
-
-
+image::anforderungen_mutation.png["peicherung der Daten bei einer Mutation "]
 
 ==== Wer sind die Interessenvertreter?
 
