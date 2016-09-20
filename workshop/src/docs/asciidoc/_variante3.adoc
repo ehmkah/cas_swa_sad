@@ -39,7 +39,7 @@ Der Batch wird mit Hilfe des _JSR 352_ mit JEE implementiert, damit er optimal i
 - Relativ einfache Implementierung der Bibliothek
 - Verwendung von bewährten Tools (Splunk, ELK)
 - Nur der Batch muss neu entwickelt werden
-- Für das Logtool kann eine bestehende Lösung verwendet
+- Für das Logtool kann eine bestehende Lösung verwendet werden
 
 ====== Nachteile
 
