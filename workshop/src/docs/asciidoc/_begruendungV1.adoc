@@ -12,7 +12,7 @@
 
 | Performanz
 | Performanz der Fachapplikation wird leicht beeinflusst wegen synchroner WebService Aufruf.
-| 4
+| 3
 
 | Verfügbarkeit Fachapplikation
 | Die Verfügbarkeit der Fachapplikation wird leicht beeinflusst.
