@@ -48,8 +48,9 @@ Es gibt bereits ein bestehendes Datenbanksystem. Für zusätzliche Instanzen fal
 | 3
 
 | Erweiterbarkeit Protokollierung
-| Ändert sich die Bibliothek müssen alle Fachapplikationen aktualisiert werden
-| 1
+| Ändert sich die Bibliothek müssen alle Fachapplikationen aktualisiert werden. Ein Teil
+der Logik ist allerdings im Webservice gekapselt.
+| 2
 
 | Erweiterbarkeit Fachapplikation
 | Wenn neue Fachapplikationen implementiert werden, muss dort die Bibliothek eingebunden werden.
@@ -71,6 +72,6 @@ Bei der "Speicher-Applikation" muss die neue Fachapplikation auch in die Liste e
 
 | Gewichtete Gesamtbewertung
 | -
-| 194
+| 197
 
 |===

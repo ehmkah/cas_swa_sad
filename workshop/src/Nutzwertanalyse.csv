@@ -1,0 +1,19 @@
+;;Variante 1;Variante 2;Variante 3;Variante 4;;Max
+Vollst„ndigkeit der Protokollierungsdaten;5;5;25;25;25;;25
+Performance;5;15;15;20;25;;25
+Verfgbarkeit FA;5;15;20;20;25;;25
+Verfgbarkeit P;5;25;20;20;20;;25
+Skalierbarkeit;4;16;12;12;12;;20
+Integrierbarkeit;4;20;20;20;20;;20
+Sicherheit;4;20;20;20;20;;20
+Batchprozesse;4;20;20;20;20;;20
+Betriebs- und Wartungskosten;3;9;9;9;6;;15
+Erweiterbarkeit P;3;15;3;9;6;;15
+Erweiterbarkeit FA;3;15;12;15;12;;15
+Realisierungkosten;2;4;4;6;4;;10
+MA-Know-How;2;4;4;8;4;;10
+Konfig Frist;2;10;10;10;10;;10
+;;;;;;;
+;46;193;194;214;209;;255
+;;;;;;;
+;;;;;0.819607843;;
