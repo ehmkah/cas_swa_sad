@@ -106,8 +106,9 @@ oder in einer separaten Datenbank) gespeichert.
 
 |===
 
+==== Fazit
 
-Fazit: Die Variante mit einer zentralen Datei schliessen wir wegen der gegenseitigen Schreibbehinderung aus.
+Die Variante mit einer zentralen Datei schliessen wir wegen der gegenseitigen Schreibbehinderung aus.
 Damit die Anforderungen an die Protokollierung zuverlässig gewährleistet werden können, wird der
  einfachere Ansatz mit einer synchronen Implementierung gewählt.
  Die Variante mit der Queue wird deshalb nicht weiter verfolgt.
