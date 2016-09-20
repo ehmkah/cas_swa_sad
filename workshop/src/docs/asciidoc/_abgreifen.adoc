@@ -13,9 +13,8 @@ Die Requests werden im Proxy protokolliert.
 | Keine Implementierung auf Applikationsebene notwendig
 | Je nach Anfrage nicht alle benötigten Log-Informationen vorhanden
 
-// TODO muss muss muss noch überarbeitet werden
 |
-| https ist "state less", darum muss muss
+| https ist "state less", darum müssen Sessioninformationen (z.B. angemeldeter Nutzer) im Proxy zwischengespeichert oder über einen SessionService ermittelt werden können.
 
 |===
 

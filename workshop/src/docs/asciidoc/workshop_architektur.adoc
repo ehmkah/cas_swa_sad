@@ -24,13 +24,37 @@ v0.1, 2016-13-09
 === Problemstellung
 
 ==== In welchem Unternehmen, Projekt, System stellt sich das Problem?
+Die Firma *High Five Company* soll für das Unternehmen *Mobiliar Versicherung* eine Softwarearchitektur zur Protokollierung von Abfragen und Mutation der Kundendaten erstellen.
+// Diese Kundendaten sind vertraulich und es muss nachträglich festgestellt werden, zu welchem Zweck die Daten und von wem sie verwendet werden.
+Es soll mithilfe der Protokollierung sichergestellt werden, dass die Mitarbeiter korrekt mit Kundendaten umgehen.
+Änderungen sollen nachvollzogen werden können und Mitarbeiter sollen nicht ohne Auftrag in den Kundendaten suchen.
 
-* Unternehmen Mobiliar : Umgang mit den Kundenschadendaten
+
+// * Unternehmen Mobiliar : Umgang mit den Kundenschadendaten
 
 ==== Worin besteht genau das zu lösende Problem (Scope)?
 
-Es soll mithilfe der Protokollierung sichergestellt werden, dass die Mitarbeiter korrekt mit Kundendaten umgehen.
-Änderungen sollen nachvollzogen werden können und Mitarbeiter sollen nicht ohne Auftrag in den Kundendaten suchen.
+// Es soll mithilfe der Protokollierung sichergestellt werden, dass die Mitarbeiter korrekt mit Kundendaten umgehen.
+// Änderungen sollen nachvollzogen werden können und Mitarbeiter sollen nicht ohne Auftrag in den Kundendaten suchen.
+
+*Funktionale Anforderungen*
+
+[cols="20%,80%"]
+|===
+1.4+| **FA-10 **
+| *Protokollierungsdaten (Anfragetation) ID*
+| Protokolleintrag muss im System eindeutig identifizierbar sein
+| Benutzer müssen eindeutig identifizierbar sein
+| Zeitpunkt und Art der Bearbeitung müssen erfasst werden
+|===
+
+|===
+1.4+| **FA-10 **
+| *Anfrage Protokollieren*
+| Protokolleintrag muss im System eindeutig identifizierbar sein
+| Benutzer müssen eindeutig identifizierbar sein
+| Zeitpunkt und Art der Bearbeitung müssen erfasst werden
+|===
 
 ==== Wer sind die Interessenvertreter?
 
@@ -39,9 +63,10 @@ Die Interessenvertreter sind: Mitarbeiter, Datenschutzbeauftragter.
 
 === Randbedingungen
 
-Die Sicherheitsstufe der Protokolldaten entspricht der Sicherheitsstufe der Fachdaten.
-Die Protokolldaten dürfen von Fachdaten geographisch getrennt gespeichert werden.
-Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
+* Die Sicherheitsstufe der Protokolldaten entspricht der Sicherheitsstufe der Fachdaten.
+* Die Protokolldaten dürfen von Fachdaten geographisch getrennt gespeichert werden.
+* Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
+
 
 ==== Technische Randbedingungen (z.B. Applikationsplattform, Referenz-Architektur)
 
@@ -49,7 +74,7 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 | Randbedingung | Ausprägung
 
 | Technologie
-| JEE
+| JEE, Java
 
 | Applikationsserver
 | JBoss
@@ -84,6 +109,9 @@ image::morphologischer_kasten.jpg["Lösungsraum"]
 * Blau: Variante 1
 * Rot: Variante 2
 * Grün: Variante 3
+* Schwarz: Variante 4
+
+Im Anhang ist beschrieben, wieso die anderen Varianten nicht weiter berücksichtigt werden.
 
 include::_abgreifen.adoc[]
 include::_speichern.adoc[]
@@ -343,6 +371,39 @@ include::_begruendungV4.adoc[]
 
 
 = Anhang
+
+== nicht näher untersuchte Varianten
+
+=== Speichern
+*Dezentrale Datenbank*
+
+Erhöhte Komplexität, erschwert die Auswertung und das Löschen der Protokollierungsdaten.
+Kaum Vorteile gegenüber einer zentralen Datenbank
+
+*Zentrale Logdatei*
+
+Zu hohes Risiko, dass es zu gegenseitigen Blockierungen kommt und dadurch die Verfügbarkeit leidet.
+
+*Queue*
+
+Zu wenig Erfahrung mit der Technologie und daher zu hohes Projektrisiko. Wahrscheinlich hohe Realisierungskosten.
+
+
+=== Abfragen
+*Plain-SQL-Abfragen*
+
+Wir gehen davon aus, dass der Datenschutzbeauftragte nicht über die Notwendigen Kenntnisse verfügt.
+
+=== Löschen
+*Anwender löscht in Datenbank*
+
+Zu fehleranfällig
+
+*Anwender löscht Logdatei*
+
+Zu fehleranfällig
+
+
 
 == Implementierungsdetails Variante 4
 
