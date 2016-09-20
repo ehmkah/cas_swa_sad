@@ -120,7 +120,7 @@ Von der Mobiliar Versicherung folgende Interessenvertreter einbezogen und müsse
 * Die Sicherheitsstufe der Protokolldaten entspricht der Sicherheitsstufe der Fachdaten.
 * Die Protokolldaten dürfen von Fachdaten geographisch getrennt gespeichert werden.
 * Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
-
+* Etwa 20 Fachapplikationen greifen zu die Kundenschadensdaten zu
 
 ==== Technische Randbedingungen (z.B. Applikationsplattform, Referenz-Architektur)
 
