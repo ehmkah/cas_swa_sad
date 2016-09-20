@@ -1,12 +1,12 @@
 
-==== Variante 4
+==== Variante 3
 
 [cols="2,4,1"]
 |===
 | Bewertungskriterium | Begründung | Punkte
 
 | Performanz
-| hohe Performanz, da zunächst nur in eine lokale Textdatei geschrieben wird.
+| hohe Performanz, da nur in eine lokale Textdatei geschrieben wird.
 | 5
 
 | Verfügbarkeit Fachapplikation
@@ -14,15 +14,12 @@
 | 5
 
 | Verfügbarkeit Protokollierung
-| Die Daten stehen erst mit Verzögerung zur Verfügung
+| Die Daten stehen mit geringer Verzögerung zur Verfügung
 | 4
 
 | Skalierbarkeit
 | Wenn eine neue Fachapplikation hinzukommt, hat es keinen Einfluss auf die bestehenden Fachapplikationen.
-
-Es werden alle Daten in einer zentralen Datenbank gespeichert, welche schlecht skaliert.
-//TODO: besser formulieren
-| 3
+| 4
 
 | Integrierbar in unsere IT-Landschaft
 | Es wird eine bestehende Technologie verwendet und daher gut integrierbar.
@@ -31,9 +28,7 @@ Es werden alle Daten in einer zentralen Datenbank gespeichert, welche schlecht s
 | Sicherheit
 | Die Textdateien können mittels File-Permissions geschützt werden.
 Es muss organisatorisch sichergestellt werden, dass die Berechtigungen vergeben werden.
-Bei der Datenbank muss sichergestellt werden, dass nur die "Speicher-Applikation" Schreibrecht hat
-und nur der Datenschutzbeauftragter Leserechte hat
-| 4
+| 5
 
 
 | Batchprozesse
@@ -41,10 +36,8 @@ und nur der Datenschutzbeauftragter Leserechte hat
 | 5
 
 | Betriebs- und Wartungskosten (pro Jahr)
-| Es muss die "Speicher-Applikation", die Bibliothek und der DB-Job zum löschen gewartet werden.
-Es gibt bereits ein bestehenden DBMS, daher fallen keine zusätzlichen Lizenzkosten an.
+| Es muss die Bibliothek gewartet werden und es fallen für das Logtool Lizenkosten an.
 | 3
-
 
 | Erweiterbarkeit Protokollierung
 | Je nach Art der Erweiterung muss entweder nur die Bibliothek angepasst werden.
@@ -53,18 +46,15 @@ Unter Umständen müssen aber auch die Fachapplikationen erweitert werden.
 
 | Erweiterbarkeit Fachapplikation
 | Wenn neue Fachapplikationen implementiert werden, muss dort die Bibliothek eingebunden werden.
-Bei der "Speicher-Applikation" muss die neue Fachapplikation auch in die Liste eingetragen werden.
-| 4
+| 5
 
 | Genug passende Mitarbeiter mit Know-How
-| Hoher Realisierungsaufwand, aber Standardtechnologie
-| 2
-
+| Mittlerer Realisierungsaufwand, aber Standardtechnologie
+| 4
 
 | Realisierungskosten (einmalig)
-| Hoher Realisierungsaufwand, aber Standardtechnologie
-| 2
-
+| Mittlere Realisierungskosten, aber Standardtechnologie
+| 3
 
 | Konfigurierung der Aufbewahrungsfrist
 | Die Frist kann beim Löschskript konfiguriert werden.
@@ -73,6 +63,6 @@ Bei der "Speicher-Applikation" muss die neue Fachapplikation auch in die Liste e
 
 | Gesamtbewertung
 | -
-| 186
+| 203
 
 |===
