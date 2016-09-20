@@ -25,7 +25,8 @@ v0.1, 2016-13-09
 
 ==== In welchem Unternehmen, Projekt, System stellt sich das Problem?
 
-* Unternehmen Mobiliar : Umgang mit den Kundenschadendaten
+Die untersuchte Aufgabe stellt sich bei der Mobiliar Versicherung.
+Bei diesem Unternehmen müssen beim Umgang mit den Kundenschadendaten besondere Sorgfaltspflichten der Mitarbeiter eingehalten werden.
 
 ==== Worin besteht genau das zu lösende Problem (Scope)?
 
