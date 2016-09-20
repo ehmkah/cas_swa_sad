@@ -36,12 +36,14 @@ Der Datenschutzbeauftrage muss somit keine Software lokal installieren und aktua
 
 - Da alle Teile selber entwickelt werden, kann spezifisch auf die einzelnen Bedürfnisse aller Beteiligten eingegangen werden.
 - Alle notwendigen Protokollierungsdaten (Kontextdaten) sind innerhalb der Fachaplikation vorhanden.
+- Auswertungen über mehrere Applikationen einfach möglich.
 
 ===== Nachteile
 
 - Relativ hoher Aufwand, da alle Teile selbst entwickelt werden müssen
 - Die Bibliothek muss in jede Applikation eingefügt werden.
 Eine neue Deploymenteinheit ist für jede Fachapplikation notwendig.
+- Alle Protokolldaten sind zentral in einer Datenbank (Datenschutz, Abgrenzung zwischen den Fachapplikationen)
 
 ==== Risiken
 

@@ -7,8 +7,48 @@ image::kontext_variante3.png["Kontextdiagramm  Variante 3"]
 
 ==== Möglichst präzise Beschreibung (Schlüsselaspekte)
 
+Analog zur zweiten Variante wird eine Bibliothek verwendet oder allenfalls neu entwickelt, die einfach in bestehende
+Fachapplikationen eingebunden werden kann. Die Bibliothek schreibt dabei die Protokollierungsdaten in einem
+vordefinierten Format in eine Logdatei. Die Logdatei wird dabei auf einen zentralen Fileserver abgelegt. Damit das Löschen
+einfacher gemacht werden kann wird pro Tag und Fachapplikation eine Datei generiert.
+
+Ein Logtool wie Splunk oder der ELK-Stack indexiert danach diese Logdateien und bereitet die Daten über ein GUI übersichtlich auf.
+Über ein Webfrontend kann danach der Datenschutzbeauftragte die gewünschten Daten anschliessend abfragen. Die abgelaufenen Daten
+werden durch einen automatischen Batch periodisch  aus dem Filesystem, resp. aus dem Index gelöscht.
+
 ==== Technologische Umsetzung
+
+
+Die Bibliothek wie Beipielsweise das quelloffene Log4J wird in alle Applikationen verwendet und als JAR via Maven importiert.
+Die Bibliothek bietet ein Interface mit den Protokollierungsfunktionen. Jeder Protokolleintrag wird danach
+synchron in die aktuelle Protokolldatei geschrieben. Um die normalen Logeinträge wie Warnungen, Exceptions, etc und die
+Zugangsprotokolldaten zu unterscheiden, werden letztere mit einem eigenen Appender in ein seperates File geschrieben.
+
+Die Logdateien werden dabei auf einem Netzwerk-Share zentral gespeichert. Der Fileserver befindet sich im gleichen
+Netzwerk und hat daher eine geringe Latenzzeit.
+
+Das Logtool indexiert danach konstant die Logdateien. Dabei wird pro Applikation ein Index erstellt.
+ Innerhalb des Logtools können verschiedene Abfragen vordefiniert und Berechtigungen auf die einzelnen Indexe vergeben werden.
+
+Der Batch wird mit Hilfe des _JSR 352_ mit JEE implementiert, damit er optimal in die bestehende Architekturlandschaft der Mobiliar passt.
 
 ==== Vor- und Nachteile
 
+===== Vorteile
+
+- Relativ einfache Implementierung der Bibliothek
+- Verwendung von bewährten Tools (Splunk, ELK)
+- Nur der Batch muss neu entwickelt werden
+- Für das Logtool kann eine bestehende Lösung verwendet
+
+===== Nachteile
+
+- Kann nur beschränkt auf die individuellen Bedürfnisse der Beteiligten angepasst werden (z.B. das GUI für den Datenschutzbeauftragen)
+- Keine klare Abgrenzung zwischen Zugriffsprotokollen und den normalen Protokolldaten
+- Alle Protokolldaten sind zentral abgelegt (Datenschutzmassnahmen notwendig, Abgrenzung zwischen den Fachapplikationen)
+
+
 ==== Risiken
+
+- Falls der Fileserver nicht verfügbar ist, können keine Requests auf die Fachapplikationen gemacht werden. (SPF)
+- Files sind nicht ideal für parallele Schreibvergänge wenn mehrere Requests gleichzeitig protokolliert werden müssen
