@@ -11,65 +11,63 @@
 | 1
 
 | Performanz
-| Performanz der Fachapplikation wird leicht beeinflusst wegen dem synchronen WebService Aufruf.
+| Performanz der Fachapplikation wird leicht beeinflusst
 | 3
 
 | Verfügbarkeit Fachapplikation
-| Die Verfügbarkeit der Fachapplikation wird leicht beeinflusst.
+| Die Verfügbarkeit der Fachapplikation wird leicht beeinflusst
 | 3
 
 | Verfügbarkeit Protokollierung
-| Die Daten stehen sofort zur Verfügung.
+| Die Daten stehen sofort zur Verfügung
 | 5
 
 | Skalierbarkeit
-| Gut skalierbar, aber wegen zentraler Datenbank kann nicht beliebig skaliert werden.
+| Gut skalierbar, aber wegen zentraler Datenbank kann nicht beliebig skaliert werden
 | 4
 
 | Integrierbar in unsere IT-Landschaft
-| Es wird eine bestehende Technologie verwendet und ist daher gut integrierbar.
+| Es wird eine bestehende Technologie verwendet und ist daher gut integrierbar
 | 5
 
 | Sicherheit
-| Die Sicherheit wird durch Vergabe der Berechtigung gewährleistet.
+| Die Sicherheit wird durch Vergabe der Berechtigung gewährleistet
 | 5
 
 
 | Batchprozesse
-| Durch den Proxy wird zentral die Überprüfung vorgenommen.
+| Durch den Proxy wird zentral die Überprüfung vorgenommen
 | 5
 
 | Betriebs- und Wartungskosten (pro Jahr)
-| Es muss der Proxy, die Applikation zum Lesen und der DB-Job zum löschen gewartet werden.
-Es gibt bereits ein bestehendes DBMS, daher fallen keine zusätzlichen Lizenzkosten an.
+| Es muss der Proxy, die Applikation zum Lesen und der Batch-Job zum Löschen gewartet werden
+Es gibt bereits ein bestehendes Datenbanksystem. Für zusätzliche Instanzen fallen Lizenzkosten an
 | 3
 
 
 | Erweiterbarkeit Protokollierung
-| Fachapplikationen werden durch Proxy nicht beeinflusst.
+| Fachapplikationen werden durch Proxy nicht beeinflusst
 | 5
 
 | Erweiterbarkeit Fachapplikation
-| Fachapplikationen werden durch Proxy nicht beeinflusst, es sind keine Änderungen an den Fachapplikationen nötig.
+| Fachapplikationen werden durch Proxy nicht beeinflusst, es sind keine Änderungen an den Fachapplikationen nötig
 | 5
-
-| Genug passende Mitarbeiter mit Know-How
-| Hoher Realisierungsaufwand, aber Standardtechnologie.
-| 2
-
 
 | Realisierungskosten (einmalig)
-| Hoher Realisierungsaufwand, aber Standardtechnologie.
+| Hoher Realisierungsaufwand, aber Standardtechnologie
 | 2
 
+| Genug passende Mitarbeiter mit Know-How
+| Hoher Realisierungsaufwand, aber Standardtechnologie
+| 2
 
 | Konfigurierung der Aufbewahrungsfrist
-| Die Frist kann beim Löschskript konfiguriert werden.
+| Die Frist kann beim Löschskript konfiguriert werden
 | 5
 
 
-| Gesamtbewertung
+| Gewichtete Gesamtbewertung
 | -
-|
+| 193
 
 |===

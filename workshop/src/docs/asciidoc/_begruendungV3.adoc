@@ -5,28 +5,34 @@
 |===
 | Bewertungskriterium | Begründung | Punkte
 
-| Performanz
-| hohe Performanz, da nur in eine lokale Textdatei geschrieben wird
+| Vollständigkeit der Protokollierungsdaten
+| Alle notwendigen Daten stehen zur Verfügung
 | 5
 
+| Performanz
+| Gute Performanz. Die Textdatei liegt auf dem Fileserver. Netzwerk-Latenzzeit vorhanden.
+| 4
+
 | Verfügbarkeit Fachapplikation
-| hohe Verfügbarkeit, da pro Fachapplikation eine eigene Textdatei verwendet wird
-| 5
+| Hohe Verfügbarkeit, da pro Fachapplikation eine eigene Textdatei verwendet wird.
+Hängt mit der Verfügbarkeit des Fileservers zusammen.
+| 4
 
 | Verfügbarkeit Protokollierung
 | Die Daten stehen mit geringer Verzögerung zur Verfügung
 | 4
 
 | Skalierbarkeit
-| Wenn eine neue Fachapplikation hinzukommt, hat es keinen Einfluss auf die bestehenden Fachapplikationen
-| 4
+| Wenn eine neue Fachapplikation hinzukommt, hat es keinen Einfluss auf die bestehenden Fachapplikationen.
+Bei vielen parallelen Zugriffen auf dem Fileserver wird der Schreibvorgang zunehmend langsamer.
+| 3
 
 | Integrierbar in unsere IT-Landschaft
 | Es wird eine bestehende Technologie verwendet und ist daher gut integrierbar.
 | 5
 
 | Sicherheit
-| Die Textdateien können mittels File-Permissions geschützt werden.
+| Die Textdateien können mittels File-Permissions geschützt werden. Die Übertragung wird verschlüsselt.
 Es muss organisatorisch sichergestellt werden, dass die Berechtigungen korrekt vergeben werden.
 | 5
 
@@ -36,33 +42,33 @@ Es muss organisatorisch sichergestellt werden, dass die Berechtigungen korrekt v
 | 5
 
 | Betriebs- und Wartungskosten (pro Jahr)
-| Es muss die Bibliothek gewartet werden und es fallen für das Logtool allenfalls Lizenkosten an.
+| Es muss die Bibliothek und der Fileserver müssen gewartet werden. Für das Logtool fallen eventuell (z.B. bei _Splunk_) Lizenkosten an.
 | 3
 
 | Erweiterbarkeit Protokollierung
 | Je nach Art der Erweiterung muss nur die Bibliothek angepasst werden.
-Unter Umständen müssen aber auch die Fachapplikationen erweitert werden.
+Unter Umständen müssen aber auch die Fachapplikationen erweitert werden
 | 3
 
 | Erweiterbarkeit Fachapplikation
 | Wenn neue Fachapplikationen implementiert werden, muss dort die Bibliothek eingebunden werden.
 | 5
 
-| Genug passende Mitarbeiter mit Know-How
-| Mittlerer Realisierungsaufwand, aber Standardtechnologie
-| 4
-
 | Realisierungskosten (einmalig)
 | Mittlere Realisierungskosten, aber Standardtechnologie
 | 3
 
+| Genug passende Mitarbeiter mit Know-How
+| Mittlerer Realisierungsaufwand, aber Standardtechnologie
+| 4
+
 | Konfigurierung der Aufbewahrungsfrist
-| Die Frist kann beim Löschskript konfiguriert werden.
+| Die Frist kann beim Löschskript konfiguriert werden
 | 5
 
 
-| Gesamtbewertung
+| Gewichtete Gesamtbewertung
 | -
-| 203
+| 214
 
 |===
