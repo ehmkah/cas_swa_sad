@@ -20,7 +20,7 @@ page:
   size: A4
 base:
   align: justify
-  font_size: 11
+  font_size: 10
   font_family: Times-Roman
   font_color: #333333
   line_height_length: 12
@@ -28,7 +28,7 @@ base:
 heading:
   font_family: Helvetica
   font_color: #0080c0
-  font_size: 17
+  font_size: 15
   font_style: bold
   line_height: 1.2
 link:
@@ -59,7 +59,7 @@ caption:
   align: left
   font_style: normal
   font_color: #000001
-  font_size: 12
+  font_size: 10
 table:
   align: center
   head:

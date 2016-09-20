@@ -5,9 +5,14 @@
 |===
 | Bewertungskriterium | Begründung | Punkte
 
+
+| Vollständigkeit der Protokollierungsdaten
+| Unter Umständen nicht alle Kontextdaten für die Protokollierung vorhanden sind
+| 1
+
 | Performanz
-| Performanz der Fachapplikation wird leicht beeinflusst wegen WebService Aufruf.
-| 4
+| Performanz der Fachapplikation wird leicht beeinflusst wegen synchroner WebService Aufruf.
+| 3
 
 | Verfügbarkeit Fachapplikation
 | Die Verfügbarkeit der Fachapplikation wird leicht beeinflusst.
