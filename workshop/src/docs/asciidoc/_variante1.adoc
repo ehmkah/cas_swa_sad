@@ -7,7 +7,7 @@ image::kontext_variante1.png["Kontextdiagramm  Variante 1"]
 
 ==== Möglichst präzise Beschreibung (Schlüsselaspekte)
 
-Bei dieser Variante werden alle Anfragen an eine Fachapplikation durch einen Proxy vor der Fachanwendung abgegriffen.
+Bei dieser Variante werden alle Anfragen an eine Fachapplikation durch einen Proxy vor der Fachapplkation abgegriffen.
 Dieser Proxy speichert die ermittelten Daten in einer zentralen Datenbank, die mit einer eigenen Applikation durch den Datenschutzbeauftragten abgefragt werden kann.
 Gelöscht werden die Protokollierungsdaten mit Hilfe eines Batches der die Daten automatisch löscht.
 
@@ -17,12 +17,28 @@ Die Realisierung des Proxies und der Speicherung kann in einem Modul realisiert 
 Aus dem Proxy würde zuerst direkt in die Datenbank geschrieben werden, um schnell eine funktionierende Protokollierung zu erhalten.
 In einer späteren Phase kann die Persistenzschicht des Proxies durch einen separaten Service ersetzt werden, der die Speicherung der Daten übernimmt.
 
-Der Batch wird mit Hilfe
+Der Batch wird mit Hilfe des _JSR 352_ mit JEE implementiert, damit er in die Architekturlandschaft der Mobiliar passt.
+
+Die Applikation für die Abfrage wird als Webanwendung aus Basis von _AngularJS_ mit einem _JEE_ basierten Backend implementiert.
+Die Kommunikation erfolgt zwischen Webanwendung und Backend erfolgt mit _REST_.
+Damit ersparen wir uns, dass die Applikation installiert werden muss.
+Ausserdem steht sie damit dem Datenschutzbeauftragten stets in der neuesten Form zur Verfügung.
 
 ==== Vor- und Nachteile
 
+===== Vorteile
+
+* Fachapplikationen werden durch Proxy nicht beeinflusst
+* Zentrale Speicherung der Protokollierungsdaten erleichtert abfragen
+* Mit eigener Applikation, können die zulässigen Abfragen durch den Datenschutzbeauftragten genau eingestellt werden
+
+===== Nachteile
+
+* Daten werden auf sehr hoher Ebene abgegriffen und erschwerden damit möglichweise die Auswertung
+* Zusätzliche Abfrageinformationen für den Datenschutzbeauftragten, müssen erst gebaut werden, das kann eventuell zu lange dauern
 
 
 ==== Risiken
 
-
+* wird die zentrale Datenbank manipuliert sind keine Rückschlüsse mehr möglich
+*
