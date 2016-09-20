@@ -11,7 +11,6 @@ v0.1, 2016-13-09
 == Workshop Architekturantrag
 
 //ToDo List:
-//- DB ausschreiben (Low Prio)
 //- Longlist Vor- und Nachteile
 //- Weshalb werden diese Varianten gewählt?
 //- Protokollieren bei HTTPS
@@ -30,9 +29,13 @@ v0.1, 2016-13-09
 
 ==== Worin besteht genau das zu lösende Problem (Scope)?
 
-* Umgang mit den Schadensdaten
+Es soll mithilfe der Protokollierung sichergestellt werden, dass die Mitarbeiter korrekt mit Kundendaten umgehen.
+Änderungen sollen nachvollzogen werden können und Mitarbeiter sollen nicht ohne Auftrag in den Kundendaten suchen.
 
 ==== Wer sind die Interessenvertreter?
+
+Die Interessenvertreter sind: Mitarbeiter, Datenschutzbeauftragter.
+
 
 === Randbedingungen
 
@@ -42,12 +45,28 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 
 ==== Technische Randbedingungen (z.B. Applikationsplattform, Referenz-Architektur)
 
-* Technologie JEE
-* Applikationsserver JBoss
-* Datenbank Orcale/ PostgresSQL
-* Standarprotokoll SOAP/REST
-* ESB Bus darf eingesetzt werden
-* kein Cachen von Daten aus dem Backend
+|===
+| Randbedingung | Ausprägung
+
+| Technologie
+| JEE
+
+| Applikationsserver
+| JBoss
+
+| Datenbank
+| Oracle, PostgreSQL
+
+| Standardkommunikationsprotokoll zwischen Applikationen
+| SOAP, REST
+
+| Enterprise Service Bus
+| darf eingesetzt werden
+
+| Daten aus dem Backend
+| Dürfen in Fachapplikation nicht gecached werden, damit Protokollierung nicht umgangen wird.
+
+|===
 
 ==== Organisatorische Randbedingungen
 
@@ -59,6 +78,7 @@ include::_architekturziele.adoc[]
 
 == Lösungsvarianten
 
+.Lösungsraum
 image::morphologischer_kasten.jpg["Lösungsraum"]
 
 * Blau: Variante 1
@@ -66,8 +86,8 @@ image::morphologischer_kasten.jpg["Lösungsraum"]
 * Grün: Variante 3
 
 include::_abgreifen.adoc[]
-include::_abfragen.adoc[]
 include::_speichern.adoc[]
+include::_abfragen.adoc[]
 include::_loeschen.adoc[]
 
 
@@ -75,6 +95,7 @@ include::_loeschen.adoc[]
 
 ==== Kontextdiagramm
 
+.Kontextdiagramm  Variante 1
 image::kontext_variante1.png["Kontextdiagramm  Variante 1"]
 
 ==== Möglichst präzise Beschreibung (Schlüsselaspekte)
@@ -87,6 +108,7 @@ image::kontext_variante1.png["Kontextdiagramm  Variante 1"]
 
 === Variante 2
 
+.Kontextdiagramm Variante 2
 image::kontext_variante2.png["Kontextdiagramm Variante 2"]
 
 ==== Kontextdiagramm
@@ -100,14 +122,128 @@ image::kontext_variante2.png["Kontextdiagramm Variante 2"]
 ==== Risiken
 
 === Variante 3
+
 ==== Kontextdiagramm
 
-image::kontext_variante3.png["Kontextdiagramm Variante 2"]
+.Kontextdiagramm Variante 3
+image::kontext_variante3.png["Kontextdiagramm Variante 3"]
 
 ==== Möglichst präzise Beschreibung (Schlüsselaspekte)
+
 ==== Technologische Umsetzung
+
 ==== Vor- und Nachteile
+
 ==== Risiken
+
+
+=== Variante 4
+
+==== Kontextdiagramm
+
+==== Technologische Umsetzung
+
+===== Abgreifen
+
+Neue Bibliothek erstellen, die eine Methode zur Protokollierung bereitstellt.
+Die Methode hat als Übergabeparameter das SecurityToken, den Methodenname, die Fachapplikation usw.
+Die Protokollierungsdaten werden zunächst in eine lokale Textdatei gespeichert.
+Pro Tag wird eine Datei erstellt.
+
+Die Methode prüft anhand des SecurityTokens, ob eine Protokollierung notwendig ist.
+Falls ja, wird eine ID und der Status (OK, NOK, IGNORE)zurück gegeben.
+Nur wenn als Status OK oder IGNORE zurückgeliefert wurde, wird die Fachapplikation die Daten abfragen bzw. mutieren.
+Anschliessend wird eine weitere Methode der Bibliothek mit den Übergabeparametern ID und Abfrageergebnis aufgerufen, (wenn der Status OK ist).
+Diese Daten werden ebenfalls in der Textdatei gespeichert.
+
+*Vorteil*
+
+hohe Performance, da zunächst nur in eine lokale Textdatei geschrieben wird.
+
+Die Protokollierungen der einzelnen Fachapplikationen erfolgt unabhängig voneinander und können sich dadurch nicht gegenseitig behindern.
+
+Es stehen sämtliche erforderlichen Protokollierungsdaten zur Verfügung.
+
+*Nachteil*
+
+Jede Fachapplikation muss angepasst werden und es muss sichergestellt werden, dass auch jede Fachapplikation den Aufruf durchführt.
+
+
+===== Speichern
+
+Es wird eine neue Applikation implementiert, die täglich die Daten der einzelnen Textdateien in einer zentralen Datenbank speichert.
+Gleichzeitig wird das Abfrageergebnis beim ursprünglichen Eintrag ergänzt, damit es pro ID nur einen Datensatz gibt.
+Wenn die Daten überführt wurden, wird die Textdatei gelöscht.
+Dadurch wird sichergestellt, dass die Daten nur einmal eingelesen werden.
+Wenn aus irgendeinen Grund die Daten nicht gespeichert werden konnten, können so aber auch Textdateien zu einem späteren Zeitpunkt eingelesen werden.
+
+*Vorteile*
+
+Die Daten stehen letztendlich an einer zentralen Stelle zur Verfügung, was die spätere Auswertung enorm erleichtert.
+
+*Nachteile*
+
+Zusätzliche Applikation notwendig.
+
+Die Daten stehen erst mit einiger Verzögerung zur Auswertung zur Verfügung.
+
+Es muss sichergestellt werden, dass alle Fachapplikationen berücksichtigt werden.
+
+===== Abfragen
+
+*Untervariante1 - Direkte Abfrage über die Datenbank*
+
+Der Datenschutzbeauftragte erhält direkten Lesezugriff auf die Datenbank.
+
+*Vorteile*
+
+Es können beliebige Auswertungen vorgenommen werden.
+
+Es muss nichts zusätzlich implementiert werden.
+
+
+*Nachteil*
+
+Der Datenschutzbeauftragte muss die erforderlichen SQL-Kenntnisse besitzen.
+
+*Untervariante2 - Eigene Auswertungsapplikation*
+
+Es wird eine neue Applikation für die Auswertung der Protokollierungsdaten implementiert
+
+*Vorteile*
+
+Der Datenschutzbeauftragte muss keine SQL-Kenntnisse besitzen.
+
+Zusätzlich wäre es aber trotzdem möglich, die Eingabe von SQL-Statements zu erlauben, um die Vorteile der Variante 1 zu haben.
+
+*Nachteile*
+
+Zusätzlicher Implementierungsaufwand.
+
+
+===== Löschen
+
+Die Daten liegen zentral in einer Datenbank.
+Es wird ein Datenbank-Job eingerichtet, der jede Nacht die Daten löscht, die älter als ein 1 Jahr sind.
+
+*Vorteile*
+
+Einfach einzurichten
+
+Performant
+
+*Nachteile*
+
+Wenn sich der Zeitraum ändert, muss der Datenbank-Job angepasst werden.
+
+
+==== Fazit
+
+Die Lösung ist performant und ermöglicht durch die zentrale Ablage der Daten eine einfache Auswertung.
+
+Nachteilig ist, dass alle Fachapplikationen angepasst werden müssen und nicht garantiert werden kann, dass alle Fachapplikationen die Protokollierungs-Bibliothek verwenden.
+
+
 
 == Auswertung
 
@@ -224,7 +360,8 @@ image::kontext_variante3.png["Kontextdiagramm Variante 2"]
 
 * Performanz, Verfügbarkeit sind wichtige Architekturziele, darum werden sie mit 10 Punkten bewertet.
 * Skalierbarkeit, Sicherheit, Batchprozesse und Integrierbarkeit werden mit 8 Punkten bewertet, weil sie intergrale Bestandteile der Nicht-Funktionalen Anforderungen sind.
-* Betriebs- und Wartungskosten, die Erfüllung der fachlichen Anforderungen sind wichtiger als die Kosten, daher werden die Kosten nur mit 4 bzw. mit 6 Punkten bewertet. Da die Lebensdauer der Anwendung mehrere Jahre dauert, werden die die laufenden Kosten höher bewertet.
+* Betriebs- und Wartungskosten, die Erfüllung der fachlichen Anforderungen sind wichtiger als die Kosten, daher werden die Kosten nur mit 4 bzw. mit 6 Punkten bewertet.
+Da die Lebensdauer der Applikation mehrere Jahre dauert, werden die die laufenden Kosten höher bewertet.
 * Die Software wird nicht ständig erweitert, somit wird die Erweiterbarkeit mit 5 Punkten bewertet.
 * Das Know-How der Mitarbeiter bewerten wir mit 5 Punkten, weil wir nach Bedarf kurzfristig externe Ressourcen  einkaufen  oder mittelfristig die Mitarbeiter  ausbilden können.
 * Die Konfigurierung der Aufbewahrungsfrist wird nicht häufig vorgenommen, somit bewerten wir sie mit 3 Punkten.
@@ -301,15 +438,7 @@ image::kontext_variante3.png["Kontextdiagramm Variante 2"]
 | -
 | -
 
-
 |===
-
-
-
-
-
-
-
 
 == Antrag
 
@@ -319,6 +448,11 @@ image::kontext_variante3.png["Kontextdiagramm Variante 2"]
 
 === Mögliche Risiken und Massnahmen (Minderung, Behandlung, Akzeptieren)
 
+
+== Glossar
+
+* ELK-Stack : Elasticsearch, Logstash, and Kibana, Tool zum Auswerten von Logdateien. https://www.elastic.co/webinars/introduction-elk-stack
+* Splunk : Kommerzielles Tool für Auswertung von Logdateien. https://www.splunk.com/
 
 // Notizen nur zur Information, aber keine ANforderung sie zu liefern
 //

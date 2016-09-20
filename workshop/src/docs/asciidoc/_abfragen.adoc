@@ -1,27 +1,6 @@
-==== Abfragen
+=== Abfragen
 
-===== Logtool
-
-Für die Auswertung von Logdateien existieren auf dem Markt sowohl kommerzielle (z.B. Splunk) als auch frei
-verfügbare Tools (ELK-Stack), mit denene Logdateien von Applikationen schnell und komfortabel ausgewertet werden können.
-Die Applikationen könnten dabei die Requests in eigene Logdateien schreiben, die dann vom Logtool indexiert würden.
- kann man feingranular konfigurieren, welcher  Benutzer auf welche Logdateien zugreifen kann.
-
- Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Logdateien Sinn.
-
-|===
-| Vorteile | Nachteile
-
-| Bewährte Tools verfügbar
-| Kommerzielle Lösungen (Splunk) sehr teuer bei grossen Datenmengen
-
-| Keine Eigenentwicklung notwendig
-| Keine strickte Trennung zwischen Applikationslogdaten (z.B. Fehler, Warnungen) und den Protokolldaten
-
-
-|===
-
-===== Eigene Anwendung
+==== Eigene Applikation
 
 Für die Auswertung wird eine eigene, auf die spezifischen Fachbedürfnisse zugeschnittene Applikation gebaut.
 Die Applikation kann dabei entweder intern oder von einem externen Dienstleister im Rahmen eines Auftrages entwickelt werden.
@@ -35,12 +14,12 @@ Die Applikation kann dabei entweder intern oder von einem externen Dienstleister
 | Kein Vendor-Lockin
 | Weiterentwicklung  muss selbst gesteuert werden
 
-| Sowohl mit DB als auch mit Dateien als Speichermedium möglich
+| Sowohl mit Datenbank als auch mit Dateien als Speichermedium möglich
 |
 
 |===
 
-===== Plain SQL-Abfragen
+==== Plain SQL-Abfragen
 
 Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslich Leserechten auf die Logtabellen
  gegeben. Diese Variante ist nur sinnvoll wenn die Persistierung der Logdateien in der Datenbank gemacht wird.
@@ -57,7 +36,27 @@ Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslic
 |
 | Wenn eine zentrale Datenbank für alle Applikationen gemacht wird, kann via SQL auf alle Logdaten zugegriffen werden
 
-|
-|
+|===
+
+==== Logtool
+
+Für die Auswertung von Logdateien existieren auf dem Markt sowohl kommerzielle (z.B. _Splunk_) als auch frei
+verfügbare Tools (_ELK-Stack_), mit denene Logdateien von Applikationen schnell und komfortabel ausgewertet werden können.
+Die Applikationen könnten dabei die Requests in eigene Logdateien schreiben, die dann vom Logtool indexiert würden.
+ kann man feingranular konfigurieren, welcher  Benutzer auf welche Logdateien zugreifen kann.
+
+Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Logdateien Sinn.
 
 |===
+| Vorteile | Nachteile
+
+| Bewährte Tools verfügbar
+| Kommerzielle Lösungen (_Splunk_) sehr teuer bei grossen Datenmengen
+
+| Keine Eigenentwicklung notwendig
+| Keine strickte Trennung zwischen Applikationslogdaten (z.B. Fehler, Warnungen) und den Protokolldaten
+
+
+|===
+
+

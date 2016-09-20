@@ -10,11 +10,11 @@ Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
 | Einfach zum Betreiben
 | Durch hohe  Last eventuell Performanceprobleme
 
-| Ermöglicht schnelle Fachanwendungsübergreifende Abfragen
+| Ermöglicht schnelle Fachapplikationsübergreifende Abfragen
 | Single Point of Failure
 
-| Lizenzkosten tiefer, da weniger DB-Instanzen notwendig sind
-| Höchste Sicherheitsstufe einer Fachanwendung gilt automatisch für alle
+| Lizenzkosten tiefer, da weniger Datenbank-Instanzen notwendig sind
+| Höchste Sicherheitsstufe einer Fachapplikation gilt automatisch für alle
 
 | Wartbarkeit
 | Keine klare Abgrenzung zwischen den Applikationen (Datenschutz)
@@ -23,48 +23,26 @@ Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
 
 ==== Dezentrale Datenbank
 
-Die Protokollierungsdaten werden bei jeder Fachanwendung (entweder innerhalb der Datenbank der Fachanwendung
+Die Protokollierungsdaten werden bei jeder Fachapplikation (entweder innerhalb der Datenbank der Fachapplikation
 oder in einer separaten Datenbank) gespeichert.
 
 |===
 | Vorteile | Nachteile
 
 | Performance beim Schreiben
-| Lizenzkosten bei einer separaten DB höher, da mehr Instanzen benötigt werden
+| Lizenzkosten bei einer separaten Datenbank höher, da mehr Instanzen benötigt werden
 
-| Keine Abhägigkeiten zwischen den Fachanwendungen
-| Abfragen über mehrere Anwendungen / Datenbanken aufwendiger
+| Keine Abhägigkeiten zwischen den Fachapplikation
+| Abfragen über mehrere Fachapplikationen / Datenbanken aufwendiger
 
 | Performance beim Lesen, da weniger Daten vorhanden sind
 |
 
-
 |===
 
+==== Dezentral in Logdatei
 
-// TODO in morp uebernehmen
-==== Protokollierungsdaten zentral in Datei loggen
-
-Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
-
-|===
-| Vorteile | Nachteile
-
-| Einfach zu imoplementieren
-| Eventuell gegenseitige Behinderung (Lock), wenn ein Filehandle zwischen Fachanwendungen geteilt wird
-
-| Alle Protokollierungsdaten können an einer Stelle zentral gefunden werden
-| Keine klare Abgrenzung zwischen den Applikationen (Datenschutz)
-
-| Keine Datenbank Lizenzkosten notwendig
-|
-
-|===
-
-// TODO in morp uebernehmen
-==== Protokollierungsdaten dezentral in Datei speichern
-
-Die Fachanwendungen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei. Die Datei könnte auch auf einem
+Die Fachapplikationen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei. Die Datei könnte auch auf einem
 von allen Applikationen geteilten Folder geschrieben werden, was die Auswertung über mehrere Applikationen erleichtert.
 
 |===
@@ -73,7 +51,7 @@ von allen Applikationen geteilten Folder geschrieben werden, was die Auswertung 
 | Einfach zu implementieren
 | Daten liegen verstreut auf den Applikationsservern
 
-| Fachanwendungen behindern sich nicht gegenseitig beim Schreiben
+| Fachapplikationen behindern sich nicht gegenseitig beim Schreiben
 |
 
 | Keine Datenbank Lizenzkosten notwendig
@@ -81,6 +59,24 @@ von allen Applikationen geteilten Folder geschrieben werden, was die Auswertung 
 
 |===
 
+
+==== Zentral in Logdatei
+
+Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
+
+|===
+| Vorteile | Nachteile
+
+| Einfach zu imoplementieren
+| Eventuell gegenseitige Behinderung (Lock), wenn ein Filehandle zwischen Fachapplikationen geteilt wird
+
+| Alle Protokollierungsdaten können an einer Stelle zentral gefunden werden
+| Keine klare Abgrenzung zwischen den Applikationen (Datenschutz)
+
+| Keine Datenbank Lizenzkosten notwendig
+|
+
+|===
 
 ==== Queue
 

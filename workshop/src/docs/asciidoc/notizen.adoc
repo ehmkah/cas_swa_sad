@@ -2,8 +2,8 @@
 
 === Varianten AB1
 
-* Vor der Fachanwendung wird der Aufruf
-* Vorwebservice, Proxy Zwischen Präsentationsschicht und Fachanwendung
+* Vor der Fachapplikation wird der Aufruf
+* Vorwebservice, Proxy Zwischen Präsentationsschicht und Fachapplikation
 * Alle Requests protokollieren
 * zum Beispiel ESB
 
@@ -14,17 +14,17 @@
 === Variante AB3
 
 * Bibliothek zur Verfügung stellen
-* jede Fachanwendung muss Bibliothek aufrufen
+* jede Fachapplikation muss Bibliothek aufrufen
 
 == Speichern
 
 === Variante S1
 
-* zentrale Datenbank für alle Fachanwendungen speichern
+* zentrale Datenbank für alle Fachapplikationen speichern
 
 === Variante S2
 
-* dezentrale Datenbank für jede Fachanwendung
+* dezentrale Datenbank für jede Fachapplikation
 
 === Variante S3
 
@@ -32,7 +32,7 @@
 
 === Variante S4
 
-* für jede Fachanwendung eine eigene Logdatei, pro Tag eine Datei
+* für jede Fachapplikatio eine eigene Logdatei, pro Tag eine Datei
 
 === Variante S5
 
@@ -46,7 +46,7 @@
 
 === Variante A2
 
-* Eigene Anwendung bauen
+* Eigene Applikation bauen
 * Reportingtool verwenden
 
 === Variante A3
