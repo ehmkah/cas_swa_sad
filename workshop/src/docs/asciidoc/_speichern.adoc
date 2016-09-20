@@ -40,24 +40,6 @@ oder in einer separaten Datenbank) gespeichert.
 
 |===
 
-==== Zentral in Logdatei
-
-Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
-
-|===
-| Vorteile | Nachteile
-
-| Einfach zu imoplementieren
-| Eventuell gegenseitige Behinderung (Lock), wenn ein Filehandle zwischen Fachapplikationen geteilt wird
-
-| Alle Protokollierungsdaten können an einer Stelle zentral gefunden werden
-| Keine klare Abgrenzung zwischen den Applikationen (Datenschutz)
-
-| Keine Datenbank Lizenzkosten notwendig
-|
-
-|===
-
 ==== Dezentral in Logdatei
 
 Die Fachapplikationen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei. Die Datei könnte auch auf einem
@@ -77,6 +59,24 @@ von allen Applikationen geteilten Folder geschrieben werden, was die Auswertung 
 
 |===
 
+
+==== Zentral in Logdatei
+
+Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
+
+|===
+| Vorteile | Nachteile
+
+| Einfach zu imoplementieren
+| Eventuell gegenseitige Behinderung (Lock), wenn ein Filehandle zwischen Fachapplikationen geteilt wird
+
+| Alle Protokollierungsdaten können an einer Stelle zentral gefunden werden
+| Keine klare Abgrenzung zwischen den Applikationen (Datenschutz)
+
+| Keine Datenbank Lizenzkosten notwendig
+|
+
+|===
 
 ==== Queue
 

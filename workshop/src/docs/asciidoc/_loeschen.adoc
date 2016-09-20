@@ -44,7 +44,7 @@ Die Daten werden manuell durch einen Anwender gelöscht.
 
 Diese Variante wird aus Gründen der Praktikabilität verworfen.
 
-==== Batch löscht Logdateien
+==== Batch löscht Logdatei
 
 Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelöscht.
 
@@ -63,7 +63,7 @@ Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelösch
 |===
 
 
-==== Anwender löscht Logdatei manuell
+==== Anwender löscht Logdatei
 
 Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelöscht.
 
