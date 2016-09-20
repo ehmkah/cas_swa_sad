@@ -51,7 +51,7 @@ Es gibt bereits ein bestehendes Datenbanksystem. Für zusätzliche Instanzen fal
 | Erweiterbarkeit Protokollierung
 | Je nach Art der Erweiterung muss nur die Bibliothek angepasst werden und die Applikationen entsprechend
 aktualisiert werden. Die ganze Logik ist durch der Bibliothek innerhalb der Fachapplikation.
-| 2
+| 1
 
 | Erweiterbarkeit Fachapplikation
 | Wenn neue Fachapplikationen implementiert werden, muss dort die Bibliothek eingebunden werden.
@@ -73,6 +73,6 @@ Bei der "Speicher-Applikation" muss die neue Fachapplikation auch in die Liste e
 
 | Gewichtete Gesamtbewertung
 | -
-| 209
+| 206
 
 |===
