@@ -1,7 +1,7 @@
 ==== Abgreifen
 
 
-===== Vor der Fachanwendung
+===== Vor der Fachapplikation
 
 Die Requests werden im Proxy protokolliert.
 
@@ -11,7 +11,7 @@ Die Requests werden im Proxy protokolliert.
 | Alle Requests werden abgegriffen
 | Technisch komplex
 
-| Keine Implementierung auf Anwendungsebene notwendig
+| Keine Implementierung auf Applikationsebene notwendig
 | Je nach Anfrage nicht alle benötigten Log-Informationen vorhanden
 
 // TODO muss muss muss noch überarbeitet werden
@@ -42,25 +42,24 @@ Die Datenbankabfragen werden via Stored Procedures gemacht. Innerhalb der Prozed
 
 |===
 
-===== Integration in der Fachanwendung
-
+===== Integration in der Fachapplikation¶
+                                         ¶
 // TODO: Wie wird der Webservice berücksichtigt?
 // TODO: Schreibt die Bibliothek direkt in die DB oder wird ein Service-Call gemacht
-Die Protokollierung findet in der Fachanwendung statt. Es wird eine
-Bibliothek erstellt, die das Protokollieren mit einfachen Aufrufen aus den Fachanwendung
-ermöglicht.
+Die Protokollierung findet in der Fachapplikation statt.
+Es wird eine Bibliothek erstellt, die das Protokollieren mit einfachen Aufrufen aus den Fachapplikation ermöglicht.
 
-Die gleiche Bibliothek wird in allen Fachanwendungen verwendet.
+Die gleiche Bibliothek wird in allen Fachapplikationen verwendet.
 
 // TODO: Noch a bisserl was mehr
 |===
 | Vorteile | Nachteile
 
 | Flexibel, plattformunabhängig
-| Muss in allen Anwendungen eingebunden werden
+| Muss in allen Fachapplikationen eingebunden werden
 
 | Umsysteme werden nicht protokolliert
-| Schränkt die Implementierungsmöglichkeiten der Fachanwendung ein (von Java auf C#)
+| Schränkt die Implementierungsmöglichkeiten der Fachapplikationen ein (von Java auf C#)
 
 |
 | Organisatorische Massnahmen notwendig, damit die Bibliothek in allen notwendigen Fachapplikationen eingebunden wird
