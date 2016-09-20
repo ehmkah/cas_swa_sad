@@ -16,7 +16,7 @@ Die abgelaufenen Daten werden durch einen automatischen Batch täglich gelöscht
 
 ==== Technologische Umsetzung
 
-Die Bibliothek wird wie alle Anwendungen mit Java entwickelt und als JAR via Maven importiert.
+Die Bibliothek wird wie alle Applikationen mit Java entwickelt und als JAR via Maven importiert.
 Die Bibliothek bietet ein Interface mit den Protokollierungsfunktionen.
 Intern wird jeder Aufruf eine solchen Funktion via SOAP verschlüsselt an den Webservice weitergeleite.
 // asynchron? Ich dachte wir machen nichts asynchron
@@ -26,8 +26,8 @@ Der Webservice wird mit JEE implementiert und in die bestehende Applikationsland
 
 Der Batch wird mit Hilfe des _JSR 352_ mit JEE implementiert, damit er in die bestehende Architekturlandschaft der Mobiliar passt.
 
-Die Applikation für die Abfrage wird als Webanwendung aus Basis von _AngularJS_ mit einem _JEE_ basierten REST-Backend implementiert.
-Die Kommunikation zwischen der Webanwendung und dem Backend erfolgt via _REST_.
+Die Applikation für die Abfrage wird als Webapplikation aus Basis von _AngularJS_ mit einem _JEE_ basierten REST-Backend implementiert.
+Die Kommunikation zwischen der Webapplikation und dem Backend erfolgt via _REST_.
 Der Datenschutzbeauftrage muss somit keine Software lokal installieren und aktualisieren.
 
 ==== Vor- und Nachteile
@@ -40,7 +40,7 @@ Der Datenschutzbeauftrage muss somit keine Software lokal installieren und aktua
 ===== Nachteile
 
 - Relativ hoher Aufwand, da alle Teile selbst entwickelt werden müssen
-- Die Bibliothek muss in jede Anwendung eingefügt werden.
+- Die Bibliothek muss in jede Applikation eingefügt werden.
 Eine neue Deploymenteinheit ist für jede Fachapplikation notwendig.
 
 ==== Risiken

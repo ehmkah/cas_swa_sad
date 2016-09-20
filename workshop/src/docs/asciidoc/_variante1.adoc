@@ -21,8 +21,8 @@ In einer späteren Phase kann die Persistenzschicht des Proxies durch einen sepa
 
 Der Batch wird mit Hilfe des _JSR 352_ mit JEE implementiert, damit er in die Architekturlandschaft der Mobiliar passt.
 
-Die Applikation für die Abfrage wird als Webanwendung aus Basis von _AngularJS_ mit einem _JEE_ basierten Backend implementiert.
-Die Kommunikation erfolgt zwischen Webanwendung und Backend mit _REST_. Damit ersparen wir uns,
+Die Applikation für die Abfrage wird als Webapplikation aus Basis von _AngularJS_ mit einem _JEE_ basierten Backend implementiert.
+Die Kommunikation erfolgt zwischen Webapplikation und Backend mit _REST_. Damit ersparen wir uns,
 dass die Applikation lokal bei den Benutzern installiert werden muss. Ausserdem steht die Fachapplikation damit dem Datenschutzbeauftragten
 stets in der neuesten Form zur Verfügung.
 
