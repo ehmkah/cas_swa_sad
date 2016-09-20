@@ -7,36 +7,40 @@ image::kontext_variante1.png["Kontextdiagramm  Variante 1"]
 
 ==== Möglichst präzise Beschreibung (Schlüsselaspekte)
 
-Bei dieser Variante werden alle Anfragen an eine Fachapplikation durch einen Proxy vor der Fachapplkation abgegriffen.
-Dieser Proxy speichert die ermittelten Daten in einer zentralen Datenbank, die mit einer eigenen Applikation durch den Datenschutzbeauftragten abgefragt werden kann.
-Gelöscht werden die Protokollierungsdaten mit Hilfe eines Batches der die Daten automatisch löscht.
+Bei dieser Variante werden alle Anfragen durch einen Proxy vor der Fachapplkation abgegriffen.
+Dieser Proxy speichert die ermittelten Daten in einer zentralen Datenbank,
+die mit einer eigenen Applikation durch den Datenschutzbeauftragten abgefragt werden kann.
+Gelöscht werden die Protokollierungsdaten regelmässig mit Hilfe eines Batches.
 
 ==== Technologische Umsetzung
 
 Die Realisierung des Proxies und der Speicherung kann in einem Modul realisiert werden.
 Aus dem Proxy würde zuerst direkt in die Datenbank geschrieben werden, um schnell eine funktionierende Protokollierung zu erhalten.
-In einer späteren Phase kann die Persistenzschicht des Proxies durch einen separaten Service ersetzt werden, der die Speicherung der Daten übernimmt.
+In einer späteren Phase kann die Persistenzschicht des Proxies durch einen separaten Service ersetzt werden,
+ der die Speicherung der Daten übernimmt.
 
 Der Batch wird mit Hilfe des _JSR 352_ mit JEE implementiert, damit er in die Architekturlandschaft der Mobiliar passt.
 
 Die Applikation für die Abfrage wird als Webanwendung aus Basis von _AngularJS_ mit einem _JEE_ basierten Backend implementiert.
-Die Kommunikation erfolgt zwischen Webanwendung und Backend erfolgt mit _REST_.
-Damit ersparen wir uns, dass die Applikation installiert werden muss.
-Ausserdem steht sie damit dem Datenschutzbeauftragten stets in der neuesten Form zur Verfügung.
+Die Kommunikation erfolgt zwischen Webanwendung und Backend mit _REST_. Damit ersparen wir uns,
+dass die Applikation lokal bei den Benutzern installiert werden muss. Ausserdem steht die Fachapplikation damit dem Datenschutzbeauftragten
+stets in der neuesten Form zur Verfügung.
 
 ==== Vor- und Nachteile
 
 ===== Vorteile
 
 * Fachapplikationen werden durch Proxy nicht beeinflusst
+* Alle Anfragen werden protoklliert. Es sind keine Änderungen an den Fachapplikationen nötig
 * Zentrale Speicherung der Protokollierungsdaten erleichtert abfragen
-* Mit eigener Applikation, können die zulässigen Abfragen durch den Datenschutzbeauftragten genau eingestellt werden
+* Mit einer selbst gebauten Auwwertungsapplikation, können die zulässigen Abfragen durch den Datenschutzbeauftragten genau konfiguriert werden
 
 ===== Nachteile
 
-* Daten werden auf sehr hoher Ebene abgegriffen und erschwerden damit möglichweise die Auswertung
-* Zusätzliche Abfrageinformationen für den Datenschutzbeauftragten, müssen erst gebaut werden, das kann eventuell zu lange dauern
-
+* Daten werden auf sehr hoher Ebene abgegriffen und erschweren damit möglichweise die Auswertung, da unter Umständen
+nicht alle Kontextdaten für die Protollierung vorhanden sind.
+* Neue Anforderungen des Datenschutzbeauftragen müssen in der Applikation stets von Entwicklern umgesetzt werden. Mit einem
+Datenbankzugriff via SQL-Client wäre die Variante für die Auswertung flexibler.
 
 ==== Risiken
 
