@@ -42,7 +42,7 @@ Es soll mithilfe der Protokollierung sichergestellt werden, dass die Mitarbeiter
 [cols="20%,80%"]
 |===
 1.4+| **FA-10 **
-| *Protokollierungsdaten (Anfrage / Mutation) ID*
+| *Protokollierungsdaten (Anfragetation) ID*
 | Protokolleintrag muss im System eindeutig identifizierbar sein
 | Benutzer müssen eindeutig identifizierbar sein
 | Zeitpunkt und Art der Bearbeitung müssen erfasst werden
@@ -50,7 +50,7 @@ Es soll mithilfe der Protokollierung sichergestellt werden, dass die Mitarbeiter
 
 |===
 1.4+| **FA-10 **
-| *Protokollierungsdaten (Anfrage / Mutation) ID*
+| *Anfrage Protokollieren*
 | Protokolleintrag muss im System eindeutig identifizierbar sein
 | Benutzer müssen eindeutig identifizierbar sein
 | Zeitpunkt und Art der Bearbeitung müssen erfasst werden
