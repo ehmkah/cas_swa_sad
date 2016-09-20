@@ -7,8 +7,22 @@ image::kontext_variante1.png["Kontextdiagramm  Variante 1"]
 
 ==== Möglichst präzise Beschreibung (Schlüsselaspekte)
 
+Bei dieser Variante werden alle Anfragen an eine Fachapplikation durch einen Proxy vor der Fachanwendung abgegriffen.
+Dieser Proxy speichert die ermittelten Daten in einer zentralen Datenbank, die mit einer eigenen Applikation durch den Datenschutzbeauftragten abgefragt werden kann.
+Gelöscht werden die Protokollierungsdaten mit Hilfe eines Batches der die Daten automatisch löscht.
+
 ==== Technologische Umsetzung
+
+Die Realisierung des Proxies und der Speicherung kann in einem Modul realisiert werden.
+Aus dem Proxy würde zuerst direkt in die Datenbank geschrieben werden, um schnell eine funktionierende Protokollierung zu erhalten.
+In einer späteren Phase kann die Persistenzschicht des Proxies durch einen separaten Service ersetzt werden, der die Speicherung der Daten übernimmt.
+
+Der Batch wird mit Hilfe
 
 ==== Vor- und Nachteile
 
+
+
 ==== Risiken
+
+
