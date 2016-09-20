@@ -41,24 +41,22 @@ Die Datenbankabfragen werden via Stored Procedures gemacht. Innerhalb der Prozed
 
 ==== Integration in Fachapplikation
 
-// TODO: Wie wird der Webservice berücksichtigt?
-// TODO: Schreibt die Bibliothek direkt in die DB oder wird ein Service-Call gemacht
 Die Protokollierung findet in der Fachapplikation statt.
 Es wird eine Bibliothek erstellt, die das Protokollieren mit einfachen Aufrufen aus den Fachapplikation ermöglicht.
+Die Bibliothek kann weiterhin kapseln, wie die Protokollierungsdaten geschrieben werden, also entweder direkt in die Datenbank, Logdateien, oder per Protokollierungsservice.
 
 Die gleiche Bibliothek wird in allen Fachapplikationen verwendet.
 
-// TODO: Noch a bisserl was mehr
 |===
 | Vorteile | Nachteile
 
-| Flexibel, plattformunabhängig
+| Flexibel, da an alle Anforderungen anpassbar
 | Muss in allen Fachapplikationen eingebunden werden
 
 | Umsysteme werden nicht protokolliert
-| Schränkt die Implementierungsmöglichkeiten der Fachapplikationen ein (von Java auf C#)
+| Schränkt die Implementierungsmöglichkeiten der Fachapplikationen ein (von Java kann nicht auf C# gewechselt werden)
 
-|
-| Organisatorische Massnahmen notwendig, damit die Bibliothek in allen notwendigen Fachapplikationen eingebunden wird
+| Einfach in Fachapplikation verwendbar, da es Kompexität vor Fachapplikationen verbirgt
+| Organisatorische Massnahmen z.B. Verankerung in der Architekturguidline notwendig, dass die Bibliothek in Fachapplikationen eingebunden werden muss
 
 |===
