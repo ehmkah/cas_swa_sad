@@ -6,11 +6,11 @@
 | Bewertungskriterium | Begründung | Punkte
 
 | Performanz
-| hohe Performanz, da nur in eine lokale Textdatei geschrieben wird.
+| hohe Performanz, da nur in eine lokale Textdatei geschrieben wird
 | 5
 
 | Verfügbarkeit Fachapplikation
-| hohe Verfügbarkeit, da pro Fachapplikation eine eigene Textdatei verwendet wird.
+| hohe Verfügbarkeit, da pro Fachapplikation eine eigene Textdatei verwendet wird
 | 5
 
 | Verfügbarkeit Protokollierung
@@ -18,29 +18,29 @@
 | 4
 
 | Skalierbarkeit
-| Wenn eine neue Fachapplikation hinzukommt, hat es keinen Einfluss auf die bestehenden Fachapplikationen.
+| Wenn eine neue Fachapplikation hinzukommt, hat es keinen Einfluss auf die bestehenden Fachapplikationen
 | 4
 
 | Integrierbar in unsere IT-Landschaft
-| Es wird eine bestehende Technologie verwendet und daher gut integrierbar.
+| Es wird eine bestehende Technologie verwendet und ist daher gut integrierbar.
 | 5
 
 | Sicherheit
 | Die Textdateien können mittels File-Permissions geschützt werden.
-Es muss organisatorisch sichergestellt werden, dass die Berechtigungen vergeben werden.
+Es muss organisatorisch sichergestellt werden, dass die Berechtigungen korrekt vergeben werden.
 | 5
 
 
 | Batchprozesse
-| Durch die Bibliothek wird zentral die Überprüfung vorgenommen
+| Durch die Bibliothek wird die Überprüfung zentral vorgenommen
 | 5
 
 | Betriebs- und Wartungskosten (pro Jahr)
-| Es muss die Bibliothek gewartet werden und es fallen für das Logtool Lizenkosten an.
+| Es muss die Bibliothek gewartet werden und es fallen für das Logtool allenfalls Lizenkosten an.
 | 3
 
 | Erweiterbarkeit Protokollierung
-| Je nach Art der Erweiterung muss entweder nur die Bibliothek angepasst werden.
+| Je nach Art der Erweiterung muss nur die Bibliothek angepasst werden.
 Unter Umständen müssen aber auch die Fachapplikationen erweitert werden.
 | 3
 
