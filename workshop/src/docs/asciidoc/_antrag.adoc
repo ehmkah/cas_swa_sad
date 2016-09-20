@@ -3,6 +3,72 @@
 
 === Begründeter Antrag zur Umsetzung einer Variante
 
+* Varianten3 und Variante 4 liegen dicht beieinander
+* Beide erfüllen die fachlichen Anforderungen
+* Variante3 verwendet Standarttool
+* Variante4 wäre vollständige Eigenentwicklung
+
 === Kosten- und Aufwandschätzung (Infrastruktur, Ressourcen)
 
-=== Mögliche Risiken und Massnahmen (Minderung, Behandlung, Akzeptieren)
+==== Realisierungskosten
+
+|===
+| Beschreibung | Kosten
+
+| Implementierung der Logging Bibliothek
+| 10 Personentage
+
+| Anbinden Bibliothek an Fachanwendungen
+| pro Fachanwendung 10 Personentage
+
+| Anbindung Logdateien an Splunk
+| pro Fachanwendung 1 Personentag
+
+| Schulungskosten für Datenschutzbeauftragten
+| 3 Personentage plus Kurskosten
+
+| Splunkadministrator
+| 5 Personentage plus Kurskosten
+
+| *Summe*
+| *260 Personentage*
+
+|===
+
+==== Betriebskosten
+
+|===
+| Beschreibung | Kosten pro Jahr
+
+| Splunk - Lizenkosten
+| 7800 USD (ca 7600 CHF)
+
+| Hardware (Cloud, Openshift)
+| 4000 CHF
+
+| Wartung
+| 30 Personentage
+
+| *Summe*
+| *30 Personentage + 116000 CHF*
+
+|===
+
+=== Mögliche Risiken und Massnahmen
+
+|===
+| Risiko | Auswirkung | Massnahme
+
+| Lizenkosten bei Volumenüberschreitung
+| Betriebskosten steigen
+| Keine Massnahme, da Kostensteigerung moderat ist (Verdopplung Protokollierungsdaten erhöht Kosten um 3000 USD im Jahr)
+
+| Vendor-Lock-In
+| Änderungen am Lizenmodell oder an Features, die wir nutzen
+| Behandlung - Keine exotischen Feature verwenden, so wenig wie möglich
+
+| Skalierungsprobleme mit dem einzigen Fileserver
+| Der Fileserver wird zum Flaschenhals
+| Behandlung - auf den Fileserver verzichten
+
+|===
