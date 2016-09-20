@@ -10,7 +10,7 @@
 | 5
 
 | Performanz
-| Synchroner Webserviceaufruf
+| Performanz der Fachapplikation wird leicht beeinflusst
 | 3
 
 | Verfügbarkeit Fachapplikation
@@ -18,14 +18,13 @@
 | 4
 
 | Verfügbarkeit Protokollierung
-| Der Webservice kann durch Loadbalanceing hochverfügbar gemacht werden.
+| Der Webservice kann durch Loadbalanceing hochverfügbar gemacht werden
 | 4
 
 | Skalierbarkeit
-| Der Webservice ist gut skallierbar.
+| Der Webservice ist gut skalierbar
 
-Es werden alle Daten in einer zentralen Datenbank gespeichert, welche schlecht skalliert.
-//TODO: besser formulieren
+Es werden alle Daten in einer zentralen Datenbank gespeichert, welche schlecht skaliert
 | 3
 
 | Integrierbar in unsere IT-Landschaft
@@ -33,10 +32,10 @@ Es werden alle Daten in einer zentralen Datenbank gespeichert, welche schlecht s
 | 5
 
 | Sicherheit
-| Die Übermittlung der Daten an den Webservice erfolgt verschlüsselt
-Bei der Datenbank muss sichergestellt werden, dass nur die "Speicher-Applikation" Schreibrecht hat
+| Die Übermittlung der Daten an den Webservice erfolgt verschlüsselt.
+Bei der Datenbank muss sichergestellt werden, dass nur die "Speicher-Applikation" Schreibrechte hat
 und nur der Datenschutzbeauftragte Leserechte hat
-| 4
+| 5
 
 
 | Batchprozesse
@@ -44,36 +43,34 @@ und nur der Datenschutzbeauftragte Leserechte hat
 | 5
 
 | Betriebs- und Wartungskosten (pro Jahr)
-| Es muss die "Speicher-Applikation", die Bibliothek und der DB-Job zum löschen gewartet werden.
-Es gibt bereits ein bestehenden DBMS, daher fallen keine zusätzlichen Lizenzkosten an.
+| Es muss die "Speicher-Applikation", die Bibliothek und der Batch-Job zum Löschen gewartet werden.
+Es gibt bereits ein bestehendes Datenbanksystem. Für zusätzliche Instanzen fallen Lizenzkosten an
 | 3
 
 | Erweiterbarkeit Protokollierung
-| Ändert sich die Bibliothek müssen alle Fachapplikationen ausgetauscht werden.
+| Ändert sich die Bibliothek müssen alle Fachapplikationen aktualisiert werden
 | 1
 
 | Erweiterbarkeit Fachapplikation
 | Wenn neue Fachapplikationen implementiert werden, muss dort die Bibliothek eingebunden werden.
-Bei der "Speicher-Applikation" muss die neue Fachapplikation auch in die Liste eingetragen werden.
+Bei der "Speicher-Applikation" muss die neue Fachapplikation auch in die Liste eingetragen werden
 | 4
-
-| Genug passende Mitarbeiter mit Know-How
-| Hoher Realisierungsaufwand, aber Standardtechnologie
-| 2
-
 
 | Realisierungskosten (einmalig)
 | Hoher Realisierungsaufwand, aber Standardtechnologie
 | 2
 
+| Genug passende Mitarbeiter mit Know-How
+| Hoher Realisierungsaufwand, aber Standardtechnologie
+| 2
 
 | Konfigurierung der Aufbewahrungsfrist
-| Die Frist kann beim Löschskript konfiguriert werden.
+| Die Frist kann beim Löschskript konfiguriert werden
 | 5
 
 
-| Gesamtbewertung
+| Gewichtete Gesamtbewertung
 | -
-| 190
+| 194
 
 |===
