@@ -7,7 +7,7 @@ image::kontext_variante1.png["Kontextdiagramm  Variante 1"]
 
 ==== Möglichst präzise Beschreibung (Schlüsselaspekte)
 
-Bei dieser Variante werden alle Anfragen durch einen Proxy vor der Fachapplkation abgegriffen.
+Bei dieser Variante werden alle Anfragen durch einen Proxy vor der Fachapplikation abgegriffen.
 Dieser Proxy speichert die ermittelten Daten in einer zentralen Datenbank,
 die mit einer eigenen Applikation durch den Datenschutzbeauftragten abgefragt werden kann.
 Gelöscht werden die Protokollierungsdaten regelmässig mit Hilfe eines Batches.

@@ -7,41 +7,44 @@ image::kontext_variante2.png["Kontextdiagramm  Variante 2"]
 
 ==== Möglichst präzise Beschreibung (Schlüsselaspekte)
 
-Es wird eine Bibliothek entwickelt (oder allenfalls eine bestehende Bibliothek angepasst), die die Entwickler in
-jeder Fachapplikation einfach mit dem Dependendency-Management einbauen können. Die Bibliothek bietet eine simple
-API an, mit der der Protokolleintrag danach auf einen vordefinierten Webservice weiterleitet. Der
-Webservice speichert die Protokollierung in eine zentrale Datenbank. Zusätzlich wird eine eigene Fachapplikation
-für den Datenschutzbeauftragten gebaut, in der er benutzerfreundlich die Protokollierungsdaten abfragen kann. Die
-abgelaufenen Daten werden durch einen automatischen Batch täglich gelöscht.
+// ehmkah: (können wir die Klammer weglassen?, wir starten doch vom Scratch?))
+Es wird eine Bibliothek entwickelt (oder allenfalls eine bestehende Bibliothek angepasst), die die Entwickler in jeder Fachapplikation einfach mit dem Dependendency-Management einbauen können.
+Die Bibliothek bietet eine simple API an, mit der der Protokolleintrag danach auf einen vordefinierten Webservice weiterleitet.
+Der Webservice speichert die Protokollierung in eine zentrale Datenbank.
+Zusätzlich wird eine eigene Fachapplikation für den Datenschutzbeauftragten gebaut, in der er benutzerfreundlich die Protokollierungsdaten abfragen kann.
+Die abgelaufenen Daten werden durch einen automatischen Batch täglich gelöscht.
 
 ==== Technologische Umsetzung
 
-Die Bibliothek wird wie alle Anwendungen mit Java entwickelt und als JAR via Maven importiert. Die Bibliothek bietet
-ein Interface mit den Protokollierungsfunktionen. Intern wird jeder Aufruf eine solchen Funktion via SOAP verschlüsselt
-an den Webservice weitergeleite. Die Kommunikation geschieht dabei stets synchron.
+Die Bibliothek wird wie alle Anwendungen mit Java entwickelt und als JAR via Maven importiert.
+Die Bibliothek bietet ein Interface mit den Protokollierungsfunktionen.
+Intern wird jeder Aufruf eine solchen Funktion via SOAP verschlüsselt an den Webservice weitergeleite.
+// asynchron? Ich dachte wir machen nichts asynchron
+Die Kommunikation geschieht dabei stets synchron.
 
 Der Webservice wird mit JEE implementiert und in die bestehende Applikationslandschaft integriert.
 
 Der Batch wird mit Hilfe des _JSR 352_ mit JEE implementiert, damit er in die bestehende Architekturlandschaft der Mobiliar passt.
 
 Die Applikation für die Abfrage wird als Webanwendung aus Basis von _AngularJS_ mit einem _JEE_ basierten REST-Backend implementiert.
-Die Kommunikation zwischen der Webanwendung und dem Backend erfolgt via _REST_. Der Datenschutzbeauftrage muss somit keine Software
-lokal installieren und aktualisieren.
+Die Kommunikation zwischen der Webanwendung und dem Backend erfolgt via _REST_.
+Der Datenschutzbeauftrage muss somit keine Software lokal installieren und aktualisieren.
 
 ==== Vor- und Nachteile
 
-Vorteile:
+===== Vorteile
 
 - Da alle Teile selber entwickelt werden, kann spezifisch auf die einzelnen Bedürfnisse aller Beteiligten eingegangen werden.
 - Alle notwendigen Protokollierungsdaten (Kontextdaten) sind innerhalb der Fachaplikation vorhanden.
 
-Nachteile:
+===== Nachteile
 
-- Relativ hoher Aufwand, da alle teile selber entwickelt werden müssen
-- Die Bibliothek muss in jede Anwendung eingefügt werden. Eine neue Deploymenteinheit ist für jede Fachapplikation notwendig.
+- Relativ hoher Aufwand, da alle Teile selbst entwickelt werden müssen
+- Die Bibliothek muss in jede Anwendung eingefügt werden.
+Eine neue Deploymenteinheit ist für jede Fachapplikation notwendig.
 
 ==== Risiken
 
-- Zentraler Service ist ein SPF.
+- Zentraler Service ist ein Single Point of Failure.
 - Es muss durch organisatorische Massnahmen sichergestellt werden, dass alle Applikationen die Bibliothek integrieren.
 Möglich Gegenmassnahme: Die Anforderung sollte in den Architekturrichtlinien festgelegt und deren Einhaltung kontrolliert werden.
