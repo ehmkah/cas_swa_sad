@@ -7,15 +7,16 @@ image::kontext_variante1.png["Kontextdiagramm  Variante 1"]
 
 ==== Möglichst präzise Beschreibung (Schlüsselaspekte)
 
-Bei dieser Variante werden alle Anfragen an eine Fachapplikation durch einen Proxy vor der Fachapplkation abgegriffen.
+Bei dieser Variante werden alle Anfragen an eine Fachapplikation durch einen Proxy vor der Fachapplikation abgegriffen.
 Dieser Proxy speichert die ermittelten Daten in einer zentralen Datenbank, die mit einer eigenen Applikation durch den Datenschutzbeauftragten abgefragt werden kann.
-Gelöscht werden die Protokollierungsdaten mit Hilfe eines Batches der die Daten automatisch löscht.
+Mit Hilfe eines Batches werden die Protokollierungsdaten automatisch gelöscht.
 
 ==== Technologische Umsetzung
 
 Die Realisierung des Proxies und der Speicherung kann in einem Modul realisiert werden.
-Aus dem Proxy würde zuerst direkt in die Datenbank geschrieben werden, um schnell eine funktionierende Protokollierung zu erhalten.
-In einer späteren Phase kann die Persistenzschicht des Proxies durch einen separaten Service ersetzt werden, der die Speicherung der Daten übernimmt.
+Aus dem Proxy würden die Protokollierungsdaten zuerst direkt in die Datenbank geschrieben werden, um schnell eine funktionierende Protokollierung zu erhalten.
+In der Zukunft kann die Persistenzschicht des Proxies durch einen separaten Service ersetzt werden, der die Speicherung der Daten übernimmt.
+
 
 Der Batch wird mit Hilfe des _JSR 352_ mit JEE implementiert, damit er in die Architekturlandschaft der Mobiliar passt.
 
