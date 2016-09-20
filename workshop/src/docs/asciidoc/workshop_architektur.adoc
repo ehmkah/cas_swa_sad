@@ -91,35 +91,12 @@ include::_abfragen.adoc[]
 include::_loeschen.adoc[]
 
 
-=== Variante 1
+include::_variante1.adoc[]
 
-==== Kontextdiagramm
+include::_variante2.adoc[]
 
-.Kontextdiagramm  Variante 1
-image::kontext_variante1.png["Kontextdiagramm  Variante 1"]
+include::_variante3.adoc[]
 
-==== Möglichst präzise Beschreibung (Schlüsselaspekte)
-
-==== Technologische Umsetzung
-
-==== Vor- und Nachteile
-
-==== Risiken
-
-=== Variante 2
-
-.Kontextdiagramm Variante 2
-image::kontext_variante2.png["Kontextdiagramm Variante 2"]
-
-==== Kontextdiagramm
-
-==== Möglichst präzise Beschreibung (Schlüsselaspekte)
-
-==== Technologische Umsetzung
-
-==== Vor- und Nachteile
-
-==== Risiken
 
 === Variante 3
 

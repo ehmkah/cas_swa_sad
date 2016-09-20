@@ -1,0 +1,14 @@
+=== Variante 1
+
+==== Kontextdiagramm
+
+.Kontextdiagramm  Variante 3
+image::kontext_variante3.png["Kontextdiagramm  Variante 3"]
+
+==== Möglichst präzise Beschreibung (Schlüsselaspekte)
+
+==== Technologische Umsetzung
+
+==== Vor- und Nachteile
+
+==== Risiken
