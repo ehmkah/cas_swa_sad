@@ -29,9 +29,13 @@ v0.1, 2016-13-09
 
 ==== Worin besteht genau das zu lösende Problem (Scope)?
 
-* Umgang mit den Schadensdaten
+Es soll mithilfe der Protokollierung sichergestellt werden, dass die Mitarbeiter korrekt mit Kundendaten umgehen.
+Änderungen sollen nachvollzogen werden können und Mitarbeiter sollen nicht ohne Auftrag in den Kundendaten suchen.
 
 ==== Wer sind die Interessenvertreter?
+
+Die Interessenvertreter sind: Mitarbeiter, Datenschutzbeauftragter.
+
 
 === Randbedingungen
 
@@ -41,12 +45,28 @@ Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 
 ==== Technische Randbedingungen (z.B. Applikationsplattform, Referenz-Architektur)
 
-* Technologie JEE
-* Applikationsserver JBoss
-* Datenbank Orcale/ PostgresSQL
-* Standarprotokoll SOAP/REST
-* ESB Bus darf eingesetzt werden
-* kein Cachen von Daten aus dem Backend
+|===
+| Randbedingung | Ausprägung
+
+| Technologie
+| JEE
+
+| Applikationsserver
+| JBoss
+
+| Datenbank
+| Oracle, PostgreSQL
+
+| Standardkommunikationsprotokoll zwischen Applikationen
+| SOAP, REST
+
+| Enterprise Service Bus
+| darf eingesetzt werden
+
+| Daten aus dem Backend
+| Dürfen in Fachapplikation nicht gecached werden, damit Protokollierung nicht umgangen wird.
+
+|===
 
 ==== Organisatorische Randbedingungen
 
@@ -414,15 +434,7 @@ Da die Lebensdauer der Applikation mehrere Jahre dauert, werden die die laufende
 | -
 | -
 
-
 |===
-
-
-
-
-
-
-
 
 == Antrag
 
@@ -432,6 +444,11 @@ Da die Lebensdauer der Applikation mehrere Jahre dauert, werden die die laufende
 
 === Mögliche Risiken und Massnahmen (Minderung, Behandlung, Akzeptieren)
 
+
+== Glossar
+
+* ELK-Stack : Elasticsearch, Logstash, and Kibana, Tool zum Auswerten von Logdateien. https://www.elastic.co/webinars/introduction-elk-stack
+* Splunk : Kommerzielles Tool für Auswertung von Logdateien. https://www.splunk.com/
 
 // Notizen nur zur Information, aber keine ANforderung sie zu liefern
 //

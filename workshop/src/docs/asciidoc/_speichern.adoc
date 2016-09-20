@@ -59,7 +59,7 @@ Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
 |===
 
 ==== Dezentral in Logdatei
-                     ]
+
 Die Fachapplikationen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei. Die Datei könnte auch auf einem
 von allen Applikationen geteilten Folder geschrieben werden, was die Auswertung über mehrere Applikationen erleichtert.
 
