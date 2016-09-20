@@ -1,0 +1,44 @@
+=== Randbedingungen
+
+* Die Sicherheitsstufe der Protokolldaten entspricht der Sicherheitsstufe der Fachdaten.
+* Die Protokolldaten dürfen von Fachdaten geographisch getrennt gespeichert werden.
+* Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
+
+
+==== Technische Randbedingungen
+
+|===
+| Randbedingung | Beschreibung
+
+| Technologie
+| JEE, Java
+
+| Applikationsserver
+| JBoss
+
+| Datenbank
+| Oracle, PostgreSQL
+
+| Standardkommunikationsprotokoll zwischen Applikationen
+| SOAP, REST
+
+| Enterprise Service Bus
+| darf eingesetzt werden
+
+| Daten aus dem Backend
+| Dürfen in Fachapplikation nicht gecached werden, damit Protokollierung nicht umgangen wird.
+
+|===
+
+==== Organisatorische Randbedingungen
+
+|===
+| Randbedinung | Beschreibung
+
+| Homogene IT-Landschaft
+| Die Mobiliar legt Wert darauf, dass die IT-Landschaft so homogen wie möglich bleibt.
+
+| Mitarbeiterpool
+| Die Mobiliar verfügt über eine ausreichend grosse Zahl von qualifizierten Mitarbeitern im Bereich Java
+
+|===

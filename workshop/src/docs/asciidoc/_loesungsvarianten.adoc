@@ -1,0 +1,30 @@
+== Lösungsvarianten
+
+=== Lösungsraum
+
+.Lösungsraum
+image::morphologischer_kasten_ohne.png["Lösungsraum"]
+
+include::_abgreifen.adoc[]
+
+include::_speichern.adoc[]
+include::_abfragen.adoc[]
+include::_loeschen.adoc[]
+
+=== Untersuchte Varianten
+
+.Ausgewählte Varianten
+image::morphologischer_kasten.jpg["Ausgewählte Varianten"]
+
+* Blau: Variante 1
+* Rot: Variante 2
+* Grün: Variante 3
+* Schwarz: Variante 4
+
+include::_variante1.adoc[]
+
+include::_variante2.adoc[]
+
+include::_variante3.adoc[]
+
+include::_variante4.adoc[]
