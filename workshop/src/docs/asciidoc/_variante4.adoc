@@ -1,13 +1,13 @@
-=== Variante 4
+==== Variante 4
 
-==== Kontextdiagramm
+===== Kontextdiagramm
 
 .Kontextdiagramm  Variante 4
 image::kontext_variante3.png["Kontextdiagramm  Variante 4"]
 
-==== Technologische Umsetzung
+===== Technologische Umsetzung
 
-===== Abgreifen und Speichern
+====== Abgreifen und Speichern
 
 Neue Bibliothek erstellen, die eine Möglichkeit zur Protokollierung bereitstellt.
 Als Übergabeparameter werden die notwendigen Daten wie SecurityToken, den Methodenname, die Fachapplikation usw. übermittelt.
@@ -21,16 +21,16 @@ Es wird eine neue Applikation implementiert, die periodisch die Protokollierungs
 Gleichzeitig wird das Abfrageergebnis beim ursprünglichen Eintrag ergänzt, damit es pro ID nur einen Datensatz gibt.
 Nach der Verarbeitung wird die Textdatei gelöscht.
 
-===== Abfragen
+====== Abfragen
 
 Es wird eine neue Applikation für die Auswertung der Protokollierungsdaten implementiert.
 
-===== Löschen
+====== Löschen
 
 Es wird ein Datenbank-Job eingerichtet, der periodisch die Daten löscht, die älter als die konfigurierte Zeit sind.
 
 
-==== Vor- und Nachteile
+===== Vor- und Nachteile
 
 Die Lösung ist performant und ermöglicht durch die zentrale Ablage der Daten eine einfache Auswertung.
 
@@ -38,6 +38,6 @@ Nachteilig ist, dass alle Fachapplikationen angepasst werden müssen.
 Es ist ein relativ hoher Entwicklungsaufwand notwendig.
 TODO: Lifecycle der Bibliothek --> Einfluss auf alle Applikationen
 
-==== Risiken
+===== Risiken
 
 Es muss sichergestellt werden, dass alle Fachapplikationen die Bibliothek verwenden.

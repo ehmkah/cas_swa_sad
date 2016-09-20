@@ -1,6 +1,6 @@
-=== Speichern
+==== Speichern
 
-==== Zentrale Datenbank
+===== Zentrale Datenbank
 
 Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
 
@@ -21,7 +21,7 @@ Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
 
 |===
 
-==== Dezentrale Logdatei + Zentrale Datenbank
+===== Dezentrale Logdatei + Zentrale Datenbank
 
 Die Protokollierungsdaten werden dezentral kontinuierlich in Logdateien geschrieben.
 Ein zentrale Batch liest die dezentralen Logdateien der Applikationen und speichert sie in der zentralen Datenbank.
@@ -37,7 +37,7 @@ Ein zentrale Batch liest die dezentralen Logdateien der Applikationen und speich
 
 |===
 
-==== Dezentral in Logdatei
+===== Dezentral in Logdatei
 
 Die Fachapplikationen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei. Die Datei könnte auch auf einem
 von allen Applikationen geteilten Folder geschrieben werden, was die Auswertung über mehrere Applikationen erleichtert.
@@ -57,7 +57,7 @@ von allen Applikationen geteilten Folder geschrieben werden, was die Auswertung 
 |===
 
 
-==== Zentral in Logdatei
+===== Zentral in Logdatei
 
 Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
 
@@ -75,7 +75,7 @@ Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
 
 |===
 
-==== Queue
+===== Queue
 
 Die Protokollierungsdaten werden in eine persistence Queue geschrieben.
 
@@ -87,7 +87,7 @@ Die Protokollierungsdaten werden in eine persistence Queue geschrieben.
 
 |===
 
-==== Dezentrale Datenbank
+===== Dezentrale Datenbank
 
 Die Protokollierungsdaten werden bei jeder Fachapplikation (entweder innerhalb der Datenbank der Fachapplikation
 oder in einer separaten Datenbank) gespeichert.
@@ -106,8 +106,9 @@ oder in einer separaten Datenbank) gespeichert.
 
 |===
 
+==== Fazit
 
-Fazit: Die Variante mit einer zentralen Datei schliessen wir wegen der gegenseitigen Schreibbehinderung aus.
+Die Variante mit einer zentralen Datei schliessen wir wegen der gegenseitigen Schreibbehinderung aus.
 Damit die Anforderungen an die Protokollierung zuverlässig gewährleistet werden können, wird der
  einfachere Ansatz mit einer synchronen Implementierung gewählt.
  Die Variante mit der Queue wird deshalb nicht weiter verfolgt.

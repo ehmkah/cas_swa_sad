@@ -1,6 +1,6 @@
-=== Abfragen
+==== Abfragen
 
-==== Eigene Applikation
+===== Eigene Applikation
 
 Für die Auswertung wird eine eigene, auf die spezifischen Fachbedürfnisse zugeschnittene Applikation gebaut.
 Die Applikation kann dabei entweder intern oder von einem externen Dienstleister im Rahmen eines Auftrages entwickelt werden.
@@ -19,7 +19,7 @@ Die Applikation kann dabei entweder intern oder von einem externen Dienstleister
 
 |===
 
-==== Plain SQL-Abfragen
+===== Plain SQL-Abfragen
 
 Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslich Leserechten auf die Logtabellen
  gegeben. Diese Variante ist nur sinnvoll wenn die Persistierung der Logdateien in der Datenbank gemacht wird.
@@ -28,7 +28,7 @@ Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslic
 | Vorteile | Nachteile
 
 | Viele Auswertungsmöglichkeiten dank SQL
-| SQL Know-How nötig
+| SQL Know-How nötig, lokal installation
 
 | Wenig Implementierungsaufwand
 | Usability
@@ -38,7 +38,7 @@ Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslic
 
 |===
 
-==== Logtool
+===== Logtool
 
 Für die Auswertung von Logdateien existieren auf dem Markt sowohl kommerzielle (z.B. _Splunk_) als auch frei
 verfügbare Tools (_ELK-Stack_), mit denene Logdateien von Applikationen schnell und komfortabel ausgewertet werden können.
@@ -58,5 +58,9 @@ Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Lo
 
 
 |===
+
+===== Fazit
+Die Protokollierungsdaten mit SQL-Client zu lesen wird nicht weiter verfolgt, weil es SQL Know-How für
+die Datenschutzbeauftragten vorausgesetzt ist.
 
 
