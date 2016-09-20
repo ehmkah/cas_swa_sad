@@ -478,7 +478,7 @@ Zu fehleranfällig
 === Implementierungsdetails Variante 4
 
 
-====== Abgreifen
+==== Abgreifen
 
 Neue Bibliothek erstellen, die eine Methode zur Protokollierung bereitstellt.
 Die Methode hat als Übergabeparameter das SecurityToken, den Methodenname, die Fachapplikation usw.
@@ -504,7 +504,7 @@ Es stehen sämtliche erforderlichen Protokollierungsdaten zur Verfügung.
 Jede Fachapplikation muss angepasst werden und es muss sichergestellt werden, dass auch jede Fachapplikation den Aufruf durchführt.
 
 
-====== Speichern
+==== Speichern
 
 Es wird eine neue Applikation implementiert, die täglich die Daten der einzelnen Textdateien in einer zentralen Datenbank speichert.
 Gleichzeitig wird das Abfrageergebnis beim ursprünglichen Eintrag ergänzt, damit es pro ID nur einen Datensatz gibt.
@@ -524,7 +524,7 @@ Die Daten stehen erst mit einiger Verzögerung zur Auswertung zur Verfügung.
 
 Es muss sichergestellt werden, dass alle Fachapplikationen berücksichtigt werden.
 
-====== Abfragen
+==== Abfragen
 
 *Untervariante1 - Direkte Abfrage über die Datenbank*
 
@@ -556,7 +556,7 @@ Zusätzlich wäre es aber trotzdem möglich, die Eingabe von SQL-Statements zu e
 Zusätzlicher Implementierungsaufwand.
 
 
-====== Löschen
+==== Löschen
 
 Die Daten liegen zentral in einer Datenbank.
 Es wird ein Datenbank-Job eingerichtet, der jede Nacht die Daten löscht, die älter als ein 1 Jahr sind.
