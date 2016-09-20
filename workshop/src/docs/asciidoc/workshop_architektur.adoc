@@ -119,7 +119,7 @@ Von der Mobiliar Versicherung folgende Interessenvertreter einbezogen und müsse
 * Die Protokolldaten sollen nach spätestens 24 Stunden abrufbar sein.
 
 
-==== Technische Randbedingungen (z.B. Applikationsplattform, Referenz-Architektur)
+==== Technische Randbedingungen
 
 |===
 | Randbedingung | Beschreibung
@@ -156,8 +156,6 @@ Von der Mobiliar Versicherung folgende Interessenvertreter einbezogen und müsse
 | Die Mobiliar verfügt über eine ausreichend grosse Zahl von qualifizierten Mitarbeitern im Bereich Java
 
 |===
-
-==== Welche wichtigsten Architekturziele sollen mit der Lösung erreicht werden?
 
 include::_architekturziele.adoc[]
 
@@ -197,8 +195,9 @@ include::_variante4.adoc[]
 
 === Variantenbewertung
 
-=== Gewichtete Bewertungskriterien, nach denen die Varianten beurteilt werden
+=== Gewichtete Bewertungskriterien
 
+Anhand der folgenden Bewertungskriterien werden die Varianten beurteilt.
 
 .Bewertungstabelle
 [cols="2,1,1,1,1,1,4"]
@@ -335,7 +334,9 @@ Da die Lebensdauer der Applikation mehrere Jahre dauert, werden die die laufende
 
 
 
-=== Begründete Bewertung der verschiedenen Varianten in einer Bewertungsmatrix
+=== Begründete Bewertung
+
+Im folgenden Abschnitt werden die Varianten ausführlich bewertet.
 
 include::_begruendungV1.adoc[]
 
@@ -345,15 +346,7 @@ include::_begruendungV3.adoc[]
 
 include::_begruendungV4.adoc[]
 
-
-== Antrag
-
-=== Begründeter Antrag zur Umsetzung einer Variante
-
-=== Kosten- und Aufwandschätzung (Infrastruktur, Ressourcen)
-
-=== Mögliche Risiken und Massnahmen (Minderung, Behandlung, Akzeptieren)
-
+include::_antrag.adoc[]
 
 == Glossar
 

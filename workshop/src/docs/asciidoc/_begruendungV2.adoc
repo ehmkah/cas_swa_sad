@@ -1,6 +1,7 @@
 
 ==== Variante 2
 
+[cols="2,4,1"]
 |===
 | Bewertungskriterium | Begründung | Punkte
 
