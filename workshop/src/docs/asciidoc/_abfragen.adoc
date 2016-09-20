@@ -54,7 +54,7 @@ Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Lo
 | Kommerzielle Lösungen (_Splunk_) sehr teuer bei grossen Datenmengen
 
 | Keine Eigenentwicklung notwendig
-| Keine strickte Trennung zwischen Applikationslogdaten (z.B. Fehler, Warnungen) und den Protokolldaten
+| Keine strikte Trennung zwischen Applikationslogdaten (z.B. Fehler, Warnungen) und den Protokolldaten
 
 
 |===

@@ -1,25 +1,30 @@
 
-*Variante 4*
+*Variante 2*
 
 |===
 | Bewertungskriterium | Begründung | Punkte
 
-| Performanz
-| hohe Performanz, da zunächst nur in eine lokale Textdatei geschrieben wird.
+
+| Vollständigkeit der Protokollierungsdaten
+| Alle notwendigen Daten stehen zur Verfügung.
 | 5
+
+| Performanz
+| synchroner Webserviceaufruf
+| 3
 
 | Verfügbarkeit Fachapplikation
-| hohe Verfügbarkeit, da pro Fachapplikation eine eigene Textdatei verwendet wird.
-| 5
+| Wenn der Webservice nicht verfügbar ist, sind auch die Fachapplikationen nicht verfügbar
+| 4
 
 | Verfügbarkeit Protokollierung
-| Die Daten stehen erst mit Verzögerung zur Verfügung
+| Der Webservice kann durch Loadbalanceing hochverfügbar gemacht werden.
 | 4
 
 | Skalierbarkeit
-| Wenn eine neue Fachapplikation hinzukommt, hat es keinen Einfluss auf die bestehenden Fachapplikationen.
+| Der Webservice ist gut skallierbar.
 
-Es werden alle Daten in einer zentralen Datenbank gespeichert, welche schlecht skaliert.
+Es werden alle Daten in einer zentralen Datenbank gespeichert, welche schlecht skalliert.
 //TODO: besser formulieren
 | 3
 
@@ -28,8 +33,7 @@ Es werden alle Daten in einer zentralen Datenbank gespeichert, welche schlecht s
 | 5
 
 | Sicherheit
-| Die Textdateien können mittels File-Permissions geschützt werden.
-Es muss organisatorisch sichergestellt werden, dass die Berechtigungen vergeben werden.
+| Die Übermittlung der Daten an den Webservice erfolgt verschlüsselt.
 Bei der Datenbank muss sichergestellt werden, dass nur die "Speicher-Applikation" Schreibrecht hat
 und nur der Datenschutzbeauftragter Leserechte hat
 | 4
@@ -44,11 +48,9 @@ und nur der Datenschutzbeauftragter Leserechte hat
 Es gibt bereits ein bestehenden DBMS, daher fallen keine zusätzlichen Lizenzkosten an.
 | 3
 
-
 | Erweiterbarkeit Protokollierung
-| Je nach Art der Erweiterung muss entweder nur die Bibliothek angepasst werden.
-Unter Umständen müssen aber auch die Fachapplikationen erweitert werden.
-| 3
+| Ändert sich die Bibliothek müssen alle Fachapplikationen ausgetauscht werden.
+| 1
 
 | Erweiterbarkeit Fachapplikation
 | Wenn neue Fachapplikationen implementiert werden, muss dort die Bibliothek eingebunden werden.
@@ -72,6 +74,6 @@ Bei der "Speicher-Applikation" muss die neue Fachapplikation auch in die Liste e
 
 | Gesamtbewertung
 | -
-| 186
+| 190
 
 |===
