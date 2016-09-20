@@ -27,7 +27,7 @@ v0.1, 2016-13-09
 === Problemstellung
 
 ==== In welchem Unternehmen, Projekt, System stellt sich das Problem?
-Die Firma *High Five Company* soll für das Unternehmen *Mobiliar Versicherung* eine Softwarearchitektur zur Protokollierung von Abfragen und Mutation der Kundendaten erstellen.
+Die Firma *High Five Company* soll für das Unternehmen *Schweizerische Mobiliar Versicherungsgesellschaft AG* eine Softwarearchitektur zur Protokollierung von Abfragen und Mutation der Kundendaten erstellen.
 Es soll mithilfe der Protokollierung sichergestellt werden, dass die Mitarbeiter korrekt mit Kundendaten umgehen.
 Änderungen sollen nachvollzogen werden können und Mitarbeiter sollen nicht ohne Auftrag in den Kundendaten suchen.
 
