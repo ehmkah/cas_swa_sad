@@ -95,21 +95,16 @@ Die Interessenvertreter sind: Mitarbeiter, Datenschutzbeauftragter.
 
 ==== Organisatorische Randbedingungen
 
-include::_architekturziele.adoc[]
-
 ==== Welche wichtigsten Architekturziele sollen mit der Lösung erreicht werden?
 
-
+include::_architekturziele.adoc[]
 
 == Lösungsvarianten
 
-.Lösungsraum
-image::morphologischer_kasten.jpg["Lösungsraum"]
+=== Lösungsraum
 
-* Blau: Variante 1
-* Rot: Variante 2
-* Grün: Variante 3
-* Schwarz: Variante 4
+.Lösungsraum
+image::morphologischer_kasten_ohne.png["Lösungsraum"]
 
 Im Anhang ist beschrieben, wieso die anderen Varianten nicht weiter berücksichtigt werden.
 
@@ -118,6 +113,14 @@ include::_speichern.adoc[]
 include::_abfragen.adoc[]
 include::_loeschen.adoc[]
 
+=== Untersuchte Varianten
+.Ausgewählte Varianten
+image::morphologischer_kasten.jpg["Ausgewählte Varianten"]
+
+* Blau: Variante 1
+* Rot: Variante 2
+* Grün: Variante 3
+* Schwarz: Variante 4
 
 include::_variante1.adoc[]
 

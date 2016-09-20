@@ -1,11 +1,11 @@
-=== Variante 3
+==== Variante 3
 
-==== Kontextdiagramm
+===== Kontextdiagramm
 
 .Kontextdiagramm  Variante 3
 image::kontext_variante3.png["Kontextdiagramm  Variante 3"]
 
-==== Möglichst präzise Beschreibung (Schlüsselaspekte)
+===== Möglichst präzise Beschreibung (Schlüsselaspekte)
 
 Analog zur zweiten Variante wird eine Bibliothek verwendet oder allenfalls neu entwickelt, die einfach in bestehende
 Fachapplikationen eingebunden werden kann. Die Bibliothek schreibt dabei die Protokollierungsdaten in einem
@@ -16,7 +16,7 @@ Ein Logtool wie Splunk oder der ELK-Stack indexiert danach diese Logdateien und 
 Über ein Webfrontend kann danach der Datenschutzbeauftragte die gewünschten Daten anschliessend abfragen. Die abgelaufenen Daten
 werden durch einen automatischen Batch periodisch  aus dem Filesystem, resp. aus dem Index gelöscht.
 
-==== Technologische Umsetzung
+===== Technologische Umsetzung
 
 
 Die Bibliothek wie Beipielsweise das quelloffene Log4J wird in alle Applikationen verwendet und als JAR via Maven importiert.
@@ -32,23 +32,23 @@ Das Logtool indexiert danach konstant die Logdateien. Dabei wird pro Applikation
 
 Der Batch wird mit Hilfe des _JSR 352_ mit JEE implementiert, damit er optimal in die bestehende Architekturlandschaft der Mobiliar passt.
 
-==== Vor- und Nachteile
+===== Vor- und Nachteile
 
-===== Vorteile
+====== Vorteile
 
 - Relativ einfache Implementierung der Bibliothek
 - Verwendung von bewährten Tools (Splunk, ELK)
 - Nur der Batch muss neu entwickelt werden
 - Für das Logtool kann eine bestehende Lösung verwendet
 
-===== Nachteile
+====== Nachteile
 
 - Kann nur beschränkt auf die individuellen Bedürfnisse der Beteiligten angepasst werden (z.B. das GUI für den Datenschutzbeauftragen)
 - Keine klare Abgrenzung zwischen Zugriffsprotokollen und den normalen Protokolldaten
 - Alle Protokolldaten sind zentral abgelegt (Datenschutzmassnahmen notwendig, Abgrenzung zwischen den Fachapplikationen)
 
 
-==== Risiken
+===== Risiken
 
 - Falls der Fileserver nicht verfügbar ist, können keine Requests auf die Fachapplikationen gemacht werden. (SPF)
 - Files sind nicht ideal für parallele Schreibvergänge wenn mehrere Requests gleichzeitig protokolliert werden müssen
