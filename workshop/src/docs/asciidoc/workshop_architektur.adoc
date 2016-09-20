@@ -290,11 +290,15 @@ Da die Lebensdauer der Applikation mehrere Jahre dauert, werden die die laufende
 | -
 
 
-| Gesamtbwertung
+| Gesamtbewertung
 | -
 | -
 
 |===
+
+
+include::_begruendungV4.adoc[]
+
 
 == Antrag
 

@@ -1,0 +1,75 @@
+
+*Variante 4*
+
+|===
+| Bewertungskriterium | Begründung | Punkte
+
+| Performanz
+| hohe Performanz, da zunächst nur in eine lokale Textdatei geschrieben wird.
+| 5
+
+| Verfügbarkeit Fachapplikation
+| hohe Verfügbarkeit, da pro Fachapplikation eine eigene Textdatei verwendet wird.
+| 5
+
+| Verfügbarkeit Protokollierung
+| Die Daten stehen erst mit Verzögerung zur Verfügung
+| 4
+
+| Skalierbarkeit
+| Wenn eine neue Fachapplikation hinzukommt, hat es keinen Einfluss auf die bestehenden Fachapplikationen.
+
+Es werden alle Daten in einer zentralen Datenbank gespeichert, welche schlecht skalliert.
+//TODO: besser formulieren
+| 3
+
+| Integrierbar in unsere IT-Landschaft
+| Es wird eine bestehende Technologie verwendet und daher gut integrierbar.
+| 5
+
+| Sicherheit
+| Die Textdateien können mittels File-Permissions geschützt werden.
+Es muss organisatorisch sichergestellt werden, dass die Berechtigungen vergeben werden.
+Bei der Datenbank muss sichergestellt werden, dass nur die "Speicher-Applikation" Schreibrecht hat
+und nur der Datenschutzbeauftragter Leserechte hat
+| 4
+
+
+| Batchprozesse
+| Durch die Bibliothek wird zentral die Überprüfung vorgenommen
+| 5
+
+| Betriebs- und Wartungskosten (pro Jahr)
+| Es muss die "Speicher-Applikation", die Bibliothek und der DB-Job zum löschen gewartet werden.
+Es gibt bereits ein bestehenden DBMS, daher fallen keine zusätzlichen Lizenzkosten an.
+| 3
+
+
+| Erweiterbarkeit Protokollierung
+| -
+| -
+
+| Erweiterbarkeit Fachapplikation
+| -
+| -
+
+| Genug passende Mitarbeiter mit Know-How
+| Hoher Realisierungsaufwand, aber Standardtechnologie
+| 2
+
+
+| Realisierungskosten (einmalig)
+| Hoher Realisierungsaufwand, aber Standardtechnologie
+| -
+
+
+| Konfigurierung der Aufbewahrungsfrist
+| -
+| -
+
+
+| Gesamtbewertung
+| -
+| -
+
+|===
