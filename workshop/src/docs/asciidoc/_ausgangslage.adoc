@@ -78,9 +78,9 @@ image::anforderungen_mutation.png["Speicherung der Daten bei einer Mutation "]
 
 ==== Stakeholder
 
-Von der _Mobiliar Versicherung_ wurden folgende Interessenvertreter benannt, die die die in diesem Dokument emphfohlenen Variante unterstützen sollen.
+Von der _Mobiliar Versicherung_ wurden folgende Interessenvertreter benannt, die die in diesem Dokument empfohlenen Variante unterstützen sollen.
 
-- Fachverantworlicher
+- Fachverantworliche
 - Vorsitzender des Architekturboards
 - Applikationsverantwortliche
 - IT-Operator

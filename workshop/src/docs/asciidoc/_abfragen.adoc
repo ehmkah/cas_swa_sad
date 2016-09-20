@@ -63,4 +63,4 @@ Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Lo
 
 ===== Fazit
 
-Die Variante _Plain SQL-Abfragen_ wird nicht weiter verfolgt, weil es SQL Know-How für den Datenschutzbeauftragten voraussetzt.
+Die Variante _Plain SQL-Abfragen_ wird nicht weiter verfolgt, weil es SQL Know-How für den Datenschutzbeauftragten voraussetzt, ausserdem lässt sich damit Anforderung FA-60 nicht umsetzen.

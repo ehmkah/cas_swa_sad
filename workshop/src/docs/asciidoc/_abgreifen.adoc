@@ -25,7 +25,7 @@ Die Requests werden im Proxy protokolliert.
 Die Datenbankabfragen werden via Stored Procedures gemacht.
 Innerhalb der Stored Procedures wird der Request in eine Tabelle gespeichert.
 Alternativ könnte eine Stored Procedure auch eine Java-Funktion aufrufen, was aber aus architektonischer Sicht nicht sinnvoll ist.
-Diese Lösung bietet sich vor allem an, wenn die Logdaten in eine Datenbank geschrieben werden.
+Diese Lösung bietet sich vor allem an, wenn die Protokollierungsdaten in eine Datenbank geschrieben werden.
 
 |===
 | Vorteile | Nachteile

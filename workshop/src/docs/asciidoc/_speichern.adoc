@@ -85,7 +85,7 @@ Die Protokollierungsdaten werden in eine persistence Queue geschrieben.
 |===
 | Vorteile | Nachteile
 
-| Protokollierungsdaten werden asynchron geschrieben und asynchron verarbeitet werden
+| Protokollierungsdaten werden asynchron geschrieben und asynchron verarbeitet
 | Queue als Technologie komplexer
 
 |===

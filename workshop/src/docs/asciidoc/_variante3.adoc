@@ -27,8 +27,9 @@ Zugangsprotokolldaten zu unterscheiden, werden letztere mit einem eigenen Append
 Die Logdateien werden dabei auf einem Netzwerk-Share zentral gespeichert. Der Fileserver befindet sich im gleichen
 Netzwerk und hat daher eine geringe Latenzzeit.
 
-Das Logtool indexiert danach konstant die Logdateien. Dabei wird pro Applikation ein Index erstellt.
- Innerhalb des Logtools können verschiedene Abfragen vordefiniert und Berechtigungen auf die einzelnen Indexe vergeben werden.
+Das Logtool indexiert danach konstant die Logdateien.
+Dabei wird pro Fachapplikation ein Index erstellt.
+Innerhalb des Logtools können verschiedene Abfragen vordefiniert und Berechtigungen auf die einzelnen Indexe vergeben werden.
 
 Der Batch wird mit Hilfe des _JSR 352_ mit JEE implementiert, damit er optimal in die bestehende Architekturlandschaft der Mobiliar passt.
 

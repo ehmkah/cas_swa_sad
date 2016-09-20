@@ -38,7 +38,6 @@ Es sind keine Änderungen an den Fachapplikationen nötig
 
 * Protokollierungsdaten werden auf sehr hoher Ebene abgegriffen und erschweren damit möglicherweise die Protokollierung, da nicht alle notwendigen Daten vorhanden sein können
 * Neue Anforderungen des Datenschutzbeauftragten müssen in der Applikation stets von Entwicklern umgesetzt werden.
-Mit einem Datenbankzugriff via SQL-Client wäre die Variante für die Auswertung flexibler.
 
 ===== Risiken
 

@@ -42,7 +42,7 @@ Es muss organisatorisch sichergestellt werden, dass die Berechtigungen korrekt v
 | 5
 
 | Betriebs- und Wartungskosten (pro Jahr)
-| Es muss die Bibliothek und der Fileserver müssen gewartet werden. Für das Logtool fallen eventuell (z.B. bei _Splunk_) Lizenkosten an.
+| Die Bibliothek und der Fileserver müssen gewartet werden. Für das Logtool fallen eventuell (z.B. bei _Splunk_) Lizenkosten an.
 | 3
 
 | Erweiterbarkeit Protokollierung
