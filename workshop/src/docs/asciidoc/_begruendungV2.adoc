@@ -6,11 +6,11 @@
 
 
 | Vollständigkeit der Protokollierungsdaten
-| Alle notwendigen Daten stehen zur Verfügung.
+| Alle notwendigen Daten stehen zur Verfügung
 | 5
 
 | Performanz
-| synchroner Webserviceaufruf
+| Synchroner Webserviceaufruf
 | 3
 
 | Verfügbarkeit Fachapplikation
@@ -29,13 +29,13 @@ Es werden alle Daten in einer zentralen Datenbank gespeichert, welche schlecht s
 | 3
 
 | Integrierbar in unsere IT-Landschaft
-| Es wird eine bestehende Technologie verwendet und daher gut integrierbar.
+| Es wird eine bestehende Technologie verwendet und ist daher gut integrierbar
 | 5
 
 | Sicherheit
-| Die Übermittlung der Daten an den Webservice erfolgt verschlüsselt.
+| Die Übermittlung der Daten an den Webservice erfolgt verschlüsselt
 Bei der Datenbank muss sichergestellt werden, dass nur die "Speicher-Applikation" Schreibrecht hat
-und nur der Datenschutzbeauftragter Leserechte hat
+und nur der Datenschutzbeauftragte Leserechte hat
 | 4
 
 
