@@ -106,8 +106,10 @@ include::_variante4.adoc[]
 === Gewichtete Bewertungskriterien, nach denen die Varianten beurteilt werden
 
 
+.Bewertungstabelle
+[cols="2,1,1,1,1,4"]
 |===
-| Bewertungs- kriterium | Gewichtung | Variante 1 | Variante 2 | Variante 3 | Beschreibung
+| Bewertungs- kriterium | Gewich- tung | V1 | V2 | V3 | Beschreibung
 
 | Performanz
 | 5
@@ -194,19 +196,19 @@ include::_variante4.adoc[]
 | -
 | Verfügen wir über genügend verfügbare und qualifizierte Mitarbeiter um die Variante selber zu implementieren
 
-| Konfigurierung der Aufbewahrungsfrist
+| Konfigurierung der Aufbewahrungs- frist
 | 2
 | -
 | -
 | -
 | Die Aufbewahrungsfrist der Protokollierungsdaten muss konfigurierbar sein (z.B 1 Jahr)
 
-| Gesamtbwertung
+| Gesamtbewertung
 | 46
 | -
 | -
 | -
-| xxx
+|
 
 |===
 Gewichtung:1 nicht relevant, 2 unwichtig, 2 weniger wichtig, 3 wichtig, 4 ziemlich wichtig  5 sehr wichtig
