@@ -5,6 +5,10 @@
 |===
 | Bewertungskriterium | Begründung | Punkte
 
+| Vollständigkeit der Protokollierungsdaten
+| Alle notwendigen Daten stehen zur Verfügung.
+| 5
+
 | Performanz
 | hohe Performanz, da zunächst nur in eine lokale Textdatei geschrieben wird.
 | 5
