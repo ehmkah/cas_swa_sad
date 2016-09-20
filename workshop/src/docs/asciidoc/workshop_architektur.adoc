@@ -66,8 +66,8 @@ image::morphologischer_kasten.jpg["Lösungsraum"]
 * Grün: Variante 3
 
 include::_abgreifen.adoc[]
-include::_abfragen.adoc[]
 include::_speichern.adoc[]
+include::_abfragen.adoc[]
 include::_loeschen.adoc[]
 
 

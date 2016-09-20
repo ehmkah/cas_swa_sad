@@ -41,8 +41,8 @@ Die Datenbankabfragen werden via Stored Procedures gemacht. Innerhalb der Prozed
 
 |===
 
-==== Integration in der Fachapplikation¶
-                                         ¶
+==== Integration in Fachapplikation
+
 // TODO: Wie wird der Webservice berücksichtigt?
 // TODO: Schreibt die Bibliothek direkt in die DB oder wird ein Service-Call gemacht
 Die Protokollierung findet in der Fachapplikation statt.
