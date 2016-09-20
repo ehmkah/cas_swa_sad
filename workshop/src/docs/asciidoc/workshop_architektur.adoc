@@ -345,15 +345,7 @@ include::_begruendungV3.adoc[]
 
 include::_begruendungV4.adoc[]
 
-
-== Antrag
-
-=== Begründeter Antrag zur Umsetzung einer Variante
-
-=== Kosten- und Aufwandschätzung (Infrastruktur, Ressourcen)
-
-=== Mögliche Risiken und Massnahmen (Minderung, Behandlung, Akzeptieren)
-
+include::_antrag.adoc[]
 
 == Glossar
 
