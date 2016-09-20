@@ -1,6 +1,6 @@
 === Löschen
 
-==== Cronjob / Batch löscht Protokollierungsdaten in DB
+==== Cronjob / Batch löscht Protokollierungsdaten in Datenbank
 
 Ein Batch wird eingerichtet, der direkt auf der Protokollierungsdatenbank die Daten
 die ausserhalb des Speicherungszeitraums liegen löscht.
@@ -21,7 +21,7 @@ die ausserhalb des Speicherungszeitraums liegen löscht.
 |===
 
 // TODO: in morphokasten anpassen
-==== Anwender löscht Protokollierungsdaten in DB
+==== Anwender löscht Protokollierungsdaten in Datenbank
 
 Die Daten werden manuell durch einen Anwender gelöscht.
 

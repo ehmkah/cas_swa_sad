@@ -35,7 +35,7 @@ Die Applikation kann dabei entweder intern oder von einem externen Dienstleister
 | Kein Vendor-Lockin
 | Weiterentwicklung  muss selbst gesteuert werden
 
-| Sowohl mit DB als auch mit Dateien als Speichermedium möglich
+| Sowohl mit Datenbank als auch mit Dateien als Speichermedium möglich
 |
 
 |===

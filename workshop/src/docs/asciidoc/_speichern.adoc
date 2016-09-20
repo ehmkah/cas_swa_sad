@@ -13,7 +13,7 @@ Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
 | Ermöglicht schnelle Fachapplikationsübergreifende Abfragen
 | Single Point of Failure
 
-| Lizenzkosten tiefer, da weniger DB-Instanzen notwendig sind
+| Lizenzkosten tiefer, da weniger Datenbank-Instanzen notwendig sind
 | Höchste Sicherheitsstufe einer Fachapplikation gilt automatisch für alle
 
 | Wartbarkeit
@@ -30,7 +30,7 @@ oder in einer separaten Datenbank) gespeichert.
 | Vorteile | Nachteile
 
 | Performance beim Schreiben
-| Lizenzkosten bei einer separaten DB höher, da mehr Instanzen benötigt werden
+| Lizenzkosten bei einer separaten Datenbank höher, da mehr Instanzen benötigt werden
 
 | Keine Abhägigkeiten zwischen den Fachapplikation
 | Abfragen über mehrere Fachapplikationen / Datenbanken aufwendiger

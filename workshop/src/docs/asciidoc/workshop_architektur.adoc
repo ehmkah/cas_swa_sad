@@ -201,7 +201,7 @@ Zusätzlicher Implementierungsaufwand.
 ===== Löschen
 
 Die Daten liegen zentral in einer Datenbank.
-Es wird ein DB-Job eingerichtet, der jede Nacht die Daten löscht, die älter als ein 1 Jahr sind.
+Es wird ein Datenbank-Job eingerichtet, der jede Nacht die Daten löscht, die älter als ein 1 Jahr sind.
 
 *Vorteile*
 
@@ -211,7 +211,7 @@ Performant
 
 *Nachteile*
 
-Wenn sich der Zeitraum ändert, muss der DB-Job angepasst werden.
+Wenn sich der Zeitraum ändert, muss der Datenbank-Job angepasst werden.
 
 
 ==== Fazit
