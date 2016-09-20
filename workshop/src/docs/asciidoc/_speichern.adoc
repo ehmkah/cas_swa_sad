@@ -38,12 +38,9 @@ oder in einer separaten Datenbank) gespeichert.
 | Performance beim Lesen, da weniger Daten vorhanden sind
 |
 
-
 |===
 
-
-// TODO in morp uebernehmen
-==== Protokollierungsdaten zentral in Datei loggen
+==== Zentral in Logdatei
 
 Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
 
@@ -61,8 +58,7 @@ Die Protokollierungsdaten werden in eine zentrale Logdatei geschrieben.
 
 |===
 
-// TODO in morp uebernehmen
-==== Protokollierungsdaten dezentral in Datei speichern
+==== Dezentral in Logdatei
                      ]
 Die Fachapplikationen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei. Die Datei könnte auch auf einem
 von allen Applikationen geteilten Folder geschrieben werden, was die Auswertung über mehrere Applikationen erleichtert.

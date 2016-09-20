@@ -1,6 +1,6 @@
 === Löschen
 
-==== Cronjob / Batch löscht Protokollierungsdaten in Datenbank
+==== Batch löscht in Datenbank
 
 Ein Batch wird eingerichtet, der direkt auf der Protokollierungsdatenbank die Daten
 die ausserhalb des Speicherungszeitraums liegen löscht.
@@ -20,8 +20,7 @@ die ausserhalb des Speicherungszeitraums liegen löscht.
 
 |===
 
-// TODO: in morphokasten anpassen
-==== Anwender löscht Protokollierungsdaten in Datenbank
+==== Anwender löscht in Datenbank
 
 Die Daten werden manuell durch einen Anwender gelöscht.
 
@@ -45,8 +44,7 @@ Die Daten werden manuell durch einen Anwender gelöscht.
 
 Diese Variante wird aus Gründen der Praktikabilität verworfen.
 
-// TODO in morpho kasten hinzufügen
-==== Cronjob / Batch löscht Log-Dateien
+==== Batch löscht Logdateien
 
 Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelöscht.
 
@@ -65,8 +63,7 @@ Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelösch
 |===
 
 
-// TODO: in morphokasten anpassen
-==== Anwender löscht Protokollierungsdateien manuell
+==== Anwender löscht Logdatei manuell
 
 Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelöscht.
 

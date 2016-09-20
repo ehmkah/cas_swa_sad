@@ -21,7 +21,7 @@ Die Applikationen könnten dabei die Requests in eigene Logdateien schreiben, di
 
 |===
 
-==== Eigene Anwendung
+==== Eigene Applikation
 
 Für die Auswertung wird eine eigene, auf die spezifischen Fachbedürfnisse zugeschnittene Applikation gebaut.
 Die Applikation kann dabei entweder intern oder von einem externen Dienstleister im Rahmen eines Auftrages entwickelt werden.
