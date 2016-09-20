@@ -18,6 +18,9 @@
 | Implementierung der Logging Bibliothek
 | 10 Personentage
 
+| Implementierung des Batchjobs zum Löschen
+| 5 Personentage
+
 | Anbinden Bibliothek an Fachanwendungen
 | pro Fachanwendung 10 Personentage
 
@@ -31,7 +34,7 @@
 | 5 Personentage plus Kurskosten
 
 | *Summe*
-| *260 Personentage*
+| *265 Personentage*
 
 |===
 
