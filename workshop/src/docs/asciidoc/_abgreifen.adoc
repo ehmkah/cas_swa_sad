@@ -60,3 +60,7 @@ Die gleiche Bibliothek wird in allen Fachapplikationen verwendet.
 | Organisatorische Massnahmen z.B. Verankerung in der Architektur Guideline notwendig, dass die Bibliothek in Fachapplikationen eingebunden werden muss
 
 |===
+
+==== Fazit
+
+Die Variante mit dem direkten Abgreifen in der Datenbank hat aus unserer Sicht zu viele Nachteile. Es stehen nicht alle notwendigen Daten zur Verfügung und es ist sehr stark abhängig von der jeweiligen Datenbank der Fachapplikation.
