@@ -196,6 +196,15 @@ include::_variante4.adoc[]
 |===
 | Bewertungs- kriterium | Gewich- tung | V1 | V2 | V3 | V4| Beschreibung
 
+
+| Vollständigkeit der Protokollierungsdaten
+| 5
+| -
+| -
+| -
+| -
+| Alle geforderten Daten sind im Kontext vorhanden und können protokolliert werden.
+
 | Performanz
 | 5
 | -
