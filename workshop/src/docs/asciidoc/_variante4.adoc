@@ -30,7 +30,11 @@ Es wird ein Datenbank-Job eingerichtet, der periodisch die Daten löscht, die ä
 
 ===== Vor- und Nachteile
 
+===== Vorteile
+
 Die Lösung ist performant und ermöglicht durch die zentrale Ablage der Daten eine einfache Auswertung.
+
+===== Nachteile
 
 Nachteilig ist, dass alle Fachapplikationen angepasst werden müssen.
 Es ist ein relativ hoher Entwicklungsaufwand notwendig.

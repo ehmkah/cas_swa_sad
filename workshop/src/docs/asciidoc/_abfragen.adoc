@@ -1,8 +1,10 @@
 ==== Abfragen
 
+Unter _Abfragen_ verstehen wir Möglichkeit, wie der Datenschutzbeauftragte auf die Protokollierungsdaten zugreifen kann.
+
 ===== Eigene Applikation
 
-Für die Auswertung wird eine eigene, auf die spezifischen Fachbedürfnisse zugeschnittene Applikation gebaut.
+Für die Auswertung wird eine eigene, auf die spezifischen Bedürfnisse des Datenschutzbeauftragten zugeschnittene Applikation gebaut.
 Die Applikation kann dabei entweder intern oder von einem externen Dienstleister im Rahmen eines Auftrages entwickelt werden.
 
 |===
@@ -21,8 +23,8 @@ Die Applikation kann dabei entweder intern oder von einem externen Dienstleister
 
 ===== Plain SQL-Abfragen
 
-Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslich Leserechten auf die Logtabellen
- gegeben. Diese Variante ist nur sinnvoll wenn die Persistierung der Logdateien in der Datenbank gemacht wird.
+Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslich Leserechten auf die Tabellen, die die Protokollierungsdaten enhalten, gegeben.
+ Diese Variante ist nur sinnvoll wenn die Protokollierungsdaten in der Datenbank gespeichert werden.
 
 |===
 | Vorteile | Nachteile
@@ -41,8 +43,8 @@ Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslic
 ===== Logtool
 
 Für die Auswertung von Logdateien existieren auf dem Markt sowohl kommerzielle (z.B. _Splunk_) als auch frei
-verfügbare Tools (_ELK-Stack_), mit denene Logdateien von Applikationen schnell und komfortabel ausgewertet werden können.
-Die Applikationen könnten dabei die Requests in eigene Logdateien schreiben, die dann vom Logtool indexiert würden.
+verfügbare Tools (_ELK-Stack_), mit denen Logdateien von Applikationen schnell und komfortabel ausgewertet werden können.
+Die Fachapplikationen könnten dabei die Anfragen und Mutationen in eigene Logdateien schreiben, die dann vom Logtool indexiert würden.
 Dabei kann man feingranular konfigurieren, welcher  Benutzer auf welche Logdateien zugreifen kann.
 
 Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Logdateien Sinn.
@@ -60,5 +62,5 @@ Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Lo
 |===
 
 ===== Fazit
-Die Protokollierungsdaten mit SQL-Client zu lesen wird nicht weiter verfolgt, weil es SQL Know-How für
-die Datenschutzbeauftragten vorausgesetzt ist.
+
+Die Variante _Plain SQL-Abfragen_ wird nicht weiter verfolgt, weil es SQL Know-How für den Datenschutzbeauftragten voraussetzt.

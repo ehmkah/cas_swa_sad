@@ -7,8 +7,7 @@ image::kontext_variante2.png["Kontextdiagramm  Variante 2"]
 
 ===== Beschreibung
 
-// ehmkah: (können wir die Klammer weglassen?, wir starten doch vom Scratch?))
-Es wird eine Bibliothek entwickelt (oder allenfalls eine bestehende Bibliothek angepasst), die die Entwickler in jeder Fachapplikation einfach mit dem Dependendency-Management einbauen können.
+Es wird eine Bibliothek entwickelt, die die Entwickler in jeder Fachapplikation einfach mit dem Dependendency-Management einbauen können.
 Die Bibliothek bietet eine simple API an, mit der der Protokolleintrag danach auf einen vordefinierten Webservice weiterleitet.
 Der Webservice speichert die Protokollierung in eine zentrale Datenbank.
 Zusätzlich wird eine eigene Fachapplikation für den Datenschutzbeauftragten gebaut, in der er benutzerfreundlich die Protokollierungsdaten abfragen kann.
@@ -16,9 +15,9 @@ Die abgelaufenen Daten werden durch einen automatischen Batch täglich gelöscht
 
 ===== Technologische Umsetzung
 
-Die Bibliothek wird wie alle Applikationen mit Java entwickelt und als JAR via Maven importiert.
+Die Bibliothek wird, wie bereits bestehende Applikationen, mit Java entwickelt und als JAR via Maven importiert.
 Die Bibliothek bietet ein Interface mit den Protokollierungsfunktionen.
-Intern wird jeder Aufruf eine solchen Funktion via SOAP verschlüsselt an den Webservice weitergeleitet.
+Intern wird jeder Aufruf verschlüsselt über einem SOAP-Aufruf an den Webservice weitergeleitet.
 Die Kommunikation geschieht dabei stets synchron.
 
 Der Webservice wird mit JEE implementiert und in die bestehende Applikationslandschaft integriert.
@@ -33,13 +32,13 @@ Der Datenschutzbeauftragte muss somit keine Software lokal installieren und aktu
 
 ====== Vorteile
 
-- Da alle Teile selber entwickelt werden, kann spezifisch auf die einzelnen Bedürfnisse aller Beteiligten eingegangen werden.
+- Da alle Komponenten selbst entwickelt werden, kann spezifisch auf die einzelnen Bedürfnisse aller Beteiligten eingegangen werden.
 - Alle notwendigen Protokollierungsdaten (Kontextdaten) sind innerhalb der Fachapplikation vorhanden.
-- Auswertungen über mehrere Applikationen einfach möglich.
+- Auswertungen über mehrere Applikationen ist einfach möglich.
 
 ====== Nachteile
 
-- Relativ hoher Aufwand, da alle Teile selbst entwickelt werden müssen
+- Relativ hoher Aufwand, da alle Komponenten selbst entwickelt werden müssen
 - Die Bibliothek muss in jede Applikation eingefügt werden.
 Eine neue Deploymenteinheit ist für jede Fachapplikation notwendig.
 - Alle Protokollierungsdaten sind zentral in einer Datenbank (Datenschutz, Abgrenzung zwischen den Fachapplikationen)
@@ -48,4 +47,4 @@ Eine neue Deploymenteinheit ist für jede Fachapplikation notwendig.
 
 - Zentraler Service ist ein Single Point of Failure.
 - Es muss durch organisatorische Massnahmen sichergestellt werden, dass alle Applikationen die Bibliothek integrieren.
-Möglich Gegenmassnahme: Die Anforderung sollte in den Architekturrichtlinien festgelegt und deren Einhaltung kontrolliert werden.
+Eine solche Massnahme könnte die Verankerung in den Architekturrichtlinien sein.

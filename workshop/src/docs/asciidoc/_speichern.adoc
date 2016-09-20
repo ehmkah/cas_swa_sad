@@ -1,6 +1,8 @@
 
 ==== Speichern
 
+Unter _Speichern_ verstehen wir Mechanismen, die eine persistene Ablage der Protokollierungsdaten ausserhalb des Arbeitsspeichers erlauben.
+
 ===== Zentrale Datenbank
 
 Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
@@ -11,11 +13,11 @@ Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
 | Einfach zum Betreiben
 | Durch hohe  Last eventuell Performanceprobleme
 
-| Ermöglicht schnelle Fachapplikations übergreifende Abfragen
+| Ermöglicht schnelle fachapplikationsübergreifende Abfragen
 | Single Point of Failure
 
 | Lizenzkosten tiefer, da weniger Datenbank-Instanzen notwendig sind
-| Höchste Sicherheitsstufe einer Fachapplikation gilt automatisch für alle
+| Höchste Sicherheitsstufe einer Fachapplikation gilt automatisch für alle Protokollierungsdaten
 
 | Wartbarkeit
 | Keine klare Abgrenzung zwischen den Applikationen (Datenschutz)
@@ -25,7 +27,7 @@ Die Protokollierungsdaten werden in einer zentralen Datenbank gespeichert.
 ===== Dezentrale Logdatei + Zentrale Datenbank
 
 Die Protokollierungsdaten werden dezentral kontinuierlich in Logdateien geschrieben.
-Ein zentrale Batch liest die dezentralen Logdateien der Applikationen und speichert sie in der zentralen Datenbank.
+Ein zentraler Batch liest die dezentralen Logdateien der Applikationen aus, speichert sie in der zentralen Datenbank und löscht anschliessend die Logdatei.
 
 |===
 | Vorteile | Nachteile
@@ -40,14 +42,14 @@ Ein zentrale Batch liest die dezentralen Logdateien der Applikationen und speich
 
 ===== Dezentral in Logdatei
 
-Die Fachapplikationen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei. Die Datei könnte auch auf einem
-von allen Applikationen geteilten Folder geschrieben werden, was die Auswertung über mehrere Applikationen erleichtert.
+Die Fachapplikationen schreiben Ihre Protokollierungsdaten in ihre eigene Logdatei.
+Die Datei könnte auch auf einem von allen Applikationen geteilten Fileserver geschrieben werden, was die Auswertung über mehrere Applikationen erleichtert.
 
 |===
 | Vorteile | Nachteile
 
 | Einfach zu implementieren
-| Daten liegen verstreut auf den Applikationsservern
+| Daten liegen verstreut auf den Applikationsservern (wenn kein zentraler Fileserver verwendet wird)
 
 | Fachapplikationen behindern sich nicht gegenseitig beim Schreiben
 |
@@ -109,9 +111,6 @@ oder in einer separaten Datenbank) gespeichert.
 
 ==== Fazit
 
-Die Variante mit einer zentralen Datei schliessen wir wegen der gegenseitigen Behinderung beim Schreiben aus.
-Damit die Anforderungen an die Protokollierung zuverlässig gewährleistet werden können, wird der
- einfachere Ansatz mit einer synchronen Implementierung gewählt.
- Die Variante mit der Queue wird deshalb nicht weiter verfolgt.
-
-// TODO: Service-Call für die Loganwendung (siehe kontext-diagramme) berücksichtigen
+Die Variante _Zentral in Logdatei_ schliessen wir wegen der gegenseitigen Behinderung beim Schreiben aus.
+Damit die Anforderungen an die Protokollierung zuverlässig gewährleistet werden können, wird der einfachere Ansatz mit einer synchronen Implementierung gewählt.
+Die Variante _Queue_ wird deshalb verworfen.

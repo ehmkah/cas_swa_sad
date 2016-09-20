@@ -7,10 +7,10 @@ image::kontext_variante3.png["Kontextdiagramm  Variante 3"]
 
 ===== Beschreibung
 
-Analog zur zweiten Variante wird eine Bibliothek verwendet oder allenfalls neu entwickelt, die einfach in bestehende
+Analog zur zweiten Variante wird eine Bibliothek entwickelt, die einfach in bestehende
 Fachapplikationen eingebunden werden kann. Die Bibliothek schreibt dabei die Protokollierungsdaten in einem
-vordefinierten Format in eine Logdatei. Die Logdatei wird dabei auf einen zentralen Fileserver abgelegt. Damit das Löschen
-einfacher gemacht werden kann wird pro Tag und Fachapplikation eine Datei generiert.
+vordefinierten Format in eine Logdatei. Die Logdatei wird dabei auf einen zentralen Fileserver abgelegt.
+Damit das Löschen einfacher gemacht werden kann, wird pro Tag und Fachapplikation eine Datei generiert.
 
 Ein Logtool wie Splunk oder der ELK-Stack indexiert danach diese Logdateien und bereitet die Daten über ein GUI übersichtlich auf.
 Über ein Webfrontend kann danach der Datenschutzbeauftragte die gewünschten Daten anschliessend abfragen. Die abgelaufenen Daten
@@ -22,7 +22,7 @@ werden durch einen automatischen Batch periodisch  aus dem Filesystem, resp. aus
 Die Bibliothek wie beipielsweise das quelloffene Log4J wird in alle Applikationen verwendet und als JAR via Maven importiert.
 Die Bibliothek bietet ein Interface mit den Protokollierungsfunktionen. Jeder Protokolleintrag wird danach
 synchron in die aktuelle Protokolldatei geschrieben. Um die normalen Logeinträge wie Warnungen, Exceptions, etc und die
-Zugangsprotokolldaten zu unterscheiden, werden letztere mit einem eigenen Appender in ein separates File geschrieben.
+Zugangsprotokolldaten zu unterscheiden, werden letztere mit einem eigenen Appender in eine separate Datei geschrieben.
 
 Die Logdateien werden dabei auf einem Netzwerk-Share zentral gespeichert. Der Fileserver befindet sich im gleichen
 Netzwerk und hat daher eine geringe Latenzzeit.
@@ -50,5 +50,6 @@ Der Batch wird mit Hilfe des _JSR 352_ mit JEE implementiert, damit er optimal i
 
 ===== Risiken
 
-- Falls der Fileserver nicht verfügbar ist, können keine Requests auf die Fachapplikationen gemacht werden. (SPF)
-- Files sind nicht ideal für parallele Schreibvergänge wenn mehrere Requests gleichzeitig protokolliert werden müssen
+- Falls der Fileserver nicht verfügbar ist, können keine Requests auf die Fachapplikationen gemacht werden.
+Der Fileserver wird zum Single Point of Failure.
+- Dateien sind nicht ideal für parallele Schreibvorgänge wenn mehrere Requests gleichzeitig protokolliert werden müssen

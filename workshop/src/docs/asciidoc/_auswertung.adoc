@@ -2,7 +2,7 @@
 
 === Variantenbewertung
 
-=== Gewichtete Bewertungskriterien
+==== Gewichtete Bewertungskriterien
 
 Anhand der folgenden Bewertungskriterien werden die Varianten beurteilt.
 
@@ -137,16 +137,21 @@ Anhand der folgenden Bewertungskriterien werden die Varianten beurteilt.
 
 Gewichtung: 1 nicht relevant, 2 weniger wichtig, 3 wichtig, 4 ziemlich wichtig  5 sehr wichtig
 
-*Begründung der Gewichtung*
+===== Begründung der Gewichtung
 
-* Performanz, Verfügbarkeit sind wichtige Architekturziele, darum werden sie mit 10 Punkten bewertet.
-* Skalierbarkeit, Sicherheit, Batchprozesse und Integrierbarkeit werden mit 8 Punkten bewertet, weil sie integrale Bestandteile der Nicht-Funktionalen Anforderungen sind.
-* Betriebs- und Wartungskosten, die Erfüllung der fachlichen Anforderungen sind wichtiger als die Kosten, daher werden die Kosten nur mit 4 bzw. mit 6 Punkten bewertet.
+* Vollständigkeit der Protokollierungsdaten ist eine wichtige funktionale Anforderung, deshalb wird sie mit 5 gewichtet.
+* Performanz und erfügbarkeit sind wichtige Architekturziele, darum werden sie mit 5 gewichtet.
+* Skalierbarkeit, Integrierbarkeit, Sicherheit, Batchprozesse und  werden mit 4 gewichtet, weil sie integrale Bestandteile der Nicht-Funktionalen Anforderungen sind.
+* Betriebs- und Wartungskosten, die Erfüllung der fachlichen Anforderungen sind wichtiger als die Realisierungskosten, daher werden sie mit 3 bewertet.
 Da die Lebensdauer der Applikation mehrere Jahre dauert, werden die die laufenden Kosten höher bewertet.
-* Die Software wird nicht ständig erweitert, somit wird die Erweiterbarkeit mit 5 Punkten bewertet.
-* Das Know-How der Mitarbeiter bewerten wir mit 5 Punkten, weil wir nach Bedarf kurzfristig externe Ressourcen  einkaufen  oder mittelfristig die Mitarbeiter  ausbilden können.
-* Die Konfigurierung der Aufbewahrungsfrist wird nicht häufig vorgenommen, somit bewerten wir sie mit 3 Punkten.
+* Die Software wird nicht ständig erweitert, somit wird die Erweiterbarkeit mit 3 bewerte.
+* Das Know-How der Mitarbeiter wirkt sich mit dem Faktor 2 auf die Gesamtbewertung aus, weil wir nach Bedarf kurzfristig externe Ressourcen  einkaufen  oder mittelfristig die Mitarbeiter  ausbilden können.
+* Die Konfigurierung der Aufbewahrungsfrist wird selten geändert, deshalb bewerten wir sie mit dem Faktor 2.
 
+===== Sonstiges zur Bewertung
+
+Maximal kann eine Lösungsvariante in einem Bewertungskriterium einen Wert zwischen 1 und 5 erhalten.
+1 bedeutet dabei, dass das Bewertungskriterium nicht unterstützt wird, 5, dass es sehr gut unterstützt wird.
 
 
 === Begründete Bewertung

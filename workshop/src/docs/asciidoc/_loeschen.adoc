@@ -1,9 +1,10 @@
 ==== Löschen
 
+Unter _Löschen_ verstehen wir Mechanismen, mit denen Protokollierungsdaten gelöscht werden können, wenn Ihre Aufbewahrungszeit abgelaufen ist.
+
 ===== Batch löscht in Datenbank
 
-Ein Batch wird eingerichtet, der direkt auf der Protokollierungsdatenbank die Daten
-die ausserhalb des Speicherungszeitraums liegen löscht.
+Ein Batch wird eingerichtet, der in der Protokollierungsdatenbank die Protokollierungsdaten, die ausserhalb des Speicherungszeitraums liegen, löscht.
 
 |===
 | Vorteile | Nachteile
@@ -27,7 +28,7 @@ Die Daten werden manuell durch einen Anwender gelöscht.
 |===
 | Vorteile | Nachteile
 
-| kein Implementierungsaufwand
+| Kein Implementierungsaufwand
 | Fehleranfällig durch Anwenderinteraktion
 
 | Flexibilität
@@ -41,8 +42,6 @@ Die Daten werden manuell durch einen Anwender gelöscht.
 
 
 |===
-
-Diese Variante wird aus Gründen der Praktikabilität verworfen.
 
 ===== Batch löscht Logdatei
 
@@ -65,7 +64,7 @@ Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelösch
 
 ===== Anwender löscht Logdatei
 
-Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelöscht.
+Die Protokollierungsdateien werden durch einen Anwender aus dem Filesystem gelöscht.
 
 |===
 | Vorteile | Nachteile
@@ -86,8 +85,7 @@ Die Protokollierungsdateien werden durch einen Batch aus dem Filesystem gelösch
 
 ===== Fazit
 
-Die Protokollierungsdaten manuell zu löschen wird nicht weiter verfolgt, weil sie zuviele Nachteile haben.
-Ausserdem ist der Vorgang beim manuellen Löschen fehleranfällig und intransparent, weil nicht nachvollzogen werden kann,
-was der Anwender gelöscht hat.
+Der beiden Ansätz die Protokollierungsdaten manuell zu löschen werden nicht weiter verfolgt, weil sie zu viele Nachteile haben.
+Ausserdem ist der Vorgang des manuellen Löschen fehleranfällig und intransparent, weil nicht nachvollzogen werden kann, was der Anwender gelöscht hat.
 
-Bei der Löschung sollte ausserdem abgeklärt werden, wie mit den Daten auf externen Backup-Medien umgegangen wird.
+Bei der Löschung sollte ausserdem abgeklärt werden, wie mit den Protokollierungsdaten auf externen Backup-Medien umgegangen wird.

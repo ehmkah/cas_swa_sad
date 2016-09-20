@@ -22,9 +22,7 @@ In einer späteren Phase kann die Persistenzschicht des Proxies durch einen sepa
 Der Batch wird mit Hilfe des _JSR 352_ mit JEE implementiert, damit er in die Architekturlandschaft der Mobiliar passt.
 
 Die Applikation für die Abfrage wird als Webapplikation auf Basis von _AngularJS_ mit einem _JEE_ basierten Backend implementiert.
-Die Kommunikation erfolgt zwischen Webapplikation und Backend mit _REST_. Damit ersparen wir uns,
-dass die Applikation lokal bei den Benutzern installiert werden muss. Ausserdem steht die Fachapplikation damit dem Datenschutzbeauftragten
-stets in der neuesten Form zur Verfügung.
+Die Kommunikation erfolgt zwischen Webapplikation und Backend mit _REST_. Damit muss die Applikation nicht auf dem Rechner des Datenschutzbeauftragten installiert werden und er kann immer die neueste Version der Applikation verwenden.
 
 ===== Vor- und Nachteile
 
@@ -33,13 +31,12 @@ stets in der neuesten Form zur Verfügung.
 * Fachapplikationen werden durch Proxy nicht beeinflusst
 * Alle Anfragen werden protokolliert.
 Es sind keine Änderungen an den Fachapplikationen nötig
-* Zentrale Speicherung der Protokollierungsdaten erleichtert abfragen
+* Zentrale Speicherung der Protokollierungsdaten erleichtert Abfragen
 * Mit einer selbst gebauten Auswertungsapplikation, können die zulässigen Abfragen durch den Datenschutzbeauftragten genau konfiguriert werden
 
 ====== Nachteile
 
-* Daten werden auf sehr hoher Ebene abgegriffen und erschweren damit möglicherweise die Auswertung, da unter Umständen
-nicht alle Kontextdaten für die Protokollierung vorhanden sind.
+* Protokollierungsdaten werden auf sehr hoher Ebene abgegriffen und erschweren damit möglicherweise die Protokollierung, da nicht alle notwendigen Daten vorhanden sein können
 * Neue Anforderungen des Datenschutzbeauftragten müssen in der Applikation stets von Entwicklern umgesetzt werden.
 Mit einem Datenbankzugriff via SQL-Client wäre die Variante für die Auswertung flexibler.
 

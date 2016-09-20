@@ -2,24 +2,23 @@
 
 === Lösungsraum
 
+Um zu verschiedenden Lösungsvarianten zu gelangen, haben wir die Protkollierung in Teilaufgaben zerlegt und für diese mögliche Lösungen gesucht. Im folgenden morphologischen Kasten, werden alle gefundenen Lösungen dargestellt und danach kurz erläutert.
+
 .Lösungsraum
 image::morphologischer_kasten_ohne.png["Lösungsraum"]
 
 include::_abgreifen.adoc[]
 
 include::_speichern.adoc[]
+
 include::_abfragen.adoc[]
+
 include::_loeschen.adoc[]
 
-=== Untersuchte Varianten
+=== Untersuchte Lösungsvarianten
 
-.Ausgewählte Varianten
+.Ausgewählte Varianten (Legende: Blau: Variante 1, Rot: Variante 2, Grün: Variante 3, Schwarz: Variante 4)
 image::morphologischer_kasten.jpg["Ausgewählte Varianten"]
-
-* Blau: Variante 1
-* Rot: Variante 2
-* Grün: Variante 3
-* Schwarz: Variante 4
 
 include::_variante1.adoc[]
 
