@@ -28,7 +28,7 @@ Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslic
 | Vorteile | Nachteile
 
 | Viele Auswertungsmöglichkeiten dank SQL
-| SQL Know-How nötig, lokal installation
+| SQL Know-How nötig, lokaler Client
 
 | Wenig Implementierungsaufwand
 | Usability
@@ -43,7 +43,7 @@ Dem Datenschützer wird eine SQL-Client und ein Datenbankuser mit ausschliesslic
 Für die Auswertung von Logdateien existieren auf dem Markt sowohl kommerzielle (z.B. _Splunk_) als auch frei
 verfügbare Tools (_ELK-Stack_), mit denene Logdateien von Applikationen schnell und komfortabel ausgewertet werden können.
 Die Applikationen könnten dabei die Requests in eigene Logdateien schreiben, die dann vom Logtool indexiert würden.
- kann man feingranular konfigurieren, welcher  Benutzer auf welche Logdateien zugreifen kann.
+Dabei kann man feingranular konfigurieren, welcher  Benutzer auf welche Logdateien zugreifen kann.
 
 Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Logdateien Sinn.
 

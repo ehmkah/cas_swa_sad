@@ -1,7 +1,7 @@
 === Architekturziele
 
 Die folgenden Architekturziele sollen mit der Lösung erreicht werden.
-Sie sind nach Ihrer Wichtigkeit aufgeführt
+Sie sind nach ihrer Wichtigkeit aufgeführt
 
 ==== Zeitverhalten
 
@@ -16,7 +16,7 @@ Die Verfügbarkeit der Fachapplikationen darf nicht wegen der Protokollierung be
 ==== Sicherheit
 
 Nur der Datenschutzbeauftragte darf die Protokollierungsdaten anschauen.
-Es muss sichergestellt werden, dass die protokollierten Daten nicht verändert können.
+Es muss sichergestellt werden, dass die protokollierten Daten nicht verändert werden können.
 
 ==== Interoperabilität
 

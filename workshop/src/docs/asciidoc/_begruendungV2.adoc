@@ -1,5 +1,5 @@
 
-*Variante 2*
+==== Variante 2
 
 |===
 | Bewertungskriterium | Begründung | Punkte

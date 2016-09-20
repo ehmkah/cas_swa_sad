@@ -7,11 +7,11 @@
 
 
 | Vollständigkeit der Protokollierungsdaten
-| Unter Umständen nicht alle Kontextdaten für die Protokollierung vorhanden sind
+| Unter Umständen sind nicht alle Kontextdaten für die Protokollierung vorhanden
 | 1
 
 | Performanz
-| Performanz der Fachapplikation wird leicht beeinflusst wegen synchroner WebService Aufruf.
+| Performanz der Fachapplikation wird leicht beeinflusst wegen dem synchronen WebService Aufruf.
 | 3
 
 | Verfügbarkeit Fachapplikation
@@ -23,11 +23,11 @@
 | 5
 
 | Skalierbarkeit
-| Gut skalierbar, aber wegen zentral Datenbank kann nicht beliebig skaliert werden.
+| Gut skalierbar, aber wegen zentraler Datenbank kann nicht beliebig skaliert werden.
 | 4
 
 | Integrierbar in unsere IT-Landschaft
-| Es wird eine bestehende Technologie verwendet und daher gut integrierbar.
+| Es wird eine bestehende Technologie verwendet und ist daher gut integrierbar.
 | 5
 
 | Sicherheit
@@ -40,8 +40,8 @@
 | 5
 
 | Betriebs- und Wartungskosten (pro Jahr)
-| Es muss den Proxy, Applikation zum lesen und der DB-Job zum löschen gewartet werden.
-Es gibt bereits ein bestehenden DBMS, daher fallen keine zusätzlichen Lizenzkosten an.
+| Es muss der Proxy, die Applikation zum Lesen und der DB-Job zum löschen gewartet werden.
+Es gibt bereits ein bestehendes DBMS, daher fallen keine zusätzlichen Lizenzkosten an.
 | 3
 
 

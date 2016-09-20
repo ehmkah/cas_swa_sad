@@ -43,7 +43,7 @@ Die Datenbankabfragen werden via Stored Procedures gemacht. Innerhalb der Prozed
 
 Die Protokollierung findet in der Fachapplikation statt.
 Es wird eine Bibliothek erstellt, die das Protokollieren mit einfachen Aufrufen aus den Fachapplikation ermöglicht.
-Die Bibliothek kann weiterhin kapseln, wie die Protokollierungsdaten geschrieben werden, also entweder direkt in die Datenbank, Logdateien, oder per Protokollierungsservice.
+Die Bibliothek kann weiterhin kapseln, wie die Protokollierungsdaten geschrieben werden, also entweder direkt in die Datenbank, Logdateien oder per Protokollierungsservice.
 
 Die gleiche Bibliothek wird in allen Fachapplikationen verwendet.
 
