@@ -9,7 +9,7 @@ include::_config.adoc[]
 = Softwarearchitektur Antrag "Logging"
 
 Christian Feuz; Frank Moritz; Jan Klominsky; Michael Krausse; Ye Zhao
-v0.1, 2016-13-09
+v 1.0, 2016-20-09
 
 == Workshop Architekturantrag
 
