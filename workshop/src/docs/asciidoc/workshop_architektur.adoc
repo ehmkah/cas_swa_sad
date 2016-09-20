@@ -5,8 +5,6 @@ include::_config.adoc[]
 
 
 = Software Architektur Antrag "Protokollierung"
-=======
-= Softwarearchitektur Antrag "Logging"
 
 Christian Feuz; Frank Moritz; Jan Klominsky; Michael Krausse; Ye Zhao
 v 1.0, 2016-20-09
