@@ -60,7 +60,3 @@ Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Lo
 |===
 
 ==== Fazit
-Die Protokollierungsdaten mit SQL-Client zu lesen wird nicht weiter verfolgt, weil es SQL Know-How für
-die Datenschutzbeauftragten vorausgesetzt ist.
-
-

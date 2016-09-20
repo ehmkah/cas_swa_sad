@@ -1,0 +1,79 @@
+
+*Variante 2*
+
+|===
+| Bewertungskriterium | Begründung | Punkte
+
+
+| Vollständigkeit der Protokollierungsdaten
+| Alle notwendigen Daten stehen zur Verfügung.
+| 5
+
+| Performanz
+| synchroner Webserviceaufruf
+| 3
+
+| Verfügbarkeit Fachapplikation
+| Wenn der Webservice nicht verfügbar ist, sind auch die Fachapplikationen nicht verfügbar
+| 4
+
+| Verfügbarkeit Protokollierung
+| Der Webservice kann durch Loadbalanceing hochverfügbar gemacht werden.
+| 4
+
+| Skalierbarkeit
+| Der Webservice ist gut skallierbar.
+
+Es werden alle Daten in einer zentralen Datenbank gespeichert, welche schlecht skalliert.
+//TODO: besser formulieren
+| 3
+
+| Integrierbar in unsere IT-Landschaft
+| Es wird eine bestehende Technologie verwendet und daher gut integrierbar.
+| 5
+
+| Sicherheit
+| Die Übermittlung der Daten an den Webservice erfolgt verschlüsselt.
+Bei der Datenbank muss sichergestellt werden, dass nur die "Speicher-Applikation" Schreibrecht hat
+und nur der Datenschutzbeauftragter Leserechte hat
+| 4
+
+
+| Batchprozesse
+| Durch die Bibliothek wird zentral die Überprüfung vorgenommen
+| 5
+
+| Betriebs- und Wartungskosten (pro Jahr)
+| Es muss die "Speicher-Applikation", die Bibliothek und der DB-Job zum löschen gewartet werden.
+Es gibt bereits ein bestehenden DBMS, daher fallen keine zusätzlichen Lizenzkosten an.
+| 3
+
+| Erweiterbarkeit Protokollierung
+| Ändert sich die Bibliothek müssen alle Fachapplikationen ausgetauscht werden.
+| 1
+
+| Erweiterbarkeit Fachapplikation
+| Wenn neue Fachapplikationen implementiert werden, muss dort die Bibliothek eingebunden werden.
+Bei der "Speicher-Applikation" muss die neue Fachapplikation auch in die Liste eingetragen werden.
+| 4
+
+| Genug passende Mitarbeiter mit Know-How
+| Hoher Realisierungsaufwand, aber Standardtechnologie
+| 2
+
+
+| Realisierungskosten (einmalig)
+| Hoher Realisierungsaufwand, aber Standardtechnologie
+| 2
+
+
+| Konfigurierung der Aufbewahrungsfrist
+| Die Frist kann beim Löschskript konfiguriert werden.
+| 5
+
+
+| Gesamtbewertung
+| -
+| 186
+
+|===

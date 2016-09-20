@@ -377,8 +377,6 @@ include::_begruendungV4.adoc[]
 === Speichern
 *Dezentrale Datenbank*
 
-Erhöhte Komplexität, erschwert die Auswertung und das Löschen der Protokollierungsdaten.
-Kaum Vorteile gegenüber einer zentralen Datenbank
 
 *Zentrale Logdatei*
 
@@ -392,7 +390,6 @@ Zu wenig Erfahrung mit der Technologie und daher zu hohes Projektrisiko. Wahrsch
 === Abfragen
 *Plain-SQL-Abfragen*
 
-Wir gehen davon aus, dass der Datenschutzbeauftragte nicht über die Notwendigen Kenntnisse verfügt.
 
 === Löschen
 *Anwender löscht in Datenbank*
