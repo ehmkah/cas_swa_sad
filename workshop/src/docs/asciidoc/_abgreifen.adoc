@@ -56,7 +56,7 @@ Die gleiche Bibliothek wird in allen Fachapplikationen verwendet.
 | Umsysteme werden nicht protokolliert
 | Schränkt die Implementierungsmöglichkeiten der Fachapplikationen ein (von Java kann nicht auf C# gewechselt werden)
 
-| Einfach in Fachapplikation verwendbar, da es Kompexität vor Fachapplikationen verbirgt
-| Organisatorische Massnahmen z.B. Verankerung in der Architekturguidline notwendig, dass die Bibliothek in Fachapplikationen eingebunden werden muss
+| Einfach in Fachapplikation verwendbar, da es Komplexität vor Fachapplikationen verbirgt
+| Organisatorische Massnahmen z.B. Verankerung in der Architektur Guideline notwendig, dass die Bibliothek in Fachapplikationen eingebunden werden muss
 
 |===
