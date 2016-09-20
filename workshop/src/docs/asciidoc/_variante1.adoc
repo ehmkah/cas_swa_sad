@@ -31,7 +31,8 @@ stets in der neuesten Form zur Verfügung.
 ===== Vorteile
 
 * Fachapplikationen werden durch Proxy nicht beeinflusst
-* Alle Anfragen werden protoklliert. Es sind keine Änderungen an den Fachapplikationen nötig
+* Alle Anfragen werden protokolliert.
+Es sind keine Änderungen an den Fachapplikationen nötig
 * Zentrale Speicherung der Protokollierungsdaten erleichtert abfragen
 * Mit einer selbst gebauten Auwwertungsapplikation, können die zulässigen Abfragen durch den Datenschutzbeauftragten genau konfiguriert werden
 
@@ -39,8 +40,8 @@ stets in der neuesten Form zur Verfügung.
 
 * Daten werden auf sehr hoher Ebene abgegriffen und erschweren damit möglichweise die Auswertung, da unter Umständen
 nicht alle Kontextdaten für die Protollierung vorhanden sind.
-* Neue Anforderungen des Datenschutzbeauftragen müssen in der Applikation stets von Entwicklern umgesetzt werden. Mit einem
-Datenbankzugriff via SQL-Client wäre die Variante für die Auswertung flexibler.
+* Neue Anforderungen des Datenschutzbeauftragen müssen in der Applikation stets von Entwicklern umgesetzt werden.
+Mit einem Datenbankzugriff via SQL-Client wäre die Variante für die Auswertung flexibler.
 
 ==== Risiken
 
