@@ -153,8 +153,6 @@ include::_architekturziele.adoc[]
 .Lösungsraum
 image::morphologischer_kasten_ohne.png["Lösungsraum"]
 
-Im Anhang ist beschrieben, weshalb die anderen Varianten nicht weiter berücksichtigt werden.
-
 include::_abgreifen.adoc[]
 include::_speichern.adoc[]
 include::_abfragen.adoc[]
