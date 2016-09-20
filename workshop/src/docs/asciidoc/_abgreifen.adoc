@@ -1,6 +1,6 @@
-=== Abgreifen
+==== Abgreifen
 
-==== Vor der Fachapplikation
+===== Vor der Fachapplikation
 
 Die Requests werden im Proxy protokolliert.
 
@@ -18,7 +18,7 @@ Die Requests werden im Proxy protokolliert.
 
 |===
 
-==== Direkt in Datenbank schreiben
+===== Direkt in Datenbank schreiben
 
 Die Datenbankabfragen werden via Stored Procedures gemacht. Innerhalb der Prozeduren wird der Request
  in eine Tabelle gespeichert. Alternativ könnte eine Stored Procedure auch eine Java-Funktion aufrufen,
@@ -39,7 +39,7 @@ Die Datenbankabfragen werden via Stored Procedures gemacht. Innerhalb der Prozed
 
 |===
 
-==== Integration in Fachapplikation
+===== Integration in Fachapplikation
 
 Die Protokollierung findet in der Fachapplikation statt.
 Es wird eine Bibliothek erstellt, die das Protokollieren mit einfachen Aufrufen aus den Fachapplikation ermöglicht.
