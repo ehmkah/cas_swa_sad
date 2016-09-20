@@ -20,11 +20,10 @@ Es muss sichergestellt werden, dass die protokollierten Daten nicht verändert w
 
 ==== Interoperabilität
 
-Die Protokollierung muss so implementiert werden, dass neue Fachapplikationen  leicht angebunden werden können.
+Die Protokollierung muss so implementiert werden, dass neue Fachapplikationen leicht angebunden werden können.
 
 ==== Richtigkeit
 
 Es sollen nur die tatsächlich durchgeführten Änderungen protokolliert werden.
 Die erfassten Protokolldaten müssen vollständig sein.
 Es dürfen keine Daten mutiert oder abgefragt werden, wenn die Protokollierung nicht funktioniert.
-
