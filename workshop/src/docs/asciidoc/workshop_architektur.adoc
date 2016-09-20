@@ -4,11 +4,7 @@ include::_config.adoc[]
 :title-logo-image: image:logo.png[Logo][scaledwidth=100%,align=right]
 
 
-<<<<<<< HEAD
 = Software Architektur Antrag "Protokollierung"
-=======
-= Softwarearchitektur Antrag "Logging"
->>>>>>> f7c39433f22fb05f8fee89b33efd37948192fad8
 Christian Feuz; Frank Moritz; Jan Klominsky; Michael Krausse; Ye Zhao
 v0.1, 2016-13-09
 
