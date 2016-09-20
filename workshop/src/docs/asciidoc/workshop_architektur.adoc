@@ -194,128 +194,128 @@ include::_variante4.adoc[]
 .Bewertungstabelle
 [cols="2,1,1,1,1,1,4"]
 |===
-| Bewertungs- kriterium | Gewich- tung | V1 | V2 | V3 | V4| Beschreibung
+| Bewertungskriterium | Gewichtung | V1 | V2 | V3 | V4| Beschreibung
 
 
 | Vollständigkeit der Protokollierungsdaten
 | 5
-| -
-| -
-| -
-| -
+| 1
+| 5
+| 5
+| 5
 | Alle geforderten Daten sind im Kontext vorhanden und können protokolliert werden.
 
 | Performanz
 | 5
-| -
-| -
-| -
-| -
+| 3
+| 3
+| 4
+| 5
 | Die Protokollierung soll einen möchlichst kleinen Performanzimpact auf die Fachapplikation haben.
 
 | Verfügbarkeit Fachapplikation
 | 5
-| -
-| -
-| -
-| -
+| 3
+| 4
+| 4
+| 5
 | Die Verfügbarkeit der Fachapplikation darf nur unwesentlich beeinflusst werden.
 
 | Verfügbarkeit Protokollierung
 | 5
-| -
-| -
-| -
-| -
+| 5
+| 4
+| 4
+| 4
 | Die Verfügbarkeit muss so hoch wie möglich sein
 
 | Skalierbarkeit
 | 4
-| -
-| -
-| -
-| -
+| 4
+| 3
+| 3
+| 3
 | Skaliert das Produkt mit wachsender Anzahl von Requests (3 Mio pro Tag, 500 Mio pro Jahr, Datenvolumen 1TB)
 
 | Integrierbar in unsere IT-Landschaft
 | 4
-| -
-| -
-| -
-| -
+| 5
+| 5
+| 5
+| 5
 | Kann das Produkt nahtlos in unsere bestehende Landschaft integriert werden
 
 | Sicherheit
 | 4
-| -
-| -
-| -
-| -
+| 5
+| 5
+| 5
+| 5
 | Zugriff nur für berechtigte Personen
 
 | Batchprozesse
 | 4
-| -
-| -
-| -
-| -
+| 5
+| 5
+| 5
+| 5
 | Automatiche Prozesse werden nicht protokolliert
 
 | Betriebs- und Wartungskosten (pro Jahr)
 | 3
-| -
-| -
-| -
-| -
+| 3
+| 3
+| 3
+| 2
 | Betriebs- und Lizenzkosten, Support
 
 | Erweiterbarkeit Protokollierung
 | 3
-| -
-| -
-| -
-| -
+| 5
+| 2
+| 3
+| 1
 | Zusätzliche Funktionalität der bestehenden Protokollierung
 
 | Erweiterbarkeit Fachapplikation
 | 3
-| -
-| -
-| -
-| -
+| 5
+| 4
+| 5
+| 4
 | Neue Fachapplikationen müssen auch protokolliert werden
 
 | Realisierungskosten (einmalig)
 | 2
-| -
-| -
-| -
-| -
+| 2
+| 2
+| 3
+| 2
 | Wie aufwendig ist die Lösung zu bauen, Kaufpreis bei einer externen Lösung
 
 
 | Genug passende Mitarbeiter mit Know-How
 | 2
-| -
-| -
-| -
-| -
+| 2
+| 2
+| 4
+| 2
 | Verfügen wir über genügend verfügbare und qualifizierte Mitarbeiter um die Variante selber zu implementieren
 
 | Konfigurierung der Aufbewahrungs- frist
 | 2
-| -
-| -
-| -
-| -
+| 5
+| 5
+| 5
+| 5
 | Die Aufbewahrungsfrist der Protokollierungsdaten muss konfigurierbar sein (z.B 1 Jahr)
 
-| Gesamtbewertung
-| -
-| -
-| -
-| -
-| -
+| Gewichtete Gesamtbewertung
+|
+| 197
+| 197
+| 214
+| 206
 |
 
 |===
