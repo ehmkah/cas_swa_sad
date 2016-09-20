@@ -51,7 +51,7 @@ Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Lo
 | Vorteile | Nachteile
 
 | Bewährte Tools verfügbar
-| Kommerzielle Lösungen (_Splunk_) sehr teuer bei grossen Datenmengen
+| Kommerzielle Lösungen (_Splunk_) teuer bei grossen Datenmengen (10 GB pro Tag 7800 USD)
 
 | Keine Eigenentwicklung notwendig
 | Keine strikte Trennung zwischen Applikationslogdaten (z.B. Fehler, Warnungen) und den Protokolldaten
@@ -62,5 +62,3 @@ Diese Lösung macht, wie der Name bereits impliziert, nur in Zusammenhang mit Lo
 ===== Fazit
 Die Protokollierungsdaten mit SQL-Client zu lesen wird nicht weiter verfolgt, weil es SQL Know-How für
 die Datenschutzbeauftragten vorausgesetzt ist.
-
-

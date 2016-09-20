@@ -5,7 +5,7 @@
 .Kontextdiagramm  Variante 1
 image::kontext_variante1.png["Kontextdiagramm  Variante 1"]
 
-===== Möglichst präzise Beschreibung (Schlüsselaspekte)
+===== Beschreibung
 
 Bei dieser Variante werden alle Anfragen durch einen Proxy vor der Fachapplikation abgegriffen.
 Dieser Proxy speichert die ermittelten Daten in einer zentralen Datenbank,

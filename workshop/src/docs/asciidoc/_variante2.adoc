@@ -5,7 +5,7 @@
 .Kontextdiagramm  Variante 2
 image::kontext_variante2.png["Kontextdiagramm  Variante 2"]
 
-===== Möglichst präzise Beschreibung (Schlüsselaspekte)
+===== Beschreibung
 
 // ehmkah: (können wir die Klammer weglassen?, wir starten doch vom Scratch?))
 Es wird eine Bibliothek entwickelt (oder allenfalls eine bestehende Bibliothek angepasst), die die Entwickler in jeder Fachapplikation einfach mit dem Dependendency-Management einbauen können.

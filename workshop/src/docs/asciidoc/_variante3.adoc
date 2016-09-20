@@ -5,7 +5,7 @@
 .Kontextdiagramm  Variante 3
 image::kontext_variante3.png["Kontextdiagramm  Variante 3"]
 
-===== Möglichst präzise Beschreibung (Schlüsselaspekte)
+===== Beschreibung
 
 Analog zur zweiten Variante wird eine Bibliothek verwendet oder allenfalls neu entwickelt, die einfach in bestehende
 Fachapplikationen eingebunden werden kann. Die Bibliothek schreibt dabei die Protokollierungsdaten in einem
