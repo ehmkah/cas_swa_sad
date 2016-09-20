@@ -84,6 +84,7 @@ image::morphologischer_kasten.jpg["Lösungsraum"]
 * Blau: Variante 1
 * Rot: Variante 2
 * Grün: Variante 3
+* Schwarz: Variante 4
 
 include::_abgreifen.adoc[]
 include::_speichern.adoc[]
